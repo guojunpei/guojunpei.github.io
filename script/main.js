@@ -10,3 +10,4 @@ myImage.onclick = function(){
       myImage.setAttribute('src', 'image/wx.jpg');
     }
 }
+myImage.style.cursor='pointer'
