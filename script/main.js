@@ -7,6 +7,6 @@ myImage.onclock = function(){
     if(mySrc === 'image/wx.jpg'){
       myImage.setAttribute('src', 'image/wxewm.jpg');
     } else {
-      myImage.setAttribute('src', 'imge/wxjpg');
+      myImage.setAttribute('src', 'imge/wx.jpg');
     }
 }
