@@ -15,7 +15,7 @@ myImage.onclick = function(){
 myImage.style.cursor='pointer';
 
 let myButton = document.querySelector('button');
-let myHeading = document.querySelector('h7');
+let myUser = document.querySelector('h7');
 
 function setUserName(){
   let myName = prompt('请输入你的名字');
@@ -23,7 +23,7 @@ function setUserName(){
     setUserName();
   } else {
     localStorage.setItem('name',myName);
-    myHeading.textContent = '你好!' + myName;
+    myUser.textContent = '你好!' + myName;
   }
 }
 
@@ -31,7 +31,7 @@ if(!localStorage.getItem('name')){
   setUserName();
 } else {
   let storedName = localStorage.getItem('name');
-  myHeading.textContent = '你好！' + storedName;
+  myUser.textContent = '你好！' + storedName;
 }
 
 myButton.onclick = function(){
