@@ -18,8 +18,8 @@ let myButton = document.querySelector('button');
 let myUser = document.querySelector('h7');
 
 function setUserName(){
-  let myName = prompt('请输入你的名字');
-  if(!myName || myName === null){
+  let myName = window.prompt('请输入你的名字');
+  if(!myName){
     setUserName();
   } else {
     localStorage.setItem('name',myName);
