@@ -18,12 +18,12 @@ let myButton = document.querySelector('button');
 let myUser = document.querySelector('h7');
 
 function setUserName(){
-  let myName = window.prompt('请输入你的名字');
+  let myName = window.prompt('Your name');
   if(!myName){
     setUserName();
   } else {
     localStorage.setItem('name',myName);
-    myUser.textContent = '你好!' + myName;
+    myUser.textContent = 'Hi!' + myName;
   }
 }
 
