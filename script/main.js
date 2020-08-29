@@ -31,8 +31,10 @@ if(!localStorage.getItem('name')){
   setUserName();
 } else {
   let storedName = localStorage.getItem('name');
-  myUser.textContent = '你好！' + storedName;
+  myUser.textContent = 'Hi！' + storedName;
 }
+
+//"中文显示乱码，以后再修 Your name,Hi";
 
 myButton.onclick = function(){
   setUserName();
