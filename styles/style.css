@@ -6,6 +6,12 @@ p,li{
 h1,h2,h3,h4,h5,h6,h7{
     color:green;
 }
+table{
+    color:blue;
+    width: 400px;
+    border: 1px solid white;
+}
+
 body{
     width: 600px;
     margin: 0 auto;
