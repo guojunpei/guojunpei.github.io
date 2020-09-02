@@ -1,8 +1,8 @@
 p,li{
     color:blue;
-    width: 500px;
     border: 1px solid white;
 }
+
 h1,h2,h3,h4,h5,h6,h7{
     color:green;
 }
@@ -24,4 +24,11 @@ img{
     display: block;
     margin: 0 auto;
     width: 200px;
+}
+nav,main{
+    display: flex;
+}
+
+aside{
+    flex: 1;
 }
