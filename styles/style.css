@@ -12,6 +12,10 @@ table{
     border: 1px solid white;
 }
 
+tr,td{
+    border:1px solid white
+}
+
 body{
     width: 600px;
     margin: 0 auto;
