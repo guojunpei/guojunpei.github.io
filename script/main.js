@@ -15,7 +15,7 @@ myImage.onclick = function(){
 myImage.style.cursor='pointer';
 
 let myButton = document.querySelector('button');
-let myUser = document.querySelector('h7');
+let myUser = document.querySelector('h3');
 
 function setUserName(){
   let myName = window.prompt('Your name');
