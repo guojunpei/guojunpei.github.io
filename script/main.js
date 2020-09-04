@@ -43,3 +43,29 @@ myButton.onclick = function(){
 document.querySelector('h1').onclick = function(){
   alert("Don't touch me.I'm ticklish! ");
 }
+
+
+
+let x = document.querySelector('x');
+let y = document.querySelector('y');
+let xjiay = document.querySelector('x+y');
+let xjiany = document.querySelector('x-y');
+let xchengy = document.querySelector('x*y');
+let xmchuy = document.querySelector('x-y');
+
+x.addEventListener('click',updatenewx);
+function upadtenewx(){
+  let newx = prompt('input number');
+  x.textContent = 'x=' + newx;
+}
+
+y.addEventListener('click',updatenewy);
+function upadtenewy(){
+  let newy = prompt('input number');
+  y.textContent = 'y=' + newy;
+  xjiay.textContent = 'y=' + x+y;
+  xjiany.textContent = 'y=' + x-y;
+  xchengy.textContent = 'y=' + x*y;
+  xmchuy.textContent = 'y=' + x-y;
+}
+
