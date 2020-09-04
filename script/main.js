@@ -45,7 +45,7 @@ document.querySelector('h1').onclick = function(){
 }
 
 
-
+/*
 let x = document.querySelector('x');
 let y = document.querySelector('y');
 let xjiay = document.querySelector('xjiay');
@@ -68,4 +68,5 @@ function upadtenewy(){
   xchengy.textContent = x*y;
   xmchuy.textContent = x-y;
 }
+*/
 
