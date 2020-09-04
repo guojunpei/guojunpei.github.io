@@ -48,10 +48,10 @@ document.querySelector('h1').onclick = function(){
 
 let x = document.querySelector('x');
 let y = document.querySelector('y');
-let xjiay = document.querySelector('x+y');
-let xjiany = document.querySelector('x-y');
-let xchengy = document.querySelector('x*y');
-let xmchuy = document.querySelector('x-y');
+let xjiay = document.querySelector('xjiay');
+let xjiany = document.querySelector('xjiany');
+let xchengy = document.querySelector('xchengy');
+let xmchuy = document.querySelector('xchuy');
 
 x.addEventListener('click',updatenewx);
 function upadtenewx(){
