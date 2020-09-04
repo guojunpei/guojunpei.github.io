@@ -56,16 +56,16 @@ let xmchuy = document.querySelector('xchuy');
 x.addEventListener('click',updatenewx);
 function upadtenewx(){
   let newx = prompt('input number');
-  x.textContent = 'x=' + newx;
+  x.textContent = newx;
 }
 
 y.addEventListener('click',updatenewy);
 function upadtenewy(){
   let newy = prompt('input number');
-  y.textContent = 'y=' + newy;
-  xjiay.textContent = 'y=' + x+y;
-  xjiany.textContent = 'y=' + x-y;
-  xchengy.textContent = 'y=' + x*y;
-  xmchuy.textContent = 'y=' + x-y;
+  y.textContent = newy;
+  xjiay.textContent =  x+y;
+  xjiany.textContent = x-y;
+  xchengy.textContent = x*y;
+  xmchuy.textContent = x-y;
 }
 
