@@ -1,5 +1,5 @@
-let myHeading = document.querySelector('h6');
-myHeading.textContent = 'Hello world!';
+
+document.querySelector('h3').textContent = 'Hello world!';
 
 let myImage = document.querySelector('img');
 myImage.onclick = function(){
@@ -15,7 +15,7 @@ myImage.onclick = function(){
 myImage.style.cursor='pointer';
 
 let myButton = document.querySelector('button');
-let myUser = document.querySelector('h3');
+let myUser = document.querySelector('h4');
 
 function setUserName(){
   let myName = window.prompt('Your name');
@@ -42,4 +42,5 @@ myButton.onclick = function(){
 
 document.querySelector('html').onclick = function(){
   alert('±ð´ÁÎÒ£¬ÎÒÅÂÑ÷');
+
 }
