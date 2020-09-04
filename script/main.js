@@ -44,6 +44,18 @@ document.querySelector('h1').onclick = function(){
   alert("Don't touch me.I'm ticklish! ");
 }
 
+let x = document.querySelector('x');
+let y = document.querySelector('y');
+let jia = document.querySelector('jia');
+let jian = document.querySelector('jian');
+let cheng = document.querySelector('cheng');
+let mchu = document.querySelector('chu');
+
+jia = x+y;
+jian = x-y;
+cheng = x*y;
+chu = x/y;
+
 
 /*
 let x = document.querySelector('x');
