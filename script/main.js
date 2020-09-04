@@ -44,18 +44,44 @@ document.querySelector('h1').onclick = function(){
   alert("Don't touch me.I'm ticklish! ");
 }
 
-/*
-let x = document.querySelector('x');
-let y = document.querySelector('y');
-let jia = document.querySelector('jia');
-let jian = document.querySelector('jian');
-let cheng = document.querySelector('cheng');
-let mchu = document.querySelector('chu');
+let x = document.getElementById('x').value;
+let y = document.getElementById('y').value;
+let jia = document.querySelector('jia').textContent;
+let jian = document.querySelector('jian').textContent;
+let cheng = document.querySelector('cheng').textContent;
+let mchu = document.querySelector('chu').textContent;
+const jiashang = Function('a','b','return a + b')
+const jianqu = Function('a','b','return a - b')
+const chengyi = Function('a','b','return a * b')
+const chuyi = Function('a','b','return a / b')
 
-jia = x+y;
-jian = x-y;
-cheng = x*y;
-chu = x/y;
+function getresult(){
+  jia = jiashang(x,y)
+  jian = jianqu(x,y)
+  cheng = chengyi(x,y)
+  chu = chuyi(x,y)
+}
+
+
+
+/*
+let x = document.getElementById('x').value;
+let y = document.getElementById('y').value;
+let jia = document.getElementById('jia').value;
+let jian = document.getElementById('jian').value;
+let cheng = document.getElementById('cheng').value;
+let mchu = document.getElementById('chu').value;
+const jiashang = Function('a','b','return a + b')
+const jianqu = Function('a','b','return a - b')
+const chengyi = Function('a','b','return a * b')
+const chuyi = Function('a','b','return a / b')
+
+function getresult(){
+  jia = jiashang(x,y)
+  jian = jianqu(x,y)
+  cheng = chengyi(x,y)
+  chu = chuyi(x,y)
+}
 */
 
 /*
@@ -74,16 +100,63 @@ function getresult(){
 }
 */
 
+/*
+let x = document.getElementById('x').value;
+let y = document.getElementById('y').value;
+let jia = document.getElementById('jia').value;
+let jian = document.getElementById('jian').value;
+let cheng = document.getElementById('cheng').value;
+let mchu = document.getElementById('chu').value;
+
+document.querySelector('start').onclick = function(){
+  jia = x+y;
+  jian = x-y;
+  cheng = x*y;
+  chu = x/y;
+}
+*/
+
+/*
+let x = document.getElementById('x').value;
+let y = document.getElementById('y').value;
+let jia = document.getElementById('jia').value;
+let jian = document.getElementById('jian').value;
+let cheng = document.getElementById('cheng').value;
+let mchu = document.getElementById('chu').value;
+
+function getresult(){
+  jia = x+y;
+  jian = x-y;
+  cheng = x*y;
+  chu = x/y;
+}
+*/
+
+/*
 let x = document.getElementById('x').value;
 let y = document.getElementById('y').value;
 
-function getresult(){
+document.querySelector('getresult').onclick=function (){
   document.getElementById('jia').value = x+y;
   jdocument.getElementById('jian').value = x-y;
   document.getElementById('cheng').value = x*y;
   document.getElementById('chu').value = x/y;
 }
+*/
 
+/*
+let x = document.querySelector('x');
+let y = document.querySelector('y');
+let jia = document.querySelector('jia');
+let jian = document.querySelector('jian');
+let cheng = document.querySelector('cheng');
+let mchu = document.querySelector('chu');
+
+jia = x+y;
+jian = x-y;
+cheng = x*y;
+chu = x/y;
+*/
 
 
 /*
