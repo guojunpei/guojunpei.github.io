@@ -138,7 +138,7 @@ let y = document.getElementById('y').value;
 
 document.querySelector('getresult').onclick=function (){
   document.getElementById('jia').value = x+y;
-  jdocument.getElementById('jian').value = x-y;
+  document.getElementById('jian').value = x-y;
   document.getElementById('cheng').value = x*y;
   document.getElementById('chu').value = x/y;
 }
@@ -174,13 +174,14 @@ function upadtenewx(){
 }
 
 y.addEventListener('click',updatenewy);
+
 function upadtenewy(){
   let newy = prompt('input number');
   y.textContent = newy;
   xjiay.textContent =  x+y;
   xjiany.textContent = x-y;
   xchengy.textContent = x*y;
-  xmchuy.textContent = x-y;
+  xmchuy.textContent = x/y;
 }
 */
 
