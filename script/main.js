@@ -44,6 +44,7 @@ document.querySelector('h1').onclick = function(){
   alert("Don't touch me.I'm ticklish! ");
 }
 
+/*
 let x = document.querySelector('x');
 let y = document.querySelector('y');
 let jia = document.querySelector('jia');
@@ -55,6 +56,34 @@ jia = x+y;
 jian = x-y;
 cheng = x*y;
 chu = x/y;
+*/
+
+/*
+let x = document.getElementById('x').value;
+let y = document.getElementById('y').value;
+let jia = document.getElementById('jia').value;
+let jian = document.getElementById('jian').value;
+let cheng = document.getElementById('cheng').value;
+let mchu = document.getElementById('chu').value;
+
+function getresult(){
+  jia = x+y;
+  jian = x-y;
+  cheng = x*y;
+  chu = x/y;
+}
+*/
+
+let x = document.getElementById('x').value;
+let y = document.getElementById('y').value;
+
+function getresult(){
+  document.getElementById('jia').value = x+y;
+  jdocument.getElementById('jian').value = x-y;
+  document.getElementById('cheng').value = x*y;
+  document.getElementById('chu').value = x/y;
+}
+
 
 
 /*
