@@ -40,7 +40,6 @@ myButton.onclick = function(){
   setUserName();
 }
 
-document.querySelector('html').onclick = function(){
+document.querySelector('h1').onclick = function(){
   alert("Don't touch me.I'm ticklish! ");
-
 }
