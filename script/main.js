@@ -41,6 +41,6 @@ myButton.onclick = function(){
 }
 
 document.querySelector('html').onclick = function(){
-  alert('ฑ๐ดมฮาฃฌฮาลยั๗');
+  alert("Don't touch me.I'm ticklish! ");
 
 }
