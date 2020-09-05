@@ -72,8 +72,7 @@ function calculations(n1,sign1,n2,sign2,n3){
   } else {
     const b = calculation(n2,sign2,n3);
     return calculation(n1,sign1,b);
-  }
-
+  };
 }
 
 /*
