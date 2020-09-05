@@ -66,7 +66,7 @@ function calculations(n1,sign1,n2,sign2,n3){
 */
 
 function calculations(n1,sign1,n2,sign2,n3){
-  if(sign1==="+" || sign1==="-"  ){
+  if(sign2==="+" || sign2==="-"  ){
     const a = calculation(n1,sign1,n2);
     return calculation(a,sign2,n3);
   } else {
