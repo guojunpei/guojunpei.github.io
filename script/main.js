@@ -34,14 +34,21 @@ if(!localStorage.getItem('name')){
   myUser.textContent = 'Hi!' + storedName;
 }
 
-//"中文显示乱码，以后再修 Your name,Hi";
+//'中文显示乱码，以后再修 Your name,Hi';
 
 myButton.onclick = function(){
   setUserName();
 }
 
 document.querySelector('h1').onclick = function(){
-  alert("Don't touch me.I'm ticklish! ");
+  alert('Don't touch me.I'm ticklish! ');
+}
+
+function judge_compute_sign(a){
+  if (a==='+'||a==='jia'||a==='加'||a==='add'||a==='plus'){return '+';}
+  if (a==='-'||a==='jian'||a==='减'||a==='subtract'||a==='plus'){return '-';}
+  if (a==='*'||a==='cheng'||a==='乘'||a==='multiply'||a==='plus'||a==='x'||a==='X'||a==='×'){return '*';}
+  if (a==='/'||a==='chu'||a==='除'||a==='adivide'||a==='÷'){return '/';}
 }
 
 function addition(a,b){return a+b};
@@ -53,11 +60,12 @@ function multiplication(a,b){return a*b};
 function division(a,b){return a/b};
 
 function calculation(n1,sign,n2){
-  if (sign==="+"){return addition(n1,n2);}
-  if (sign==="-"){return subtraction(n1,n2);}
-  if (sign==="*"){return multiplication(n1,n2);}
-  if (sign==="/"){return division(n1,n2);}
+  if (sign==='+'){return addition(n1,n2);}
+  if (sign==='-'){return subtraction(n1,n2);}
+  if (sign==='*'){return multiplication(n1,n2);}
+  if (sign==='/'){return division(n1,n2);}
 }
+
 /*
 function calculations(n1,sign1,n2,sign2,n3){
   const a = calculation(n1,sign1,n2);
@@ -66,7 +74,7 @@ function calculations(n1,sign1,n2,sign2,n3){
 */
 
 function calculations(n1,sign1,n2,sign2,n3){
-  if(sign2==="+" || sign2==="-"  ){
+  if(sign2==='+' || sign2==='-'  ){
     const a = calculation(n1,sign1,n2);
     return calculation(a,sign2,n3);
   } else {
