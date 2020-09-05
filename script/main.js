@@ -58,12 +58,23 @@ function calculation(n1,sign,n2){
   if (sign==="*"){return multiplication(n1,n2);}
   if (sign==="/"){return division(n1,n2);}
 }
-
+/*
 function calculations(n1,sign1,n2,sign2,n3){
   const a = calculation(n1,sign1,n2);
   return calculation(a,sign2,n3);
 }
+*/
 
+function calculations(n1,sign1,n2,sign2,n3){
+  if(sign1==="+" || sign1==="-"  ){
+    const a = calculation(n1,sign1,n2);
+    return calculation(a,sign2,n3);
+  } else {
+    const b = calculation(n2,sign2,n3);
+    return calculation(n1,sign1,b);
+  }
+
+}
 
 /*
 let x = document.getElementById('x').value;
