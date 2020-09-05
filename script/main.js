@@ -44,6 +44,28 @@ document.querySelector('h1').onclick = function(){
   alert("Don't touch me.I'm ticklish! ");
 }
 
+function addition(a,b){return a+b};
+
+function subtraction(a,b){return a-b};
+
+function multiplication(a,b){return a*b};
+
+function division(a,b){return a/b};
+
+function calculation(n1,sign,n2){
+  if (sign==="+"){return addition(n1,n2);}
+  if (sign==="-"){return subtraction(n1,n2);}
+  if (sign==="*"){return multiplication(n1,n2);}
+  if (sign==="/"){return division(n1,n2);}
+}
+
+function calculations(n1,sign1,n2,sign2,n3){
+  const a = calculation(n1,sign1,n2);
+  return calculation(a,sign2,n3);
+}
+
+
+/*
 let x = document.getElementById('x').value;
 let y = document.getElementById('y').value;
 let jia = document.querySelector('jia').textContent;
@@ -61,7 +83,7 @@ function getresult(){
   cheng = chengyi(x,y)
   chu = chuyi(x,y)
 }
-
+*/
 
 
 /*
