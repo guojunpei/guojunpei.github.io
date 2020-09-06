@@ -66,6 +66,31 @@ function calculation(n1,sign,n2){
   if (sign==='/'){return division(n1,n2);}
 }
 
+/*'
+function fib(n)=求Fibonacci数列第N项的值
+费波那契数列：F0 = 0,F1 = 1,Fn = Fn-1 + Fn-2'
+*/
+function fib(n){
+  if(n%1 !== 0){return 'n is positive integer!'}
+  if(n === 0){return 0;}
+  if(n === 1){return 1;}
+  return fib(n-1)+fib(n-2);
+}
+
+/*
+n=0,0
+n=1,1
+n=2,fib(0)+fib(1)
+
+
+n=2,0+1,
+n=3,1+1,
+n=4,1+2,
+function fib(n){
+
+}
+*/
+
 /*
 function calculations(n1,sign1,n2,sign2,n3){
   const a = calculation(n1,sign1,n2);
