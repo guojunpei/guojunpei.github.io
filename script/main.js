@@ -76,7 +76,7 @@ function fib(n){
   if(n === 1){return 1;}
   return fib(n-1)+fib(n-2);
 }
-
+//1
 function fib(n,[]){
   let li=[];
   if(n === 0){let l0=[];l0.push(0);console.log(l0);return 0;}
@@ -85,6 +85,7 @@ function fib(n,[]){
 }
 
 /*
+//2
 function fib(n,[]){
   let li=[];
   if(n === 0){let l0=[];l0.push(0);console.log(l0);return 0;}
@@ -94,6 +95,7 @@ function fib(n,[]){
 */
 
 /*
+//3
 function fib(n){
   let li =[];
   if(n === 0){li.push(0);console.log(li);return 0;}
