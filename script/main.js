@@ -77,6 +77,50 @@ function fib(n){
   return fib(n-1)+fib(n-2);
 }
 
+function fib(n,[]){
+  let li=[];
+  if(n === 0){let l0=[];l0.push(0);console.log(l0);return 0;}
+  if(n === 1){let l1=[];l1.push(1);console.log(l1);return 1;}
+  let ln=[];ln.push(fib(n-1,ln)+fib(n-2,ln));console.log(ln);return fib(n-1,ln)+fib(n-2,ln);
+}
+
+function fib(n,[]){
+  let li=[];
+  if(n === 0){let l0=[];l0.push(0);console.log(l0);return 0;}
+  if(n === 1){let l1=[];l1.push(1);console.log(l1);return 1;}
+  let ln=[];ln.push(fib(n-1,li)+fib(n-2,li));console.log(ln);return fib(n-1,li)+fib(n-2,li);
+}
+
+function fib(n){
+  let li =[];
+  if(n === 0){li.push(0);console.log(li);return 0;}
+  if(n === 1){li.push(1);console.log(li);return 1;}
+  li.push(fib(n-1)+fib(n-2));console.log(li);return fib(n-1)+fib(n-2);
+}
+
+
+
+/*
+function fib(n,[]){
+  let li =[];
+  if(n === 0){li.push(0);console.log(li);return 0;}
+  if(n === 1){li.push(1);console.log(li);return 1;}
+  li.push(fib(n-1,li)+fib(n-2,li));console.log(li);return fib(n-1,li)+fib(n-2,li);
+}
+*/
+
+
+/*
+function fib(n){
+  let li =[];
+  if(n === 0){li.push(0);console.log(li);return 0;}
+  if(n === 1){li.push(1);console.log(li);return 1;}
+  li.push(fib(n-1)+fib(n-2));console.log(li);return fib(n-1)+fib(n-2);
+}
+*/
+
+
+
 /*
 n=0,0
 n=1,1
