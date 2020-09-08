@@ -70,20 +70,69 @@ function calculation(n1,sign,n2){
 function fib(n)=求Fibonacci数列第N项的值
 费波那契数列：F0 = 0,F1 = 1,Fn = Fn-1 + Fn-2'
 */
+/*
 function fib(n){
   if(n%1 !== 0){return 'n is positive integer!'}
   if(n === 0){return 0;}
   if(n === 1){return 1;}
   return fib(n-1)+fib(n-2);
 }
+*/
+
+function fib(n,l){
+  if(n%1 !== 0){return 'n is positive integer!'}
+  if(n === 0){return 0;}
+  if(n === 1){return 1;}
+  let x=fib(n-1,l)+fib(n-2,l);
+  l.push(x);
+  console.log(l);
+  return x;
+}
+
+//！！！需要加强和记录array/list的相关操作
+/*
+function fib(n,l){
+  if(n%1 !== 0){return 'n is positive integer!'}
+  if(n === 0){return 0;}
+  if(n === 1){return 1;}
+  let a=fib(n-1,l);
+  let b=fib(n-2,l);
+  let c=a+b;
+  l.push(a,b);
+  //push改成替换命令
+  console.log(l);
+  return c;
+}
+*/
+
+
+
+/*
+function fib(n,[]){
+  if(n === 0){let l0=[];l0.push(0);console.log(0,l0);return 0;}
+  if(n === 1){let l1=[];l1.push(1);console.log(1,l1);return 1;}
+  let ln=[];
+  let ln1=[];
+  let ln2=[];
+  let a=fib(n-1,ln1);
+  let b=fib(n-2,ln2);
+  let c=a+b;
+  ln.push(fib(n-1,ln1)+fib(n-2,ln2),'r'+c);console.log(ln);return c;
+}
+
 
 function fib(n,[]){
   if(n === 0){let l0=[];l0.push(0);console.log(0,l0);return 0;}
   if(n === 1){let l1=[];l1.push(1);console.log(1,l1);return 1;}
   let ln=[];
-  let c=fib(n-1,ln)+fib(n-2,ln);
-  ln.push(c);console.log(c,ln);return c;
+  let ln1=[];
+  let ln2=[];
+  let a=fib(n-1,ln1);
+  let b=fib(n-2,ln2);
+  let c=a+b;
+  ln.push(a,b);console.log(ln);return c;
 }
+*/
 
 //1
 /*
