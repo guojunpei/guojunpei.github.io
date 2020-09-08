@@ -76,14 +76,24 @@ function fib(n){
   if(n === 1){return 1;}
   return fib(n-1)+fib(n-2);
 }
+
+function fib(n,[]){
+  if(n === 0){let l0=[];l0.push(0);console.log(0,l0);return 0;}
+  if(n === 1){let l1=[];l1.push(1);console.log(1,l1);return 1;}
+  let ln=[];
+  let c=fib(n-1,ln)+fib(n-2,ln);
+  ln.push(c);console.log(c,ln);return c;
+}
+
 //1
+/*
 function fib(n,[]){
   let li=[];
   if(n === 0){let l0=[];l0.push(0);console.log(l0);return 0;}
   if(n === 1){let l1=[];l1.push(1);console.log(l1);return 1;}
   let ln=[];ln.push(fib(n-1,ln)+fib(n-2,ln));console.log(ln);return fib(n-1,ln)+fib(n-2,ln);
 }
-
+*/
 /*
 //2
 function fib(n,[]){
