@@ -79,6 +79,22 @@ function fib(n){
 }
 */
 
+
+function fib(n,l){
+  if(n%1 !== 0){return 'n is positive integer!'}
+  if(n === 0){return 0;}
+  if(n === 1){return 1;}
+  let a=fib(n-1,l);
+  let b=fib(n-2,l);
+  let c=a+b;
+  l[0]=a;
+  l[1]=b;
+  console.log(c,l);
+  return c;
+}
+
+
+/*
 function fib(n,l){
   if(n%1 !== 0){return 'n is positive integer!'}
   if(n === 0){return 0;}
@@ -88,23 +104,7 @@ function fib(n,l){
   console.log(l);
   return x;
 }
-
-//！！！需要加强和记录array/list的相关操作
-/*
-function fib(n,l){
-  if(n%1 !== 0){return 'n is positive integer!'}
-  if(n === 0){return 0;}
-  if(n === 1){return 1;}
-  let a=fib(n-1,l);
-  let b=fib(n-2,l);
-  let c=a+b;
-  l.push(a,b);
-  //push改成替换命令
-  console.log(l);
-  return c;
-}
 */
-
 
 
 /*
@@ -119,6 +119,7 @@ function fib(n,[]){
   let c=a+b;
   ln.push(fib(n-1,ln1)+fib(n-2,ln2),'r'+c);console.log(ln);return c;
 }
+
 
 
 function fib(n,[]){
