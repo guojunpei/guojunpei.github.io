@@ -41,7 +41,7 @@ myButton.onclick = function(){
 }
 
 document.querySelector('h1').onclick = function(){
-  alert('Don't touch me.I'm ticklish! ');
+  alert("Don't touch me.I'm ticklish! ");
 }
 
 function judge_compute_sign(a){
@@ -92,6 +92,15 @@ function fib(n,l){
   console.log(c,l);
   return c;
 }
+
+let l=[1,2,3,4,5,6]
+
+for(let b=0;b<5;b++){
+  if (l[b]%2===0){
+    l[b]++;}else{
+      l[b]--;}}
+
+
 
 
 /*
