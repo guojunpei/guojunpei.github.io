@@ -99,9 +99,12 @@ for(let b=0;b<5;b++){
   if (l[b]%2===0){
     l[b]++;}else{
       l[b]--;}}
+//202009110054
 
-
-
+//123
+for(let c=0;c<9;c++){
+  if (l[c]>l[c+1]{
+    l.shift();l.push(l[c]);}
 
 /*
 function fib(n,l){
