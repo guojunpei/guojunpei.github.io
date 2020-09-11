@@ -101,10 +101,27 @@ for(let b=0;b<5;b++){
       l[b]--;}}
 //202009110054
 
-//123
-for(let c=0;c<9;c++){
-  if (l[c]>l[c+1]{
-    l.shift();l.push(l[c]);}
+function findmax(l){
+  let max=l[0];
+  for (let i = 1; i < l.length;i++){
+    if (l[i]>max){max=l[i];}
+  }
+  return max;
+}
+  
+  //"ln…˝–Ú≈≈¡–"
+  /*
+let l=[7,3,6,8,4,5,2,1]
+let ln=[]
+
+for(let c=1;c<8;c++){
+  if (l[0]>l[c]{
+    l.push(l[0]);
+    l.shift(l[0]);}else{
+      ln.push(l[0]);
+      l.shift(l[0]);
+    }
+*/
 
 /*
 function fib(n,l){
@@ -370,4 +387,3 @@ function upadtenewy(){
   xmchuy.textContent = x/y;
 }
 */
-
