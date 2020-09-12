@@ -93,13 +93,17 @@ function fib(n,l){
   return c;
 }
 
+/*
 let l=[1,2,3,4,5,6]
 
 for(let b=0;b<5;b++){
   if (l[b]%2===0){
     l[b]++;}else{
       l[b]--;}}
-//202009110054
+//202009110054[]"偶数位+1奇数位-1"
+*/
+
+let l=[7,3,6,8,4,5,2,1]
 
 function findmax(l){
   let max=l[0];
@@ -109,8 +113,86 @@ function findmax(l){
   return max;
 }
 
+function delemax(l){
+  let a=findmax(l);
+  let b=l.indexOf(a);
+  l.splice(b,1);
+  return l;
+}
+
+function jangxu(l){
+  const len = l.length
+  let ln=[];
+  for (let i = 0; i < len;i++){
+    ln[i]=findmax(l);
+    delemax(l);
+  }
+  return ln;
+}
+
+/*
 let l=[7,3,6,8,4,5,2,1]
 
+function findmax(l){
+  let max=l[0];
+  for (let i = 1; i < l.length;i++){
+    if (l[i]>max){max=l[i];}
+  }
+  return max;
+}
+
+function delemax(l){
+  let a=findmax(l);
+  let b=l.indexOf(a);
+  l.splice(b,1);
+  console.log(l);
+  return l;
+}
+
+function jangxu(l){
+  let ln=[];
+  const len=l.length;
+  for (let i = 0; i < len;i++){
+    let z=finndmax(l);
+    ln.push(z);
+    delemax(1);
+  }
+  return ln;
+}
+
+*/
+
+/*
+function jangxu(l){
+  const len=l.length;
+  let ln=[];
+  for (let i = 1; i < len;i++){
+    ln.push(finndmax(l));
+    ln.push(finndmax(delemax(l)));}
+  return ln;
+  }
+*/
+
+/*
+function jangxu(l){
+  let ln=[];
+  ln.push(finndmax(l));
+  for (let i = 1; i < l.length;i++){
+    if(i>1){ln.push(finndmax(delemax(l)));}}
+  return ln;
+  }
+*/
+/*
+function jangxu(l){
+  let ln=[];
+  ln[0]=finndmax(l);
+  for (let i = 1; i < l.length;i++){
+    ln[i]=findmax(delemax(l));}
+  return ln;
+  }
+*/
+
+/*
 function jangxu(l){
   let ln=[]
   for (let i = 1; i < l.length;i++){
@@ -122,7 +204,7 @@ function jangxu(l){
       }
       return ln;
   }
-
+*/
   
   //"ln升序排列"
   /*
