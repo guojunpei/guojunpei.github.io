@@ -108,6 +108,21 @@ function findmax(l){
   }
   return max;
 }
+
+let l=[7,3,6,8,4,5,2,1]
+
+function jangxu(l){
+  let ln=[]
+  for (let i = 1; i < l.length;i++){
+    let i = finndmax(l)
+    ln.push(i);
+    l.splice(
+      l.indexOf(i,1)
+        );
+      }
+      return ln;
+  }
+
   
   //"lnÉýÐòÅÅÁÐ"
   /*
