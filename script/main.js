@@ -130,6 +130,61 @@ function jangxu(l){
   return ln;
 }
 
+
+//"打印符号列"
+for(i=0;i<16;i=i+2){
+  let x="";
+  for(j=0;j<i+1;j++){
+    x+="# "}
+    console.log(x);}
+
+
+/*
+//"报错"
+function jing(n){
+  let xing=[];
+  for (let i=1; i<2*n;i=2*i-1){
+    xing.push('#')
+  }
+  console.log(xing);
+}
+
+function jings(n){
+  let xing=[];
+  for (let i=1; i<n+1;i++){
+    jing(i);
+  }
+  console.log(xing);
+}
+*/
+
+/*
+//"这个能显示"
+function jing(n){
+  let xing=[];
+  for (let i=0; i<n;i++;){
+    xing.push('#')
+  }
+  console.log(xing);
+}
+
+function jings(n){
+  let xing=[];
+  for (let i=0; i<n;i++){
+    jing(i+1);
+  }
+  console.log(xing);
+}
+*/
+
+/*
+function jing(n){
+  for (let i=0; i<n;i++){
+    console.log("#");
+  }
+}
+*/
+
 /*
 let l=[7,3,6,8,4,5,2,1]
 
