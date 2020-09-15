@@ -138,6 +138,50 @@ for(i=0;i<16;i=i+2){
     x+="# "}
     console.log(x);}
 
+    function zsj(n){
+      for(i=0;i<2*n;i=i+2){
+        let x="";
+        for(k=2*n-i-2;k>0;k--){
+          x=" "+x
+        }
+        for(j=0;j<i+1;j++){
+          x=x+"# "
+        }
+          console.log(x);}
+    }
+
+/*
+//"¸çµÄÊ¾Àý"    
+function print (n){
+  n *= 2;
+
+  for(let i = 0; i < n; i += 2) {
+    let s = "";
+    for(let j = 0; j < i + 1; j++) s += " #";
+
+    let x = "";
+    for(let k = (n-i) - 2; k > 0; k--) x += " ";
+
+    console.log(x + s);
+  }
+}
+*/
+
+
+
+/*
+function zsj(n){
+  for(i=0;i<2*n;i=i+2){
+    let x="";
+    for(j=0;j<i+1;j++){
+      x=x+"# ";
+      for(k=n;k>0;k--){
+        x="  "+x
+      }
+    }
+      console.log(x);}
+}
+*/
 
 /*
 //"±¨´í"
