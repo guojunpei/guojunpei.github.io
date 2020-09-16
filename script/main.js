@@ -149,6 +149,74 @@ for(i=0;i<16;i=i+2){
         }
           console.log(x);}
     }
+//"三柱上挪圆片"
+//"哥的示例"
+
+function hanoi(n,a,b,c){
+  if(n===1){console.log(a,"-->",c);}
+  else{
+    hanoi(n-1,a,c,b);
+    //hanoi(n-1,a,b,c);
+    //hanoi(n-1,b,a,c);
+  }
+
+}
+
+
+
+    function nuo(x,y){
+      let a=[];
+      let b=[];
+      let c=[];
+
+      let l="large";
+      let m="middle";
+      let s="small";
+
+      if (x===A){a=[l,m,s];}
+      if (x===B){b=[l,m,s];}
+      if (x===C){c=[l,m,s];}
+      //"from x ; end with y"
+
+      //"move one log one: push. pop. console.log"
+      li="choose one form abc";
+      yu="abc zuihouyiweisahngdezhi;bunengxuankong";
+      lis="choose one from the other";
+      lis.push(yu);
+      li.pop(yu);
+      console.log("choose",yu,"to",lis);
+
+      if(a[2]===l ||
+         b[2]===l ||
+         c[2]===l ||
+         a===[s,m] ||
+         b===[s,m] ||
+         c===[s,m] ||
+         a===[s,m] ||
+         b===[s,m] ||
+         c===[s,l] ||
+         a===[s,m] ||
+         b===[s,m] ||
+         c===[s,m] ){
+           return "err";
+         }
+
+      if("chu xian chongfu"){
+        return "chongfu";
+      }
+
+      if (y===A ,a===[l,m,s] ||
+          y===B ,b===[l,m,s] ||
+          y===C ,c===[l,m,s]
+      ){
+        return "finish";
+      }
+
+    }
+
+
+
+
 
 /*
 //"哥的示例"    
