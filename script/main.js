@@ -151,7 +151,7 @@ for(i=0;i<16;i=i+2){
     }
 //"三柱上挪圆片"
 //"哥的示例"
-
+/*
 function hanoi(n,a,b,c){
   if(n===1){console.log(a,"-->",c);}
   else{
@@ -160,8 +160,8 @@ function hanoi(n,a,b,c){
     hanoi(n-1,b,a,c);
   }
 }
-
-let nr=0
+*/
+let nr=1
 function hanoi(n,a,b,c){
   if(n===1){console.log(a,"-->",c,nr++);}
   else{
@@ -171,7 +171,7 @@ function hanoi(n,a,b,c){
   }
 }
 
-
+/*
     function nuo(x,y){
       let a=[];
       let b=[];
@@ -221,7 +221,7 @@ function hanoi(n,a,b,c){
       }
 
     }
-
+*/
 
 
 
@@ -659,3 +659,93 @@ function upadtenewy(){
   xmchuy.textContent = x/y;
 }
 */
+
+//"打印空心正方形"
+
+for(i=0;i<3;i++){
+  let x="";
+  for(j=0;j<i+1;j++){
+    x+="#";
+  }
+    console.log(x);}
+/*
+#
+##
+###
+*/
+
+for(i=0;i<3;i++){
+  let x="";
+  for(j=3-i;j>0;j--){
+    x+="#";
+  }
+    console.log(x);}
+/*
+###
+##
+#
+*/
+
+for(i=0;i<3;i++){
+  let x="";
+  for(j=0;j<i+1;j++){
+    x+="#";
+  }
+  for(j=2-i;j>0;j--){
+    x+="#";
+  }
+    console.log(x);}
+/*
+3###
+*/
+
+for(i=0;i<3;i++){
+  let x="";
+  for(j=3;j>0;j--){
+    x+="#";
+  }
+    console.log(x);}
+/*
+3###
+*/
+
+function kz (n){
+  let x='';
+  let y='';
+
+  for (i=0; i<n;i++){
+    if(i===0 || i===n-1 ){
+      for (j=0; j<n; j++ ){
+        x+="#";
+      }
+    }
+    else{
+      for (k=0;k<n-2;k++){
+        y=y+" ";
+      }
+      x="#"+y+"#";
+    }
+  }
+  console.log(x);
+}
+
+
+
+
+for(i=0;i<16;i=i+2){
+  let x="";
+  for(j=0;j<i+1;j++){
+    x+="# "}
+    console.log(x);}
+
+    function zsj(n){
+      for(i=0;i<2*n;i=i+2){
+        let x="";
+        for(k=2*n-i-2;k>0;k--){
+          x=" "+x
+        }
+        for(j=0;j<i+1;j++){
+          x=x+"# "
+        }
+          console.log(x);}
+    }
