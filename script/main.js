@@ -34,7 +34,7 @@ if(!localStorage.getItem('name')){
   myUser.textContent = 'Hi!' + storedName;
 }
 
-//'������ʾ���룬�Ժ����� Your name,Hi';
+//'中文显示乱码，以后再修 Your name,Hi';
 
 myButton.onclick = function(){
   setUserName();
@@ -67,8 +67,8 @@ function calculation(n1,sign,n2){
 }
 
 /*'
-function fib(n)=��Fibonacci���е�N���ֵ
-�Ѳ��������У�F0 = 0,F1 = 1,Fn = Fn-1 + Fn-2'
+function fib(n)=求Fibonacci数列第N项的值
+斐波那契数列:F0 = 0,F1 = 1,Fn = Fn-1 + Fn-2'
 */
 /*
 function fib(n){
@@ -100,7 +100,7 @@ for(let b=0;b<5;b++){
   if (l[b]%2===0){
     l[b]++;}else{
       l[b]--;}}
-//202009110054[]"ż��λ+1����λ-1"
+//202009110054[]"偶数位+1奇数位-1"
 */
 
 let l=[7,3,6,8,4,5,2,1]
@@ -131,7 +131,7 @@ function jangxu(l){
 }
 
 
-//"��ӡ������"
+//"打印符号列"
 for(i=0;i<16;i=i+2){
   let x="";
   for(j=0;j<i+1;j++){
@@ -149,8 +149,8 @@ for(i=0;i<16;i=i+2){
         }
           console.log(x);}
     }
-//"������ŲԲƬ"
-//"���ʾ��"
+//"三柱上挪圆片"
+//"君的示例"
 /*
 function hanoi(n,a,b,c){
   if(n===1){console.log(a,"-->",c);}
@@ -227,7 +227,7 @@ function hanoi(n,a,b,c){
 
 
 /*
-//"���ʾ��"    
+//"君的示例"    
 function print (n){
   n *= 2;
 
@@ -260,7 +260,7 @@ function zsj(n){
 */
 
 /*
-//"����"
+//"报错"
 function jing(n){
   let xing=[];
   for (let i=1; i<2*n;i=2*i-1){
@@ -279,7 +279,7 @@ function jings(n){
 */
 
 /*
-//"�������ʾ"
+//"这个能显示ʾ"
 function jing(n){
   let xing=[];
   for (let i=0; i<n;i++;){
@@ -381,7 +381,7 @@ function jangxu(l){
   }
 */
   
-  //"ln��������"
+  //"ln升序排列"
   /*
 let l=[7,3,6,8,4,5,2,1]
 let ln=[]
@@ -660,7 +660,7 @@ function upadtenewy(){
 }
 */
 
-//"��ӡ����������"
+//"打印空心正方形"
 
 for(i=0;i<3;i++){
   let x="";
@@ -749,63 +749,3 @@ for(i=0;i<16;i=i+2){
         }
           console.log(x);}
     }
-
-
-
-    for(i=0;i<16;i=i+2){
-      let x="";
-      for(j=0;j<i+1;j++){
-        x+="# "}
-        console.log(x);}
-    
-        function zsj(n){
-          for(i=0;i<2*n;i=i+2){
-            let x="";
-            for(k=2*n-i-2;k>0;k--){
-              x=" "+x;
-            }
-            for(j=0;j<i+1;j++){
-              x=x+"# ";
-            }
-              console.log(x);}
-        }
-    
-
-
-        for(i=0;i<16;i=i+2){
-          let x="";
-          for(j=0;j<i+1;j++){
-            x+="# "}
-            console.log(x);}
-        
-            function zsj(n){
-              for(i=0;i<2*n;i=i+2){
-                let x="";
-                for(k=2*n-i-2;k>0;k--){
-                  x=" "+x;
-                }
-                for(j=0;j<i+1;j++){
-                  x=x+"# ";
-                }
-                  console.log(x);}
-            }
-        
-            for(i=0;i<16;i=i+2){
-              let x="";
-              for(j=0;j<i+1;j++){
-                x+="# "}
-                console.log(x);}
-            
-                function zsj(n){
-                  for(i=0;i<2*n;i=i+2){
-                    let x="";
-                    for(k=2*n-i-2;k>0;k--){
-                      x=" "+x;
-                    }
-                    for(j=0;j<i+1;j++){
-                      x=x+"# ";
-                    }
-                      console.log(x);}
-                }
-                
-//"test"
