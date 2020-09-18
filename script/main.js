@@ -790,5 +790,22 @@ for(i=0;i<16;i=i+2){
                   console.log(x);}
             }
         
-    
+            for(i=0;i<16;i=i+2){
+              let x="";
+              for(j=0;j<i+1;j++){
+                x+="# "}
+                console.log(x);}
+            
+                function zsj(n){
+                  for(i=0;i<2*n;i=i+2){
+                    let x="";
+                    for(k=2*n-i-2;k>0;k--){
+                      x=" "+x;
+                    }
+                    for(j=0;j<i+1;j++){
+                      x=x+"# ";
+                    }
+                      console.log(x);}
+                }
+                
 //"test"
