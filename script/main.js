@@ -147,7 +147,7 @@ for(i=0;i<16;i=i+2){
         for(j=0;j<i+1;j++){
           x=x+"# "
         }
-          console.log(x);}
+      console.log(x);}
     }
 //"三柱上挪圆片"
 //"君的示例"
@@ -679,7 +679,8 @@ for(i=0;i<3;i++){
   for(j=3-i;j>0;j--){
     x+="#";
   }
-    console.log(x);}
+  console.log(x);
+}
 /*
 ###
 ##
@@ -694,7 +695,8 @@ for(i=0;i<3;i++){
   for(j=2-i;j>0;j--){
     x+="#";
   }
-    console.log(x);}
+  console.log(x);
+}
 /*
 3###
 */
@@ -704,15 +706,15 @@ for(i=0;i<3;i++){
   for(j=3;j>0;j--){
     x+="#";
   }
-    console.log(x);}
+  console.log(x);
+}
 /*
 3###
 */
 
 function kz (n){
-  let x='';
-  let y='';
-
+  let x="";
+  let y="";
   for (i=0; i<n;i++){
     if(i===0 || i===n-1 ){
       for (j=0; j<n; j++ ){
@@ -725,27 +727,39 @@ function kz (n){
       }
       x="#"+y+"#";
     }
+    console.log(x);
   }
-  console.log(x);
 }
+/*
+kz(4)
+####
+#  #
+#    #
+#    #####
+*/
 
-
-
-
-for(i=0;i<16;i=i+2){
+function kz (n){
   let x="";
-  for(j=0;j<i+1;j++){
-    x+="# "}
-    console.log(x);}
-
-    function zsj(n){
-      for(i=0;i<2*n;i=i+2){
-        let x="";
-        for(k=2*n-i-2;k>0;k--){
-          x=" "+x;
-        }
-        for(j=0;j<i+1;j++){
-          x=x+"# ";
-        }
-          console.log(x);}
+  let y="";
+  for (i=0; i<n;i++){
+    if(i===0 || i===n-1 ){
+      for (j=0; j<n; j++ ){
+        x+="#";
+      }
     }
+    else{
+      for (k=0;k<n-2;k++){
+        y=y+" ";
+        x="#"+y+"#";
+      }
+    }
+    console.log(x);
+  }
+}
+/*
+kz(4)
+####
+#  #
+#    #
+#    #####
+*/
