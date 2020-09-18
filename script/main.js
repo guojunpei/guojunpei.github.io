@@ -34,7 +34,7 @@ if(!localStorage.getItem('name')){
   myUser.textContent = 'Hi!' + storedName;
 }
 
-//'ÖĞÎÄÏÔÊ¾ÂÒÂë£¬ÒÔºóÔÙĞŞ Your name,Hi';
+//'ä¸­æ–‡æ˜¾ç¤ºä¹±ç ï¼Œä»¥åå†ä¿® Your name,Hi';
 
 myButton.onclick = function(){
   setUserName();
@@ -45,10 +45,10 @@ document.querySelector('h1').onclick = function(){
 }
 
 function judge_compute_sign(a){
-  if (a==='+'||a==='jia'||a==='¼Ó'||a==='add'||a==='plus'){return '+';}
-  if (a==='-'||a==='jian'||a==='¼õ'||a==='subtract'||a==='plus'){return '-';}
-  if (a==='*'||a==='cheng'||a==='³Ë'||a==='multiply'||a==='plus'||a==='x'||a==='X'||a==='¡Á'){return '*';}
-  if (a==='/'||a==='chu'||a==='³ı'||a==='adivide'||a==='¡Â'){return '/';}
+  if (a==='+'||a==='jia'||a==='ï¿½ï¿½'||a==='add'||a==='plus'){return '+';}
+  if (a==='-'||a==='jian'||a==='ï¿½ï¿½'||a==='subtract'||a==='plus'){return '-';}
+  if (a==='*'||a==='cheng'||a==='ï¿½ï¿½'||a==='multiply'||a==='plus'||a==='x'||a==='X'||a==='ï¿½ï¿½'){return '*';}
+  if (a==='/'||a==='chu'||a==='ï¿½ï¿½'||a==='adivide'||a==='ï¿½ï¿½'){return '/';}
 }
 
 function addition(a,b){return a+b};
@@ -67,8 +67,8 @@ function calculation(n1,sign,n2){
 }
 
 /*'
-function fib(n)=ÇóFibonacciÊıÁĞµÚNÏîµÄÖµ
-·Ñ²¨ÄÇÆõÊıÁĞ£ºF0 = 0,F1 = 1,Fn = Fn-1 + Fn-2'
+function fib(n)=æ±‚Fibonacciæ•°åˆ—ç¬¬Né¡¹çš„å€¼
+æ–æ³¢é‚£å¥‘æ•°åˆ—:F0 = 0,F1 = 1,Fn = Fn-1 + Fn-2'
 */
 /*
 function fib(n){
@@ -100,7 +100,7 @@ for(let b=0;b<5;b++){
   if (l[b]%2===0){
     l[b]++;}else{
       l[b]--;}}
-//202009110054[]"Å¼ÊıÎ»+1ÆæÊıÎ»-1"
+//202009110054[]"å¶æ•°ä½+1å¥‡æ•°ä½-1"
 */
 
 let l=[7,3,6,8,4,5,2,1]
@@ -131,7 +131,7 @@ function jangxu(l){
 }
 
 
-//"´òÓ¡·ûºÅÁĞ"
+//"æ‰“å°ç¬¦å·åˆ—"
 for(i=0;i<16;i=i+2){
   let x="";
   for(j=0;j<i+1;j++){
@@ -149,8 +149,8 @@ for(i=0;i<16;i=i+2){
         }
           console.log(x);}
     }
-//"ÈıÖùÉÏÅ²Ô²Æ¬"
-//"¸çµÄÊ¾Àı"
+//"ä¸‰æŸ±ä¸ŠæŒªåœ†ç‰‡"
+//"å›çš„ç¤ºä¾‹"
 /*
 function hanoi(n,a,b,c){
   if(n===1){console.log(a,"-->",c);}
@@ -227,7 +227,7 @@ function hanoi(n,a,b,c){
 
 
 /*
-//"¸çµÄÊ¾Àı"    
+//"å›çš„ç¤ºä¾‹"    
 function print (n){
   n *= 2;
 
@@ -260,7 +260,7 @@ function zsj(n){
 */
 
 /*
-//"±¨´í"
+//"æŠ¥é”™"
 function jing(n){
   let xing=[];
   for (let i=1; i<2*n;i=2*i-1){
@@ -279,7 +279,7 @@ function jings(n){
 */
 
 /*
-//"Õâ¸öÄÜÏÔÊ¾"
+//"è¿™ä¸ªèƒ½æ˜¾ç¤ºÊ¾"
 function jing(n){
   let xing=[];
   for (let i=0; i<n;i++;){
@@ -381,7 +381,7 @@ function jangxu(l){
   }
 */
   
-  //"lnÉıĞòÅÅÁĞ"
+  //"lnå‡åºæ’åˆ—"
   /*
 let l=[7,3,6,8,4,5,2,1]
 let ln=[]
@@ -660,7 +660,7 @@ function upadtenewy(){
 }
 */
 
-//"´òÓ¡¿ÕĞÄÕı·½ĞÎ"
+//"æ‰“å°ç©ºå¿ƒæ­£æ–¹å½¢"
 
 for(i=0;i<3;i++){
   let x="";
