@@ -34,7 +34,11 @@ if(!localStorage.getItem('name')){
   myUser.textContent = 'Hi!' + storedName;
 }
 
+<<<<<<< HEAD
 //'中文显示乱码，以后再修 Your name,Hi';
+=======
+//'������ʾ���룬�Ժ����� Your name,Hi';
+>>>>>>> 726eea9ba6e0ea1a7da8548f5f0c299efcacec54
 
 myButton.onclick = function(){
   setUserName();
@@ -67,8 +71,13 @@ function calculation(n1,sign,n2){
 }
 
 /*'
+<<<<<<< HEAD
 function fib(n)=求Fibonacci数列第N项的值
 斐波那契数列:F0 = 0,F1 = 1,Fn = Fn-1 + Fn-2'
+=======
+function fib(n)=��Fibonacci���е�N���ֵ
+�Ѳ��������У�F0 = 0,F1 = 1,Fn = Fn-1 + Fn-2'
+>>>>>>> 726eea9ba6e0ea1a7da8548f5f0c299efcacec54
 */
 /*
 function fib(n){
@@ -100,7 +109,11 @@ for(let b=0;b<5;b++){
   if (l[b]%2===0){
     l[b]++;}else{
       l[b]--;}}
+<<<<<<< HEAD
 //202009110054[]"偶数位+1奇数位-1"
+=======
+//202009110054[]"ż��λ+1����λ-1"
+>>>>>>> 726eea9ba6e0ea1a7da8548f5f0c299efcacec54
 */
 
 let l=[7,3,6,8,4,5,2,1]
@@ -131,7 +144,11 @@ function jangxu(l){
 }
 
 
+<<<<<<< HEAD
 //"打印符号列"
+=======
+//"��ӡ������"
+>>>>>>> 726eea9ba6e0ea1a7da8548f5f0c299efcacec54
 for(i=0;i<16;i=i+2){
   let x="";
   for(j=0;j<i+1;j++){
@@ -149,8 +166,13 @@ for(i=0;i<16;i=i+2){
         }
           console.log(x);}
     }
+<<<<<<< HEAD
 //"三柱上挪圆片"
 //"君的示例"
+=======
+//"������ŲԲƬ"
+//"���ʾ��"
+>>>>>>> 726eea9ba6e0ea1a7da8548f5f0c299efcacec54
 /*
 function hanoi(n,a,b,c){
   if(n===1){console.log(a,"-->",c);}
@@ -227,7 +249,11 @@ function hanoi(n,a,b,c){
 
 
 /*
+<<<<<<< HEAD
 //"君的示例"    
+=======
+//"���ʾ��"    
+>>>>>>> 726eea9ba6e0ea1a7da8548f5f0c299efcacec54
 function print (n){
   n *= 2;
 
@@ -260,7 +286,11 @@ function zsj(n){
 */
 
 /*
+<<<<<<< HEAD
 //"报错"
+=======
+//"����"
+>>>>>>> 726eea9ba6e0ea1a7da8548f5f0c299efcacec54
 function jing(n){
   let xing=[];
   for (let i=1; i<2*n;i=2*i-1){
@@ -279,7 +309,11 @@ function jings(n){
 */
 
 /*
+<<<<<<< HEAD
 //"这个能显示ʾ"
+=======
+//"�������ʾ"
+>>>>>>> 726eea9ba6e0ea1a7da8548f5f0c299efcacec54
 function jing(n){
   let xing=[];
   for (let i=0; i<n;i++;){
@@ -381,7 +415,11 @@ function jangxu(l){
   }
 */
   
+<<<<<<< HEAD
   //"ln升序排列"
+=======
+  //"ln��������"
+>>>>>>> 726eea9ba6e0ea1a7da8548f5f0c299efcacec54
   /*
 let l=[7,3,6,8,4,5,2,1]
 let ln=[]
@@ -660,7 +698,11 @@ function upadtenewy(){
 }
 */
 
+<<<<<<< HEAD
 //"打印空心正方形"
+=======
+//"��ӡ����������"
+>>>>>>> 726eea9ba6e0ea1a7da8548f5f0c299efcacec54
 
 for(i=0;i<3;i++){
   let x="";
@@ -742,11 +784,57 @@ for(i=0;i<16;i=i+2){
       for(i=0;i<2*n;i=i+2){
         let x="";
         for(k=2*n-i-2;k>0;k--){
-          x=" "+x
+          x=" "+x;
         }
         for(j=0;j<i+1;j++){
-          x=x+"# "
+          x=x+"# ";
         }
           console.log(x);}
     }
+<<<<<<< HEAD
     //test!!!!!
+=======
+
+
+
+    for(i=0;i<16;i=i+2){
+      let x="";
+      for(j=0;j<i+1;j++){
+        x+="# "}
+        console.log(x);}
+    
+        function zsj(n){
+          for(i=0;i<2*n;i=i+2){
+            let x="";
+            for(k=2*n-i-2;k>0;k--){
+              x=" "+x;
+            }
+            for(j=0;j<i+1;j++){
+              x=x+"# ";
+            }
+              console.log(x);}
+        }
+    
+
+
+        for(i=0;i<16;i=i+2){
+          let x="";
+          for(j=0;j<i+1;j++){
+            x+="# "}
+            console.log(x);}
+        
+            function zsj(n){
+              for(i=0;i<2*n;i=i+2){
+                let x="";
+                for(k=2*n-i-2;k>0;k--){
+                  x=" "+x;
+                }
+                for(j=0;j<i+1;j++){
+                  x=x+"# ";
+                }
+                  console.log(x);}
+            }
+        
+    
+//"test"
+>>>>>>> 726eea9ba6e0ea1a7da8548f5f0c299efcacec54
