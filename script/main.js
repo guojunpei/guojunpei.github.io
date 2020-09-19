@@ -662,18 +662,43 @@ function upadtenewy(){
 
 //"打印空心正方形"
 
+function kz (n){
+  let z=""
+  for (i=0; i<n;i++){
+    let x="";
+    let y="";
+    if(i===0 || i===n-1 ){
+      for (j=0; j<n; j++ ){
+        x+="# ";
+      }
+      x+="\n";
+    }
+    else{
+      for (k=0;k<n-2;k++){
+        y=y+"  ";
+      }
+      x="# "+y+"# "+"\n";
+    }
+    z+=x;
+  }
+  return z;
+}
+
+/*
 for(i=0;i<3;i++){
   let x="";
   for(j=0;j<i+1;j++){
     x+="#";
   }
     console.log(x);}
+*/
 /*
 #
 ##
 ###
 */
 
+/*
 for(i=0;i<3;i++){
   let x="";
   for(j=3-i;j>0;j--){
@@ -681,12 +706,14 @@ for(i=0;i<3;i++){
   }
   console.log(x);
 }
+*/
 /*
 ###
 ##
 #
 */
 
+/*
 for(i=0;i<3;i++){
   let x="";
   for(j=0;j<i+1;j++){
@@ -697,10 +724,12 @@ for(i=0;i<3;i++){
   }
   console.log(x);
 }
+*/
 /*
 3###
 */
 
+/*
 for(i=0;i<3;i++){
   let x="";
   for(j=3;j>0;j--){
@@ -708,28 +737,12 @@ for(i=0;i<3;i++){
   }
   console.log(x);
 }
+*/
 /*
 3###
 */
 
-function kz (n){
-  let x="";
-  let y="";
-  for (i=0; i<n;i++){
-    if(i===0 || i===n-1 ){
-      for (j=0; j<n; j++ ){
-        x+="#";
-      }
-    }
-    else{
-      for (k=0;k<n-2;k++){
-        y=y+" ";
-      }
-      x="#"+y+"#";
-    }
-    console.log(x);
-  }
-}
+
 /*
 kz(4)
 ####
@@ -738,20 +751,23 @@ kz(4)
 #    #####
 */
 
+/*
 function kz (n){
-  let x="";
-  let y="";
   for (i=0; i<n;i++){
+    let x="";
+    let y="";
     if(i===0 || i===n-1 ){
       for (j=0; j<n; j++ ){
         x+="#";
       }
+      x+="\n";
     }
     else{
       for (k=0;k<n-2;k++){
         y=y+" ";
         x="#"+y+"#";
       }
+      x+="\n";
     }
     console.log(x);
   }
