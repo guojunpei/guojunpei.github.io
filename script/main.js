@@ -661,7 +661,6 @@ function upadtenewy(){
 */
 
 //"打印空心正方形"
-
 function kz (n){
   let z=""
   for (i=0; i<n;i++){
@@ -683,6 +682,137 @@ function kz (n){
   }
   return z;
 }
+
+//"打印双壁空心正方形"
+//"简化3"
+function kz (n){
+  let z=""
+  for (i=0; i<n;i++){
+    let x="";
+    if(i===0 || i===n-1 || i===1 && n>4 || i===n-2 && n>4 ){
+      for (j=0; j<n; j++ ){
+        x+="# ";
+      }
+      x+="\n";
+    }
+    else{
+      for (k=0;k<n-2;k++){
+        x=x+"  ";
+      }
+      if(n>4){
+        x="# # "+x.slice(0,x.length-4)+"# # "+"\n";
+      }
+      else{
+        x="# "+x+"# "+"\n";
+      }
+    }
+    z+=x;
+  }
+  return z;
+}
+
+//"简化2"
+/*
+function kz (n){
+  let z=""
+  for (i=0; i<n;i++){
+    let x="";
+    let y="";
+    if(i===0 || i===n-1 || i===1 && n>4 || i===n-2 && n>4 ){
+      for (j=0; j<n; j++ ){
+        x+="# ";
+      }
+      x+="\n";
+    }
+    else{
+        for (k=0;k<n-2;k++){
+          y=y+"  ";
+        }
+        if(n>4){
+          x="# # "+y.slice(0,y.length-4)+"# # "+"\n";
+        }
+        else{
+          x="# "+y+"# "+"\n";
+        }
+    }
+    z+=x;
+  }
+  return z;
+}
+*/
+//"简化1"
+/*
+function kz (n){
+  let z=""
+  for (i=0; i<n;i++){
+    let x="";
+    let y="";
+    if(i===0 || i===n-1 || i===1 && n>4 || i===n-2 && n>4 ){
+      for (j=0; j<n; j++ ){
+        x+="# ";
+      }
+      x+="\n";
+    }
+    else{
+      if(n>4){
+        for (k=0;k<n-4;k++){
+          y=y+"  ";
+        }
+        x="# # "+y+"# # "+"\n";
+      }
+      else{
+        for (k=0;k<n-2;k++){
+          y=y+"  ";
+        }
+        x="# "+y+"# "+"\n";
+      }
+    }
+    z+=x;
+  }
+  return z;
+}
+*/
+//"未简化"
+/*
+function kz (n){
+  let z=""
+  for (i=0; i<n;i++){
+    let x="";
+    let y="";
+    if(n>4){
+      if(i===0 || i===1 || i===n-2 ||i===n-1 ){
+        for (j=0; j<n; j++ ){
+          x+="# ";
+        }
+        x+="\n";
+      }
+      else{
+        for (k=0;k<n-4;k++){
+          y=y+"  ";
+        }
+        x="# # "+y+"# # "+"\n";
+      }
+      z+=x;
+    }
+    else{
+      if(i===0 || i===n-1 ){
+        for (j=0; j<n; j++ ){
+         x+="# ";
+        }
+        x+="\n";
+      }
+      else{
+        for (k=0;k<n-2;k++){
+         y=y+"  ";
+        }
+        x="# "+y+"# "+"\n";
+      }
+     z+=x;
+    }
+  }
+  return z;
+}
+*/
 
 /*
 for(i=0;i<3;i++){
