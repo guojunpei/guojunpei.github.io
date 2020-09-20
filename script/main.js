@@ -925,3 +925,23 @@ for(i=0;i<n;i++){
 }
 return a;
 }
+
+//"君的示例""练习迭代"
+/*
+function fa(n){
+  if(n===1){return 1;}
+  return n*fa(n-1);
+}
+*/
+
+/*
+let a=1;
+function fac(n){
+  if(n===1){return 1;}
+  a=a*fac(n);
+  return a*fac(n-1);
+}
+*/
+/*
+fac(n)=1
+*/
