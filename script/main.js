@@ -909,3 +909,19 @@ kz(4)
 #    #
 #    #####
 */
+
+//"阶乘n!"
+/*
+let a=1;
+for(i=0;i<5;i++){
+  a=a*(i+1);
+}
+*/
+
+function fac(n){
+  let a=1;
+for(i=0;i<n;i++){
+  a=a*(i+1);
+}
+return a;
+}
