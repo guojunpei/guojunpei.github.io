@@ -945,3 +945,32 @@ function fac(n){
 /*
 fac(n)=1
 */
+
+function fa(){console.log("fa");}
+
+function fb(f){
+  console.log("fb");
+  f();
+}
+
+fb(fa)
+/*
+*/
+
+const l=[1,2,3,4,5]
+const ln=l.map(x=>x*3)
+/*
+*/
+
+const ll=ln.map(x=>x%2===0)
+/*
+*/
+l.map(x=>{return x%2!==0})
+/*
+*/
+
+l.map(x=>{
+  if(x===1){return "a";}
+  if(x===2){return "b";}
+  if(x===3){return "c";}
+})
