@@ -946,31 +946,108 @@ function fac(n){
 fac(n)=1
 */
 
+
+//"map学习"
+/*
 function fa(){console.log("fa");}
 
 function fb(f){
   console.log("fb");
   f();
 }
-
-fb(fa)
 /*
+fb(fa)
+fb
+fa
 */
 
+/*
 const l=[1,2,3,4,5]
 const ln=l.map(x=>x*3)
 /*
+l
+(5) [1, 2, 3, 4, 5]
+
+ln
+(5) [3, 6, 9, 12, 15]
 */
 
+/*
 const ll=ln.map(x=>x%2===0)
 /*
-*/
-l.map(x=>{return x%2!==0})
-/*
+ll
+(5) [false, true, false, true, false]
 */
 
+/*
+l.map(x=>{return x%2!==0})
+/*
+(5) [true, false, true, false, true]
+*/
+
+/*
 l.map(x=>{
   if(x===1){return "a";}
   if(x===2){return "b";}
   if(x===3){return "c";}
 })
+/*
+(5) ["a", "b", "c", undefined, undefined]
+*/
+
+//"practice funtion"
+/*
+function square(n){
+  return n*n;
+}
+*/
+/*
+square(3)
+9
+*/
+/*
+function myFunc(o){
+  o.make="Toyota";
+}
+let mycar={make:"Honda",model:"Accord",year:"1998"};
+let x,y;
+x=mycar.make;
+
+myFunc(mycar);
+y=mycar.make;
+*/
+/*
+"Toyota"
+*/
+
+/*
+let mybike={make:"Yadi",model:"white01",year:"2018"}; 
+
+function huanche(o){
+  o.make="Lvyuan";
+  o.model="black03";
+  o.year="2020";
+}
+*/
+/*
+huanche(mybike)
+mybike
+{made: "Yadi", model: "black03", year: "2020", make: "Lvyuan"}
+*/
+
+/*
+const square=function(n){return n*n;};
+let x=square(3);
+*/
+/*
+x
+9
+*/
+
+const factorial=function fac(n){return n<2?1:n*fac(n-1)};
+console.log(factorial(3));
+/*
+6
+console.log(factorial(1));
+1
+*/
