@@ -1064,3 +1064,10 @@ console.log(map(f,[0,1,2,5,10]));
 /*
 (5) [0, 1, 8, 125, 1000]
 */
+
+let myFunc;
+if(num==0){
+  myFunc=function(o){
+    o.make="Toyota";
+  }
+}
