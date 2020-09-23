@@ -1051,3 +1051,16 @@ console.log(factorial(3));
 console.log(factorial(1));
 1
 */
+
+function map(f,a){
+  let result=[];
+  let i;
+  for(i=0;i!=a.length;i++)
+    result[i]=f(a[i]);
+  return result; 
+}
+const f=function(x){return x*x*x;}
+console.log(map(f,[0,1,2,5,10]));
+/*
+(5) [0, 1, 8, 125, 1000]
+*/
