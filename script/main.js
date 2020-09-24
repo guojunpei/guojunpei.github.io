@@ -1136,3 +1136,62 @@ lnnnnn.length
 3.14e-2
 0.0314
 */
+
+/*
+
+let foo={a:"alpha",2:"two"};
+console.log(foo.a);
+alpha
+
+console.log(foo[2])
+two
+
+console.log(foo.2)
+Uncaught SyntaxError: missing ) after argument list
+
+console.log(foo[a])
+Uncaught ReferenceError: a is not defined
+    at <anonymous>:1:17
+
+console.log(foo["a"])
+
+alpha
+
+console.log(foo["2"])
+two
+
+*/
+
+/*
+
+console.log("tom's car".length)
+9
+
+"\0"
+"Null空"
+
+"\b"
+"退格符"
+
+"\f"
+"换页符"
+
+"\n"
+"换行符"
+
+"\r"
+"回车符"
+
+"\t"
+"Tab（制表符）"
+
+"\v"
+"垂直制表符"
+
+let quote="He read \"the book\" by tom";
+console.log(quote);
+He read "the book" by tom
+
+let home="c:\\temp";
+
+*/
