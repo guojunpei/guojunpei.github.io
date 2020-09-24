@@ -1043,15 +1043,16 @@ let x=square(3);
 x
 9
 */
-
+/*
 const factorial=function fac(n){return n<2?1:n*fac(n-1)};
 console.log(factorial(3));
+*/
 /*
 6
 console.log(factorial(1));
 1
 */
-
+/*
 function map(f,a){
   let result=[];
   let i;
@@ -1061,13 +1062,77 @@ function map(f,a){
 }
 const f=function(x){return x*x*x;}
 console.log(map(f,[0,1,2,5,10]));
+*/
 /*
 (5) [0, 1, 8, 125, 1000]
 */
-
+/*
 let myFunc;
 if(num==0){
   myFunc=function(o){
     o.make="Toyota";
   }
 }
+*/
+
+//"practice grammar and type"
+/*
+let l=[];
+let ln=[1]
+!ln[0]
+false
+!l[0]
+true
+
+(+"1.1")+(+"1.1")
+2.2
+
+"1.1"+"1.1"
+"1.11.1"
+
+"37"+"7"
+"377"
+
+"37"-"7"
+30
+
+"hi"-"h"
+NaN
+
+Number.parseInt("1.1")
+1
+
+let lnn=["a","b","c"]
+lnn.length
+3
+
+let lnnn=[,"a","b","c"]
+lnnn.length
+4
+
+let lnnnn=[,"a",,"b","c"]
+lnnnn.length
+5
+
+let lnnnnn=[,"a",,"b","c",]
+lnnnnn.length
+5
+
+3.14e+2
+314
+
+3**2
+9
+
+9**3
+27
+
+3.14*10**2
+314
+
+3.14*0.1**2
+0.031400000000000004
+
+3.14e-2
+0.0314
+*/
