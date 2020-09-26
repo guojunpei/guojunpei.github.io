@@ -1195,3 +1195,68 @@ He read "the book" by tom
 let home="c:\\temp";
 
 */
+
+/*
+function factorial(n){
+  if(n===0 ||n===1 ){return 1 ;
+  }
+  else{
+  return (n*factorial(n-1));
+  }
+}
+
+let a=factorial(1);
+let b=factorial(2);
+let c=factorial(3);
+let d=factorial(4);
+let e=factorial(5);
+
+a
+1
+b
+2
+c
+6
+d
+24
+e
+120
+*/
+/*
+let n1=20;
+let n2=3;
+
+function qiuhe(){
+  return n1*n2;
+}
+
+qiuhe()
+*/
+
+/*
+function getScore(){
+  let n1=2;
+  let n2=3;
+  let name="Chamahk"
+  function add(){
+    return name +"scored"+n1+n2;
+  }
+  return add();
+}
+
+getScore()
+"Chamahkscored23"
+
+function getScore(){
+  let n1=2;
+  let n2=3;
+  let name="Chamahk"
+  function add(){
+    return name +"scored"+(n1+n2);
+  }
+  return add();
+}
+
+getScore()
+"Chamahkscored5"
+*/
