@@ -1283,16 +1283,16 @@ function game(){
   console.log(qipan);
 }
 
-function name(n){
+function name(name){
   if(p1===" "){
-    p1n=n;
-    p1=n;
+    p1n=name;
+    p1=name;
     zt="  Welcome~"+n+"! What's your name, player 2 ? Please player 2 type 'name('yourname')'.";
   }
   else{
     p2n=n;
     p2=n;
-    zt="  Welcome~"+n+"! Please "+p1+"start the game with type 'luozi('p1' or play's name,weizhi like 'a1')'";
+    zt="  Welcome~"+n+"! Please "+p1+" start the game with type 'luozi('p1' or play's name,weizhi like 'a1')'";
     let a1="a1";
     let a2="a2";
     let a3="a3";
