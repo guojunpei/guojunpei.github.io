@@ -1260,3 +1260,75 @@ function getScore(){
 getScore()
 "Chamahkscored5"
 */
+
+//"井字游戏"
+let p1="";
+let p2="";
+let p1n="play1's name";
+let p2n="play2's name";
+let zt="";
+let a1=" ";
+let a2=" ";
+let a3=" ";
+let b1=" ";
+let b2=" ";
+let b3=" ";
+let c1=" ";
+let c2=" ";
+let c3=" ";
+let qipan= "╔═══╦═══╦═══╗\n║ "+a1+" ║ "+a2+" ║ "+a3+" ║"+"  x:"+p1n+"\n╠═══╬═══╬═══╣\n║ "+b1+" ║ "+b2+" ║ "+b3+" ║"+"  o:"+p2n+"\n╠═══╬═══╬═══╣\n║ "+c1+" ║ "+c2+" ║ "+c3+" ║"+zt+"\n╚═══╩═══╩═══╝";
+
+function chongzhiqipan(){
+  let a1=" ";
+  let a2=" ";
+  let a3=" ";
+  let b1=" ";
+  let b2=" ";
+  let b3=" ";
+  let c1=" ";
+  let c2=" ";
+  let c3=" ";
+  let zt="";
+  console.log(qipan);
+}
+
+function playername(n){
+  if(p1===""){p1n=n;p1=n;}else{p2n=n;p2=n;}
+  console.log(qipan);
+}
+
+function luozi(p,q){
+  if(p===p1){qizi="x";zt="x"+q+"; o 's time!";}
+  if(p===p2){qizi="o";zt="x"+o+"; x 's time!";}
+  if(q===a1){a1=qizi;}
+  if(q===a2){a1=qizi;}
+  if(q===a3){a1=qizi;}
+  if(q===b1){b1=qizi;}
+  if(q===b2){b2=qizi;}
+  if(q===b3){b3=qizi;}
+  if(q===c1){c1=qizi;}
+  if(q===c2){c2=qizi;}
+  if(q===c3){c3=qizi;}
+  if(a1===a2 && a1===a3 && a1!==" "){zt="Game over! winer is "+p;}
+  if(b1===b2 && b1===b3 && b1!==" "){zt="Game over! winer is "+p;}
+  if(c1===c2 && c1===c3 && c1!==" "){zt="Game over! winer is "+p;}
+  if(a1===b1 && a1===c1 && a1!==" "){zt="Game over! winer is "+p;}
+  if(a2===b2 && a2===c2 && a2!==" "){zt="Game over! winer is "+p;}
+  if(a3===b3 && a3===c3 && a3!==" "){zt="Game over! winer is "+p;}
+  if(a1===b2 && a1===c3 && a1!==" "){zt="Game over! winer is "+p;}
+  if(a3===b2 && a3===c1 && a3!==" "){zt="Game over! winer is "+p;}
+  console.log(qipan);
+}
+/*
+let qipan= "╔═══╦═══╦═══╗\n║ x ║ o ║ x ║\n╠═══╬═══╬═══╣\n║ x ║   ║ x ║\n╠═══╬═══╬═══╣\n║ x ║ o ║ x ║\n╚═══╩═══╩═══╝"
+console.log(qipan)
+*/
+/*
+╔═══╦═══╦═══╗
+║ x ║ o ║ x ║
+╠═══╬═══╬═══╣
+║ x ║ o ║ x ║
+╠═══╬═══╬═══╣
+║ x ║ o ║ x ║
+╚═══╩═══╩═══╝
+*/
