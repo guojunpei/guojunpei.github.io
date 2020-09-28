@@ -25,62 +25,65 @@ function name(n){
   if(p1===" "){
     p1n=n;
     p1=n;
-    zt="  Welcome~"+ n+"! What's your name, player 2 ? Please player 2 type 'name('yourname')'.";
+    zt="  Welcome~ "+n+"! What's your name, player 2 ? Please player 2 type 'name('yourname')'.";
   }
   else{
     p2n=n;
     p2=n;
-    zt="  Welcome~"+ n+"! Please "+p1+" start the game with type 'luozi('p1' or play's name,weizhi like 'a1')'";
-    let a1="a1";
-    let a2="a2";
-    let a3="a3";
-    let b1="b1";
-    let b2="b2";
-    let b3="b3";
-    let c1="c1";
-    let c2="c2";
-    let c3="c3";
+    zt="  Welcome~ "+n+"! Please "+p1+" start the game with type 'luozi('p1' or play's name,weizhi like 'a1')'";
+    a1="a1";
+    a2="a2";
+    a3="a3";
+    b1="b1";
+    b2="b2";
+    b3="b3";
+    c1="c1";
+    c2="c2";
+    c3="c3";
   }
   game();
 }
 
 function again(){
-  let a1="a1";
-  let a2="a2";
-  let a3="a3";
-  let b1="b1";
-  let b2="b2";
-  let b3="b3";
-  let c1="c1";
-  let c2="c2";
-  let c3="c3";
-  let zt="  Please "+p1+"start the game with type 'luozi('p1' or play's name,weizhi like 'a1')'";
+  a1="a1";
+  a2="a2";
+  a3="a3";
+  b1="b1";
+  b2="b2";
+  b3="b3";
+  c1="c1";
+  c2="c2";
+  c3="c3";
+  zt="  Please "+p1+"start the game with type 'luozi('p1' or play's name,weizhi like 'a1')'";
   game();
 }
 
 function exchange(){
-  let p0=p2;
-  let p2=p1;
-  let p1=p0;
-  let a1="a1";
-  let a2="a2";
-  let a3="a3";
-  let b1="b1";
-  let b2="b2";
-  let b3="b3";
-  let c1="c1";
-  let c2="c2";
-  let c3="c3";
-  let zt="  Please "+p1+"start the game with type 'luozi('p1' or play's name,weizhi like 'a1')'";
+  p0=p2;
+  p2=p1;
+  p1=p0;
+  p0n=p2n;
+  p2n=p1n;
+  p1n=p0n;
+  a1="a1";
+  a2="a2";
+  a3="a3";
+  b1="b1";
+  b2="b2";
+  b3="b3";
+  c1="c1";
+  c2="c2";
+  c3="c3";
+  zt="  Please "+p1+" start the game with type 'luozi('p1' or play's name,weizhi like 'a1')'";
   game();
 }
 
 function luozi(p,q){
-  if(p===p1){qizi="x ";zt="  x"+q+"; o 's time! Please "+p2+" type 'luozi('p1' or play's name,weizhi like 'a1')'";}
-  if(p===p2){qizi="o ";zt="  x"+o+"; x 's time! Please "+p1+" type 'luozi('p1' or play's name,weizhi like 'a1')'";}
+  if(p===p1){qizi="x ";zt="  x: "+q+"; o 's time! Please "+p2+" type 'luozi('p1' or play's name,weizhi like 'a1')'";}
+  if(p===p2){qizi="o ";zt="  x: "+q+"; x 's time! Please "+p1+" type 'luozi('p1' or play's name,weizhi like 'a1')'";}
   if(q===a1){a1=qizi;}
-  if(q===a2){a1=qizi;}
-  if(q===a3){a1=qizi;}
+  if(q===a2){a2=qizi;}
+  if(q===a3){a3=qizi;}
   if(q===b1){b1=qizi;}
   if(q===b2){b2=qizi;}
   if(q===b3){b3=qizi;}
