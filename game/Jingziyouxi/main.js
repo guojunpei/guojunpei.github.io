@@ -1,6 +1,6 @@
 
-//"井字游戏"
-
+//"井字游戏1.0"
+/*
 let p1=" ";
 let p2=" ";
 let p1n="play1's name";
@@ -100,6 +100,8 @@ function luozi(p,q){
   if(a3===b2 && a3===c1 ){zt="  Game over! Winer is "+p+"! One more? Please tpye 'again()'! Exchange and again? Please tpye 'exchange()'!";}
   game();
 }
+*/
+
 /*
 let qipan= "╔═══╦═══╦═══╗\n║ x ║ o ║ x ║\n╠═══╬═══╬═══╣\n║ x ║   ║ x ║\n╠═══╬═══╬═══╣\n║ x ║ o ║ x ║\n╚═══╩═══╩═══╝"
 console.log(qipan)
@@ -113,3 +115,8 @@ console.log(qipan)
 ║ x ║ o ║ x ║
 ╚═══╩═══╩═══╝
 */
+
+//"井字游戏2.0"
+jingziyouxi=class{
+    chooseqipan=function(m,n,v){}
+}
