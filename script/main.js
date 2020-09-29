@@ -1260,3 +1260,13 @@ function getScore(){
 getScore()
 "Chamahkscored5"
 */
+
+
+//"practice class"
+class polygon{
+  constructor(height,width){
+    this.area=height * width;
+  }
+}
+
+console.log(new polygon(4,3).area);
