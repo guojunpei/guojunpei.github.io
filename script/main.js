@@ -1263,6 +1263,7 @@ getScore()
 
 
 //"practice class"
+/*
 class polygon{
   constructor(height,width){
     this.area=height * width;
@@ -1270,3 +1271,32 @@ class polygon{
 }
 
 console.log(new polygon(4,3).area);
+12
+*/
+/*
+class Polygon{
+  constructor(height,width){
+    this.name='Polygon';
+    this.height=height;
+    this.width=width;
+  }
+}
+
+class Square extends Polygon{
+  constructor(length){
+    super(length,length);
+    this.name='Square';
+  }
+}
+*/
+
+class Square extends Polygon{
+  constructor(length){
+    super(length,length);
+    this.name='Square';
+  }
+
+  get area(){
+    return this.height * this.width;
+  }
+}
