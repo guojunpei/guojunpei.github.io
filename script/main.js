@@ -1300,3 +1300,22 @@ class Square extends Polygon{
     return this.height * this.width;
   }
 }
+
+class myDate extends Data{
+ constructor(){
+  super();
+ }
+ getFormattedDate(){
+  let months=['Jan','Feb','Mar','Apr','May','Jun','Aug','Sep','Oct','Nov','Dec'];
+  return this.getDate() + "-" + months[this.getMonth()] +"-"+this.getFullyear();
+ }
+}
+
+class nullExtends extends null{
+ constructor(){}
+}
+
+Object.getPrototypeOf(nullExtends);
+Object.getPrototypeOf(nullExtends.prototype);
+
+new nullExtends();
