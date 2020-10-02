@@ -1329,3 +1329,26 @@ class Polygon{
 const poly1= new Polygon();
 
 console.log(poly1.name);
+
+
+class Polygon{
+ constructor(){
+  this.name="Polygon";
+ }
+}
+
+class Square extends Polygon{
+ constructor(){
+  super();
+ }
+}
+
+class Rectangle{}
+
+Object.setPrototypeOf(Square.prototype, Rectangle.prototype);
+
+console.log(Object.getPrototypeOf(Square.prototype) === Polygon.prototype);
+console.log(Object.getPrototypeOf(Square.prototype) === Rectangle.prototype);
+
+let newInstance = new Square();
+console.log(newInstance.name);
