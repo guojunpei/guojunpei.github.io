@@ -1300,3 +1300,15 @@ class Square extends Polygon{
     return this.height * this.width;
   }
 }
+
+
+//practice class static
+class StaticMethodCall {
+  static staticMethod(){
+    return 'Static method has been called';
+  }
+  static anotherStaticMethod(){
+    return this.staticMethod() + ' form another static method';
+  }
+}
+StaticMethodCall.staticMethod();
