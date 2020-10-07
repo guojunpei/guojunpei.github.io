@@ -1349,6 +1349,7 @@ console.log(ClassWithStaticField.staticField);
 "static field"
 */
 
+/*
 class ClassWithStaticField{
   static staticField;
 }
@@ -1356,3 +1357,20 @@ class ClassWithStaticField{
 console.assert(ClassWithStaticField.hasOwnProperty('staticField'));
 console.log(ClassWithStaticField.staticField);
 "undefind"
+*/
+
+
+class ClassWithStaticField{
+  static baseStaticField= 'base field';
+}
+
+class SubClassWithStaticField extends ClassWithStaticField{
+  static subStaticField='sub class field';
+}
+
+console.log(SubClassWithStaticField.subStaticField);
+"sub class field"
+console.log(SubClassWithStaticField.baseStaticField);
+"base field"
+
+
