@@ -1290,6 +1290,7 @@ class Square extends Polygon{
 }
 */
 
+/*
 class Square extends Polygon{
   constructor(length){
     super(length,length);
@@ -1300,9 +1301,10 @@ class Square extends Polygon{
     return this.height * this.width;
   }
 }
-
+*/
 
 //practice class static
+/*
 class StaticMethodCall {
   static staticMethod(){
     return 'Static method has been called';
@@ -1334,3 +1336,23 @@ let tp=new Tripple();
 
 console.log(BiggerTripple.tripple(3));
 console.log(tp.tripple());
+
+*/
+
+//practice class fields
+/*
+class ClassWithStaticField{
+  static staticField= 'static field';
+}
+
+console.log(ClassWithStaticField.staticField);
+"static field"
+*/
+
+class ClassWithStaticField{
+  static staticField;
+}
+
+console.assert(ClassWithStaticField.hasOwnProperty('staticField'));
+console.log(ClassWithStaticField.staticField);
+"undefind"
