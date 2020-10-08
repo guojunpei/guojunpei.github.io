@@ -1359,7 +1359,7 @@ console.log(ClassWithStaticField.staticField);
 "undefind"
 */
 
-
+/*
 class ClassWithStaticField{
   static baseStaticField= 'base field';
 }
@@ -1372,5 +1372,42 @@ console.log(SubClassWithStaticField.subStaticField);
 "sub class field"
 console.log(SubClassWithStaticField.baseStaticField);
 "base field"
+*/
 
+/*
+class ClassWithStaticField{
+  static baseStaticField='base static field';
+  static anotherBaseStaticField=this.baseStaticField;
+  static baseStaticField(){return 'base static method output';}
+}
+
+class SubClassWithStaticField extends ClassWithStaticField{
+  static subStaticField=super.baseStaticMethod();
+}
+
+console.log(ClassWithStaticField.anotherBaseStaticField);
+"base static field"
+
+console.log(SubClassWithStaticField.subStaticField);
+"base static method output"
+*/
+
+/*
+class ClassWithInstanceField{
+  instanceField='instance field';
+}
+
+const instance=new ClassWithInstanceField();
+console.log(instance.instanceField);
+"instance field"
+*/
+
+class ClassWithInstanceField{
+  instanceField;
+}
+
+const instance=new ClassWithInstanceField();
+console.assert(instance.hasOwnProperty('instanceField'));
+console.log(instance.instanceField);
+"undefined"
 
