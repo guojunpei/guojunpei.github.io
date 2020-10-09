@@ -1411,3 +1411,11 @@ console.assert(instance.hasOwnProperty('instanceField'));
 console.log(instance.instanceField);
 "undefined"
 
+const PREFIX='prefix';
+
+class ClassWithComputedFieldName{
+  [`${PREFIX}Field`]='prefixed field';
+}
+
+const instance=new ClassWithComputedFieldName();
+console.log(instance.prefixField);
