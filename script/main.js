@@ -1402,6 +1402,7 @@ console.log(instance.instanceField);
 "instance field"
 */
 
+/*
 class ClassWithInstanceField{
   instanceField;
 }
@@ -1419,3 +1420,24 @@ class ClassWithComputedFieldName{
 
 const instance=new ClassWithComputedFieldName();
 console.log(instance.prefixField);
+"prefixed field"
+*/
+
+class ClassWithInstanceField{
+  baseInstanceField='base field';
+  anotherBaseInstanceField=this.baseInstanceField;
+  baseInstanceMethod(){return 'base method output';}
+}
+
+class SubClassWithInstanceField extends ClassWithInstanceField{
+  subInstanceField=super.baseInstanceMethod();
+}
+
+const base=new ClassWithInstanceField();
+const sub=new SubClassWithInstanceField();
+
+console.log(base.anotherBaseInstanceField);
+"base field"
+
+console.log(sub.subInstanceField);
+"base method output"
