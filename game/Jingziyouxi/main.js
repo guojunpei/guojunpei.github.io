@@ -117,6 +117,9 @@ console.log(qipan)
 */
 
 //"井字游戏2.0"
-jingziyouxi=class{
-    chooseqipan=function(m,n,v){}
+class jingziyouxi{
+  constructor(playername,luozi){
+    this.playername=playername;
+    this.luozi=luozi;
+  }
 }
