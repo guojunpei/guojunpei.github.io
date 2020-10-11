@@ -122,4 +122,15 @@ class jingziyouxi{
     this.playername=playername;
     this.luozi=luozi;
   }
+
+  get result(){
+    if(a1===a2 && a1===a3 ){return "Game over! Winer is "+this.playername+"!";}
+    if(b1===b2 && b1===b3 ){return "Game over! Winer is "+this.playername+"!";}
+    if(c1===c2 && c1===c3 ){return "Game over! Winer is "+this.playername+"!";}
+    if(a1===b1 && a1===c1 ){return "Game over! Winer is "+this.playername+"!";}
+    if(a2===b2 && a2===c2 ){return "Game over! Winer is "+this.playername+"!";}
+    if(a3===b3 && a3===c3 ){return "Game over! Winer is "+this.playername+"!";}
+    if(a1===b2 && a1===c3 ){return "Game over! Winer is "+this.playername+"!";}
+    if(a3===b2 && a3===c1 ){return "Game over! Winer is "+this.playername+"!";}
+  }
 }
