@@ -134,3 +134,4 @@ class jingziyouxi{
     if(a3===b2 && a3===c1 ){return "Game over! Winer is "+this.playername+"!";}
   }
 }
+

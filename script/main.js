@@ -1291,6 +1291,14 @@ class Square extends Polygon{
 */
 
 /*
+class Polygon{
+  constructor(height,width){
+    this.name='Polygon';
+    this.height=height;
+    this.width=width;
+  }
+}
+
 class Square extends Polygon{
   constructor(length){
     super(length,length);
@@ -1423,6 +1431,7 @@ console.log(instance.prefixField);
 "prefixed field"
 */
 
+/*
 class ClassWithInstanceField{
   baseInstanceField='base field';
   anotherBaseInstanceField=this.baseInstanceField;
@@ -1441,3 +1450,71 @@ console.log(base.anotherBaseInstanceField);
 
 console.log(sub.subInstanceField);
 "base method output"
+
+*/
+
+class Polygon{
+  constructor(height,width){
+    this.name='Polygon';
+    this.height=height;
+    this.width=width;
+  }
+}
+
+class Square extends Polygon{
+  constructor(length){
+    super(length,length);
+    this.name='Square';
+  }
+
+  get area(){
+    return this.height * this.width;
+  }
+  set area(value){
+    this._area=value;
+  }
+}
+
+console.log(Polygon)
+""
+class Polygon{
+  constructor(height,width){
+    this.name='Polygon';
+    this.height=height;
+    this.width=width;
+  }
+}
+""
+
+Polygon.name
+"Polygon"
+
+Polygon.height
+undefined
+
+Polygon.width
+undefined
+
+console.log(Square)
+class Square extends Polygon{
+  constructor(length){
+    super(length,length);
+    this.name='Square';
+  }
+
+  get area(){
+    return this.height * this.width;
+  }
+  set area(value){
+    this._area=value;
+  }
+}
+
+Square.name
+"Square"
+
+Square._area
+undefined
+
+Square.value
+undefined
