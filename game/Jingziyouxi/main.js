@@ -136,18 +136,18 @@ class TicTacToeGame{
     this.c3="  ";
     this.result="";
     this.history=[];
-    this.getresult();
-    this.showchessboard();
+    this.getResult();
+    this.showChessBoard();
   }
 
-  showchessboard(){
+  showChessBoard(){
     let chessboard= "╔═══╦═══╦═══╗\n║ "+this.a1+"║ "+this.a2+"║ "+this.a3+"║"+"  "+this.player1pieces+":"+this.player1name+"\n╠═══╬═══╬═══╣\n║ "+this.b1+"║ "+this.b2+"║ "+this.b3+"║"+"  "+this.player2pieces+":"+this.player2name+"\n╠═══╬═══╬═══╣\n║ "+this.c1+"║ "+this.c2+"║ "+this.c3+"║"+this.result+"\n╚═══╩═══╩═══╝";
     console.log(chessboard);
   }
 
-  getresult(){
-    if(this.player1pieces===""){return this.result="Please "+this.player1name+" type:yourgame.choosepieces('x'or'+')";}
-    if(this.player2pieces===""){return this.result="Please "+this.player2name+" type:yourgame.choosepieces('o'or'0')";}
+  getResult(){
+    if(this.player1pieces===""){return this.result="Please "+this.player1name+" type:yourgame.choosePieces('x'or'+')";}
+    if(this.player2pieces===""){return this.result="Please "+this.player2name+" type:yourgame.choosePieces('o'or'0')";}
     if(this.whosturn===""){
       this.a1="a1";
       this.a2="a2";
@@ -158,36 +158,39 @@ class TicTacToeGame{
       this.c1="c1";
       this.c2="c2";
       this.c3="c3";
-      return this.result="Please first player type:yourgame.chooseplace('playerpieces'like'x','place'like'a1')";}
+      return this.result="Please first player type:yourgame.choosePlace('playername','place'like'a1')";}
     else{
-      this.result=this.whosturn+"'s turn is done! Please the oher player type:yourgame.chooseplace('playername','place')";
+      this.result=this.whosturn+"'s turn is done! Please the other player type:yourgame.choosePlace('playername','place'like'a2')";
     }
-    if(this.a1===this.a2 && this.a1===this.a3 && this.a1!=="  "){this.result="Game over! Winer is "+this.playername+"!";}
-    if(this.b1===this.b2 && this.b1===this.b3 && this.a1!=="  "){this.result="Game over! Winer is "+this.playername+"!";}
-    if(this.c1===this.c2 && this.c1===this.c3 && this.a1!=="  "){this.result="Game over! Winer is "+this.playername+"!";}
-    if(this.a1===this.b1 && this.a1===this.c1 && this.a1!=="  "){this.result="Game over! Winer is "+this.playername+"!";}
-    if(this.a2===this.b2 && this.a2===this.c2 && this.a1!=="  "){this.result="Game over! Winer is "+this.playername+"!";}
-    if(this.a3===this.b3 && this.a3===this.c3 && this.a1!=="  "){this.result="Game over! Winer is "+this.playername+"!";}
-    if(this.a1===this.b2 && this.a1===this.c3 && this.a1!=="  "){this.result="Game over! Winer is "+this.playername+"!";}
-    if(this.a3===this.b2 && this.a3===this.c1 && this.a1!=="  "){this.result="Game over! Winer is "+this.playername+"!";}
+    if(this.a1===this.a2 && this.a1===this.a3 && this.a1!=="  "){return this.result="Game over! Winer is "+this.whosturn+"!";}
+    if(this.b1===this.b2 && this.b1===this.b3 && this.a1!=="  "){return this.result="Game over! Winer is "+this.whosturn+"!";}
+    if(this.c1===this.c2 && this.c1===this.c3 && this.a1!=="  "){return this.result="Game over! Winer is "+this.whosturn+"!";}
+    if(this.a1===this.b1 && this.a1===this.c1 && this.a1!=="  "){return this.result="Game over! Winer is "+this.whosturn+"!";}
+    if(this.a2===this.b2 && this.a2===this.c2 && this.a1!=="  "){return this.result="Game over! Winer is "+this.whosturn+"!";}
+    if(this.a3===this.b3 && this.a3===this.c3 && this.a1!=="  "){return this.result="Game over! Winer is "+this.whosturn+"!";}
+    if(this.a1===this.b2 && this.a1===this.c3 && this.a1!=="  "){return this.result="Game over! Winer is "+this.whosturn+"!";}
+    if(this.a3===this.b2 && this.a3===this.c1 && this.a1!=="  "){return this.result="Game over! Winer is "+this.whosturn+"!";}
   }
 
   save(){
     this.history.push({date: new Date(), who:this.whosturn, place:this.place})
   }
 
-  choosepieces(pieces){
+  choosePieces(pieces){
     if(this.player1pieces===""){this.player1pieces=pieces;}
     else{
       this.player2pieces=pieces;
     }
-    this.getresult();
-    this.showchessboard();
+    this.getResult();
+    this.showChessBoard();
   }
 
-  chooseplace(pieces,place){
-    this.whosturn=pieces;
+  choosePlace(playername,place){
+    this.whosturn=playername;
     this.place=place;
+    let pieces="";
+    if(playername===this.player1name){pieces=this.player1pieces+" ";}
+    if(playername===this.player2name){pieces=this.player2pieces+" ";}
     if(place==="a1"){this.a1=pieces;}
     if(place==="a2"){this.a2=pieces;}
     if(place==="a3"){this.a3=pieces;}
@@ -197,8 +200,8 @@ class TicTacToeGame{
     if(place==="c1"){this.c1=pieces;}
     if(place==="c2"){this.c2=pieces;}
     if(place==="c3"){this.c3=pieces;}
-    this.getresult();
-    this.showchessboard();
+    this.getResult();
+    this.showChessBoard();
     this.save();
   }
 }
