@@ -1518,3 +1518,12 @@ undefined
 
 Square.value
 undefined
+
+class A{
+  constructor(l,w){
+    this.l=l;
+    this.w=w;
+  }
+}
+
+const a=new A
