@@ -158,7 +158,7 @@ class TicTacToeGame{
       this.c1="c1";
       this.c2="c2";
       this.c3="c3";
-      return this.result="Please first player type:yourgame.chooseplace('playername','place'like'a1')";}
+      return this.result="Please first player type:yourgame.chooseplace('playerpieces'like'x','place'like'a1')";}
     else{
       this.result=this.whosturn+"'s turn is done! Please the oher player type:yourgame.chooseplace('playername','place')";
     }
@@ -181,11 +181,12 @@ class TicTacToeGame{
     else{
       this.player2pieces=pieces;
     }
+    this.getresult();
     this.showchessboard();
   }
 
   chooseplace(pieces,place){
-    this.whosturn=playername;
+    this.whosturn=pieces;
     this.place=place;
     if(place==="a1"){this.a1=pieces;}
     if(place==="a2"){this.a2=pieces;}
@@ -196,6 +197,7 @@ class TicTacToeGame{
     if(place==="c1"){this.c1=pieces;}
     if(place==="c2"){this.c2=pieces;}
     if(place==="c3"){this.c3=pieces;}
+    this.getresult();
     this.showchessboard();
     this.save();
   }

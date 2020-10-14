@@ -1453,6 +1453,7 @@ console.log(sub.subInstanceField);
 
 */
 
+/*
 class Polygon{
   constructor(height,width){
     this.name='Polygon';
@@ -1527,3 +1528,20 @@ class A{
 }
 
 const a=new A
+
+
+*/
+
+class A{
+  constructor(name){
+    this.name=name;
+    this.history=[];
+    this.sum=0;
+  }
+  save(value){
+    this.sum=value;
+    this.history.push({date: new Date(), value: value})
+  }
+}
+
+const b=new A(1);
