@@ -121,17 +121,19 @@ class TicTacToeGame{
   constructor(player1name,player2name){
     this.player1name=player1name;
     this.player2name=player2name;
+    this.player1pieces="";
+    this.player2pieces="";
     this.whosturn="";
     this.place="";
-    this.a1=" ";
-    this.a2=" ";
-    this.a3=" ";
-    this.b1=" ";
-    this.b2=" ";
-    this.b3=" ";
-    this.c1=" ";
-    this.c2=" ";
-    this.c3=" ";
+    this.a1="  ";
+    this.a2="  ";
+    this.a3="  ";
+    this.b1="  ";
+    this.b2="  ";
+    this.b3="  ";
+    this.c1="  ";
+    this.c2="  ";
+    this.c3="  ";
     this.result="";
     this.history=[];
     this.getresult();
@@ -139,44 +141,64 @@ class TicTacToeGame{
   }
 
   showchessboard(){
-    let chessboard= "╔═══╦═══╦═══╗\n║ "+this.a1+"║ "+this.a2+"║ "+this.a3+"║"+"  x:"+this.player1name+"\n╠═══╬═══╬═══╣\n║ "+this.b1+"║ "+this.b2+"║ "+this.b3+"║"+"  o:"+this.player2name+"\n╠═══╬═══╬═══╣\n║ "+this.c1+"║ "+this.c2+"║ "+this.c3+"║"+this.result+"\n╚═══╩═══╩═══╝";
+    let chessboard= "╔═══╦═══╦═══╗\n║ "+this.a1+"║ "+this.a2+"║ "+this.a3+"║"+"  "+this.player1pieces+":"+this.player1name+"\n╠═══╬═══╬═══╣\n║ "+this.b1+"║ "+this.b2+"║ "+this.b3+"║"+"  "+this.player2pieces+":"+this.player2name+"\n╠═══╬═══╬═══╣\n║ "+this.c1+"║ "+this.c2+"║ "+this.c3+"║"+this.result+"\n╚═══╩═══╩═══╝";
     console.log(chessboard);
   }
 
   getresult(){
-    if(this.whosturn===""){this.result="Please first player type:yourgame.chooseplace('playername','place')";}
+    if(this.player1pieces===""){return this.result="Please "+this.player1name+" type:yourgame.choosepieces('x'or'+')";}
+    if(this.player2pieces===""){return this.result="Please "+this.player2name+" type:yourgame.choosepieces('o'or'0')";}
+    if(this.whosturn===""){
+      this.a1="a1";
+      this.a2="a2";
+      this.a3="a3";
+      this.b1="b1";
+      this.b2="b2";
+      this.b3="b3";
+      this.c1="c1";
+      this.c2="c2";
+      this.c3="c3";
+      return this.result="Please first player type:yourgame.chooseplace('playername','place'like'a1')";}
     else{
       this.result=this.whosturn+"'s turn is done! Please the oher player type:yourgame.chooseplace('playername','place')";
     }
-    if(this.a1===this.a2 && this.a1===this.a3 && this.a1!==" "){this.result="Game over! Winer is "+this.playername+"!";}
-    if(this.b1===this.b2 && this.b1===this.b3 && this.a1!==" "){this.result="Game over! Winer is "+this.playername+"!";}
-    if(this.c1===this.c2 && this.c1===this.c3 && this.a1!==" "){this.result="Game over! Winer is "+this.playername+"!";}
-    if(this.a1===this.b1 && this.a1===this.c1 && this.a1!==" "){this.result="Game over! Winer is "+this.playername+"!";}
-    if(this.a2===this.b2 && this.a2===this.c2 && this.a1!==" "){this.result="Game over! Winer is "+this.playername+"!";}
-    if(this.a3===this.b3 && this.a3===this.c3 && this.a1!==" "){this.result="Game over! Winer is "+this.playername+"!";}
-    if(this.a1===this.b2 && this.a1===this.c3 && this.a1!==" "){this.result="Game over! Winer is "+this.playername+"!";}
-    if(this.a3===this.b2 && this.a3===this.c1 && this.a1!==" "){this.result="Game over! Winer is "+this.playername+"!";}
-    console.log(this.result)
+    if(this.a1===this.a2 && this.a1===this.a3 && this.a1!=="  "){this.result="Game over! Winer is "+this.playername+"!";}
+    if(this.b1===this.b2 && this.b1===this.b3 && this.a1!=="  "){this.result="Game over! Winer is "+this.playername+"!";}
+    if(this.c1===this.c2 && this.c1===this.c3 && this.a1!=="  "){this.result="Game over! Winer is "+this.playername+"!";}
+    if(this.a1===this.b1 && this.a1===this.c1 && this.a1!=="  "){this.result="Game over! Winer is "+this.playername+"!";}
+    if(this.a2===this.b2 && this.a2===this.c2 && this.a1!=="  "){this.result="Game over! Winer is "+this.playername+"!";}
+    if(this.a3===this.b3 && this.a3===this.c3 && this.a1!=="  "){this.result="Game over! Winer is "+this.playername+"!";}
+    if(this.a1===this.b2 && this.a1===this.c3 && this.a1!=="  "){this.result="Game over! Winer is "+this.playername+"!";}
+    if(this.a3===this.b2 && this.a3===this.c1 && this.a1!=="  "){this.result="Game over! Winer is "+this.playername+"!";}
   }
 
   save(){
-    this.history.push({date:new Date(),who:this.whosturn,place:this.place})
+    this.history.push({date: new Date(), who:this.whosturn, place:this.place})
   }
 
-  chooseplace(playername,place){
+  choosepieces(pieces){
+    if(this.player1pieces===""){this.player1pieces=pieces;}
+    else{
+      this.player2pieces=pieces;
+    }
+    this.showchessboard();
+  }
+
+  chooseplace(pieces,place){
     this.whosturn=playername;
     this.place=place;
-    if(place==="a1"){this.a1=playername;}
-    if(place==="a2"){this.a2=playername;}
-    if(place==="a3"){this.a3=playername;}
-    if(place==="b1"){this.b1=playername;}
-    if(place==="b2"){this.b2=playername;}
-    if(place==="b3"){this.b3=playername;}
-    if(place==="c1"){this.c1=playername;}
-    if(place==="c2"){this.c2=playername;}
-    if(place==="c3"){this.c3=playername;}
+    if(place==="a1"){this.a1=pieces;}
+    if(place==="a2"){this.a2=pieces;}
+    if(place==="a3"){this.a3=pieces;}
+    if(place==="b1"){this.b1=pieces;}
+    if(place==="b2"){this.b2=pieces;}
+    if(place==="b3"){this.b3=pieces;}
+    if(place==="c1"){this.c1=pieces;}
+    if(place==="c2"){this.c2=pieces;}
+    if(place==="c3"){this.c3=pieces;}
     this.showchessboard();
     this.save();
   }
 }
 
+const a=new TicTacToeGame(1,2);
