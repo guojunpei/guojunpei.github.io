@@ -117,6 +117,7 @@ console.log(qipan)
 */
 
 //"井字游戏2.0"
+/*
 class TicTacToeGame{
   constructor(player1name,player2name){
     this.player1name=player1name;
@@ -207,3 +208,73 @@ class TicTacToeGame{
 }
 
 const a=new TicTacToeGame(1,2);
+*/
+
+//"井字游戏2.1"
+class TicTacToeGame{
+  constructor(player1name,player2name){
+    this.player1name=player1name;
+    this.player2name=player2name;
+    this.player1pieces="";
+    this.player2pieces="";
+    this.l=[];
+    this.whosturn="";
+    this.place="";
+    this.result="";
+    this.history=[];
+    this.getResult();
+    this.showChessBoard();
+  }
+
+  showChessBoard(){
+    let chessboard= "";
+    console.log(chessboard);
+  }
+
+  getResult(){
+    if(this.player1pieces===""){return this.result="Please "+this.player1name+" type:yourgame.choosePieces('x'or'+')";}
+    if(this.player2pieces===""){return this.result="Please "+this.player2name+" type:yourgame.choosePieces('o'or'0')";}
+    if(this.whosturn===""){
+
+      return this.result="Please first player type:yourgame.choosePlace('playername','place'like'a1')";}
+    else{
+      this.result=this.whosturn+"'s turn is done! Please the other player type:yourgame.choosePlace('playername','place'like'a2')";
+    }
+
+  }
+
+  save(){
+    this.history.push({date: new Date(), who:this.whosturn, place:this.place})
+  }
+
+  choosePieces(pieces){
+    if(this.player1pieces===""){this.player1pieces=pieces;}
+    else{
+      this.player2pieces=pieces;
+    }
+    this.getResult();
+    this.showChessBoard();
+  }
+
+  choosePlace(playername,place){
+    this.whosturn=playername;
+    this.place=place;
+    let pieces="";
+    if(playername===this.player1name){pieces=this.player1pieces+" ";}
+    if(playername===this.player2name){pieces=this.player2pieces+" ";}
+
+    this.getResult();
+    this.showChessBoard();
+    this.save();
+  }
+
+  chooseMode(n,m,q){
+    for(i=0;i<m*n;i++){l.push(" ")}
+
+
+
+  }
+
+
+
+}
