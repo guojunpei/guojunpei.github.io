@@ -217,18 +217,16 @@ class TicTacToeGame{
     this.player2name=player2name;
     this.player1pieces="";
     this.player2pieces="";
-    this.l=[];
+    this.l=["chess board"];
+    this.m=3;
+    this.n=3;
+    this.q=3;
     this.whosturn="";
     this.place="";
     this.result="";
     this.history=[];
     this.getResult();
     this.showChessBoard();
-  }
-
-  showChessBoard(){
-    let chessboard= "";
-    console.log(chessboard);
   }
 
   getResult(){
@@ -268,13 +266,32 @@ class TicTacToeGame{
     this.save();
   }
 
-  chooseMode(n,m,q){
+  chooseMode(m,n,q){
+    this.m=m;
+    this.n=n;
+    this.q=q;
     for(i=0;i<m*n;i++){l.push(" ")}
-
-
-
   }
 
+/*
+let l=["chess board"];
+function chooseMode(m,n,){
+  for(i=0;i<m*n;i++){l.push(" ")}
+}
+*/
 
+  showChessBoard(){
+    let chessboard= "";
+    for(i=1;i<this.l.length;i++){chessboard+=this.l[i]}
+    console.log(chessboard);
+  }
+
+/*
+function showChessBoard(){
+  let chessboard= "";
+  for(i=1;i<l.length;i++){chessboard+=l[i]}
+  console.log(chessboard);
+}
+*/
 
 }
