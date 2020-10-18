@@ -331,14 +331,39 @@ this.m-1*("╠"+(this.n-1)*"═══╬"+"═══╣\n"
 
 
 function win(){
-
+//待测
   /*
   i=this.m+this.n-2+1;i<this.m*this.n+1;i++
   i=this.m;i<this.n*(this.n-1)+this.m+1;i+=n
 
   */
-   
+  for(j=1;j<this.m+1;j++)
   for(i=this.m+this.n-2+1;i<this.m*this.n+1;i++){if(l[i]===l[i]){return "win"}}
+
+  for(j=1;j<this.m+1;j++)
   for(i=this.m;i<this.n*(this.n-1)+this.m+1;i+=n){if(l[i]===l[i]){return "win"}}
   
+  for(j=1;j<this.m+1;j++)
+  for(i=1;i<this.n*this.n+1;i=this.n*(this.m-1)+this.m){if(l[i]===l[i]){return "win"}}
+  for(i=1;i<this.n*this.n-this.n+1+1;i=this.n*this.m-this.m+1){if(l[i]===l[i]){return "win"}}
+
 }
+
+/*
+//"待测"
+function win(){
+  for(j=1;j<this.m+1;j++){
+    for(i=this.m+this.n-2+1;i<this.m*this.n+1;i++){if(l[i]===l[i]){return "win"}}
+  }
+
+  for(j=1;j<this.m+1;j++){
+    for(i=this.m;i<this.n*(this.n-1)+this.m+1;i+=n){if(l[i]===l[i]){return "win"}}
+  }
+ 
+  for(j=1;j<this.m+1;j++){
+    for(i=1;i<this.n*this.n+1;i=this.n*(this.m-1)+this.m){if(l[i]===l[i]){return "win"}}
+    for(i=1;i<this.n*this.n-this.n+1+1;i=this.n*this.m-this.m+1){if(l[i]===l[i]){return "win"}}
+  }
+}
+
+*/
