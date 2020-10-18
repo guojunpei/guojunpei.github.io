@@ -210,7 +210,7 @@ class TicTacToeGame{
 const a=new TicTacToeGame(1,2);
 */
 
-//"井字游戏2.1"
+//"井字游戏2.1--TicTacToeGame2.1"
 class TicTacToeGame{
   constructor(player1name,player2name){
     this.player1name=player1name;
@@ -329,3 +329,16 @@ this.m-1*("╠"+(this.n-1)*"═══╬"+"═══╣\n"
   console.log(chessboard);
 }
 
+
+function win(){
+
+  /*
+  i=this.m+this.n-2+1;i<this.m*this.n+1;i++
+  i=this.m;i<this.n*(this.n-1)+this.m+1;i+=n
+
+  */
+   
+  for(i=this.m+this.n-2+1;i<this.m*this.n+1;i++){if(l[i]===l[i]){return "win"}}
+  for(i=this.m;i<this.n*(this.n-1)+this.m+1;i+=n){if(l[i]===l[i]){return "win"}}
+  
+}
