@@ -353,36 +353,35 @@ function win(){
 //"待测"
 function win(){
   for(j=1;j<this.m+1;j++){
-    for(i=this.m+this.n-2+1;i<this.m*this.n+1;i++){if(l[i]===l[i]){return "win"}}
+    for(i=this.m+this.n-2+1;i<this.m*this.n+1;i++){if(l[i]===l[i]&&l[i]!==""){return "win"}}
   }
 
   for(j=1;j<this.m+1;j++){
-    for(i=this.m;i<this.n*(this.n-1)+this.m+1;i+=n){if(l[i]===l[i]){return "win"}}
+    for(i=this.m;i<this.n*(this.n-1)+this.m+1;i+=n){if(l[i]===l[i]&&l[i]!==""){return "win"}}
   }
  
   for(j=1;j<this.m+1;j++){
-    for(i=1;i<this.n*this.n+1;i=this.n*(this.m-1)+this.m){if(l[i]===l[i]){return "win"}}
-    for(i=1;i<this.n*this.n-this.n+1+1;i=this.n*this.m-this.m+1){if(l[i]===l[i]){return "win"}}
+    for(i=1;i<this.n*this.n+1;i=this.n*(this.m-1)+this.m){if(l[i]===l[i]&&l[i]!==""){return "win"}}
+    for(i=1;i<this.n*this.n-this.n+1+1;i=this.n*this.m-this.m+1){if(l[i]===l[i]&&l[i]!==""){return "win"}}
   }
 }
 
 //"测试"
+let l=[]
+
 function win(m,n){
     for(j=1;j<m+1;j++){
-      for(i=m+n-2+1;i<m*n+1;i++){if(l[i]===l[i]){return "win"}}
+      for(i=m+n-2+1;i<m*n+1;i++){if(l[i]===l[i]&&l[i]!==""){return "win"}}
     }
   
     for(j=1;j<m+1;j++){
-      for(i=m;i<n*(n-1)+m+1;i+=n){if(l[i]===l[i]){return "win"}}
+      for(i=m;i<n*(n-1)+m+1;i+=n){if(l[i]===l[i]&&l[i]!==""){return "win"}}
     }
    
     for(j=1;j<m+1;j++){
-      for(i=1;i<n*n+1;i=n*(m-1)+m){if(l[i]===l[i]){return "win"}}
-      for(i=1;i<n*n-n+1+1;i=n*m-m+1){if(l[i]===l[i]){return "win"}}
+      for(i=1;i<n*n+1;i=n*(m-1)+m){if(l[i]===l[i]&&l[i]!==""){return "win"}}
+      for(i=1;i<n*n-n+1+1;i=n*m-m+1){if(l[i]===l[i]&&l[i]!==""){return "win"}}
     }
 }
-
-
-
 
 */
