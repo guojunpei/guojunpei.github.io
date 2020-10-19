@@ -366,4 +366,23 @@ function win(){
   }
 }
 
+//"测试"
+function win(m,n){
+    for(j=1;j<m+1;j++){
+      for(i=m+n-2+1;i<m*n+1;i++){if(l[i]===l[i]){return "win"}}
+    }
+  
+    for(j=1;j<m+1;j++){
+      for(i=m;i<n*(n-1)+m+1;i+=n){if(l[i]===l[i]){return "win"}}
+    }
+   
+    for(j=1;j<m+1;j++){
+      for(i=1;i<n*n+1;i=n*(m-1)+m){if(l[i]===l[i]){return "win"}}
+      for(i=1;i<n*n-n+1+1;i=n*m-m+1){if(l[i]===l[i]){return "win"}}
+    }
+}
+
+
+
+
 */
