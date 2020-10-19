@@ -366,8 +366,8 @@ function win(){
   }
 }
 
-//"测试"
-let l=[]
+//"test win()"
+let l=[];
 
 function win(m,n){
     for(j=1;j<m+1;j++){
@@ -383,5 +383,39 @@ function win(m,n){
       for(i=1;i<n*n-n+1+1;i=n*m-m+1){if(l[i]===l[i]&&l[i]!==""){return "win"}}
     }
 }
+
+//"test for"
+
+let l=[];
+let ln1=[];
+let ln2=[];
+let ln3=[];
+let ln4=[];
+
+function atl(m,n){
+  for(i=0;i<m*n;i++){l.push(" ")}
+  console.log(l);
+}
+
+function win(m,n){
+  for(j=1;j<m+1;j++){
+    for(i=m+n-2+1;i<m*n+1;i++){ln1.push(l[i])}
+  }
+  
+  for(j=1;j<m+1;j++){
+    for(i=m;i<n*(n-1)+m+1;i+=n){ln2.push(l[i])}
+  }
+   
+  for(j=1;j<m+1;j++){
+    for(i=1;i<n*n+1;i=n*(m-1)+m){ln3.push(l[i])}
+    for(i=1;i<n*n-n+1+1;i=n*m-m+1){ln4.push(l[i])}
+  }
+  console.log(l);
+  console.log(ln1);
+  console.log(ln2);
+  console.log(ln3);
+  console.log(ln4);
+}
+
 
 */
