@@ -417,5 +417,6 @@ function win(m,n){
   console.log(ln4);
 }
 
+//"there is a problem with for of win()"
 
 */
