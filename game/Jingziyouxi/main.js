@@ -373,10 +373,8 @@ let l=[ " ", "1", "1", "1", "4", "5", "6", "7", "8", "9"];
 
 function win(m,n){
   for(j=1;j<m+1;j++){
-    let ln=[];
-    for(i=(j-1)*n+1;i<j*n+1;i++){ln.push(l[i])}
-    for(k=0,k<n,k++){}
-    if(l[i]===l[i]&&l[i]!==""){return "win"}
+    let NewString="";
+    for(i=(j-1)*n+1;i<j*n+1;i++){if(l[i]===NewString!==""){return "win"}else{NewString=l[i]}}
   }
   
   for(j=1;j<m+1;j++){
