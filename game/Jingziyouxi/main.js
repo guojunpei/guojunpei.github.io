@@ -419,6 +419,8 @@ function win(m,n){
 
 //"there is a problem with for of win()"
 
+//"fix the problem with for"
+/*
 let l=[" "," ", " ", " ", " ", " ", " ", " ", " ", " "];
 let ln1=[];
 let ln2=[];
@@ -465,7 +467,6 @@ for(j=1;j<4;j++){
 }
 
 console.log(ln2);
-
 
 for(i=1;i<10;i+=4){ln3.push(l[i])}
 
