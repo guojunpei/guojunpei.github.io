@@ -419,4 +419,60 @@ function win(m,n){
 
 //"there is a problem with for of win()"
 
+let l=[" "," ", " ", " ", " ", " ", " ", " ", " ", " "];
+let ln1=[];
+let ln2=[];
+let ln3=[];
+let ln4=[];
+
+for(j=1;j<4;j++){
+  for(i=j*3-2;i<j*3+1;i++){ln1.push(l[i])}
+}
+
+console.log(ln1);
+
+for(j=1;j<4;j++){
+  for(i=j;i<j+7;i+=3){ln2.push(l[i])}
+}
+
+console.log(ln2);
+
+
+for(i=1;i<10;i+=4){ln3.push(l[i])}
+
+console.log(ln3);
+
+for(i=3;i<8;i+=2){ln4.push(l[i])}
+
+console.log(ln4);
+
+
+let l=[ " ", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+let ln1=[];
+let ln2=[];
+let ln3=[];
+let ln4=[];
+
+
+for(j=1;j<4;j++){
+  for(i=j*3-2;i<j*3+1;i++){ln1.push(l[i])}
+}
+
+console.log(ln1);
+
+for(j=1;j<4;j++){
+  for(i=j;i<j+7;i+=3){ln2.push(l[i])}
+}
+
+console.log(ln2);
+
+
+for(i=1;i<10;i+=4){ln3.push(l[i])}
+
+console.log(ln3);
+
+for(i=3;i<8;i+=2){ln4.push(l[i])}
+
+console.log(ln4);
+
 */
