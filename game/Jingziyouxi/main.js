@@ -368,22 +368,26 @@ function win(){
 
 //"test win()"
 let l=[];
+let l=[ " ", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+let l=[ " ", "1", "1", "1", "4", "5", "6", "7", "8", "9"];
 
 function win(m,n){
-    for(j=1;j<m+1;j++){
-      for(i=m+n-2+1;i<m*n+1;i++){if(l[i]===l[i]&&l[i]!==""){return "win"}}
-    }
+  for(j=1;j<m+1;j++){
+    for(i=(j-1)*n+1;i<j*n+1;i++){if(l[i]===l[i]&&l[i]!==""){return "win"}}
+  }
   
-    for(j=1;j<m+1;j++){
-      for(i=m;i<n*(n-1)+m+1;i+=n){if(l[i]===l[i]&&l[i]!==""){return "win"}}
-    }
+  for(j=1;j<m+1;j++){
+    for(i=j;i<n*(n-1)+m+1;i+=n){if(l[i]===l[i]&&l[i]!==""){return "win"}}
+  }
    
-    for(j=1;j<m+1;j++){
-      for(i=1;i<n*n+1;i=n*(m-1)+m){if(l[i]===l[i]&&l[i]!==""){return "win"}}
-      for(i=1;i<n*n-n+1+1;i=n*m-m+1){if(l[i]===l[i]&&l[i]!==""){return "win"}}
-    }
+  for(i=1;i<n*m+1;i+=n+1){if(l[i]===l[i]&&l[i]!==""){return "win"}}
+  
+  for(i=n;i<n*m-n+1+1;i+=n-1){if(l[i]===l[i]&&l[i]!==""){return "win"}}
+
 }
 
+
+//"fix win() for"
 //"test for"
 
 let l=[];
@@ -399,17 +403,17 @@ function atl(m,n){
 
 function win(m,n){
   for(j=1;j<m+1;j++){
-    for(i=m+n-2+1;i<m*n+1;i++){ln1.push(l[i])}
+    for(i=(j-1)*n)+1;i<j*n+1;i++){ln1.push(l[i])}
   }
   
   for(j=1;j<m+1;j++){
-    for(i=m;i<n*(n-1)+m+1;i+=n){ln2.push(l[i])}
+    for(i=j;i<n*(n-1)+m+1;i+=n){ln2.push(l[i])}
   }
    
-  for(j=1;j<m+1;j++){
-    for(i=1;i<n*n+1;i=n*(m-1)+m){ln3.push(l[i])}
-    for(i=1;i<n*n-n+1+1;i=n*m-m+1){ln4.push(l[i])}
-  }
+  for(i=1;i<n*m+1;i+=n+1){ln3.push(l[i])}
+
+  for(i=n;i<n*m-n+1+1;i+=n-1){ln4.push(l[i])}
+
   console.log(l);
   console.log(ln1);
   console.log(ln2);
