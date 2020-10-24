@@ -373,6 +373,40 @@ let l=[];
 let l=[ " ", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 let l=[ " ", "1", "1", "1", "4", "5", "6", "7", "8", "9"];
 
+function win(m,n){
+  for(j=1;j<m+1;j++){
+    let v=l[1];
+    for(i=(j-1)*n;i<j*n;i++){
+      if(l[i]!==v){return "no win"}else{return "win"}
+    }
+  }
+  
+  for(j=1;j<m+1;j++){
+    let v=l[1];
+    for(i=j;i<n*(n-1)+m+1;i+=n){
+      if(l[i]!==v){return "no win"}else{return "win"}
+    }
+  }
+   
+  let ln1=[];
+  for(i=1;i<n*m+1;i+=n+1){ln1.push(l[i])}
+  let v1=ln1[0];
+  for(i=1;i<m,i++){if(l[i]!==v1){return "no win"}else{return "win"}}
+  
+  let ln2=[];
+  for(i=n;i<n*m-n+1+1;i+=n-1){ln1.push(l[i])}
+  let v2=ln2[0];
+  for(i=1;i<m,i++){if(l[i]!==v2){return "no win"}else{return "win"}}
+}
+
+function win(m){
+  let v= l[1];
+  for(j=2;j<m;j++){
+    if(v!==l[j]){return "no win"}
+    if(v===l[j]){return "win"}
+  }
+}
+
 function BiJiao(l[2]){
   if(l[1]===l[2]!==""){BiJiao(l[3])}else{return "no win"}
 }
