@@ -391,14 +391,76 @@ function win(m,n){
   let ln1=[];
   for(i=1;i<n*m+1;i+=n+1){ln1.push(l[i])}
   let v1=ln1[0];
-  for(i=1;i<m,i++){if(l[i]!==v1){return "no win"}else{return "win"}}
+  for(i=1;i<m;i++){if(l[i]!==v1){return "no win"}else{return "win"}}
   
   let ln2=[];
   for(i=n;i<n*m-n+1+1;i+=n-1){ln1.push(l[i])}
   let v2=ln2[0];
-  for(i=1;i<m,i++){if(l[i]!==v2){return "no win"}else{return "win"}}
+  for(i=1;i<m;i++){if(l[i]!==v2){return "no win"}else{return "win"}}
 }
 
+function win(m,n){
+    for(j=1;j<m+1;j++){
+      let v=l[1];
+      for(i=(j-1)*n;i<j*n;i++){
+        if(l[i]===v){return "win"}
+      }
+    }
+    
+    for(j=1;j<m+1;j++){
+      let v=l[1];
+      for(i=j;i<n*(n-1)+m+1;i+=n){
+        if(l[i]===v){return "win"}
+      }
+    }
+     
+    let ln1=[];
+    for(i=1;i<n*m+1;i+=n+1){ln1.push(l[i])}
+    let v1=ln1[0];
+    for(i=1;i<m;i++){
+        if(l[i]===v1){return "win"}
+    }
+    
+    let ln2=[];
+    for(i=n;i<n*m-n+1+1;i+=n-1){ln1.push(l[i])}
+    let v2=ln2[0];
+    for(i=1;i<m;i++){
+        if(l[i]===v2){return "win"}
+    }
+}
+
+//"win(m,n) 1 work"
+let l=[ " ", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+undefined
+function win(m,n){
+    for(j=1;j<m+1;j++){
+      let v=l[(j-1)*n+1];
+      for(i=(j-1)*n+2;i<j*n+1;i++){
+        if(l[i]!==v){return "no win"}else{return "win"}
+      }
+    }
+}
+undefined
+win(3,3)
+"no win"
+
+let l=[ " ", "1", "1", "1", "4", "5", "6", "7", "8", "9"];
+undefined
+function win(m,n){
+    for(j=1;j<m+1;j++){
+      let v=l[(j-1)*n+1];
+      for(i=(j-1)*n+2;i<j*n+1;i++){
+        if(l[i]!==v){return "no win"}else{return "win"}
+      }
+    }
+}
+undefined
+win(3,3)
+"win"
+
+
+
+//
 function win(m){
   let v= l[1];
   for(j=2;j<m;j++){
