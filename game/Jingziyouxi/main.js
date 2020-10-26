@@ -233,12 +233,11 @@ class TicTacToeGame{
     if(this.player1pieces===""){return this.result="Please "+this.player1name+" type:yourgame.choosePieces('x'or'+')";}
     if(this.player2pieces===""){return this.result="Please "+this.player2name+" type:yourgame.choosePieces('o'or'0')";}
     if(this.whosturn===""){
-
       return this.result="Please first player type:yourgame.choosePlace('playername','place'like'a1')";}
     else{
       this.result=this.whosturn+"'s turn is done! Please the other player type:yourgame.choosePlace('playername','place'like'a2')";
     }
-
+    this.win;
   }
 
   save(){
@@ -273,37 +272,69 @@ class TicTacToeGame{
     for(i=0;i<m*n;i++){l.push(" ")}
   }
 
-  win(m,n){
-    for(j=1;j<m+1;j++){
-      let v=l[(j-1)*n+1];
-      for(i=(j-1)*n+2;i<j*n+1;i++){
-        if(l[i]===v){this.result="win"}
+  win(){
+    for(j=1;j<this.m+1;j++){
+      let v=this.l[(j-1)*this.n+1];
+      for(i=(j-1)*this.n+2;i<j*this.n+1;i++){
+        if(this.l[i]===v){this.result="Winer is "+this.whosturn}
       }
     }
   
-    for(j=1;j<m+1;j++){
-      let v=l[j];
-      for(i=j+n;i<n*(n-1)+m+1;i+=n){
-        if(l[i]===v){this.result="win"}
+    for(j=1;j<this.m+1;j++){
+      let v=this.l[j];
+      for(i=j+this.n;i<this.n*(this.n-1)+this.m+1;i+=this.n){
+        if(this.l[i]===v){this.result="Winer is "+this.whosturn}
       }
     }
      
-    let v1=l[1];
-    for(i=n+2;i<n*m+1;i+=n+1){if(l[i]===v1){this.result="win"}}
+    let v1=this.l[1];
+    for(i=this.n+2;i<this.n*this.m+1;i+=this.n+1){if(this.l[i]===v1){this.result="Winer is "+this.whosturn}}
   
-    let v2=l[n];
-    for(i=2*n-1;i<n*m-n+1+1;i+=n-1){if(l[i]===v2){this.result="win"}}
+    let v2=this.l[this.n];
+    for(i=2*this.n-1;i<this.n*this.m-this.n+1+1;i+=this.n-1){if(this.l[i]===v2){this.result="Winer is "+this.whosturn}}
   }
 
   showChessBoard(){
-    let chessboard= "";
-    for(i=1;i<this.l.length;i++){chessboard+=this.l[i]}
+    let chessboard= "╔";
+    for(i=0;i<this.n-1;i++){chessboard+="═══╦"}
+    chessboard+="═══╗\n";
+
+    for(i=0;i<this.n;i++){chessboard+="║"+this.l[i+1]}
+    chessboard+="║\n";
+
+    for(j=0;j<this.m-1;j++){
+      chessboard+="╠";
+      for(i=0;i<this.n;i++){chessboard+="═══╬"}
+      chessboard+="═══╣\n";
+      for(i=0;i<this.n;i++){chessboard+="║"+this.l[i+1+(j+1)*this.n]}
+      chessboard+="║\n";
+    }
+
+    chessboard+="╚";
+    for(i=0;i<this.n-1;i++){chessboard+="═══╩"}
+    chessboard+="═══╝\n";
+
+    chessboard+=this.result;
+
     console.log(chessboard);
   }
-
-
 }
 //"-----------------------------------------------------------------------------here!--------------------------------------------------------------------------------------------------------"
+
+/*
+          "╔"+(this.n-1)*"═══╦"+"═══╗\n"
+          "║"+(this.n-1)*"║"+"║\n"
+this.m-1*("╠"+(this.n-1)*"═══╬"+"═══╣\n"
+          "║"+(this.n-1)*"║"+"║\n"       )
+          "╚"+(this.n-1)*"═══╩"+"═══╝\n"
+╔═══╦═══╦═══╗\n
+║
+╠═══╬═══╬═══╣\n
+║
+╠═══╬═══╬═══╣\n
+║
+╚═══╩═══╩═══╝
+*/
 
 
 
