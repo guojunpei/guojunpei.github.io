@@ -273,6 +273,40 @@ class TicTacToeGame{
     for(i=0;i<m*n;i++){l.push(" ")}
   }
 
+  win(m,n){
+    for(j=1;j<m+1;j++){
+      let v=l[(j-1)*n+1];
+      for(i=(j-1)*n+2;i<j*n+1;i++){
+        if(l[i]===v){this.result="win"}
+      }
+    }
+  
+    for(j=1;j<m+1;j++){
+      let v=l[j];
+      for(i=j+n;i<n*(n-1)+m+1;i+=n){
+        if(l[i]===v){this.result="win"}
+      }
+    }
+     
+    let v1=l[1];
+    for(i=n+2;i<n*m+1;i+=n+1){if(l[i]===v1){this.result="win"}}
+  
+    let v2=l[n];
+    for(i=2*n-1;i<n*m-n+1+1;i+=n-1){if(l[i]===v2){this.result="win"}}
+  }
+
+  showChessBoard(){
+    let chessboard= "";
+    for(i=1;i<this.l.length;i++){chessboard+=this.l[i]}
+    console.log(chessboard);
+  }
+
+
+}
+//"-----------------------------------------------------------------------------here!--------------------------------------------------------------------------------------------------------"
+
+
+
 /*
 let l=["chess board"];
 function chooseMode(m,n,){
@@ -280,11 +314,6 @@ function chooseMode(m,n,){
 }
 */
 
-  showChessBoard(){
-    let chessboard= "";
-    for(i=1;i<this.l.length;i++){chessboard+=this.l[i]}
-    console.log(chessboard);
-  }
 
 /*
 function showChessBoard(){
@@ -294,8 +323,7 @@ function showChessBoard(){
 }
 */
 
-}
-
+/*
 function showChessBoard(){
   let chessboard= "";
   for(i=1;i<l.length;i++){chessboard+=l[i]}
@@ -325,18 +353,40 @@ this.m-1*("╠"+(this.n-1)*"═══╬"+"═══╣\n"
 ╠═══╬═══╬═══╣\n
 ║
 ╚═══╩═══╩═══╝
-*/
+
   console.log(chessboard);
 }
+*/
 
+/*
+function win(m,n){
+  for(j=1;j<m+1;j++){
+    let v=l[(j-1)*n+1];
+    for(i=(j-1)*n+2;i<j*n+1;i++){
+      if(l[i]===v){return "win"}
+    }
+  }
 
+  for(j=1;j<m+1;j++){
+    let v=l[j];
+    for(i=j+n;i<n*(n-1)+m+1;i+=n){
+      if(l[i]===v){return "win"}
+    }
+  }
+   
+  let v1=l[1];
+  for(i=n+2;i<n*m+1;i+=n+1){if(l[i]===v1){return "win"}}
+
+  let v2=l[n];
+  for(i=2*n-1;i<n*m-n+1+1;i+=n-1){if(l[i]===v2){return "win"}}
+}
+*/
+/*
 function win(){
-//待测
-  /*
+
   i=this.m+this.n-2+1;i<this.m*this.n+1;i++
   i=this.m;i<this.n*(this.n-1)+this.m+1;i+=n
 
-  */
   for(j=1;j<this.m+1;j++)
   for(i=this.m+this.n-2+1;i<this.m*this.n+1;i++){if(l[i]===l[i]){return "win"}}
 
@@ -348,6 +398,7 @@ function win(){
   for(i=1;i<this.n*this.n-this.n+1+1;i=this.n*this.m-this.m+1){if(l[i]===l[i]){return "win"}}
 
 }
+*/
 
 /*
 //"待测"
@@ -367,67 +418,95 @@ function win(){
 }
 
 
-//"-----------------------------------------------------------------------------here!--------------------------------------------------------------------------------------------------------"
+
 //"test win()"
 let l=[];
 let l=[ " ", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 let l=[ " ", "1", "1", "1", "4", "5", "6", "7", "8", "9"];
-
-function win(m,n){
-  for(j=1;j<m+1;j++){
-    let v=l[1];
-    for(i=(j-1)*n;i<j*n;i++){
-      if(l[i]!==v){return "no win"}else{return "win"}
-    }
-  }
-  
-  for(j=1;j<m+1;j++){
-    let v=l[1];
-    for(i=j;i<n*(n-1)+m+1;i+=n){
-      if(l[i]!==v){return "no win"}else{return "win"}
-    }
-  }
-   
-  let ln1=[];
-  for(i=1;i<n*m+1;i+=n+1){ln1.push(l[i])}
-  let v1=ln1[0];
-  for(i=1;i<m;i++){if(l[i]!==v1){return "no win"}else{return "win"}}
-  
-  let ln2=[];
-  for(i=n;i<n*m-n+1+1;i+=n-1){ln1.push(l[i])}
-  let v2=ln2[0];
-  for(i=1;i<m;i++){if(l[i]!==v2){return "no win"}else{return "win"}}
-}
+let l=[ " ", "1", "2", "3", "1", "5", "6", "1", "8", "9"];
+let l=[ " ", "1", "2", "3", "4", "1", "6", "7", "8", "1"];
 
 function win(m,n){
     for(j=1;j<m+1;j++){
-      let v=l[1];
-      for(i=(j-1)*n;i<j*n;i++){
+      let v=l[(j-1)*n+1];
+      for(i=(j-1)*n+2;i<j*n+1;i++){
         if(l[i]===v){return "win"}
       }
     }
-    
+
     for(j=1;j<m+1;j++){
-      let v=l[1];
-      for(i=j;i<n*(n-1)+m+1;i+=n){
+      let v=l[j];
+      for(i=j+n;i<n*(n-1)+m+1;i+=n){
         if(l[i]===v){return "win"}
       }
     }
      
-    let ln1=[];
-    for(i=1;i<n*m+1;i+=n+1){ln1.push(l[i])}
-    let v1=ln1[0];
-    for(i=1;i<m;i++){
-        if(l[i]===v1){return "win"}
-    }
-    
-    let ln2=[];
-    for(i=n;i<n*m-n+1+1;i+=n-1){ln1.push(l[i])}
-    let v2=ln2[0];
-    for(i=1;i<m;i++){
-        if(l[i]===v2){return "win"}
-    }
+    let v1=l[1];
+    for(i=n+2;i<n*m+1;i+=n+1){if(l[i]===v1){return "win"}}
+
+    let v2=l[n];
+    for(i=2*n-1;i<n*m-n+1+1;i+=n-1){if(l[i]===v2){return "win"}}
 }
+
+
+let l=[ " ", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+win(3,3);
+undefined
+
+let l=[ " ", "1", "1", "1", "4", "5", "6", "7", "8", "9"];
+win(3,3);
+"win"
+
+let l=[ " ", "1", "2", "3", "1", "5", "6", "1", "8", "9"];
+win(3,3);
+"win"
+
+let l=[ " ", "1", "2", "3", "4", "1", "6", "7", "8", "1"];
+win(3,3);
+"win"
+
+//
+function win(m,n){
+  for(j=1;j<m+1;j++){
+    let v=l[(j-1)*n+1];
+    for(i=(j-1)*n+2;i<j*n+1;i++){
+      if(l[i]!==v){return "no win"}else{return "win"}
+    }
+  }
+
+  for(j=1;j<m+1;j++){
+    let v=l[j];
+    for(i=j+n;i<n*(n-1)+m+1;i+=n){
+      if(l[i]!==v){return "no win"}else{return "win"}
+    }
+  }
+     
+  let v1=l[1];
+  for(i=n+2;i<n*m+1;i+=n+1){
+    if(l[i]!==v1){return "no win"}else{return "win"}
+  }
+
+  let v2=l[n];
+  for(i=2*n-1;i<n*m-n+1+1;i+=n-1){
+    if(l[i]!==v2){return "no win"}else{return "win"}
+  }
+}
+
+let l=[ " ", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+win(3,3);
+"no win"
+
+let l=[ " ", "1", "1", "1", "4", "5", "6", "7", "8", "9"];
+win(3,3);
+"win"
+
+let l=[ " ", "1", "2", "3", "1", "5", "6", "1", "8", "9"];
+win(3,3);
+"no win"
+
+let l=[ " ", "1", "2", "3", "4", "1", "6", "7", "8", "1"];
+win(3,3);
+"no win"
 
 //"win(m,n) 1 work"
 let l=[ " ", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
@@ -488,7 +567,6 @@ function win(m,n){
   for(i=n;i<n*m-n+1+1;i+=n-1){if(l[i]===l[i]&&l[i]!==""){return "win"}}
 
 }
-//"-----------------------------------------------------------------------------here!--------------------------------------------------------------------------------------------------------"
 
 //"fix win() for"
 //"test for"
