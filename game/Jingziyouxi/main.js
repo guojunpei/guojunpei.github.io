@@ -25,7 +25,6 @@ class TicTacToeGame{
       this.result=this.whosturn+"'s turn is done! Please the other player type:yourgame.choosePlace('playername','place'like'a2')";
     }
     this.win;
-
   }
 
   save(){
@@ -79,7 +78,7 @@ class TicTacToeGame{
     for(i=this.n+2;i<this.n*this.m+1;i+=this.n+1){if(this.l[i]===v1 && v1!==" "){this.result="Winer is "+this.whosturn}}
   
     let v2=this.l[this.n];
-    for(i=2*this.n-1;i<this.n*this.m-this.n+1+1;i+=this.n-1){if(this.l[i]===v2 && v2!==" "){this.result="Winer is "+this.whosturn}}
+    for(i=2*this.n-1;i<this.n*this.m-this.n+2;i+=this.n-1){if(this.l[i]===v2 && v2!==" "){this.result="Winer is "+this.whosturn}}
   }
 
   showChessBoard(){
