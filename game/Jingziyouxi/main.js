@@ -24,7 +24,7 @@ class TicTacToeGame{
     else{
       this.result=this.whosturn+"'s turn is done! Please the other player type:yourgame.choosePlace('playername','place'like'a2')";
     }
-    this.win;
+    this.win();
   }
 
   save(){
@@ -43,10 +43,7 @@ class TicTacToeGame{
   choosePlace(playername,place){
     this.whosturn=playername;
     this.place=place;
-    let pieces="";
-    if(playername===this.player1name){pieces=this.player1pieces+" ";}
-    if(playername===this.player2name){pieces=this.player2pieces+" ";}
-
+    for(let i=1;i<this.m*this.n+1;i++){if(place===i){if(playername===this.player1name){this.l[i]=this.player1pieces}else{this.l[i]=this.player2pieces}}}
     this.getResult();
     this.showChessBoard();
     this.save();
@@ -56,49 +53,58 @@ class TicTacToeGame{
     this.m=m;
     this.n=n;
     this.q=q;
-    for(i=0;i<m*n;i++){l.push(" ")}
+    for(let i=0;i<m*n;i++){this.l.push(" ")}
   }
 
   win(){
-    for(j=1;j<this.m+1;j++){
+    for(let j=1;j<this.m+1;j++){
       let v=this.l[(j-1)*this.n+1];
-      for(i=(j-1)*this.n+2;i<j*this.n+1;i++){
-        if(this.l[i]===v && v!==" "){this.result="Winer is "+this.whosturn}
+      let vn=0;
+      for(let i=(j-1)*this.n+2;i<j*this.n+1;i++){
+        if(this.l[i]===v && v!==" "){vn+=1}
       }
+      if(vn===this.n-1){return "win"}
     }
-  
-    for(j=1;j<this.m+1;j++){
+    
+    for(let j=1;j<this.m+1;j++){
       let v=this.l[j];
-      for(i=j+this.n;i<this.n*(this.n-1)+this.m+1;i+=this.n){
-        if(this.l[i]===v && v!==" "){this.result="Winer is "+this.whosturn}
+      let vn=0;
+      for(let i=j+this.n;i<this.n*(this.n-1)+this.m+1;i+=this.n){
+        if(this.l[i]===v && v!==" "){vn+=1}
       }
+      if(vn===this.n-1){return "win"}
     }
-     
+       
     let v1=this.l[1];
-    for(i=this.n+2;i<this.n*this.m+1;i+=this.n+1){if(this.l[i]===v1 && v1!==" "){this.result="Winer is "+this.whosturn}}
+    let vn1=0;
+    for(let i=this.n+2;i<this.n*this.m+1;i+=this.n+1){if(this.l[i]===v1 && v1!==" "){vn1+=1}}
+    if(vn1===this.n-1){return "win"}
   
-    let v2=this.l[this.n];
-    for(i=2*this.n-1;i<this.n*this.m-this.n+2;i+=this.n-1){if(this.l[i]===v2 && v2!==" "){this.result="Winer is "+this.whosturn}}
+    let v2=this.l[n];
+    let vn2=0;
+    for(let i=2*this.n-1;i<this.n*this.m-this.n+1+1;i+=this.n-1){if(this.l[i]===v2 && v2!==" "){vn2+=1}}
+    if(vn2===this.n-1){return "win"}
+  
   }
 
   showChessBoard(){
     let chessboard= "╔";
-    for(i=0;i<this.n-1;i++){chessboard+="═══╦"}
+    for(let i=0;i<this.n-1;i++){chessboard+="═══╦"}
     chessboard+="═══╗\n";
       
-    for(i=0;i<this.n;i++){chessboard+="║ "+this.l[i+1]+" "}
+    for(let i=0;i<this.n;i++){chessboard+="║ "+this.l[i+1]+" "}
     chessboard+="║\n";
       
-    for(j=0;j<this.m-1;j++){
+    for(let j=0;j<this.m-1;j++){
       chessboard+="╠";
-      for(i=1;i<this.n;i++){chessboard+="═══╬"}
+      for(let i=1;i<this.n;i++){chessboard+="═══╬"}
       chessboard+="═══╣\n";
-      for(i=0;i<this.n;i++){chessboard+="║ "+this.l[i+1+(j+1)*this.n]+" "}
+      for(let i=0;i<this.n;i++){chessboard+="║ "+this.l[i+1+(j+1)*this.n]+" "}
       chessboard+="║\n";
     }
       
     chessboard+= "╚";
-    for(i=0;i<this.n-1;i++){chessboard+="═══╩"}
+    for(let i=0;i<this.n-1;i++){chessboard+="═══╩"}
     chessboard+="═══╝\n";
       
     chessboard+=this.result;
@@ -119,41 +125,102 @@ let l=[ " ", "1", "2", "3", "1", "5", "6", "1", "8", "9"];
 let l=[ " ", "1", "2", "3", "4", "1", "6", "7", "8", "1"];
 
 function win(m,n){
-  for(j=1;j<m+1;j++){
+  for(let j=1;j<m+1;j++){
     let v=l[(j-1)*n+1];
-    for(i=(j-1)*n+2;i<j*n+1;i++){
+    let vn=0;
+    for(let i=(j-1)*n+2;i<j*n+1;i++){
+      if(l[i]===v && v!==" "){vn+=1}
+    }
+    if(vn===n-1){return "win"}
+  }
+  
+  for(let j=1;j<m+1;j++){
+    let v=l[j];
+    let vn=0;
+    for(let i=j+n;i<n*(n-1)+m+1;i+=n){
+      if(l[i]===v && v!==" "){vn+=1}
+    }
+    if(vn===n-1){return "win"}
+  }
+     
+  let v1=l[1];
+  let vn1=0;
+  for(let i=n+2;i<n*m+1;i+=n+1){if(l[i]===v1 && v1!==" "){vn1+=1}}
+  if(vn1===n-1){return "win"}
+
+  let v2=l[n];
+  let vn2=0;
+  for(let i=2*n-1;i<n*m-n+1+1;i+=n-1){if(l[i]===v2 && v2!==" "){vn2+=1}}
+  if(vn2===n-1){return "win"}
+
+}
+
+
+let l=[];
+win(3,3);
+
+let l=[ " ", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+win(3,3);
+
+let l=[ " ", "1", "1", "3", "4", "5", "6", "7", "8", "9"];
+win(3,3);
+
+let l=[ " ", "1", "1", "1", "4", "5", "6", "7", "8", "9"];
+win(3,3);
+"win"
+
+let l=[ " ", "1", "2", "3", "1", "5", "6", "1", "8", "9"];
+win(3,3);
+"win"
+
+let l=[ " ", "1", "2", "3", "4", "1", "6", "7", "8", "1"];
+win(3,3);
+"win"
+
+
+
+function win(m,n){
+  for(let j=1;j<m+1;j++){
+    let v=l[(j-1)*n+1];
+    for(let i=(j-1)*n+2;i<j*n+1;i++){
       if(l[i]===v && v!==" "){return "win"}
     }
   }
 
-  for(j=1;j<m+1;j++){
+  for(let j=1;j<m+1;j++){
     let v=l[j];
-    for(i=j+n;i<n*(n-1)+m+1;i+=n){
+    for(let i=j+n;i<n*(n-1)+m+1;i+=n){
       if(l[i]===v && v!==" "){return "win"}
     }
   }
    
   let v1=l[1];
-  for(i=n+2;i<n*m+1;i+=n+1){if(l[i]===v1 && v1!==" "){return "win"}}
+  for(let i=n+2;i<n*m+1;i+=n+1){if(l[i]===v1 && v1!==" "){return "win"}}
 
   let v2=l[n];
-  for(i=2*n-1;i<n*m-n+1+1;i+=n-1){if(l[i]===v2 && v2!==" "){return "win"}}
+  for(let i=2*n-1;i<n*m-n+1+1;i+=n-1){if(l[i]===v2 && v2!==" "){return "win"}}
 }
 
 let l=[];
+win(3,3);
 
 let l=[ " ", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+win(3,3);
 
 let l=[ " ", "1", "1", "3", "4", "5", "6", "7", "8", "9"];
+win(3,3);
 "win"
 
 let l=[ " ", "1", "1", "1", "4", "5", "6", "7", "8", "9"];
+win(3,3);
 "win"
 
 let l=[ " ", "1", "2", "3", "1", "5", "6", "1", "8", "9"];
+win(3,3);
 "win"
 
 let l=[ " ", "1", "2", "3", "4", "1", "6", "7", "8", "1"];
+win(3,3);
 "win"
 
 */
@@ -165,22 +232,22 @@ let result=""
 
 function ShowChessBoard(m,n){
   let chessboard= "╔";
-  for(i=0;i<n-1;i++){chessboard+="═══╦"}
+  for(let i=0;i<n-1;i++){chessboard+="═══╦"}
   chessboard+="═══╗\n";
   
-  for(i=0;i<n;i++){chessboard+="║ "+l[i+1]+" "}
+  for(let i=0;i<n;i++){chessboard+="║ "+l[i+1]+" "}
   chessboard+="║\n";
   
-  for(j=0;j<m-1;j++){
+  for(let j=0;j<m-1;j++){
     chessboard+="╠";
-    for(i=1;i<n;i++){chessboard+="═══╬"}
+    for(let i=1;i<n;i++){chessboard+="═══╬"}
     chessboard+="═══╣\n";
-    for(i=0;i<n;i++){chessboard+="║ "+l[i+1+(j+1)*n]+" "}
+    for(let i=0;i<n;i++){chessboard+="║ "+l[i+1+(j+1)*n]+" "}
     chessboard+="║\n";
   }
   
   chessboard+= "╚";
-  for(i=0;i<n-1;i++){chessboard+="═══╩"}
+  for(let i=0;i<n-1;i++){chessboard+="═══╩"}
   chessboard+="═══╝\n";
   
   chessboard+=result;
