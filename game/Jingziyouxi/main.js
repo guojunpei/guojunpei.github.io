@@ -4,7 +4,7 @@ class TicTacToeGame{
     this.player2name=player2name;
     this.player1pieces="";
     this.player2pieces="";
-    this.l=["chess board"];
+    this.l=[this.player1name+"VS"+this.player2name];
     this.m=3;
     this.n=3;
     this.q=3;
