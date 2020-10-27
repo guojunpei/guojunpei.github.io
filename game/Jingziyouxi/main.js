@@ -22,7 +22,7 @@ class TicTacToeGame{
     if(this.whosturn===""){
       return this.result="Please first player type:yourgame.choosePlace('playername','place'like'a1')";}
     else{
-      this.result=this.whosturn+"'s turn is done! Please the other player type:yourgame.choosePlace('playername','place'like'a2')";
+      this.result=this.whosturn+"'s turn is done! Please the other player type:yourgame.choosePlace('playername','place'like'1')";
     }
     this.win();
   }
@@ -53,7 +53,7 @@ class TicTacToeGame{
     this.m=m;
     this.n=n;
     this.q=q;
-    for(let i=0;i<m*n;i++){this.l.push(" ")}
+    for(let i=1;i<m*n+1;i++){this.l.push(i)}
   }
 
   win(){
@@ -61,7 +61,7 @@ class TicTacToeGame{
       let v=this.l[(j-1)*this.n+1];
       let vn=0;
       for(let i=(j-1)*this.n+2;i<j*this.n+1;i++){
-        if(this.l[i]===v && v!==" "){vn+=1}
+        if(this.l[i]===v && v!==""){vn+=1}
       }
       if(vn===this.n-1){return "win"}
     }
@@ -70,19 +70,19 @@ class TicTacToeGame{
       let v=this.l[j];
       let vn=0;
       for(let i=j+this.n;i<this.n*(this.n-1)+this.m+1;i+=this.n){
-        if(this.l[i]===v && v!==" "){vn+=1}
+        if(this.l[i]===v && v!==""){vn+=1}
       }
       if(vn===this.n-1){return "win"}
     }
        
     let v1=this.l[1];
     let vn1=0;
-    for(let i=this.n+2;i<this.n*this.m+1;i+=this.n+1){if(this.l[i]===v1 && v1!==" "){vn1+=1}}
+    for(let i=this.n+2;i<this.n*this.m+1;i+=this.n+1){if(this.l[i]===v1 && v1!==""){vn1+=1}}
     if(vn1===this.n-1){return "win"}
   
     let v2=this.l[n];
     let vn2=0;
-    for(let i=2*this.n-1;i<this.n*this.m-this.n+1+1;i+=this.n-1){if(this.l[i]===v2 && v2!==" "){vn2+=1}}
+    for(let i=2*this.n-1;i<this.n*this.m-this.n+1+1;i+=this.n-1){if(this.l[i]===v2 && v2!==""){vn2+=1}}
     if(vn2===this.n-1){return "win"}
   
   }
