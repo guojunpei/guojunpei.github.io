@@ -31,11 +31,11 @@ class TicTacToeGame{
       return;
     }
     if(this.whosturn===""){
-      this.result="Please first player type:yourgame.choosePlace('playername','place'like'a1')";
+      this.result="Please first player type:yourgame.choosePlace('playername','place'like'1')";
       return;
     }
     else{
-      this.result=this.whosturn+"'s turn is done! Please the other player type:yourgame.choosePlace('playername','place'like'1')";
+      this.result=this.whosturn+"'s turn is done! Please the other player type:yourgame.choosePlace('playername','place'like'2')";
     }
     this.win();
   }
@@ -56,7 +56,16 @@ class TicTacToeGame{
   choosePlace(playername,place){
     this.whosturn=playername;
     this.place=place;
-    for(let i=1;i<this.m*this.n+1;i++){if(place===i){if(playername===this.player1name){this.l[i]=this.player1pieces}else{this.l[i]=this.player2pieces}}}
+    for(let i=1;i<this.m*this.n+1;i++){
+      if(place===i){
+        if(playername===this.player1name){
+          this.l[i]=this.player1pieces
+        }
+        else{
+          this.l[i]=this.player2pieces
+        }
+      }
+    }
     this.getResult();
     this.showChessBoard();
     this.save();
