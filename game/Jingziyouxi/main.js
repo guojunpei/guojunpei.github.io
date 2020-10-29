@@ -88,7 +88,10 @@ class TicTacToeGame{
       for(let i=(j-1)*this.n+2;i<j*this.n+1;i++){
         if(this.l[i]===v && v!==""){vn+=1}
       }
-      if(vn===this.n-1){return "win"}
+      if(vn===this.n-1){
+        this.result="Game over!\nWinner is "+this.whosturn;
+        return;
+      }
     }
     
     for(let j=1;j<this.m+1;j++){
@@ -97,18 +100,27 @@ class TicTacToeGame{
       for(let i=j+this.n;i<this.n*(this.n-1)+this.m+1;i+=this.n){
         if(this.l[i]===v && v!==""){vn+=1}
       }
-      if(vn===this.n-1){return "win"}
+      if(vn===this.n-1){
+        this.result="Game over!\nWinner is "+this.whosturn;
+        return;
+      }
     }
        
     let v1=this.l[1];
     let vn1=0;
     for(let i=this.n+2;i<this.n*this.m+1;i+=this.n+1){if(this.l[i]===v1 && v1!==""){vn1+=1}}
-    if(vn1===this.n-1){return "win"}
+    if(vn1===this.n-1){
+      this.result="Game over!\nWinner is "+this.whosturn;
+      return;
+    }
   
     let v2=this.l[this.n];
     let vn2=0;
     for(let i=2*this.n-1;i<this.n*this.m-this.n+1+1;i+=this.n-1){if(this.l[i]===v2 && v2!==""){vn2+=1}}
-    if(vn2===this.n-1){return "win"}
+    if(vn2===this.n-1){
+      this.result="Game over!\nWinner is "+this.whosturn;
+      return;
+    }
   
   }
 
