@@ -7,7 +7,7 @@ class TicTacToeGame{
     this.l=[this.player1name+"VS"+this.player2name];
     this.m=3;
     this.n=3;
-    this.q=3;
+    this.q=0;
     this.whosturn="";
     this.place="";
     this.result="";
@@ -17,10 +17,23 @@ class TicTacToeGame{
   }
 
   getResult(){
-    if(this.player1pieces===""){return this.result="Please "+this.player1name+" type:yourgame.choosePieces('x'or'+')";}
-    if(this.player2pieces===""){return this.result="Please "+this.player2name+" type:yourgame.choosePieces('o'or'0')";}
+    if(this.q===0){
+      this.result="Please type:yourgame.chooseMode(m,n,q) \n Now only supports m=n=q>=3";
+      return;
+    }
+    if(this.player1pieces===""){
+      this.result="Please "+this.player1name+" type:yourgame.choosePieces('x'or'+')";
+      for(let i=1;i<this.m*this.n+1;i++){this.l.push(" ")}
+      return; 
+    }
+    if(this.player2pieces===""){
+      this.result="Please "+this.player2name+" type:yourgame.choosePieces('o'or'0')";
+      return;
+    }
     if(this.whosturn===""){
-      return this.result="Please first player type:yourgame.choosePlace('playername','place'like'a1')";}
+      this.result="Please first player type:yourgame.choosePlace('playername','place'like'a1')";
+      return;
+    }
     else{
       this.result=this.whosturn+"'s turn is done! Please the other player type:yourgame.choosePlace('playername','place'like'1')";
     }
@@ -53,7 +66,7 @@ class TicTacToeGame{
     this.m=m;
     this.n=n;
     this.q=q;
-    for(let i=1;i<m*n+1;i++){this.l.push(i)}
+    for(let i=1;i<this.m*this.n+1;i++){this.l.push(i)}
   }
 
   win(){
