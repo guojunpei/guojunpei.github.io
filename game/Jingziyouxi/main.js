@@ -4,7 +4,7 @@ class TicTacToeGame{
     this.player2name=player2name;
     this.player1pieces="";
     this.player2pieces="";
-    this.l=[this.player1name+"VS"+this.player2name];
+    this.l=[this.player1name+" VS "+this.player2name," "," "," "," "," "," "," "," "," "];
     this.m=3;
     this.n=3;
     this.q=0;
@@ -18,7 +18,6 @@ class TicTacToeGame{
 
   getResult(){
     if(this.q===0){
-      for(let i=1;i<this.m*this.n+1;i++){this.l.push(" ")}
       this.result="Please type:yourgame.chooseMode(m,n,q) \nNow only supports m=n=q>=3";
       return;
     }
@@ -31,6 +30,7 @@ class TicTacToeGame{
       return;
     }
     if(this.whosturn===""){
+      for(let i=1;i<this.m*this.n+1;i++){this.l[i]=i}
       this.result="Please first player type:yourgame.choosePlace('playername','place'like'1')";
       return;
     }
@@ -75,7 +75,8 @@ class TicTacToeGame{
     this.m=m;
     this.n=n;
     this.q=q;
-    for(let i=1;i<this.m*this.n+1;i++){this.l.push(i)}
+    this.l=[this.player1name+" VS "+this.player2name];
+    for(let i=1;i<this.m*this.n+1;i++){this.l.push(" ")}
     this.getResult();
     this.showChessBoard();
   }
@@ -104,7 +105,7 @@ class TicTacToeGame{
     for(let i=this.n+2;i<this.n*this.m+1;i+=this.n+1){if(this.l[i]===v1 && v1!==""){vn1+=1}}
     if(vn1===this.n-1){return "win"}
   
-    let v2=this.l[n];
+    let v2=this.l[this.n];
     let vn2=0;
     for(let i=2*this.n-1;i<this.n*this.m-this.n+1+1;i+=this.n-1){if(this.l[i]===v2 && v2!==""){vn2+=1}}
     if(vn2===this.n-1){return "win"}
