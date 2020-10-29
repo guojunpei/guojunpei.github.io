@@ -18,12 +18,12 @@ class TicTacToeGame{
 
   getResult(){
     if(this.q===0){
-      this.result="Please type:yourgame.chooseMode(m,n,q) \n Now only supports m=n=q>=3";
+      for(let i=1;i<this.m*this.n+1;i++){this.l.push(" ")}
+      this.result="Please type:yourgame.chooseMode(m,n,q) \nNow only supports m=n=q>=3";
       return;
     }
     if(this.player1pieces===""){
       this.result="Please "+this.player1name+" type:yourgame.choosePieces('x'or'+')";
-      for(let i=1;i<this.m*this.n+1;i++){this.l.push(" ")}
       return; 
     }
     if(this.player2pieces===""){
@@ -67,6 +67,8 @@ class TicTacToeGame{
     this.n=n;
     this.q=q;
     for(let i=1;i<this.m*this.n+1;i++){this.l.push(i)}
+    this.getResult();
+    this.showChessBoard();
   }
 
   win(){
