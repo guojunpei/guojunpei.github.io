@@ -129,14 +129,14 @@ class TicTacToeGame{
     for(let i=0;i<this.n-1;i++){chessboard+="═══╦"}
     chessboard+="═══╗\n";
       
-    for(let i=0;i<this.n;i++){chessboard+="║ "+this.l[i+1]+" "}
+    for(let i=0;i<this.n;i++){chessboard+="║"+this.l[i+1]+""}
     chessboard+="║\n";
       
     for(let j=0;j<this.m-1;j++){
       chessboard+="╠";
       for(let i=1;i<this.n;i++){chessboard+="═══╬"}
       chessboard+="═══╣\n";
-      for(let i=0;i<this.n;i++){chessboard+="║ "+this.l[i+1+(j+1)*this.n]+" "}
+      for(let i=0;i<this.n;i++){chessboard+="║"+this.l[i+1+(j+1)*this.n]+""}
       chessboard+="║\n";
     }
       
