@@ -1,8 +1,8 @@
 
 function btnClickHandler(Obj){
-    button4.value=Obj.id+" has been click ";
+    bttext.value=Obj.id+" : click ";
 }
 
 function btnMouseOverHandler(Obj){
-    button4.value=Obj.id+" has been mouse over ";
+    bttext.value=Obj.id+" : mouse over ";
 }
