@@ -1,10 +1,8 @@
 
-function buttonClick(Obj){
-  console.log(Obj.id+" has been click "+new Date());
+function btnClickHandler(Obj){
+    button4.value=Obj.id+" has been click ";
 }
 
-
-function buttonMouseOver(Obj){
-    console.log(Obj.id+ " has been mouse over "+new Date());
-  }
-    
+function btnMouseOverHandler(Obj){
+    button4.value=Obj.id+" has been mouse over ";
+}
