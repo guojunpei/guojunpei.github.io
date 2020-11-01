@@ -10,12 +10,25 @@
 
 <body>
 
-<form>
-  <input type="button" id="button1" onclick="btnClickHandler(this)" onmouseover="btnMouseOverHandler(this)">
-  <input type="button" id="button2" onclick="btnClickHandler(this)" onmouseover="btnMouseOverHandler(this)">
-  <input type="button" id="button3" onclick="btnClickHandler(this)" onmouseover="btnMouseOverHandler(this)">
-  <input id="bttext" value="The button can be click~">
-</form>
+<div>
+  <button type="button" id="button1" style="color:blue" onclick="btnClickHandler(this)" onmouseover="btnMouseOverHandler(this)">
+    button1
+  </button>
+  <button type="button" id="button2" style="color:green" onclick="btnClickHandler(this)" onmouseover="btnMouseOverHandler(this)">
+    button2
+  </button>
+  <button type="button" id="button3" style="color:yellow" onclick="btnClickHandler(this)" onmouseover="btnMouseOverHandler(this)">
+    button3
+  </button>
+</div>
+
+<div id="btntext1">
+Which button is onclick or mouse over
+</div>
+
+<div id="btntext2">
+There is the history about buttons and mouse 
+</div>
 
 </body>
 
