@@ -7,7 +7,7 @@
 
 .box1{
     margin: 10px;
-    width: 450px;
+    width: 460px;
     padding: 10px;
     border-style: dashed;
     border-color: darkgray;
@@ -19,7 +19,7 @@
 .box11{
     padding: 5px;
     padding-bottom: 20px;
-    width: 50px;
+    width: 70px;
     text-align: center;
     color: white;
     background-color: red;
@@ -28,7 +28,7 @@
 .box12{
     padding: 5px;
     padding-bottom: 20px;
-    width: 50px;
+    width: 70px;
     text-align: center;
     color: white;
     background-color: green;
@@ -37,7 +37,7 @@
 .box13{
     padding: 5px;
     padding-bottom: 20px;
-    width: 50px;
+    width: 70px;
     text-align: center;
     color: white;
     background-color: blue;
@@ -46,7 +46,7 @@
 
 .box2{
     margin: 10px;
-    width: 450px;
+    width: 480px;
     border-style: dashed;
     border-color: darkgray;
     display: flex;
@@ -58,7 +58,7 @@
 .box21{
     padding: 5px;
     padding-bottom: 20px;
-    width: 50px;
+    width: 70px;
     text-align: center;
     color: white;
     background-color: red;
@@ -66,7 +66,7 @@
 
 .box22{
     padding: 5px;
-    width: 50px;
+    width: 70px;
     text-align: center;
     color: white;
     background-color: green;
@@ -75,7 +75,7 @@
 .box23{
     padding: 5px;
     padding-bottom: 20px;
-    width: 50px;
+    width: 70px;
     text-align: center;
     color: white;
     background-color: blue;
@@ -83,36 +83,95 @@
 
 .box3{
     margin: 10px;
-    width: 450px;
+    padding: 60px;
+    width: 360px;
     border-style: dashed;
     border-color: darkgray;
     display: flex;
     flex-direction: column;
-    /*justify-content: center;*/
     align-items: center;
 }
 
 .box31{
-    padding: 5px;
-    padding-bottom: 20px;
-    width: 50px;
+    padding: 20px;
     text-align: center;
     color: white;
     background-color: red;
 }
 
 .box32{
-    padding: 5px;
-    width: 50px;
+    padding: 20px;
     text-align: center;
     color: white;
     background-color: green;
 }
 
 .box33{
-    padding: 5px;
-    padding-bottom: 20px;
-    width: 50px;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    background-color: blue;
+}
+
+
+.box4{
+    margin: 10px;
+    width: 480px;
+    border-style: dashed;
+    border-color: darkgray;
+    display: flex;
+    flex-wrap: wrap-reverse;
+}
+
+.box41{
+    margin: 10px;
+    padding: 10px;
+    width: 60px;
+    text-align: center;
+    color: white;
+    background-color: red;
+}
+
+.box42{
+    padding: 10px;
+    padding-bottom: 30px;
+    width: 60px;
+    text-align: center;
+    color: white;
+    background-color: green;
+}
+
+.box43{
+    margin: 10px;
+    padding: 10px;
+    width: 60px;
+    text-align: center;
+    color: white;
+    background-color: blue;
+}
+
+.box44{
+    padding: 10px;
+    padding-bottom: 30px;
+    width: 60px;
+    text-align: center;
+    color: white;
+    background-color: red;
+}
+
+.box45{
+    margin: 10px;
+    padding: 10px;
+    width: 60px;
+    text-align: center;
+    color: white;
+    background-color: green;
+}
+
+.box46{
+    padding: 10px;
+    padding-bottom: 30px;
+    width: 60px;
     text-align: center;
     color: white;
     background-color: blue;
