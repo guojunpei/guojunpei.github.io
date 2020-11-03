@@ -1,0 +1,65 @@
+
+.myBody{
+    color: floralwhite;
+    background-color: black;
+    font-size: 1rem;
+}
+
+.myBody > div {
+    margin: 0.5rem;
+    padding: 2rem;
+}
+
+.myH1{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.myHeader{
+    background-color: darkblue;
+}
+
+.myNavs{
+    background-color:green;
+}
+
+.myNavs > div {
+    border-style: solid;
+    border-width: 0.01rem;
+    margin-left: 2rem;
+    padding: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.myLayoutFocus{
+    background-color: blue;
+}
+
+.mySidebar{
+    background-color: red;
+}
+
+.myAdvertising{
+    background-color: orange;
+}
+
+.myFooter{
+    background-color: purple;
+}
+
+@media (max-width: 40rem){
+    .myNavs{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 40rem){
+    .myNavs{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
