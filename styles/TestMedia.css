@@ -11,6 +11,7 @@
 }
 
 .myH1{
+    margin-bottom: 1rem;
     font-size: 2rem;
     font-weight: bold;
 }
@@ -56,10 +57,49 @@
 }
 
 @media (min-width: 40rem){
+    .myBody{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .myHeader{
+        flex-basis: 60rem;
+        flex-grow: 2;
+        flex-shrink: 0.3;
+    }
+
     .myNavs{
+        flex-basis: 40rem;
+        flex-grow: 2;
+        flex-shrink: 0.3;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
     }
+
+    .myLayoutFocus{
+        flex-basis: 30rem;
+        flex-grow: 2;
+        flex-shrink: 0.3;
+    }
+
+    .mySidebar{
+        flex-basis: 10rem;
+        flex-grow: 2;
+        flex-shrink: 0.3;
+    }
+
+    .myAdvertising{
+        flex-basis: 10rem;
+        flex-grow: 2;
+        flex-shrink: 0.3;
+    }
+
+    .myFooter{
+        flex-basis: 30rem;
+        flex-grow: 2;
+        flex-shrink: 0.3;
+    }
 }
+
