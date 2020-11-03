@@ -115,9 +115,8 @@
 
 
 .box4{
-    margin: 10px;
-    width: 480px;
-    height: 300px;
+    margin: 1rem;
+    height: 30rem;
     border-style: dashed;
     border-color: darkgray;
     display: flex;
@@ -130,60 +129,72 @@
 }
 
 .box41{
-    margin: 10px;
-    padding: 10px;
-    width: 60px;
-    height: 20px;
+    margin: 1rem;
+    padding: 1rem;
+    height: 2rem;
+    flex-basis: 4rem;
+    flex-grow: 8;
+    flex-shrink: 2;
     text-align: center;
     color: white;
     background-color: red;
 }
 
 .box42{
-    padding: 10px;
-    padding-bottom: 30px;
-    width: 60px;
-    height: 20px;
+    padding: 1rem;
+    padding-bottom: 3rem;
+    flex-basis: 2rem;
+    flex-grow: 4;
+    flex-shrink: 1;
+    height: 2rem;
     text-align: center;
     color: white;
     background-color: green;
 }
 
 .box43{
-    margin: 10px;
-    padding: 10px;
-    width: 60px;
-    height: 20px;
+    margin: 1rem;
+    padding: 1rem;
+    flex-basis: 4rem;
+    flex-grow: 8;
+    flex-shrink: 2;
+    height: 2rem;
     text-align: center;
     color: white;
     background-color: blue;
 }
 
 .box44{
-    padding: 10px;
-    padding-bottom: 30px;
-    width: 60px;
-    height: 20px;
+    padding: 1rem;
+    padding-bottom: 3rem;
+    flex-basis: 2rem;
+    flex-grow: 4;
+    flex-shrink: 1;
+    height: 2rem;
     text-align: center;
     color: white;
     background-color: red;
 }
 
 .box45{
-    margin: 10px;
-    padding: 10px;
-    width: 60px;
-    height: 20px;
+    margin: 1rem;
+    padding: 1rem;
+    flex-basis: 4rem;
+    flex-grow: 8;
+    flex-shrink: 2;
+    height: 2rem;
     text-align: center;
     color: white;
     background-color: green;
 }
 
 .box46{
-    padding: 10px;
-    padding-bottom: 30px;
-    width: 60px;
-    height: 20px;
+    padding: 1rem;
+    padding-bottom: 3rem;
+    flex-basis: 2rem;
+    flex-grow: 4;
+    flex-shrink: 1;
+    height: 2rem;
     text-align: center;
     color: white;
     background-color: blue;
