@@ -7,7 +7,7 @@
 
 .myBody > div {
     margin: 0.5rem;
-    padding: 2rem;
+    padding: 1rem;
 }
 
 .myH1{
@@ -22,6 +22,8 @@
 
 .myNavs{
     background-color:green;
+    display: flex;
+    flex-direction: column;
 }
 
 .myNavs > div {
@@ -49,20 +51,19 @@
     background-color: purple;
 }
 
-@media (max-width: 40rem){
+@media (max-width: 400pix){
     .myNavs{
+        flex-basis: 40rem;
+        flex-grow: 2;
+        flex-shrink: 0.3;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
 }
 
-@media (max-width: 80rem) and (min-width: 40rem){
-    
-}
-
-
-
-@media (min-width: 80rem){
+@media (max-width: 800pix){
     .myBody{
         display: flex;
         flex-wrap: wrap;
@@ -76,6 +77,7 @@
 
     .myNavs{
         flex-basis: 40rem;
+        flex-grow: 2;
         flex-shrink: 0.3;
         display: flex;
         flex-direction: row;
