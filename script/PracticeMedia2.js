@@ -8,8 +8,8 @@ window.screen.availWidth;
 */
 
 function webClass(){
-    if(window.screen.width>= 800){webWidth1();}
-    if(window.screen.width>= 1000){webWidth2();}
+    if(window.screen.width>= 800){webWidth1()};
+    if(window.screen.width>= 1000){webWidth2()};
 }
 
 function webWidth1(){
@@ -56,12 +56,14 @@ function webWidth1(){
             </div>
         </div>
     </div>
-        `
+    `;
+
     let myNavs=document.getElementsByClassName("myNavs");
     let myLayoutFocus=document.getElementsByClassName("myLayoutFocus");
     let mySidebar=document.getElementsByClassName("mySidebar");
     let myAdvertising=document.getElementsByClassName("myAdvertising");
     let myFooter=document.getElementsByClassName("myFooter");
+
     myNavs.style.cssText=`
         background-color:green;
         margin: 0.5rem;
