@@ -68,7 +68,7 @@
     background-color: purple;
 }
 
-@media (min-width: 800px){
+@media (min-width: 600px){
     .myBody1{
         display: none;
     }
