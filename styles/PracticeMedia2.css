@@ -68,7 +68,6 @@
     background-color: purple;
 }
 
-
 .myBody2box1{
     margin: 0rem;
     padding: 0rem;
@@ -104,63 +103,4 @@
     padding: 0rem;
     display: flex;
     flex-direction: row;
-}
-
-@media (min-width: 600px){
-    .myBody1{
-        display: none;
-    }
-    
-    .myBody2{
-        display: block;
-        flex-direction: row;
-        font-size: 1rem;
-    }
-
-    .myBody3{
-        display: none;
-    }
-    
-    .myNavs{
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    
-    .myLayoutFocus{
-        flex-basis: 30rem;
-        flex-grow: 2;
-    }
-    
-    .mySidebar{
-        flex-basis: 10rem;
-        flex-grow: 0.2;
-    }
-    
-    .myAdvertising{
-        flex-basis: 10rem;
-        flex-grow: 0.2;
-    }
-    
-    .myFooter{
-        flex-basis: 30rem;
-        flex-grow: 2;
-    }
-
-}
-
-@media (min-width: 1000px){
-    .myBody1{
-        display: none;
-    }
-    
-    .myBody2{
-        display: none;
-    }
-
-    .myBody3{
-        display: block;
-        flex-direction: row;
-        font-size: 1rem;
-    }
-
 }
