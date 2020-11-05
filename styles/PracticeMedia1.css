@@ -84,11 +84,15 @@
     }
     
     .myBody2box1{
+        margin: 0rem;
+        padding: 0rem;
         display: flex;
         flex-direction: row;
     }
 
     .myBody2box2{
+        margin: 0rem;
+        padding: 0rem;
         display: flex;
         flex-direction: row;
     }
@@ -110,7 +114,7 @@
     
     .myAdvertising{
         flex-basis: 10rem;
-        flex-grow: 0.3;
+        flex-grow: 0.2;
     }
     
     .myFooter{
@@ -136,16 +140,24 @@
     }
 
     .myBody3box1{
+        margin: 0rem;
+        padding: 0rem;
         display: flex;
         flex-direction: row;
     }
 
     .myBody3box11{
+        margin: 0rem;
+        padding: 0rem;
         display: flex;
         flex-direction: column;
+        flex-basis: 30rem;
+        flex-grow: 2;
     }
 
     .myBody3box111{
+        margin: 0rem;
+        padding: 0rem;
         display: flex;
         flex-direction: row;
     }
