@@ -1,5 +1,4 @@
 console.log("js work")
-window.addEventListener("resize",webClass());
 
 /*
 document.body.clientWidth;
@@ -115,3 +114,5 @@ function webClass(){
     if(window.screen.width>= 1000){webWidth2()};
     console.log("webClass() work")
 }
+
+window.addEventListener("resize",webClass());
