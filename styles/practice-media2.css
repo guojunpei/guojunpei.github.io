@@ -1,33 +1,33 @@
-.myBody{
+body{
     color: floralwhite;
     background-color: black;
 }
 
-.myBody1{
+.my-body1{
     font-size: 1rem;
 }
 
-.myBody2{
+.my-body2{
     display: none;
 }
 
-.myBody3{
+.my-body3{
     display: none;
 }
 
-.myH1{
+.my-h1{
     margin-bottom: 1rem;
     font-size: 2rem;
     font-weight: bold;
 }
 
-.myHeader{
+.my-header{
     background-color: darkblue;
     margin: 0.5rem;
     padding: 1rem;
 }
 
-.myNavs{
+.my-navs{
     background-color:green;
     margin: 0.5rem;
     padding: 1rem;
@@ -35,7 +35,7 @@
     flex-direction: column;
 }
 
-.myNavs > div {
+.my-navs > div {
     border-style: solid;
     border-width: 0.01rem;
     margin-left: 2rem;
@@ -44,52 +44,52 @@
     padding-right: 1rem;
 }
 
-.myLayoutFocus{
+.my-layoutFocus{
     margin: 0.5rem;
     padding: 1rem;
     background-color: blue;
 }
 
-.mySidebar{
+.my-sidebar{
     margin: 0.5rem;
     padding: 1rem;
     background-color: red;
 }
 
-.myAdvertising{
+.my-advertising{
     margin: 0.5rem;
     padding: 1rem;
     background-color: orange;
 }
 
-.myFooter{
+.my-footer{
     margin: 0.5rem;
     padding: 1rem;
     background-color: purple;
 }
 
-.myBody2box1{
+.my-body2box1{
     margin: 0rem;
     padding: 0rem;
     display: flex;
     flex-direction: row;
 }
 
-.myBody2box2{
+.my-body2box2{
     margin: 0rem;
     padding: 0rem;
     display: flex;
     flex-direction: row;
 }
 
-.myBody3box1{
+.my-body3box1{
     margin: 0rem;
     padding: 0rem;
     display: flex;
     flex-direction: row;
 }
 
-.myBody3box11{
+.my-body3box11{
     margin: 0rem;
     padding: 0rem;
     display: flex;
@@ -98,7 +98,7 @@
     flex-grow: 2;
 }
 
-.myBody3box111{
+.my-body3box111{
     margin: 0rem;
     padding: 0rem;
     display: flex;
