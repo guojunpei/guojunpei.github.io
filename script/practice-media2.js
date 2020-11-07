@@ -11,7 +11,7 @@ document.getElementsByClassName("my-navs").parentElement
 
 function uiMiddle(){
     console.log("uiMiddle() work");
-    document.body.innerHTML = `
+    document.getElementsByClassName("my-body").innerHTML = `
         <div class="my-body2">
             <div class="my-header">
                 The header
@@ -59,7 +59,7 @@ function uiMiddle(){
 
 function uiLarge(){
     console.log("uiLarge() work");
-    document.body.innerHTML = `
+    document.getElementsByClassName("my-body").innerHTML = `
     <div class="my-body3">
 <div class="my-header">
     The header
