@@ -9,8 +9,8 @@ document.getElementsByClassName("my-navs").offsetParent
 document.getElementsByClassName("my-navs").parentElement
 */
 
-function webWidth1(){
-    console.log("webWidth1() work");
+function uiMiddle(){
+    console.log("uiMiddle() work");
     document.body.innerHTML = `
         <div class="my-body2">
             <div class="my-header">
@@ -57,8 +57,8 @@ function webWidth1(){
     `;
 }
 
-function webWidth2(){
-    console.log("webWidth2() work");
+function uiLarge(){
+    console.log("uiLarge() work");
     document.body.innerHTML = `
     <div class="my-body3">
 <div class="my-header">
@@ -109,10 +109,11 @@ function webWidth2(){
     `;
 }
 
-function webClass(){
-    if(window.screen.width>= 600){webWidth1()};
-    if(window.screen.width>= 1000){webWidth2()};
-    console.log("webClass() work")
+function uiChoose(){
+    let width=window.screen.width
+    if(width>= 600 && width<1000){uiMiddle()
+    }else if(width>= 1000){uiLarge()};
+    console.log("uiChoose() work")
 }
 
-window.addEventListener("resize",webClass());
+window.addEventListener("resize",uiChoose());
