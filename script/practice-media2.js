@@ -9,14 +9,58 @@ document.getElementsByClassName("my-navs").offsetParent
 document.getElementsByClassName("my-navs").parentElement
 document.getElementById("app")
 */
+/*
+document.getElementById("app").innerHTML = `
+<div class="my-body1">
+    <div class="my-header">
+        The header
+    </div>
+
+    <div class="my-navs">
+        <div>
+            Nav 1
+        </div>
+        <div>
+            Nav 2
+        </div>
+        <div>
+            Nav 3
+        </div>
+    </div>
+
+    <div class="my-body2box1">
+        <div class="my-sidebar">
+            Sidebar
+        </div>
+
+        <div class="my-layoutFocus">
+            <div class="my-h1">
+                Responsive grid layout
+            </div>
+            <div>
+                Use media query and grid template areas to achive responsive web
+            </div>
+        </div>
+    </div>
+
+    <div class="my-body2box2">
+        <div class="my-advertising">
+            Advertisting
+        </div>
+
+        <div class="my-footer">
+            the footer
+        </div>
+    </div>
+</div>
+`;
+*/
+
 
 function uiMiddle(){
     console.log("uiMiddle() work");
-    document.getElementById("app").innerHTML =`<div>middle</div>`;
-    
-    /*
     document.getElementById("app").innerHTML = `
-        <div class="my-body2">
+        <div class="my-body1">
             <div class="my-header">
                 The header
             </div>
@@ -59,15 +103,12 @@ function uiMiddle(){
             </div>
         </div>
     `;
-    */
 }
 
 function uiLarge(){
     console.log("uiLarge() work");
-    document.getElementById("app").innerHTML =`<div>large</div>`
-    /*
     document.getElementById("app").innerHTML = `
-    <div class="my-body3">
+    <div class="my-body1">
 <div class="my-header">
     The header
 </div>
@@ -114,7 +155,6 @@ function uiLarge(){
 </div>
 </div>
     `;
-    */
 }
 
 function uiChoose(){
