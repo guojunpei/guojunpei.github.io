@@ -7,15 +7,15 @@ window.screen.availWidth;
 document.getElementsByClassName("my-navs").style
 document.getElementsByClassName("my-navs").offsetParent
 document.getElementsByClassName("my-navs").parentElement
+document.getElementById("app")
 */
-document.getElementById
 
 function uiMiddle(){
     console.log("uiMiddle() work");
-    document.getElementsById("app").innerHTML =`<div>middle</div>`
+    document.getElementById("app").innerHTML =`<div>middle</div>`;
     
     /*
-    document.getElementsById("app").innerHTML = `
+    document.getElementById("app").innerHTML = `
         <div class="my-body2">
             <div class="my-header">
                 The header
@@ -64,9 +64,9 @@ function uiMiddle(){
 
 function uiLarge(){
     console.log("uiLarge() work");
-    document.getElementsById("app").innerHTML =`<div>large</div>`
+    document.getElementById("app").innerHTML =`<div>large</div>`
     /*
-    document.getElementsById("app").innerHTML = `
+    document.getElementById("app").innerHTML = `
     <div class="my-body3">
 <div class="my-header">
     The header
