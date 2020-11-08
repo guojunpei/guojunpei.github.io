@@ -8,10 +8,14 @@ document.getElementsByClassName("my-navs").style
 document.getElementsByClassName("my-navs").offsetParent
 document.getElementsByClassName("my-navs").parentElement
 */
+document.getElementById
 
 function uiMiddle(){
     console.log("uiMiddle() work");
-    document.getElementsByClassName("my-body").innerHTML = `
+    document.getElementsById("app").innerHTML =`<div>middle</div>`
+    
+    /*
+    document.getElementsById("app").innerHTML = `
         <div class="my-body2">
             <div class="my-header">
                 The header
@@ -55,11 +59,14 @@ function uiMiddle(){
             </div>
         </div>
     `;
+    */
 }
 
 function uiLarge(){
     console.log("uiLarge() work");
-    document.getElementsByClassName("my-body").innerHTML = `
+    document.getElementsById("app").innerHTML =`<div>large</div>`
+    /*
+    document.getElementsById("app").innerHTML = `
     <div class="my-body3">
 <div class="my-header">
     The header
@@ -107,6 +114,7 @@ function uiLarge(){
 </div>
 </div>
     `;
+    */
 }
 
 function uiChoose(){
@@ -116,4 +124,7 @@ function uiChoose(){
     console.log("uiChoose() work")
 }
 
+uiChoose();
+console.log("end uiChoose() work")
 window.addEventListener("resize",uiChoose());
+console.log("window.listener work")
