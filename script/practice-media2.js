@@ -1,4 +1,4 @@
-console.log("js work")
+console.log("js work");
 
 /*
 document.body.clientWidth;
@@ -206,15 +206,15 @@ function uiLarge(){
 
 function uiChoose(){
     let width=window.screen.width;
-    if(width< 600){uiSmall()
-    }else if(width>= 600 && width<1000){uiMiddle()
+    if(width< 600){uiSmall();
+    }else if(width>= 600 && width<1000){uiMiddle();
     }else if(width>= 1000){uiLarge()};
-    console.log("uiChoose() work")
+    console.log("uiChoose() work");
 }
 //"work"
 
 uiChoose();
-console.log("end uiChoose() work")
+console.log("end uiChoose() work");
 
 /*
 function uiWidth(){
@@ -225,5 +225,5 @@ window.addEventListener("resize",uiWidth());
 //"work"
 */
 window.addEventListener("resize",uiChoose());
-console.log("window.listener work")
+console.log("window.listener work");
 //"work"
