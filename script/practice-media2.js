@@ -10,6 +10,9 @@ document.getElementsByClassName("my-navs").parentElement
 document.getElementById("app")
 */
 /*
+document.getElementById("app").innerHTML = `1`;
+//"work"
+
 document.getElementById("app").innerHTML = `
 <div class="my-body1">
     <div class="my-header">
@@ -54,7 +57,51 @@ document.getElementById("app").innerHTML = `
     </div>
 </div>
 `;
+//"work"
+
 */
+
+function uiSmall(){
+    console.log("uiSmall() work");
+    document.getElementById("app").innerHTML = `
+            <div class="my-header">
+                The header
+            </div>
+    
+            <div class="my-navs">
+                <div>
+                    Nav 1
+                </div>
+                <div>
+                    Nav 2
+                </div>
+                <div>
+                    Nav 3
+                </div>
+            </div>
+    
+            <div class="my-layoutFocus">
+                <div class="my-h1">
+                    Responsive grid layout
+                </div>
+                <div>
+                    Use media query and grid template areas to achive responsive web
+                </div>
+            </div>
+    
+            <div class="my-sidebar">
+                Sidebar
+            </div>
+    
+            <div class="my-advertising">
+                Advertisting
+            </div>
+    
+            <div class="my-footer">
+                the footer
+            </div>
+    `;
+}
 
 
 function uiMiddle(){
@@ -163,8 +210,18 @@ function uiChoose(){
     }else if(width>= 1000){uiLarge()};
     console.log("uiChoose() work")
 }
+//"work"
 
 uiChoose();
 console.log("end uiChoose() work")
+
+/*
+function uiWidth(){
+    console.log(window.screen.width);
+}
+
+window.addEventListener("resize",uiWidth());
+//"work"
+*/
 window.addEventListener("resize",uiChoose());
 console.log("window.listener work")
