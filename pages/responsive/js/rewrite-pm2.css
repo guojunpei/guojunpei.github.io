@@ -3,3 +3,97 @@ body{
     color: blanchedalmond;
 }
 
+
+.my-body1{
+    font-size: 1rem;
+}
+
+.my-h1{
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.my-header{
+    background-color: darkblue;
+    margin: 0.5rem;
+    padding: 1rem;
+}
+
+.my-navs{
+    background-color:green;
+    margin: 0.5rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.my-navs > div {
+    border-style: solid;
+    border-width: 0.01rem;
+    margin-left: 2rem;
+    padding: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.my-layoutFocus{
+    margin: 0.5rem;
+    padding: 1rem;
+    background-color: blue;
+}
+
+.my-sidebar{
+    margin: 0.5rem;
+    padding: 1rem;
+    background-color: red;
+}
+
+.my-advertising{
+    margin: 0.5rem;
+    padding: 1rem;
+    background-color: orange;
+}
+
+.my-footer{
+    margin: 0.5rem;
+    padding: 1rem;
+    background-color: purple;
+}
+
+.my-body2box1{
+    margin: 0rem;
+    padding: 0rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.my-body2box2{
+    margin: 0rem;
+    padding: 0rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.my-body3box1{
+    margin: 0rem;
+    padding: 0rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.my-body3box11{
+    margin: 0rem;
+    padding: 0rem;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 30rem;
+    flex-grow: 2;
+}
+
+.my-body3box111{
+    margin: 0rem;
+    padding: 0rem;
+    display: flex;
+    flex-direction: row;
+}
