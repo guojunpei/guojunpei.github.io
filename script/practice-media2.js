@@ -211,10 +211,15 @@ function uiChoose(){
     }else if(width>= 1000){uiLarge()};
     console.log("uiChoose() work");
 }
-//"work"
 
 uiChoose();
 console.log("end uiChoose() work");
+
+window.addEventListener("resize",uiChoose());
+console.log("window.listener work");
+
+//"work"
+
 
 /*
 function uiWidth(){
@@ -222,8 +227,6 @@ function uiWidth(){
 }
 
 window.addEventListener("resize",uiWidth());
-//"work"
+
+//uiChoose() "work"
 */
-window.addEventListener("resize",uiChoose());
-console.log("window.listener work");
-//"work"
