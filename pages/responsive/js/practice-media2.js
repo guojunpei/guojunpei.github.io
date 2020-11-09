@@ -1,7 +1,6 @@
 let appDiv=document.getElementById("app");
 
 function uiSmall(){
-    console.log("uiSmall() work");
     appDiv.innerHTML = `
             <div class="my-header">
                 The header
@@ -44,7 +43,6 @@ function uiSmall(){
 
 
 function uiMiddle(){
-    console.log("uiMiddle() work");
     appDiv.innerHTML = `
         <div class="my-body1">
             <div class="my-header">
@@ -92,7 +90,6 @@ function uiMiddle(){
 }
 
 function uiLarge(){
-    console.log("uiLarge() work");
     appDiv.innerHTML = `
     <div class="my-body1">
 <div class="my-header">
@@ -152,88 +149,7 @@ function uiChoose(){
     }else{
         uiSmall();
     }
-    console.log("uiChoose() work");
 }
 
 uiChoose();
-//console.log("end uiChoose() work");
-
 window.addEventListener("resize",uiChoose);
-//console.log("window.listener work");
-
-//"work"
-
-
-/*
-function uiWidth(){
-    console.log(window.screen.width);
-}
-
-window.addEventListener("resize",uiWidth());
-
-//uiChoose() "work"
-*/
-
-
-//console.log("js work");
-
-/*
-document.body.clientWidth;
-window.screen.width;
-window.screen.availWidth;
-document.getElementsByClassName("my-navs").style
-document.getElementsByClassName("my-navs").offsetParent
-document.getElementsByClassName("my-navs").parentElement
-document.getElementById("app")
-*/
-/*
-document.getElementById("app").innerHTML = `1`;
-//"work"
-
-document.getElementById("app").innerHTML = `
-<div class="my-body1">
-    <div class="my-header">
-        The header
-    </div>
-
-    <div class="my-navs">
-        <div>
-            Nav 1
-        </div>
-        <div>
-            Nav 2
-        </div>
-        <div>
-            Nav 3
-        </div>
-    </div>
-
-    <div class="my-body2box1">
-        <div class="my-sidebar">
-            Sidebar
-        </div>
-
-        <div class="my-layoutFocus">
-            <div class="my-h1">
-                Responsive grid layout
-            </div>
-            <div>
-                Use media query and grid template areas to achive responsive web
-            </div>
-        </div>
-    </div>
-
-    <div class="my-body2box2">
-        <div class="my-advertising">
-            Advertisting
-        </div>
-
-        <div class="my-footer">
-            the footer
-        </div>
-    </div>
-</div>
-`;
-//"work"
-
-*/
