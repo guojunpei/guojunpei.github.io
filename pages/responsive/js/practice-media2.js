@@ -144,17 +144,21 @@ function uiLarge(){
 }
 
 function uiChoose(){
-    let width=window.screen.width;
-    if(width > 1000){uiLarge();
-    }else if(width > 600){uiMiddle();
-    }else{uiSmall();}
+    let width=window.innerWidth;
+    if(width > 800){
+        uiLarge();
+    }else if(width > 600){
+        uiMiddle();
+    }else{
+        uiSmall();
+    }
     console.log("uiChoose() work");
 }
 
 uiChoose();
 //console.log("end uiChoose() work");
 
-window.addEventListener("resize",uiChoose());
+window.addEventListener("resize",uiChoose);
 //console.log("window.listener work");
 
 //"work"
