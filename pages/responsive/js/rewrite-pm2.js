@@ -1,10 +1,11 @@
+
 const appNode = document.querySelector("#app");
 
 function uiMobile () {
     appNode.innerHTML=`
     <div class="my-body">1</div>
     `;
-    appNode.style.color = "red";
+    appNode.style.color = "yellow";
 }
 
 function uiSm(){
@@ -41,25 +42,29 @@ window.addEventListener("resize", windowResizeHandler);
 const appDiv=document.getElementById("app");
 
 function uiSmall(){
-    appDiv.innerHTML="<div>Small</div>";
+    appDiv.innerHTML="Small";
     appDiv.style.color="red";
 }
 
 function uiMiddle(){
-    appDiv.innerHTML="<div>Middle</div>";
+    appDiv.innerHTML="Middle";
     appDiv.style.color="yellow";
 }
 
 function uiLarge(){
-    appDiv.innerHTML="<div>Large</div>";
+    appDiv.innerHTML="Large";
     appDiv.style.color="green";
 }
 
 function reColor(){
-    const width=window.width;
-    if(width>1000){uiLarge();
-    }else if(width>800){uiMiddle();
-    }else{uiSmall();}
+    const width = window.width;
+    if(width > 500){
+        uiLarge();
+    }else if(width > 300){
+        uiMiddle();
+    }else{
+        uiSmall();
+    }
 }
 
 reColor();
