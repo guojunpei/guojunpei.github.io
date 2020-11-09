@@ -1,4 +1,38 @@
+/*
+const appDiv=document.getElementById("app");
 
+function uiSmall(){
+    appDiv.innerHTML="Small";
+    appDiv.style.color="yellow";
+}
+
+function uiMiddle(){
+    appDiv.innerHTML="Middle";
+    appDiv.style.color="green";
+}
+
+function uiLarge(){
+    appDiv.innerHTML="Large";
+    appDiv.style.color="blue";
+}
+
+function reColor () {
+    const width = window.innerWidth;
+    //const width=window.width;"not work"
+    if(width > 800){
+        uiLarge();
+    }else if(width > 600){
+        uiMiddle();
+    }else {
+        uiSmall();
+    }
+}
+
+reColor();
+window.addEventListener("resize", reColor);
+*/
+
+/*
 const appNode = document.querySelector("#app");
 
 function uiMobile () {
@@ -26,9 +60,9 @@ function uiLg(){
 
 function windowResizeHandler () {
     const width = window.innerWidth;
-    if(width > 500){
+    if(width > 800){
         uiLg();
-    }else if(width > 300){
+    }else if(width > 600){
         uiSm();
     }else {
         uiMobile();
@@ -37,8 +71,9 @@ function windowResizeHandler () {
 
 windowResizeHandler();
 window.addEventListener("resize", windowResizeHandler);
+*/
 
-/*
+
 const appDiv=document.getElementById("app");
 
 function uiSmall(){
@@ -57,10 +92,10 @@ function uiLarge(){
 }
 
 function reColor(){
-    const width = window.width;
-    if(width > 500){
+    const width = window.innerWidth;
+    if(width > 800){
         uiLarge();
-    }else if(width > 300){
+    }else if(width > 600){
         uiMiddle();
     }else{
         uiSmall();
@@ -69,4 +104,3 @@ function reColor(){
 
 reColor();
 window.addEventListener("resize", reColor);
-*/
