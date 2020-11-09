@@ -23,7 +23,7 @@ function uiLg(){
     appNode.style.color = "blue";
 }
 
-function windowResizeHandler (event) {
+function windowResizeHandler () {
     const width = window.innerWidth;
     if(width > 500){
         uiLg();

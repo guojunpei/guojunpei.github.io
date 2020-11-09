@@ -206,9 +206,9 @@ function uiLarge(){
 
 function uiChoose(){
     let width=window.screen.width;
-    if(width< 600){uiSmall();
-    }else if(width>= 600 && width<1000){uiMiddle();
-    }else if(width>= 1000){uiLarge()};
+    if(width>= 600 && width<1000){uiMiddle();
+    }else if(width>= 1000){uiLarge()
+    }else{uiSmall();}
     console.log("uiChoose() work");
 }
 
