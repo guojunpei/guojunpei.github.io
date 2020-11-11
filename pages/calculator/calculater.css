@@ -1,0 +1,16 @@
+body{
+    background-color: black;
+    color: white;
+}
+
+app{
+    border: slategray;
+}
+
+display-div{
+    border: steelblue;
+}
+
+input-div{
+    color: white;
+}
