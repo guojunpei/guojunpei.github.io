@@ -7,12 +7,12 @@ let result=0;
 
 function input(n){
     inputRsult=inputRsult+n;
-    number0=number0+n;
+    number0=number0.toString+n;
     document.getElementById("input-result").textContent=inputRsult;
 }
 
 function save(s){
-    if(symbol===""&&number0===null&&number1!==null){
+    if(symbol===""&&number0===null&&number1===null){
         inputRsult;
         document.getElementById("input-result").textContent=inputRsult;
     }else{
