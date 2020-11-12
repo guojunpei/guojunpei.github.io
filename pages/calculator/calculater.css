@@ -3,33 +3,61 @@ body{
     color: white;
 }
 
-app{
+#app{
     border: slategray;
-    /*font-size: 2rem;*/
+    /*font-size: 4rem;*/
+    /*margin: 0.1rem;*/
+    /*padding: 0rem;*/
 }
 
-display-div{
-    border: steelblue;
-}
 
-input-div{
+#display-div{
+    /*border: steelblue;*/
+    background-color: dimgray;
     color: whitesmoke;
+    font-size: 2rem;
+    width: 17.4rem;
+    margin: 0.1rem;
+    text-align: right;
+}
+
+#input-result{
+    font-size: 1.5rem;
+    word-wrap: break-word;
+}
+
+#input-div{
+    color: whitesmoke;
+    /*font-size: 2rem;*/
 }
 
 .button1{
     background-color:darkgray;
+    color: whitesmoke;
     width: 4rem;
     height: 4rem;
+    font-size: 2rem;
+    margin: 0.1rem;
 }
 
 .button2{
     background-color: gray;
+    color: whitesmoke;
     width: 4rem;
     height: 4rem;
+    font-size: 2rem;
+    margin: 0.1rem;
 }
 
 .button3{
     background-color: orange;
+    color: whitesmoke;
     width: 4rem;
     height: 4rem;
+    font-size: 2rem;
+    margin: 0.1rem;
+}
+
+#zero{
+    width: 8.5rem;
 }
