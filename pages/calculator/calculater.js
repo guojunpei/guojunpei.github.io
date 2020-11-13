@@ -8,11 +8,22 @@ let result=0;
 function input(n){
     if(inputRsult===null){
         inputRsult=n;
+        document.getElementById("input-result").textContent=inputRsult;
     }else{
         inputRsult=inputRsult+n.toString();
+        document.getElementById("input-result").textContent=inputRsult;
     }
-    number0=Number(Number(number0)+n.toString());
-    document.getElementById("input-result").textContent=inputRsult;
+
+    if(number0===null){
+        number0=n;
+    }else{
+        number0=number0+n.toString();
+    }
+
+
+    //number0=number0+n.toString();
+    //number0=Number(Number(number0)+n.toString());
+    //document.getElementById("input-result").textContent=inputRsult;
 }
 
 function save(s){
@@ -43,7 +54,11 @@ function outEqual(){
         result=number1/number2;
     }else{
         result=number1;
+        //"？，1？，1+？，1+2？，1+2=？五种情况没有补齐"
     }
+    number0=null;
+    number1=result;
+    number2=null;
     symbol="";
     document.getElementById("calculate-result").textContent=result;
     document.getElementById("input-result").textContent=inputRsult;
