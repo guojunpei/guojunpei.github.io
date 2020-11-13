@@ -26,7 +26,6 @@ function save(s){
         symbol=s;
         document.getElementById("input-result").textContent=inputRsult;
     }
-
 }
 
 function outEqual(){
@@ -37,11 +36,11 @@ function outEqual(){
     }else if(symbol==="+"){
         result=number1+number2;
     }else if(symbol==="-"){
-        result=number1+number2;
-    }else if(symbol==="*"){
-        result=number1+number2;
-    }else if(symbol==="/"){
-        result=number1+number2;
+        result=number1-number2;
+    }else if(symbol==="×"){
+        result=number1*number2;
+    }else if(symbol==="÷"){
+        result=number1/number2;
     }else{
         result=number1;
     }
@@ -71,13 +70,9 @@ function allClear(){
     }
 }
 
-function deleteEnd(s){
-    return s.substring(0,s.length-1);
-}
-
 function oneClear(){
     function deleteEnd(s){
-        return s.substring(0,s.length-1);
+        return s.substr(0,s.length-1);
     }
     inputRsult=deleteEnd(inputRsult);
     document.getElementById("input-result").textContent=inputRsult;
