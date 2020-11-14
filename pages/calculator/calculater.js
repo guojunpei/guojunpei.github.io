@@ -1,4 +1,4 @@
-let inputRsult=null;
+let inputResult=null;
 let number0=null;
 let number1=null;
 let number2=null;
@@ -6,10 +6,10 @@ let symbol="";
 let result=0;
 
 function input(n){
-    if(inputRsult===null){
-        inputRsult=n;
+    if(inputResult===null){
+        inputResult=n;
     }else{
-        inputRsult=inputRsult+n.toString();
+        inputResult=inputResult+n.toString();
     }
 
     if(number0===null){
@@ -18,23 +18,23 @@ function input(n){
         number0=number0+n.toString();
     }
 
-    document.getElementById("input-result").textContent=inputRsult;
+    document.getElementById("input-result").textContent=inputResult;
 }
 
 function save(s){
     if(symbol!==""){
         result="must be number!"
     }else if(number1!==null){
-        inputRsult=inputRsult+s;
+        inputResult=inputResult+s;
         symbol=s;
     }else{
-        inputRsult=inputRsult+s;
+        inputResult=inputResult+s;
         number1=Number(number0);
         number0=null;
         symbol=s;
     }
     document.getElementById("calculate-result").textContent=result;
-    document.getElementById("input-result").textContent=inputRsult;
+    document.getElementById("input-result").textContent=inputResult;
 }
 
 function outEqual(){
@@ -53,37 +53,37 @@ function outEqual(){
         number1=result;
         number2=null;
         symbol="";
-        inputRsult=inputRsult+"="+result;
+        inputResult=inputResult+"="+result;
     }else{
-        result=inputRsult;
+        result=inputResult;
     }
     document.getElementById("calculate-result").textContent=result;
-    document.getElementById("input-result").textContent=inputRsult;
+    document.getElementById("input-result").textContent=inputResult;
 }
 
 function percent(){
     if(number0===null){
         result="Follow number!";
     }else{
-        inputRsult=inputRsult+".";
+        inputResult=inputResult+".";
         number0=Number(number0)/100;
     }
-    document.getElementById("input-result").textContent=inputRsult;
+    document.getElementById("input-result").textContent=inputResult;
     document.getElementById("calculate-result").textContent=result;
 }
 
 function allClear(){
-    inputRsult=null;
+    inputResult=null;
     number0=null;
     number1=null;
     number2=null;
     symbol="";
     result=0;
     document.getElementById("calculate-result").textContent=result;
-    if(inputRsult===null){
+    if(inputResult===null){
         document.getElementById("input-result").textContent=0;
     }else{
-        document.getElementById("input-result").textContent=inputRsult;
+        document.getElementById("input-result").textContent=inputResult;
     }
 }
 
@@ -91,10 +91,24 @@ function oneClear(){
     function deleteEnd(s){
         return s.substr(0,s.length-1);
     }
-    inputRsult=deleteEnd(inputRsult);
-    document.getElementById("input-result").textContent=inputRsult;
+
+    if(symbol===""&&number0===null&&number1===null){
+        result="Nothing to clear";
+    }else if(number0!==null){
+        number0=deleteEnd(number0);
+        inputResult=deleteEnd(inputResult);
+    }else if(symbol===""){
+        result="Press 'AC' or go on calculate";
+    }else{
+        symbol="";
+        number0=number1;
+        number1=null;
+        inputResult=deleteEnd(inputResult);
+    }
+
+/*
     if(symbol===""&&number0===null&&number1!==null){
-        document.getElementById("one-clear").style.color=red;
+        result="Press 'AC'! "
     }else if(symbol!==""&&number0!==null&&number1!==null){
         number2=deleteEnd(number2);
     }else if(symbol!==""&&number0===null&&number1!==null){
@@ -102,7 +116,13 @@ function oneClear(){
         number0=number1;
         number1=null;
     }else{
+        if(number0===null){number0=0}
         number0=deleteEnd(number0);
-    }   
+    }
+    inputResult=deleteEnd(inputResult);
+*/
+
+    document.getElementById("input-result").textContent=inputResult;
+    document.getElementById("calculate-result").textContent=result;
 }
 
