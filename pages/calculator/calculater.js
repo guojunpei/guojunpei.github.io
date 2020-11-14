@@ -38,7 +38,6 @@ function save(s){
 }
 
 function outEqual(){
-    
     if(symbol!==""&&number0!==null&&number1!==null){
         number2=Number(number0);
         if(symbol==="+"){
@@ -54,7 +53,7 @@ function outEqual(){
         number1=result;
         number2=null;
         symbol="";
-        inputRsult=inputRsult+"=";
+        inputRsult=inputRsult+"="+result;
     }else{
         result=inputRsult;
     }
