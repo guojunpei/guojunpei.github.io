@@ -38,7 +38,7 @@ function save(s){
 }
 
 function outEqual(){
-    inputRsult=inputRsult+"=";
+    
     if(symbol!==""&&number0!==null&&number1!==null){
         number2=Number(number0);
         if(symbol==="+"){
@@ -54,6 +54,7 @@ function outEqual(){
         number1=result;
         number2=null;
         symbol="";
+        inputRsult=inputRsult+"=";
     }else{
         result=inputRsult;
     }
@@ -62,9 +63,14 @@ function outEqual(){
 }
 
 function percent(){
-    inputRsult=inputRsult+".";
-    number0=Number(number0)/100;
+    if(number0===null){
+        result="Follow number!";
+    }else{
+        inputRsult=inputRsult+".";
+        number0=Number(number0)/100;
+    }
     document.getElementById("input-result").textContent=inputRsult;
+    document.getElementById("calculate-result").textContent=result;
 }
 
 function allClear(){
