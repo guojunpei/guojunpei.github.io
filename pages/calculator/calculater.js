@@ -8,10 +8,8 @@ let result=0;
 function input(n){
     if(inputRsult===null){
         inputRsult=n;
-        document.getElementById("input-result").textContent=inputRsult;
     }else{
         inputRsult=inputRsult+n.toString();
-        document.getElementById("input-result").textContent=inputRsult;
     }
 
     if(number0===null){
@@ -20,46 +18,45 @@ function input(n){
         number0=number0+n.toString();
     }
 
-
-    //number0=number0+n.toString();
-    //number0=Number(Number(number0)+n.toString());
-    //document.getElementById("input-result").textContent=inputRsult;
+    document.getElementById("input-result").textContent=inputRsult;
 }
 
 function save(s){
-    if(symbol===""&&number0===null&&number1===null){
-        inputRsult;
-        document.getElementById("input-result").textContent=inputRsult;
+    if(symbol!==""){
+        result="must be number!"
+    }else if(number1!==null){
+        inputRsult=inputRsult+s;
+        symbol=s;
     }else{
         inputRsult=inputRsult+s;
         number1=Number(number0);
         number0=null;
         symbol=s;
-        document.getElementById("input-result").textContent=inputRsult;
     }
+    document.getElementById("calculate-result").textContent=result;
+    document.getElementById("input-result").textContent=inputRsult;
 }
 
 function outEqual(){
     inputRsult=inputRsult+"=";
-    number2=Number(number0);
-    if(symbol===""&&number1===null){
-        result=Number(number0);
-    }else if(symbol==="+"){
-        result=number1+number2;
-    }else if(symbol==="-"){
-        result=number1-number2;
-    }else if(symbol==="×"){
-        result=number1*number2;
-    }else if(symbol==="÷"){
-        result=number1/number2;
+    if(symbol!==""&&number0!==null&&number1!==null){
+        number2=Number(number0);
+        if(symbol==="+"){
+            result=number1+number2;
+        }else if(symbol==="-"){
+            result=number1-number2;
+        }else if(symbol==="×"){
+            result=number1*number2;
+        }else if(symbol==="÷"){
+            result=number1/number2;
+        }
+        number0=null;
+        number1=result;
+        number2=null;
+        symbol="";
     }else{
-        result=number1;
-        //"？，1？，1+？，1+2？，1+2=？五种情况没有补齐"
+        result=inputRsult;
     }
-    number0=null;
-    number1=result;
-    number2=null;
-    symbol="";
     document.getElementById("calculate-result").textContent=result;
     document.getElementById("input-result").textContent=inputRsult;
 }
