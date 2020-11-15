@@ -10,10 +10,7 @@ body{
     /*font-size: 4rem;*/
     /*margin: 0.1rem;*/
     /*padding: 0rem;*/
-    
-
 }
-
 
 #display-div{
     /*border: steelblue;*/
@@ -33,7 +30,6 @@ body{
 .result{
     width: 17rem;
 }
-
 
 #input-div{
     color: whitesmoke;

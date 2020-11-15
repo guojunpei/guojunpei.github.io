@@ -125,4 +125,3 @@ function oneClear(){
     document.getElementById("input-result").textContent=inputResult;
     document.getElementById("calculate-result").textContent=result;
 }
-
