@@ -1,35 +1,28 @@
-body{
-    /*background-color: black;*/
-    /*color: white;*/
+
+html,body{
     height: 100%;
     width: 100%;
     padding: 0rem;
     margin: 0rem;
-
 }
 
 #app{
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
     height: 100%;
     width: 100%;
     background-color: black;
-    color: white;
-
-
-    /*font-size: 4rem;*/
-    /*margin: 0.1rem;*/
-    /*padding: 0rem;*/
 }
 
 #main{
     border: solid darkslategray;
+    color: white;
+    height: 25.8rem;
 }
 
 
 #display-div{
-    /*border: steelblue;*/
     background-color: dimgray;
     color: whitesmoke;
     font-size: 2rem;
