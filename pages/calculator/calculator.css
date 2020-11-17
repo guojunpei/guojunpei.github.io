@@ -6,7 +6,7 @@ html,body{
     margin: 0rem;
 }
 
-#app{
+#app-calculator{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,7 +17,7 @@ html,body{
     background-color: black;
 }
 
-#main{
+#main-cal{
     border: solid darkslategray;
     color: white;
     height: 25.8rem;
@@ -37,7 +37,7 @@ html,body{
     word-wrap: break-word;
 }
 
-.result{
+.result-cal{
     width: 17rem;
 }
 
