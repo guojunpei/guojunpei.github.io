@@ -18,18 +18,24 @@ html,body{
 }
 
 #main-cal{
-    border: solid darkslategray;
-    color: white;
-    height: 25.8rem;
+    background-color: gray;
+    padding: 0rem;
+    margin: 0rem;
 }
 
 #display-div{
     background-color: dimgray;
-    color: whitesmoke;
     font-size: 2rem;
-    width: 17.4rem;
-    margin: 0.1rem;
+    width: 100%;
+    margin: 0rem;
+    padding: 0rem;
     text-align: right;
+}
+
+.result-cal{
+    margin: 0rem;
+    padding: 0.5rem;
+    color: white;
 }
 
 #input-result{
@@ -37,13 +43,14 @@ html,body{
     word-wrap: break-word;
 }
 
-.result-cal{
-    width: 17rem;
+#input-div{
+    margin: 0rem;
+    padding: 0rem;
 }
 
-#input-div{
-    color: whitesmoke;
-    /*font-size: 2rem;*/
+#input-div > div{
+    margin: 0rem;
+    padding: 0rem;
 }
 
 #btn-all-clear,#btn-one-clear,#btn-percent
@@ -53,20 +60,20 @@ html,body{
 
 #btn-divide,#btn-multiply,#btn-subtract,#btn-add,#btn-equal
 {
-    background-color: gray;
+    background-color: orange;
 }
 
 #btn-seven,#btn-eight,#btn-nine,#btn-four,#btn-five,#btn-six,#btn-one,#btn-two,#btn-three,#btn-zero,#btn-point
 {
-    background-color: orange;
+    background-color: gray;
 }
 
 .btn-cal{
-    color: whitesmoke;
-    width: 4rem;
+    color: white;
+    width: 4.5rem;
     height: 4rem;
     font-size: 2rem;
-    margin: 0.1rem;
+    margin: 0rem;
     padding: 0rem;
 }
 
@@ -79,5 +86,5 @@ html,body{
 }
 
 #btn-zero{
-    width: 8.5rem;
+    width: 9.2rem;
 }
