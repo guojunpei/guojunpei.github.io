@@ -3,47 +3,67 @@ html,body{
     margin: 0rem;
     height: 100%;
     width: 100%;
-}
-
-
-.myBody{
-    color: floralwhite;
     background-color: black;
 }
 
-.myBody1{
-    font-size: 1rem;
+
+#flex-layout-app{
+    color: floralwhite;
+    background-color: black;
+    padding: 0rem;
+    margin: 0rem;
+    height: 100%;
+    width: 100%;
 }
 
-.myBody2{
+.ui-mobile{
+    padding: 0rem;
+    margin: 0rem;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.ui-pad{
+    padding: 0rem;
+    margin: 0rem;
+    height: 100%;
+    width: 100%;
     display: none;
+    flex-direction: column;
 }
 
-.myBody3{
+.ui-pc{
+    padding: 0rem;
+    margin: 0rem;
+    height: 100%;
+    width: 100%;
     display: none;
+    flex-direction: column;
 }
 
-.myH1{
+.my-h1{
     margin-bottom: 1rem;
     font-size: 2rem;
     font-weight: bold;
 }
 
-.myHeader{
+.my-header{
     background-color: darkblue;
-    margin: 0.5rem;
+    margin: 0.1rem;
     padding: 1rem;
 }
 
-.myNavs{
+.my-navs{
     background-color:green;
-    margin: 0.5rem;
+    margin: 0.1rem;
     padding: 1rem;
     display: flex;
     flex-direction: column;
 }
 
-.myNavs > div {
+.my-navs > div {
     border-style: solid;
     border-width: 0.01rem;
     margin-left: 2rem;
@@ -52,53 +72,56 @@ html,body{
     padding-right: 1rem;
 }
 
-.myLayoutFocus{
-    margin: 0.5rem;
+.my-layoutFocus{
+    margin: 0.1rem;
     padding: 1rem;
     background-color: blue;
+    flex-grow: 2;
 }
 
-.mySidebar{
-    margin: 0.5rem;
+.my-sidebar{
+    margin: 0.1rem;
     padding: 1rem;
     background-color: red;
 }
 
-.myAdvertising{
-    margin: 0.5rem;
+.my-advertising{
+    margin: 0.1rem;
     padding: 1rem;
     background-color: orange;
 }
 
-.myFooter{
-    margin: 0.5rem;
+.my-footer{
+    margin: 0.1rem;
     padding: 1rem;
     background-color: purple;
 }
 
 
-.myBody2box1{
+.ui-pad-box1{
+    margin: 0rem;
+    padding: 0rem;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 2;
+}
+
+.ui-pad-box2{
     margin: 0rem;
     padding: 0rem;
     display: flex;
     flex-direction: row;
 }
 
-.myBody2box2{
+.ui-pc-box1{
     margin: 0rem;
     padding: 0rem;
     display: flex;
     flex-direction: row;
+    flex-grow: 2;
 }
 
-.myBody3box1{
-    margin: 0rem;
-    padding: 0rem;
-    display: flex;
-    flex-direction: row;
-}
-
-.myBody3box11{
+.ui-pc-box11{
     margin: 0rem;
     padding: 0rem;
     display: flex;
@@ -107,49 +130,48 @@ html,body{
     flex-grow: 2;
 }
 
-.myBody3box111{
+.ui-pc-box111{
     margin: 0rem;
     padding: 0rem;
     display: flex;
     flex-direction: row;
+    flex-grow: 2;
 }
 
 @media (min-width: 600px){
-    .myBody1{
+    .ui-mobile{
         display: none;
     }
     
-    .myBody2{
-        display: block;
-        flex-direction: row;
-        font-size: 1rem;
+    .ui-pad{
+        display: flex;
     }
 
-    .myBody3{
+    .ui-pc{
         display: none;
     }
-    
-    .myNavs{
+
+    .my-navs{
         flex-direction: row;
         justify-content: space-between;
     }
     
-    .myLayoutFocus{
+    .my-layoutFocus{
         flex-basis: 30rem;
         flex-grow: 2;
     }
     
-    .mySidebar{
+    .my-sidebar{
         flex-basis: 10rem;
         flex-grow: 0.2;
     }
     
-    .myAdvertising{
+    .my-advertising{
         flex-basis: 10rem;
         flex-grow: 0.2;
     }
     
-    .myFooter{
+    .my-footer{
         flex-basis: 30rem;
         flex-grow: 2;
     }
@@ -157,18 +179,21 @@ html,body{
 }
 
 @media (min-width: 1000px){
-    .myBody1{
+    .ui-mobile{
         display: none;
     }
     
-    .myBody2{
+    .ui-pad{
         display: none;
     }
 
-    .myBody3{
-        display: block;
-        flex-direction: row;
-        font-size: 1rem;
+    .ui-pc{
+        display: flex;
+    }
+
+    .my-footer{
+        flex-basis: 0;
+        flex-grow: 0;
     }
 
 }
