@@ -5,7 +5,7 @@ let number2=null;
 let symbol="";
 let result=0;
 
-function input(n){
+function clickBtnN(n){
     if(inputResult===null){
         inputResult=n;
     }else{
@@ -21,7 +21,7 @@ function input(n){
     document.getElementById("input-result").textContent=inputResult;
 }
 
-function save(s){
+function clickBtnS(s){
     if(symbol!==""){
         result="must be number!"
     }else if(number1!==null){
@@ -37,7 +37,7 @@ function save(s){
     document.getElementById("input-result").textContent=inputResult;
 }
 
-function outEqual(){
+function clickBtnEqual(){
     if(symbol!==""&&number0!==null&&number1!==null){
         number2=Number(number0);
         if(symbol==="+"){
@@ -61,7 +61,7 @@ function outEqual(){
     document.getElementById("input-result").textContent=inputResult;
 }
 
-function percent(){
+function clickBtnPercent(){
     if(number0===null){
         result="Follow number!";
     }else{
@@ -72,7 +72,7 @@ function percent(){
     document.getElementById("calculate-result").textContent=result;
 }
 
-function allClear(){
+function clickBtnAllClear(){
     inputResult=null;
     number0=null;
     number1=null;
@@ -87,7 +87,7 @@ function allClear(){
     }
 }
 
-function oneClear(){
+function clickBtnClear(){
     function deleteEnd(s){
         return s.substr(0,s.length-1);
     }

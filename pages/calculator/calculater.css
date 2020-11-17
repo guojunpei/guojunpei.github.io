@@ -12,6 +12,8 @@ html,body{
     align-items: center;
     height: 100%;
     width: 100%;
+    padding: 0rem;
+    margin: 0rem;
     background-color: black;
 }
 
@@ -20,7 +22,6 @@ html,body{
     color: white;
     height: 25.8rem;
 }
-
 
 #display-div{
     background-color: dimgray;
@@ -45,33 +46,38 @@ html,body{
     /*font-size: 2rem;*/
 }
 
-.button1{
+#btn-all-clear,#btn-one-clear,#btn-percent
+{
     background-color:darkgray;
-    color: whitesmoke;
-    width: 4rem;
-    height: 4rem;
-    font-size: 2rem;
-    margin: 0.1rem;
 }
 
-.button2{
+#btn-divide,#btn-multiply,#btn-subtract,#btn-add,#btn-equal
+{
     background-color: gray;
-    color: whitesmoke;
-    width: 4rem;
-    height: 4rem;
-    font-size: 2rem;
-    margin: 0.1rem;
 }
 
-.button3{
+#btn-seven,#btn-eight,#btn-nine,#btn-four,#btn-five,#btn-six,#btn-one,#btn-two,#btn-three,#btn-zero,#btn-point
+{
     background-color: orange;
+}
+
+.btn-cal{
     color: whitesmoke;
     width: 4rem;
     height: 4rem;
     font-size: 2rem;
     margin: 0.1rem;
+    padding: 0rem;
 }
 
-#zero{
+.btn-cal:hover{
+    border:0.1rem solid red;
+}
+
+.btn-cal:active{
+    color: red;
+}
+
+#btn-zero{
     width: 8.5rem;
 }
