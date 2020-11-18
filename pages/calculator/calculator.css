@@ -18,13 +18,12 @@ html,body{
 }
 
 #main-cal{
-    background-color: gray;
+    background-color: #3a3635;
     padding: 0rem;
     margin: 0rem;
 }
 
 #display-div{
-    background-color: dimgray;
     font-size: 2rem;
     width: 100%;
     margin: 0rem;
@@ -55,17 +54,17 @@ html,body{
 
 #btn-all-clear,#btn-one-clear,#btn-percent
 {
-    background-color:darkgray;
+    background-color: #4d4948;
 }
 
 #btn-divide,#btn-multiply,#btn-subtract,#btn-add,#btn-equal
 {
-    background-color: orange;
+    background-color: #fd9e2a;
 }
 
 #btn-seven,#btn-eight,#btn-nine,#btn-four,#btn-five,#btn-six,#btn-one,#btn-two,#btn-three,#btn-zero,#btn-point
 {
-    background-color: gray;
+    background-color: #6b6766;
 }
 
 .btn-cal{
@@ -73,8 +72,10 @@ html,body{
     width: 4.5rem;
     height: 4rem;
     font-size: 2rem;
-    margin: 0rem;
+    margin: 0.01rem;
     padding: 0rem;
+    border-width: 0.01rem;
+    border-color: #3a3635;
 }
 
 .btn-cal:hover{
@@ -86,5 +87,5 @@ html,body{
 }
 
 #btn-zero{
-    width: 9.2rem;
+    width: 9.3rem;
 }

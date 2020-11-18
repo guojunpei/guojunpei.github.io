@@ -106,22 +106,6 @@ function clickBtnClear(){
         inputResult=deleteEnd(inputResult);
     }
 
-/*
-    if(symbol===""&&number0===null&&number1!==null){
-        result="Press 'AC'! "
-    }else if(symbol!==""&&number0!==null&&number1!==null){
-        number2=deleteEnd(number2);
-    }else if(symbol!==""&&number0===null&&number1!==null){
-        symbol="";
-        number0=number1;
-        number1=null;
-    }else{
-        if(number0===null){number0=0}
-        number0=deleteEnd(number0);
-    }
-    inputResult=deleteEnd(inputResult);
-*/
-
     document.getElementById("input-result").textContent=inputResult;
     document.getElementById("calculate-result").textContent=result;
 }
