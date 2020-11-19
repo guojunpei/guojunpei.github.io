@@ -72,10 +72,12 @@ html,body{
     width: 4.5rem;
     height: 4rem;
     font-size: 2rem;
-    margin: 0.01rem;
+    margin: 0.1rem;
     padding: 0rem;
-    border-width: 0.01rem;
+    border-width: 0.1rem;
     border-color: #3a3635;
+    border-style: none;
+    cursor: pointer;
 }
 
 .btn-cal:hover{
