@@ -1,4 +1,4 @@
-import "./tic-tac-toe-game.css";
+//import "./tic-tac-toe-game.css";
 
 let app=document.getElementById("app-tic-tac-toe-game");
 app.style.display="flex";
