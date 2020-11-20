@@ -10,5 +10,12 @@ app.style.padding="0";
 app.style.margin="0";
 app.style.backgroundColor="black";
 
+let gameContainer=document.createElement("div");
+gameContainer.style.backgroundColor="black";
+
+let row=document.createElement("div");
+
+let btn=document.createElement("button");
+
 
 
