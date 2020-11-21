@@ -78,6 +78,9 @@ html,body{
     border-color: #3a3635;
     border-style: none;
     cursor: pointer;
+    display: block;
+    float: left;
+    
 }
 
 .btn-cal:hover{
@@ -89,5 +92,5 @@ html,body{
 }
 
 #btn-zero{
-    width: 9.5rem;
+    width: 9.2rem;
 }
