@@ -47,7 +47,14 @@ btn.innerText=3;
 let bs=btn.style;
 bs.width=`${btnWidth}rem`;
 bs.height==`${btnHeight}rem`;
+
 row.appendChild(btn);
+
+
+btn.innerText=2;
+row.appendChild(btn);
+
+
 gameContainer.appendChild(row);
 app.appendChild(gameContainer);
 
