@@ -1,7 +1,7 @@
 //import "./tic-tac-toe-game.css";
 
 let app=document.getElementById("app-tic-tac-toe-game");
-app.style.display="flex";
+app.style.display="block";
 app.style.justifyContent="center";
 app.style.alignItems="center";
 app.style.height="100%";
@@ -26,7 +26,7 @@ let row=document.createElement("div");
 
 let btn=document.createElement("button");
 
-
+/*
 for(let i=0;i<rowSize;i++){
     for(let j=0;j<columnSize;j++){
         btn.innerText=i*columnSize+j+1;
@@ -37,6 +37,17 @@ for(let i=0;i<rowSize;i++){
     }
     gameContainer.appendChild(row);
 }
+*/
 
+btn.innerText=1;
+/*
+btn.innerText=2;
+btn.innerText=3;
+*/
+let bs=btn.style;
+bs.width=`${btnWidth}rem`;
+bs.height==`${btnHeight}rem`;
+row.appendChild(btn);
+gameContainer.appendChild(row);
 app.appendChild(gameContainer);
 
