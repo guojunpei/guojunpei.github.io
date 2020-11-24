@@ -10,21 +10,33 @@ app.style.padding="0";
 app.style.margin="0";
 app.style.backgroundColor="black";
 
+let rowSize=3;
+let columnSize=3;
+let btnWidth=3;
+let btnHeight=2;
+
 let gameContainer=document.createElement("div");
-gameContainer.style.backgroundColor="black";
+let gs=gameContainer.style;
+gs.backgroundColor="black";
+gs.width=`${columnSize*btnWidth}rem`;
+gs.height=`${rowSize*btnHeight}rem`;
+
 
 let row=document.createElement("div");
 
 let btn=document.createElement("button");
 
-let rowSize=3;
-let columnSize=3;
 
 for(let i=0;i<rowSize;i++){
     for(let j=0;j<columnSize;j++){
-        btn;
         btn.innerText=i*columnSize+j+1;
+        let bs=btn.style;
+        bs.width=`${btnWidth}rem`;
+        bs.height==`${btnHeight}rem`;
+        row.appendChild(btn);
     }
+    gameContainer.appendChild(row);
 }
 
+app.appendChild(gameContainer);
 
