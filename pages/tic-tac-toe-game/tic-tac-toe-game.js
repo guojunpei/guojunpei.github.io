@@ -1,6 +1,16 @@
 //import "./tic-tac-toe-game.css";
 
+/*
 const app = document.getElementById("app-tic-tac-toe-game");
+
+app.style.display="flex";
+app.style.justifyContent="center";
+app.style.alignItems="center";
+app.style.height="100%";
+app.style.width="100%";
+app.style.padding="0";
+app.style.margin="0";
+app.style.backgroundColor="black";
 
 const rowSize = 3;
 const colSize = 4;
@@ -33,9 +43,9 @@ for (let i = 0; i < colSize; i++) {
 }
 
 app.appendChild(container);
+*/
 
 
-/*
 let app=document.getElementById("app-tic-tac-toe-game");
 app.style.display="block";
 app.style.justifyContent="center";
@@ -56,15 +66,12 @@ let gs=gameContainer.style;
 gs.backgroundColor="black";
 gs.width=`${columnSize*btnWidth}rem`;
 gs.height=`${rowSize*btnHeight}rem`;
+gs.padding="1rem"
 
-
-let row=document.createElement("div");
-
-let btn=document.createElement("button");
-*/
-/*
 for(let i=0;i<rowSize;i++){
+    let row=document.createElement("div");
     for(let j=0;j<columnSize;j++){
+        let btn=document.createElement("button");
         btn.innerText=i*columnSize+j+1;
         let bs=btn.style;
         bs.width=`${btnWidth}rem`;
@@ -73,22 +80,22 @@ for(let i=0;i<rowSize;i++){
     }
     gameContainer.appendChild(row);
 }
-*/
+
+app.appendChild(gameContainer);
 
 /*
 btn.innerText=1;
-
-let bs=btn.style;
 bs.width=`${btnWidth}rem`;
 bs.height==`${btnHeight}rem`;
-
 row.appendChild(btn);
-
+gameContainer.appendChild(row);
 
 btn.innerText=2;
 row.appendChild(btn);
-
-
 gameContainer.appendChild(row);
 app.appendChild(gameContainer);
 */
+
+
+
+
