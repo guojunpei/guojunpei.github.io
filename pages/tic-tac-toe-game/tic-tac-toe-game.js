@@ -148,9 +148,9 @@ class TicTacToeGame{
         
       console.log(chessboard);
     }
-  }
+}
   
-  const a=new TicTacToeGame(1,2);
+const a=new TicTacToeGame(1,2);
 
 let app=document.getElementById("app-tic-tac-toe-game");
 app.style.display="flex";
@@ -162,10 +162,21 @@ app.style.padding="0";
 app.style.margin="0";
 app.style.backgroundColor="black";
 
-let rowSize=3;
-let columnSize=3;
+let rowSize=this.m;
+let columnSize=this.n;
 let btnWidth=3;
 let btnHeight=3;
+
+
+let gameSet=document.createElement("div");
+let playerNamneInput1=document.createElement("div");
+let playerNamneInput2=document.createElement("div");
+let gameMode=document.createElement("div");
+
+gameSet.appendChild(playerNamneInput1);
+gameSet.appendChild(playerNamneInput2);
+gameSet.appendChild(gameMode);
+app.appendChild(gameSet);
 
 let gameContainer=document.createElement("div");
 let gs=gameContainer.style;
@@ -182,7 +193,7 @@ for(let i=0;i<rowSize;i++){
     for(let j=0;j<columnSize;j++){
         let btn=document.createElement("button");
         btn.innerText=i*columnSize+j+1;
-        btn.onclick=choosePlace(playername,btn.innerText);
+        btn.onclick=choosePlace(this.whosturn,btn.innerText);
         let bs=btn.style;
         bs.width=`${btnWidth}rem`;
         bs.height=`${btnHeight}rem`;
@@ -199,3 +210,18 @@ for(let i=0;i<rowSize;i++){
 }
 
 app.appendChild(gameContainer);
+
+
+let gameState=document.createElement("div");
+let statePlay1=document.createElement("p");
+let statePlay2=document.createElement("p");
+let stateResult=document.createElement("p");
+
+statePlay1.innerText=this.player1name;
+statePlay2.innerText=this.player2name;
+stateResult.innerText=this.result;
+
+gameState.appendChild(statePlay1);
+gameState.appendChild(statePlay1);
+gameState.appendChild(stateResult);
+app.appendChild(gameState);
