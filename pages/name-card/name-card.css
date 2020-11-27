@@ -1,0 +1,17 @@
+html,body{
+    height: 100%;
+    width: 100%;
+    padding: 0rem;
+    margin: 0rem;
+}
+
+#name-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.form-content{
+    color: white;
+}
