@@ -18,3 +18,13 @@ html,body{
 .form-content{
     color: white;
 }
+
+.form-button{
+    display: flex;
+    justify-content: space-between;
+}
+
+.name-crad-btn{
+    color: white;
+    background-color: darkblue;
+}
