@@ -15,6 +15,10 @@ html,body{
     background-color: black;
 }
 
+#show-name{
+    color: white;
+}
+
 .form-content{
     color: white;
 }

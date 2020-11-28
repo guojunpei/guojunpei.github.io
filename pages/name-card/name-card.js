@@ -9,5 +9,6 @@ formMain.addEventListener("formdata",(e)=>{
     for(let value of data.values()){
         console.log(value);
     }
+    document.getElementById("show-name").innerText=data.name;
 })
 
