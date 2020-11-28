@@ -6,8 +6,8 @@ formMain.addEventListener("submit",(e)=>{
 formMain.addEventListener("formdata",(e)=>{
     console.log("formdata fired");
     let data=e.FormData;
-    for(let v of data.values()){
-        console.log(v);
+    for(let value of data.values()){
+        console.log(value);
     }
-        
 })
+
