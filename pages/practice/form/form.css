@@ -11,5 +11,5 @@ input:invalid{
 }
 
 input:valid{
-    border: 0.1rem solid gray;
+    border: 0.1rem solid green;
 }
