@@ -1,0 +1,15 @@
+html,body{
+    background-color: black;
+}
+
+#btn{
+    background-color: black;
+}
+
+input:invalid{
+    border: 0.1rem dashed red;
+}
+
+input:valid{
+    border: 0.1rem solid gray;
+}
