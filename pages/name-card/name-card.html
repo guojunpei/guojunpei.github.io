@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>name card</title>
+    <meta charset="UTF-8" />
+    <style>
+        html,body{
+    height: 100%;
+    width: 100%;
+    padding: 0rem;
+    margin: 0rem;
+    background-color: black;
+}
+
+#name-card{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+#show-name{
+    color: white;
+    font-size: 7.5rem;
+    text-align: center;
+}
+
+.form-content{
+    color: white;
+}
+
+.form-button{
+    display: flex;
+    justify-content: space-between;
+}
+
+.name-crad-btn{
+    color: white;
+    background-color: darkblue;
+}
+    </style>
+</head>
+
+<body>
+	<div id="name-card">
+        <div id="show-name">
+            name
+        </div>
+        <form action="">
+            <div class="form-content">
+                <label for="name">Enter your name:</label>
+                <input type="text" name="name" id="name" value="" required>
+            </div>
+            <div class="form-content">
+                <label for="color">Choose text color:</label>
+                <input type="color" name="color" id="color" value="#ffffff">
+            </div>
+            <div class="form-content">
+                <label for="backgroundcolor">Choose backgroundcolor:</label>
+                <input type="color" name="backgroundcolor" id="backgroundcolor" value="#000000">
+            </div>
+            <div class="form-content form-button">
+                <button type="submit" class="name-crad-btn" id="preview">Preview</button>
+                <button id="full-screen" onclick="" class="name-crad-btn">Full screen</button>
+            </div>
+        </form>
+    </div>
+
+	<script>
+    document.querySelector("form").addEventListener("submit",(e)=>{
+    e.preventDefault();
+    document.getElementById("show-name").innerText=document.getElementById("name").value;
+    document.getElementById("show-name").style.color=document.getElementById("color").value;
+    document.getElementById("show-name").style.backgroundColor=document.getElementById("backgroundcolor").value;
+})
+
+document.getElementById("full-screen").addEventListener("click",()=>{
+    document.getElementById("show-name").innerText=document.getElementById("name").value;
+    document.getElementById("show-name").style.color=document.getElementById("color").value;
+    document.getElementById("show-name").style.backgroundColor=document.getElementById("backgroundcolor").value;
+    document.querySelector("form").style.display="none";
+    document.getElementById("show-name").style.fontSize=`${window.innerHeight/2}px`;
+})
+	</script>
+</body>
+
+</html>
