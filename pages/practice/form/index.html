@@ -12,37 +12,31 @@
             <ul>
                 <li>
                     <label for="user-name">user name</label>
-                    <input type="text" name="user-name" id="user-name" value="张三" minlength="3" required>
-                    <!--
-                        <input type="text" name="user-name" id="user-name" minlength="3" required pattern="[A-Za-z]">
-                        <input type="text" name="user-name" id="user-name" minlength="3" requiredpattern="[A-Za-z0-9]">
-                        <input type="text" name="user-name" id="user-name" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{3,}$">
-                    -->
-
+                    <input type="text" name="user-name" id="user-name" pattern="[A-Za-z0-9]{3,}" required autofocus>
                 </li>
                 <li>
                     <label for="family-name">family name</label>
-                    <input type="text" name="family-name" id="family-name" value="张" minlength="1">
+                    <input type="text" name="family-name" id="family-name" value="" minlength="1">
                 </li>
                 <li>
                     <label for="given-name">given name</label>
-                    <input type="text" name="given-name" id="given-name" value="三" minlength="1">
+                    <input type="text" name="given-name" id="given-name" value="" minlength="1">
                 </li>
                 <li>
                     <label for="mobile-number">mobile number</label>
-                    <input type="tel" name="mobile-number" id="mobile-number" value="13909000000" required>
+                    <input type="tel" name="mobile-number" id="mobile-number" value="" pattern="[0-9]{7,13}" required>
                 </li>
                 <li>
                     <label for="email">email</label>
-                    <input type="email" name="email" id="email" value="zhangsan@qq.com" required>
+                    <input type="email" name="email" id="email" value="" required>
                 </li>
                 <li>
                     <label for="password">password</label>
-                    <input type="password" name="pwd" id="pwd" value="123456" minlength="5" required>
+                    <input type="password" name="pwd" id="pwd" value="" minlength="5" required>
                 </li>
                 <li>
                     <label for="repeat-password" id="repwd-label">repeat password</label>
-                    <input type="password" name="repwd" id="repwd" minlength="5" value="123456" required>
+                    <input type="password" name="repwd" id="repwd" minlength="5" value="" required>
                 </li>
                 <li>
                     <button type="submit" id="btn">submit</button>
@@ -54,7 +48,3 @@
     </div>
 </body>
 </html>
-
-/*
-username 只能是 任意数字和字母，不能有符号等
-*/
