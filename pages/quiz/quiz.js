@@ -1,4 +1,5 @@
 let q1={
+    name:"q1",
     question:"Which of the following is not JavaScript Data Types?",
     A:"Undefined",
     B:"Number",
@@ -8,6 +9,7 @@ let q1={
 };
 
 let q2={
+    name:"q2",
     question:"When a user views a page containing a JavaScript program, which machine actually executes the script?",
     A:"The User’s machine running a Web browser",
     B:"The Web server",
@@ -17,6 +19,7 @@ let q2={
 };
 
 let q3={
+    name:"q3",
     question:"Inside which HTML element do we put the JavaScript?",
     A:"<js>",
     B:"<scripting>",
@@ -26,6 +29,7 @@ let q3={
 };
 
 let q4={
+    name:"q4",
     question:"Which is the correct way to write a JavaScript array?",
     A:"var txt = new Array(1:”tim”,2:”kim”,3:”jim”)",
     B:"var txt = new Array:1=(“tim”)2=(“kim”)3=(“jim”)",
@@ -35,6 +39,7 @@ let q4={
 };
 
 let q5={
+    name:"q5",
     question:"Which of the following event fires when the form element loses the focus: <button>, <input>, <label>, <select>, <textarea>?",
     A:"onfocus",
     B:"onblur",
@@ -44,6 +49,7 @@ let q5={
 };
 
 let q6={
+    name:"q6",
     question:"Which of the following is the structure of an if statement?",
     A:"if (conditional expression is true) thenexecute this codeend if",
     B:"if (conditional expression is true)execute this codeend if",
@@ -53,6 +59,7 @@ let q6={
 };
 
 let q7={
+    name:"q7",
     question:"What are JavaScript primitive data types:",
     A:"string",
     B:"immutable",
@@ -71,27 +78,38 @@ let q7={
 };
 
 function showQA(qn){
-    let questionContent=document.getElementById("question-zone").innerText;
-    let a1v=document.getElementById("a1").value;
-    let a2v=document.getElementById("a2").value;
-    let a3v=document.getElementById("a3").value;
-    let a4v=document.getElementById("a4").value;
-    let a1lt=document.getElementById("a1l").innerText;
-    let a2lt=document.getElementById("a2l").innerText;
-    let a3lt=document.getElementById("a3l").innerText;
-    let a4lt=document.getElementById("a4l").innerText;
-    questionContent=qn.question;
-    a1v=qn.A;
-    a1lt=qn.A;
-    a2v=qn.B;
-    a2lt=qn.B;
-    a3v=qn.C;
-    a3lt=qn.C;
-    a4v=qn.D;
-    a4lt=qn.D;
+    document.getElementById("question-number").innerText=qn.name;
+    document.getElementById("question-content").innerText=qn.question;
+    document.getElementById("a1").value=qn.A;
+    document.getElementById("a2").value=qn.B;
+    document.getElementById("a3").value=qn.C;
+    document.getElementById("a4").value=qn.D;
+    document.getElementById("a1l").innerText=qn.A;
+    document.getElementById("a2l").innerText=qn.B;
+    document.getElementById("a3l").innerText=qn.C;
+    document.getElementById("a4l").innerText=qn.D;
+    if(qn.answer.length>1){
+        document.getElementById("a1").type="checkbox";
+        document.getElementById("a2").type="checkbox";
+        document.getElementById("a3").type="checkbox";
+        document.getElementById("a4").type="checkbox";
+    }
+
 }
 
 showQA(q1);
-console.log("q1")
 
-document.querySelector("form").addEventListener("submit",)
+let save=[];
+
+let form=document.querySelector("form");
+
+form.addEventListener("submit",(e)=>{
+    e.preventDefault();
+    new FormData(formMain);
+});
+
+form.addEventListener("formdata",(e)=>{
+    const obj = Object.fromEntries(e.formData);
+    document.getElementById("show-name").innerText = obj["name"];
+})
+

@@ -9,3 +9,8 @@ html,body{
     width: 100%;
     color: white;
 }
+
+.btn{
+    color: white;
+    background-color: darkblue;
+}

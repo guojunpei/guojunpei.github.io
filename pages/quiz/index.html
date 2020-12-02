@@ -9,30 +9,42 @@
 <body>
     <div id="app-quiz">
         <div id="question-and-answer">
-            <div id="question-zone">This is the question</div>
+            <div id="question-zone">
+                <div id="question-number">question-number</div>
+                <div id="question-content">This is the question</div>
+            </div>
             <div id="answer-zone">
                 <form action="">
                     <div class="answers">
-                        <input type="radio" name="answer" id="a1" value="answer1">
+                        <input type="radio" name="answer" id="a1" value="A">
                         <label id="a1l" for="a1">This is answer1</label>
                     </div>
                     <div class="answers">
-                        <input type="radio" name="answer" id="a2" value="answer2">
+                        <input type="radio" name="answer" id="a2" value="B">
                         <label id="a2l" for="a2">This is answer2</label>
                     </div>
                     <div class="answers">
-                        <input type="radio" name="answer" id="a3" value="answer3">
+                        <input type="radio" name="answer" id="a3" value="C">
                         <label id="a3l" for="a3">This is answer3</label>
                     </div>
                     <div class="answers">
-                        <input type="radio" name="answer" id="a4" value="answer4">
+                        <input type="radio" name="answer" id="a4" value="D">
                         <label id="a4l" for="a4">This is answer4</label>
                     </div>
                     <div>
-                        <button type="submit">submit and next</button>
+                        <button class="btn" type="submit">submit and next</button>
                     </div>
 
                 </form>
+            </div>
+            <div>
+                <button class="btn" onclick="showQA(q1)">question1</button>
+                <button class="btn" onclick="showQA(q2)">question2</button>
+                <button class="btn" onclick="showQA(q3)">question3</button>
+                <button class="btn" onclick="showQA(q4)">question4</button>
+                <button class="btn" onclick="showQA(q5)">question5</button>
+                <button class="btn" onclick="showQA(q6)">question6</button>
+                <button class="btn" onclick="showQA(q7)">question7</button>
             </div>
 
         </div>
