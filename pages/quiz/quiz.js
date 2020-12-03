@@ -125,10 +125,12 @@ function showQA(qn){
         questionForm.appendChild(answersOfOne);
     }
     let btn = document.createElement("button");
+    let btnZone= document.createElement("div");
     btn.style.class="btn";
     btn.style.type="submit";
     btn.innerText="submit and next";
-    document.createElement("div").appendChild(btn);
+    btnZone.appendChild(btn);
+    questionForm.appendChild(btnZone);
 }
 
 showQA(q1);
@@ -152,7 +154,7 @@ form.addEventListener("formdata",(e)=>{
     save.push(obj);
     console.log(qusetionNow);
     for(let i=0;i<7;i++){
-        if(qusetionNow==questionList[i]){
+        if(qusetionNow===questionList[i]){
             if(questionList[i].rightAnswer===obj.answer){
                 save[0]=save[0]+1;
                 console.log(questionList[i].rightAnswer);
