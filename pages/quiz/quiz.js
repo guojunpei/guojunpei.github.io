@@ -6,6 +6,7 @@ let q1={
     C:"Boolean",
     D:"Float",
     rightAnswer:"Float",
+    type:"radio",
 };
 
 let q2={
@@ -16,6 +17,7 @@ let q2={
     C:"A central machine deep within Netscape’s corporate offices",
     D:"None of the above",
     rightAnswer:"D",
+    type:"radio",
 };
 
 let q3={
@@ -26,6 +28,7 @@ let q3={
     C:"<script>",
     D:"<javascript>",
     rightAnswer:"D",
+    type:"radio",
 };
 
 let q4={
@@ -36,6 +39,7 @@ let q4={
     C:"var txt = new Array(“tim”,”kim”,”jim”)",
     D:"var txt = new Array=”tim”,”kim”,”jim”",
     rightAnswer:"D",
+    type:"radio",
 };
 
 let q5={
@@ -46,6 +50,7 @@ let q5={
     C:"onclick",
     D:"ondblclick",
     rightAnswer:"D",
+    type:"radio",
 };
 
 let q6={
@@ -56,6 +61,7 @@ let q6={
     C:"if (conditional expression is true) {then execute this code>->}",
     D:"if (conditional expression is true) then {execute this code}",
     rightAnswer:"D",
+    type:"radio",
 };
 
 let q7={
@@ -75,6 +81,7 @@ let q7={
     L:"undefined",
     M:"symbol",
     rightAnswer:"ACFK",
+    type:"checkbox",
 };
 
 let qusetionNow=q1;
@@ -98,9 +105,16 @@ function showQA(qn){
         document.getElementById("a4").type="checkbox";
     }*/
     if(qn===q7){
-        
-    }
+        document.getElementById("a1").type="checkbox";
+        document.getElementById("a2").type="checkbox";
+        document.getElementById("a3").type="checkbox";
+        document.getElementById("a4").type="checkbox";
 
+        let questionForm = document.querySelector("form");
+        questionForm.innerHTML="";
+
+
+    }
 }
 
 showQA(q1);
@@ -108,14 +122,12 @@ showQA(q1);
 let save=[0];
 let questionList=[q1,q2,q3,q4,q5,q6,q7];
 
-
 let form=document.querySelector("form");
 
 form.addEventListener("submit",(e)=>{
     console.log(e);
     e.preventDefault();
     new FormData(form);
-
 });
 
 form.addEventListener("formdata",(e)=>{
