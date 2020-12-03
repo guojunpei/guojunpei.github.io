@@ -90,7 +90,7 @@ function showQA(qn){
     qusetionNow=qn;
     document.getElementById("question-number").innerText=qn.name;
     document.getElementById("question-content").innerText=qn.question;
-    document.getElementById("a1").value=qn.A;
+    /*document.getElementById("a1").value=qn.A;
     document.getElementById("a2").value=qn.B;
     document.getElementById("a3").value=qn.C;
     document.getElementById("a4").value=qn.D;
@@ -98,23 +98,37 @@ function showQA(qn){
     document.getElementById("a2l").innerText=qn.B;
     document.getElementById("a3l").innerText=qn.C;
     document.getElementById("a4l").innerText=qn.D;
-    /*if(qn.answer.length>1){
+    if(qn.answer.length>1){
         document.getElementById("a1").type="checkbox";
         document.getElementById("a2").type="checkbox";
         document.getElementById("a3").type="checkbox";
         document.getElementById("a4").type="checkbox";
     }*/
-    if(qn===q7){
-        document.getElementById("a1").type="checkbox";
-        document.getElementById("a2").type="checkbox";
-        document.getElementById("a3").type="checkbox";
-        document.getElementById("a4").type="checkbox";
 
-        let questionForm = document.querySelector("form");
-        questionForm.innerHTML="";
-
-
+    let questionForm = document.querySelector("form");
+    questionForm.innerHTML="";
+    let l=Object.values(qn);
+    for(let i=2;i<l.length-2;i++){
+        let answersOfOne=document.createElement("div");
+        let answerschoose=document.createElement("input");
+        let answersShow=document.createElement("label");
+        answersOfOne.style.class="answers";
+        answerschoose.style.type=qn.type;
+        answerschoose.style.name="answer";
+        answerschoose.style.id="a"+(i-1);
+        answerschoose.style.value=l[i];
+        answersOfOne.appendChild(answerschoose);
+        answersShow.style.id="a"+(i-1)+"l";
+        answersShow.style.for="a"+(i-1);
+        answersShow.innerText=l[i];
+        answersOfOne.appendChild(answersShow);
+        questionForm.appendChild(answersOfOne);
     }
+    let btn = document.createElement("button");
+    btn.style.class="btn";
+    btn.style.type="submit";
+    btn.innerText="submit and next";
+    document.createElement("div").appendChild(btn);
 }
 
 showQA(q1);
