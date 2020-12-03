@@ -14,3 +14,7 @@ html,body{
     color: white;
     background-color: darkblue;
 }
+
+#show-score-text{
+    color: red;
+}

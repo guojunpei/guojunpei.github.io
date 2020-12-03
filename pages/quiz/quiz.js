@@ -5,7 +5,7 @@ let q1={
     B:"Number",
     C:"Boolean",
     D:"Float",
-    answer:"D",
+    rightAnswer:"Float",
 };
 
 let q2={
@@ -15,7 +15,7 @@ let q2={
     B:"The Web server",
     C:"A central machine deep within Netscape’s corporate offices",
     D:"None of the above",
-    answer:"D",
+    rightAnswer:"D",
 };
 
 let q3={
@@ -25,7 +25,7 @@ let q3={
     B:"<scripting>",
     C:"<script>",
     D:"<javascript>",
-    answer:"D",
+    rightAnswer:"D",
 };
 
 let q4={
@@ -35,7 +35,7 @@ let q4={
     B:"var txt = new Array:1=(“tim”)2=(“kim”)3=(“jim”)",
     C:"var txt = new Array(“tim”,”kim”,”jim”)",
     D:"var txt = new Array=”tim”,”kim”,”jim”",
-    answer:"D",
+    rightAnswer:"D",
 };
 
 let q5={
@@ -45,7 +45,7 @@ let q5={
     B:"onblur",
     C:"onclick",
     D:"ondblclick",
-    answer:"D",
+    rightAnswer:"D",
 };
 
 let q6={
@@ -55,7 +55,7 @@ let q6={
     B:"if (conditional expression is true)execute this codeend if",
     C:"if (conditional expression is true) {then execute this code>->}",
     D:"if (conditional expression is true) then {execute this code}",
-    answer:"D",
+    rightAnswer:"D",
 };
 
 let q7={
@@ -74,10 +74,13 @@ let q7={
     K:"boolean",
     L:"undefined",
     M:"symbol",
-    answer:"ACFK",
+    rightAnswer:"ACFK",
 };
 
+let qusetionNow=q1;
+
 function showQA(qn){
+    qusetionNow=qn;
     document.getElementById("question-number").innerText=qn.name;
     document.getElementById("question-content").innerText=qn.question;
     document.getElementById("a1").value=qn.A;
@@ -88,28 +91,54 @@ function showQA(qn){
     document.getElementById("a2l").innerText=qn.B;
     document.getElementById("a3l").innerText=qn.C;
     document.getElementById("a4l").innerText=qn.D;
-    if(qn.answer.length>1){
+    /*if(qn.answer.length>1){
         document.getElementById("a1").type="checkbox";
         document.getElementById("a2").type="checkbox";
         document.getElementById("a3").type="checkbox";
         document.getElementById("a4").type="checkbox";
+    }*/
+    if(qn===q7){
+        
     }
 
 }
 
 showQA(q1);
 
-let save=[];
+let save=[0];
+let questionList=[q1,q2,q3,q4,q5,q6,q7];
+
 
 let form=document.querySelector("form");
 
 form.addEventListener("submit",(e)=>{
+    console.log(e);
     e.preventDefault();
-    new FormData(formMain);
+    new FormData(form);
+
 });
 
 form.addEventListener("formdata",(e)=>{
+    console.log(e);
     const obj = Object.fromEntries(e.formData);
-    document.getElementById("show-name").innerText = obj["name"];
+    obj.name=document.getElementById("question-number").innerText;
+    console.log(obj);
+    save.push(obj);
+    console.log(qusetionNow);
+    for(let i=0;i<7;i++){
+        if(qusetionNow==questionList[i]){
+            if(questionList[i].rightAnswer===obj.answer){
+                save[0]=save[0]+1;
+                console.log(questionList[i].rightAnswer);
+                console.log(obj.answer);
+            }
+        }
+    }
+    console.log("score: "+save[0]);
+    let qusetionNext=questionList[(questionList.indexOf(qusetionNow)+1)];
+    showQA(qusetionNext);
+    qusetionNow=qusetionNext;
+    save[0]=document.getElementById("show-score-number").innerText;
 })
+
 
