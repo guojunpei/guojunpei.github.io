@@ -128,6 +128,8 @@ function showQA(qn){
     let btnZone= document.createElement("div");
     btn.style.class="btn";
     btn.style.type="submit";
+    btn.style.backgroundColor="blue";
+    btn.style.color="white";
     btn.innerText="submit and next";
     btnZone.appendChild(btn);
     questionForm.appendChild(btnZone);
@@ -166,7 +168,7 @@ form.addEventListener("formdata",(e)=>{
     let qusetionNext=questionList[(questionList.indexOf(qusetionNow)+1)];
     showQA(qusetionNext);
     qusetionNow=qusetionNext;
-    save[0]=document.getElementById("show-score-number").innerText;
+    document.getElementById("show-score-number").innerText = save[0];
 })
 
 

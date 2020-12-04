@@ -15,5 +15,5 @@ function testSame(e){
     }
 }
 
-document.querySelector("form").addEventListener("submit",testSame());
+document.querySelector("form").addEventListener("submit",testSame(e));
 //document.getElementById("repwd").addEventListener("focusout",testSame());
