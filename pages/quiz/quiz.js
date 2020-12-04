@@ -170,5 +170,3 @@ form.addEventListener("formdata",(e)=>{
     qusetionNow=qusetionNext;
     document.getElementById("show-score-number").innerText = save[0];
 })
-
-
