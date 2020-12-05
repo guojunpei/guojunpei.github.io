@@ -8,41 +8,42 @@
 </head>
 <body>
     <div id="app">
-        <form action="">
-            <ul>
-                <li>
+        <form action="" class="form-style">
+            <div class="form-content">
+                <div>
                     <label for="user-name">user name</label>
-                    <input type="text" name="user-name" id="user-name" pattern="[A-Za-z0-9]{3,}" required autofocus>
-                </li>
-                <li>
+                    <input type="text" name="user-name" id="user-name" class="input-style" pattern="[A-Za-z0-9]{3,}" required autofocus>
+                </div>
+                <div>
                     <label for="family-name">family name</label>
-                    <input type="text" name="family-name" id="family-name" value="" minlength="1">
-                </li>
-                <li>
+                    <input type="text" name="family-name" id="family-name" class="input-style" value="" minlength="1">
+                </div>
+                <div>
                     <label for="given-name">given name</label>
-                    <input type="text" name="given-name" id="given-name" value="" minlength="1">
-                </li>
-                <li>
+                    <input type="text" name="given-name" id="given-name" class="input-style" value="" minlength="1">
+                </div>
+                <div>
                     <label for="mobile-number">mobile number</label>
-                    <input type="tel" name="mobile-number" id="mobile-number" value="" pattern="[0-9]{7,13}" required>
-                </li>
-                <li>
+                    <input type="tel" name="mobile-number" id="mobile-number" class="input-style" value="" pattern="[0-9]{7,13}" required>
+                </div>
+                <div>
                     <label for="email">email</label>
-                    <input type="email" name="email" id="email" value="" required>
-                </li>
-                <li>
+                    <input type="email" name="email" id="email" class="input-style" value="" required>
+                </div>
+                <div>
                     <label for="password">password</label>
-                    <input type="password" name="pwd" id="pwd" value="" minlength="5" required>
-                </li>
-                <li>
+                    <input type="password" name="pwd" id="pwd" class="input-style" value="" minlength="5" required>
+                </div>
+                <div>
                     <label for="repeat-password" id="repwd-label">repeat password</label>
-                    <input type="password" name="repwd" id="repwd" minlength="5" value="" required>
-                </li>
-                <li>
+                    <input type="password" name="repwd" id="repwd" class="input-style" minlength="5" value="" required>
+                </div>
+                <div id="show-form-data"></div>
+                <div>
                     <button type="submit" id="btn">submit</button>
-                </li>
+                </div>
 
-            </ul>
+            </div>
         </form>
 
     </div>
