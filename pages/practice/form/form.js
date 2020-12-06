@@ -7,8 +7,10 @@ function testSame(){
 
     if(pwd1===pwd2){
         pwd2BC="0.1rem solid green";
+
     }else{
         pwd2BC="0.1rem dashed red";
+        
     }
 }
 
@@ -23,9 +25,7 @@ form.addEventListener("submit",(e)=>{
 });
 
 form.addEventListener("formdata",(e)=>{
-    const obj = Object.fromEntries(e.formData);
-    console.log(obj);
     let content="";
-    for(let [k,v] of obj){content=content+k+":"+v+";";}
+    for(let [k,v] of e.formData){content=content+k+":"+v+";";}
     document.getElementById("show-form-data").innerText = content;
 });
