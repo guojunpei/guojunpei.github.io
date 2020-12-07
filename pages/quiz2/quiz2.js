@@ -152,9 +152,11 @@ mainForm.addEventListener("formdata",(e)=>{
     //let rightAnswerQ={};
     const rAMap=new Map();
     for(const qn of questionList){
-        rAMap.set(qu.name,qn.rightAnswer);
+        rAMap.set(qn.name,qn.rightAnswer);
     }
     //rightAnswerQ=Object.fromEntries(rAMap);
+
+    let questionsAndScore="";
 
     for(let [rk,rv] of rAMap){
         if(rk!=="Q7"){
@@ -162,8 +164,10 @@ mainForm.addEventListener("formdata",(e)=>{
                 if(rk===uk){
                     if(rv===uv){
                         save[0]=save[0]+10;
+                        questionsAndScore=questionsAndScore+rk+":"+"10"+";";
                     }else{
                         save[0]=save[0]-5;
+                        questionsAndScore=questionsAndScore+rk+":"+"-5"+";";
                     }
                 }
             }
@@ -175,17 +179,21 @@ mainForm.addEventListener("formdata",(e)=>{
                     for(let b of uv){
                         for(let a of rv){
                             if(a===b){
-                                sn=sn+15/ras.length;
+                                sn=sn+15/rv.length;
                             }else{
                                 sn=sn-10;
                             }
                         }
                     }
-
                 }
             }
-            if(sn<-30){save[0]=save[0]-30;}else{
+            if(sn<-30){
+                sn=-30;
                 save[0]=save[0]+sn;
+                questionsAndScore=questionsAndScore+"Q7"+":"+sn+";";
+            }else{
+                save[0]=save[0]+sn;
+                questionsAndScore=questionsAndScore+"Q7"+":"+sn+";";
             }
             //"多选题 （用 checkbox) 全对 20 分；选错 一个 -10 扣分（错误数 * -10）；最多扣 30分 （-30）；答对单个题分数为： 15 / 对的选项数量 全对 + 5分 （全对 20分）"
         }
@@ -194,11 +202,12 @@ mainForm.addEventListener("formdata",(e)=>{
     console.log(userAnswer);
 
     console.log("score: "+save[0]);
-    document.getElementById("question-and-answer").style.display="none";
+    document.getElementById("show-paper").style.display="none";
     document.getElementById("show-score").style.display="flex";
     document.getElementById("show-score-text").style.fontSize="2rem";
     document.getElementById("show-score-text").style.color="white";
     document.getElementById("show-score-text").innerText="Congratulations! All the questions has be finshed! your final score is";
     document.getElementById("show-score-number").style.fontSize="4rem";
     document.getElementById("show-score-number").innerText = save[0];
+    document.getElementById("questions-and-score").innerText = questionsAndScore;
 })
