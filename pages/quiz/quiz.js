@@ -104,6 +104,7 @@ function showQA(qn){
         answerschoose.name="answer";
         answerschoose.id="a"+(i-1);
         answerschoose.value=lk[i];
+        answerschoose.className="select-style";
         answersOfOne.appendChild(answerschoose);
         answersShow.id="a"+(i-1)+"l";
         answersShow.htmlFor="a"+(i-1);

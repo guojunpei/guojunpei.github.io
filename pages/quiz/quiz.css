@@ -8,13 +8,54 @@ html,body{
     height: 100%;
     width: 100%;
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0rem;
+    margin: 0rem;
 }
+
+#question-and-answer > div{
+    padding: 1rem;
+}
+
+#question-zone{
+    display: flex;
+    flex-direction: row;
+    color: darkgreen;
+}
+
+#question-content{
+    color: lawngreen;
+}
+
+.answers{
+    padding: 0.5rem;
+    /*color: lightseagreen;*/
+}
+
+/*
+.select-style{
+    color: lightseagreen;
+}
+*/
 
 .btn{
     color: white;
     background-color: darkblue;
+    margin: 0.5rem;
+}
+
+#show-score{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 #show-score-text{
-    color: red;
+    color: rgb(90, 1, 1);
+}
+
+#show-score-number{
+    color: darkred;
 }
