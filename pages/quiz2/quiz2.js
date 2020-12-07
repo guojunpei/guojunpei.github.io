@@ -168,9 +168,9 @@ mainForm.addEventListener("formdata",(e)=>{
                     }else{
                         sn=-5;
                     }
+                    save[0]=save[0]+sn;
+                    questionsAndScore=questionsAndScore+rk+":"+sn+";";
                 }
-                save[0]=save[0]+sn;
-                questionsAndScore=questionsAndScore+"Q7"+":"+sn+";";
             }
             //"单选题（用 radio） 答对 10分，答错 -5 分 扣分"
         }else{
@@ -181,7 +181,7 @@ mainForm.addEventListener("formdata",(e)=>{
                     }else{
                         for(let b of uv){
                             for(let a of rv){
-                                if(a===b){
+                                if(b===a){
                                     sn=sn+15/rv.length;
                                 }else{
                                     sn=sn-10;
@@ -190,14 +190,14 @@ mainForm.addEventListener("formdata",(e)=>{
                         }
                     }
                 }
-                if(sn<-30){
-                    sn=-30;
-                }else{
-                    sn=sn;
-                }
-                save[0]=save[0]+sn;
-                questionsAndScore=questionsAndScore+"Q7"+":"+sn+";";
             }
+            if(sn<-30){
+                sn=-30;
+            }else{
+                sn=sn;
+            }
+            save[0]=save[0]+sn;
+            questionsAndScore=questionsAndScore+"Q7"+":"+sn+";";
             //"多选题 （用 checkbox) 全对 20 分；选错 一个 -10 扣分（错误数 * -10）；最多扣 30分 （-30）；答对单个题分数为： 15 / 对的选项数量 全对 + 5分 （全对 20分）"
         }
     }
