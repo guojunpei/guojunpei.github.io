@@ -16,11 +16,12 @@ html,body{
     margin: 0rem;
 }
 
-.question-and-answer > div{
-    padding: 1rem;
+.question-and-answer{
+    margin: 2rem;
 }
 
 .question-zone{
+    margin: 0.5rem;
     display: flex;
     flex-direction: row;
     color: darkgreen;
@@ -30,8 +31,12 @@ html,body{
     color: lawngreen;
 }
 
+.answer-zone{
+    margin: 0.5rem;
+}
+
 .answers{
-    padding: 0.5rem;
+    margin: 0.2rem;
     /*color: lightseagreen;*/
 }
 

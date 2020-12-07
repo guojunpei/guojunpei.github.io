@@ -96,9 +96,9 @@ for(const qn of questionList){
     const questionNumber = document.createElement("div");
     const questionContent = document.createElement("div");
     questionZone.className="question-zone";
-    questionNumber.innerText=qn.name+" : ";
+    questionNumber.innerText=qn.name+":";
     questionNumber.className="question-number";
-    questionContent.innerText=qn.name+" : ";
+    questionContent.innerText=qn.question;
     questionContent.className="question-content";
     questionZone.appendChild(questionNumber);
     questionZone.appendChild(questionContent);
