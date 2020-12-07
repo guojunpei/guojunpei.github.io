@@ -5,7 +5,7 @@ let q1={
     B:"Number",
     C:"Boolean",
     D:"Float",
-    rightAnswer:"Float",
+    rightAnswer:"D",
     type:"radio",
 };
 
@@ -90,44 +90,31 @@ function showQA(qn){
     qusetionNow=qn;
     document.getElementById("question-number").innerText=qn.name;
     document.getElementById("question-content").innerText=qn.question;
-    /*document.getElementById("a1").value=qn.A;
-    document.getElementById("a2").value=qn.B;
-    document.getElementById("a3").value=qn.C;
-    document.getElementById("a4").value=qn.D;
-    document.getElementById("a1l").innerText=qn.A;
-    document.getElementById("a2l").innerText=qn.B;
-    document.getElementById("a3l").innerText=qn.C;
-    document.getElementById("a4l").innerText=qn.D;
-    if(qn.answer.length>1){
-        document.getElementById("a1").type="checkbox";
-        document.getElementById("a2").type="checkbox";
-        document.getElementById("a3").type="checkbox";
-        document.getElementById("a4").type="checkbox";
-    }*/
 
     let questionForm = document.querySelector("form");
     questionForm.innerHTML="";
     let l=Object.values(qn);
+    let lk=Object.keys(qn);
     for(let i=2;i<l.length-2;i++){
         let answersOfOne=document.createElement("div");
         let answerschoose=document.createElement("input");
         let answersShow=document.createElement("label");
-        answersOfOne.style.class="answers";
-        answerschoose.style.type=qn.type;
-        answerschoose.style.name="answer";
-        answerschoose.style.id="a"+(i-1);
-        answerschoose.style.value=l[i];
+        answersOfOne.className="answers";
+        answerschoose.type=qn.type;
+        answerschoose.name="answer";
+        answerschoose.id="a"+(i-1);
+        answerschoose.value=lk[i];
         answersOfOne.appendChild(answerschoose);
-        answersShow.style.id="a"+(i-1)+"l";
-        answersShow.style.for="a"+(i-1);
+        answersShow.id="a"+(i-1)+"l";
+        answersShow.htmlFor="a"+(i-1);
         answersShow.innerText=l[i];
         answersOfOne.appendChild(answersShow);
         questionForm.appendChild(answersOfOne);
     }
     let btn = document.createElement("button");
     let btnZone= document.createElement("div");
-    btn.style.class="btn";
-    btn.style.type="submit";
+    btn.className="btn";
+    btn.type="submit";
     btn.style.backgroundColor="blue";
     btn.style.color="white";
     btn.innerText="submit and next";
@@ -155,15 +142,34 @@ form.addEventListener("formdata",(e)=>{
     console.log(obj);
     save.push(obj);
     console.log(qusetionNow);
-    for(let i=0;i<7;i++){
-        if(qusetionNow===questionList[i]){
-            if(questionList[i].rightAnswer===obj.answer){
-                save[0]=save[0]+1;
-                console.log(questionList[i].rightAnswer);
-                console.log(obj.answer);
+    if(qusetionNow.type==="radio"){
+        if(qusetionNow.rightAnswer===obj.answer){
+            save[0]=save[0]+10;
+        }else{save[0]=save[0]-5;}
+    }else{
+        if(qusetionNow.rightAnswer===obj.answer){
+            save[0]=save[0]+20;
+        }else{
+            let sn=0;
+            let ras =qusetionNow.rightAnswer;
+            for(let b of obj.answer){
+                for(let a of ras){
+                    if(a===b){
+                        sn=sn+15/ras.length;
+                    }else{
+                        sn=sn-10;
+                    }
+                }
+            }
+            if(sn<-30){save[0]=save[0]-30;}else{
+                save[0]=save[0]+sn;
             }
         }
     }
+//"单选题（用 radio） 答对 10分，答错 -5 分 扣分"
+//"多选题 （用 checkbox) 全对 20 分；选错 一个 -10 扣分（错误数 * -10）；最多扣 30分 （-30）；答对单个题分数为： 15 / 对的选项数量 全对 + 5分 （全对 20分）"
+
+
     console.log("score: "+save[0]);
     let qusetionNext=questionList[(questionList.indexOf(qusetionNow)+1)];
     showQA(qusetionNext);
