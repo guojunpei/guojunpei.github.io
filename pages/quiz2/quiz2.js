@@ -189,7 +189,6 @@ mainForm.addEventListener("formdata",(e)=>{
                     }
                 }
             }
-
             if(sn<-30){
                 sn=-30;
             }else{
@@ -213,5 +212,3 @@ mainForm.addEventListener("formdata",(e)=>{
     document.getElementById("show-score-number").innerText = save[0];
     document.getElementById("questions-and-score").innerText = questionsAndScore;
 })
-
-save.filter
