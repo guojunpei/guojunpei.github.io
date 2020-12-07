@@ -1,4 +1,4 @@
-let q1={
+let Q1={
     name:"q1",
     question:"Which of the following is not JavaScript Data Types?",
     A:"Undefined",
@@ -20,7 +20,7 @@ let q2={
     type:"radio",
 };
 
-let q3={
+let Q3={
     name:"q3",
     question:"Inside which HTML element do we put the JavaScript?",
     A:"<js>",
@@ -31,7 +31,7 @@ let q3={
     type:"radio",
 };
 
-let q4={
+let Q4={
     name:"q4",
     question:"Which is the correct way to write a JavaScript array?",
     A:"var txt = new Array(1:”tim”,2:”kim”,3:”jim”)",
@@ -42,7 +42,7 @@ let q4={
     type:"radio",
 };
 
-let q5={
+let Q5={
     name:"q5",
     question:"Which of the following event fires when the form element loses the focus: <button>, <input>, <label>, <select>, <textarea>?",
     A:"onfocus",
@@ -53,18 +53,18 @@ let q5={
     type:"radio",
 };
 
-let q6={
+let Q6={
     name:"q6",
     question:"Which of the following is the structure of an if statement?",
     A:"if (conditional expression is true) thenexecute this codeend if",
     B:"if (conditional expression is true)execute this codeend if",
     C:"if (conditional expression is true) {then execute this code>->}",
     D:"if (conditional expression is true) then {execute this code}",
-    rightAnswer:"D",
+    rightAnswer:"C",
     type:"radio",
 };
 
-let q7={
+let Q7={
     name:"q7",
     question:"What are JavaScript primitive data types:",
     A:"string",
@@ -91,14 +91,14 @@ function showQA(qn){
     document.getElementById("question-number").innerText=qn.name;
     document.getElementById("question-content").innerText=qn.question;
 
-    let questionForm = document.querySelector("form");
+    const questionForm = document.querySelector("form");
     questionForm.innerHTML="";
     let l=Object.values(qn);
     let lk=Object.keys(qn);
     for(let i=2;i<l.length-2;i++){
-        let answersOfOne=document.createElement("div");
-        let answerschoose=document.createElement("input");
-        let answersShow=document.createElement("label");
+        const answersOfOne=document.createElement("div");
+        const answerschoose=document.createElement("input");
+        const answersShow=document.createElement("label");
         answersOfOne.className="answers";
         answerschoose.type=qn.type;
         answerschoose.name="answer";
@@ -112,8 +112,8 @@ function showQA(qn){
         answersOfOne.appendChild(answersShow);
         questionForm.appendChild(answersOfOne);
     }
-    let btn = document.createElement("button");
-    let btnZone= document.createElement("div");
+    const btn = document.createElement("button");
+    const btnZone= document.createElement("div");
     btn.className="btn";
     btn.type="submit";
     btn.style.backgroundColor="blue";
@@ -126,9 +126,9 @@ function showQA(qn){
 showQA(q1);
 
 let save=[0];
-let questionList=[q1,q2,q3,q4,q5,q6,q7];
+const questionList=[q1,q2,q3,q4,q5,q6,q7];
 
-let form=document.querySelector("form");
+const form=document.querySelector("form");
 
 form.addEventListener("submit",(e)=>{
     console.log(e);
@@ -152,7 +152,7 @@ form.addEventListener("formdata",(e)=>{
             save[0]=save[0]+20;
         }else{
             let sn=0;
-            let ras =qusetionNow.rightAnswer;
+            const ras =qusetionNow.rightAnswer;
             for(let b of obj.answer){
                 for(let a of ras){
                     if(a===b){
