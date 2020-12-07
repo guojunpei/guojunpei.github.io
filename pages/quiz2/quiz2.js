@@ -169,7 +169,7 @@ mainForm.addEventListener("formdata",(e)=>{
                         sn=-5;
                     }
                     save[0]=save[0]+sn;
-                    questionsAndScore=questionsAndScore+rk+":"+sn+";";
+                    questionsAndScore=questionsAndScore+rk+":满分10分,实得"+sn+"分;\n";
                 }
             }
             //"单选题（用 radio） 答对 10分，答错 -5 分 扣分"
@@ -195,7 +195,7 @@ mainForm.addEventListener("formdata",(e)=>{
                 sn=sn;
             }
             save[0]=save[0]+sn;
-            questionsAndScore=questionsAndScore+"Q7"+":"+sn+";";
+            questionsAndScore=questionsAndScore+"Q7"+":满分20分,实得"+sn+"分;\n";
             //"多选题 （用 checkbox) 全对 20 分；选错 一个 -10 扣分（错误数 * -10）；最多扣 30分 （-30）；答对单个题分数为： 15 / 对的选项数量 全对 + 5分 （全对 20分）"
         }
     }
@@ -207,7 +207,7 @@ mainForm.addEventListener("formdata",(e)=>{
     document.getElementById("show-score").style.display="flex";
     document.getElementById("show-score-text").style.fontSize="2rem";
     document.getElementById("show-score-text").style.color="white";
-    document.getElementById("show-score-text").innerText="Congratulations! All the questions has be finshed! your final score is";
+    document.getElementById("show-score-text").innerText="Congratulations!\n All the questions has be finshed!\n your final score is";
     document.getElementById("show-score-number").style.fontSize="4rem";
     document.getElementById("show-score-number").innerText = save[0];
     document.getElementById("questions-and-score").innerText = questionsAndScore;
