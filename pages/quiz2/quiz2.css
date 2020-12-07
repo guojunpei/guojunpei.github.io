@@ -49,13 +49,13 @@ html,body{
 .btn{
     color: white;
     background-color: darkblue;
-    margin: 0.5rem auto;
+    margin: 2rem auto;
     display: block;
 }
 
 #show-score{
-    display: flex;
-    flex-direction: row;
+    display: none;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }

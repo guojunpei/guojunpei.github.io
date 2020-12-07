@@ -117,7 +117,7 @@ for(const qn of questionList){
         const answersShow=document.createElement("label");
         answersOfOne.className="answers";
         answerschoose.type=qn.type;
-        answerschoose.name="answer";
+        answerschoose.name=qn.name;
         answerschoose.id="a"+qn.name+lk[i];
         answerschoose.value=lk[i];
         answerschoose.className="select-style";
@@ -144,41 +144,58 @@ mainForm.addEventListener("submit",(e)=>{
 
 mainForm.addEventListener("formdata",(e)=>{
     console.log(e);
-    const obj = Object.fromEntries(e.formData);
-    obj.name=document.getElementById("question-number").innerText;
-    console.log(obj);
-    save.push(obj);
-    console.log(qusetionNow);
-    if(qusetionNow.type==="radio"){
-        if(qusetionNow.rightAnswer===obj.answer){
-            save[0]=save[0]+10;
-        }else{save[0]=save[0]-5;}
-        //"单选题（用 radio） 答对 10分，答错 -5 分 扣分"
-    }else{
-        if(qusetionNow.rightAnswer===obj.answer){
-            save[0]=save[0]+20;
+    const userAnswer = Object.fromEntries(e.formData);
+    const uAMap=e.formData;
+
+    save.push(userAnswer);
+    
+    //let rightAnswerQ={};
+    const rAMap=new Map();
+    for(const qn of questionList){
+        rAMap.set(qu.name,qn.rightAnswer);
+    }
+    //rightAnswerQ=Object.fromEntries(rAMap);
+
+    for(let [rk,rv] of rAMap){
+        if(rk!=="Q7"){
+            for(let [uk,uv] of uAMap){
+                if(rk===uk){
+                    if(rv===uv){
+                        save[0]=save[0]+10;
+                    }else{
+                        save[0]=save[0]-5;
+                    }
+                }
+            }
+            //"单选题（用 radio） 答对 10分，答错 -5 分 扣分"
         }else{
             let sn=0;
-            const ras =qusetionNow.rightAnswer;
-            for(let b of obj.answer){
-                for(let a of ras){
-                    if(a===b){
-                        sn=sn+15/ras.length;
-                    }else{
-                        sn=sn-10;
+            for(let [uk,uv] of uAMap){
+                if(uk==="Q7"){
+                    for(let b of uv){
+                        for(let a of rv){
+                            if(a===b){
+                                sn=sn+15/ras.length;
+                            }else{
+                                sn=sn-10;
+                            }
+                        }
                     }
+
                 }
             }
             if(sn<-30){save[0]=save[0]-30;}else{
                 save[0]=save[0]+sn;
             }
+            //"多选题 （用 checkbox) 全对 20 分；选错 一个 -10 扣分（错误数 * -10）；最多扣 30分 （-30）；答对单个题分数为： 15 / 对的选项数量 全对 + 5分 （全对 20分）"
         }
-        //"多选题 （用 checkbox) 全对 20 分；选错 一个 -10 扣分（错误数 * -10）；最多扣 30分 （-30）；答对单个题分数为： 15 / 对的选项数量 全对 + 5分 （全对 20分）"
     }
+    
+    console.log(userAnswer);
 
     console.log("score: "+save[0]);
     document.getElementById("question-and-answer").style.display="none";
-    document.getElementById("show-score").style.flexDirection="column";
+    document.getElementById("show-score").style.display="flex";
     document.getElementById("show-score-text").style.fontSize="2rem";
     document.getElementById("show-score-text").style.color="white";
     document.getElementById("show-score-text").innerText="Congratulations! All the questions has be finshed! your final score is";
