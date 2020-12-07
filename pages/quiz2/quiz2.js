@@ -159,39 +159,42 @@ mainForm.addEventListener("formdata",(e)=>{
     let questionsAndScore="";
 
     for(let [rk,rv] of rAMap){
+        let sn=0;
         if(rk!=="Q7"){
             for(let [uk,uv] of uAMap){
                 if(rk===uk){
                     if(rv===uv){
-                        save[0]=save[0]+10;
-                        questionsAndScore=questionsAndScore+rk+":"+"10"+";";
+                        sn=10;
                     }else{
-                        save[0]=save[0]-5;
-                        questionsAndScore=questionsAndScore+rk+":"+"-5"+";";
+                        sn=-5;
                     }
                 }
+                save[0]=save[0]+sn;
+                questionsAndScore=questionsAndScore+"Q7"+":"+sn+";";
             }
             //"单选题（用 radio） 答对 10分，答错 -5 分 扣分"
         }else{
-            let sn=0;
             for(let [uk,uv] of uAMap){
                 if(uk==="Q7"){
-                    for(let b of uv){
-                        for(let a of rv){
-                            if(a===b){
-                                sn=sn+15/rv.length;
-                            }else{
-                                sn=sn-10;
+                    if(rv===uv){
+                        sn=20;
+                    }else{
+                        for(let b of uv){
+                            for(let a of rv){
+                                if(a===b){
+                                    sn=sn+15/rv.length;
+                                }else{
+                                    sn=sn-10;
+                                }
                             }
                         }
                     }
                 }
-            }
-            if(sn<-30){
-                sn=-30;
-                save[0]=save[0]+sn;
-                questionsAndScore=questionsAndScore+"Q7"+":"+sn+";";
-            }else{
+                if(sn<-30){
+                    sn=-30;
+                }else{
+                    sn=sn;
+                }
                 save[0]=save[0]+sn;
                 questionsAndScore=questionsAndScore+"Q7"+":"+sn+";";
             }
