@@ -1,5 +1,5 @@
-let Q1={
-    name:"q1",
+let q1={
+    name:"Q1",
     question:"Which of the following is not JavaScript Data Types?",
     A:"Undefined",
     B:"Number",
@@ -10,7 +10,7 @@ let Q1={
 };
 
 let q2={
-    name:"q2",
+    name:"Q2",
     question:"When a user views a page containing a JavaScript program, which machine actually executes the script?",
     A:"The User’s machine running a Web browser",
     B:"The Web server",
@@ -20,8 +20,8 @@ let q2={
     type:"radio",
 };
 
-let Q3={
-    name:"q3",
+let q3={
+    name:"Q3",
     question:"Inside which HTML element do we put the JavaScript?",
     A:"<js>",
     B:"<scripting>",
@@ -31,8 +31,8 @@ let Q3={
     type:"radio",
 };
 
-let Q4={
-    name:"q4",
+let q4={
+    name:"Q4",
     question:"Which is the correct way to write a JavaScript array?",
     A:"var txt = new Array(1:”tim”,2:”kim”,3:”jim”)",
     B:"var txt = new Array:1=(“tim”)2=(“kim”)3=(“jim”)",
@@ -42,8 +42,8 @@ let Q4={
     type:"radio",
 };
 
-let Q5={
-    name:"q5",
+let q5={
+    name:"Q5",
     question:"Which of the following event fires when the form element loses the focus: <button>, <input>, <label>, <select>, <textarea>?",
     A:"onfocus",
     B:"onblur",
@@ -53,8 +53,8 @@ let Q5={
     type:"radio",
 };
 
-let Q6={
-    name:"q6",
+let q6={
+    name:"Q6",
     question:"Which of the following is the structure of an if statement?",
     A:"if (conditional expression is true) thenexecute this codeend if",
     B:"if (conditional expression is true)execute this codeend if",
@@ -64,8 +64,8 @@ let Q6={
     type:"radio",
 };
 
-let Q7={
-    name:"q7",
+let q7={
+    name:"Q7",
     question:"What are JavaScript primitive data types:",
     A:"string",
     B:"immutable",
@@ -147,6 +147,7 @@ form.addEventListener("formdata",(e)=>{
         if(qusetionNow.rightAnswer===obj.answer){
             save[0]=save[0]+10;
         }else{save[0]=save[0]-5;}
+        //"单选题（用 radio） 答对 10分，答错 -5 分 扣分"
     }else{
         if(qusetionNow.rightAnswer===obj.answer){
             save[0]=save[0]+20;
@@ -166,14 +167,21 @@ form.addEventListener("formdata",(e)=>{
                 save[0]=save[0]+sn;
             }
         }
+        //"多选题 （用 checkbox) 全对 20 分；选错 一个 -10 扣分（错误数 * -10）；最多扣 30分 （-30）；答对单个题分数为： 15 / 对的选项数量 全对 + 5分 （全对 20分）"
     }
-//"单选题（用 radio） 答对 10分，答错 -5 分 扣分"
-//"多选题 （用 checkbox) 全对 20 分；选错 一个 -10 扣分（错误数 * -10）；最多扣 30分 （-30）；答对单个题分数为： 15 / 对的选项数量 全对 + 5分 （全对 20分）"
-
 
     console.log("score: "+save[0]);
     let qusetionNext=questionList[(questionList.indexOf(qusetionNow)+1)];
-    showQA(qusetionNext);
-    qusetionNow=qusetionNext;
+    if(qusetionNow===q7){
+        document.getElementById("question-zone").style.display="none";
+        document.getElementById("answer-zone").style.display="none";
+        document.getElementById("show-score").style.flexDirection="column"
+        document.getElementById("show-score-text").innerText="Congratulations! All the questions has be finshed! your final score is"
+
+    }else{
+        showQA(qusetionNext);
+        qusetionNow=qusetionNext;
+    }
+    
     document.getElementById("show-score-number").innerText = save[0];
 })
