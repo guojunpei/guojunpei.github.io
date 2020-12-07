@@ -26,11 +26,11 @@ html,body{
     margin: 0.5rem;
     display: flex;
     flex-direction: row;
-    color: darkgreen;
+    color: gray;
 }
 
 .question-content{
-    color: lawngreen;
+    color: lightskyblue;
 }
 
 .answer-zone{
