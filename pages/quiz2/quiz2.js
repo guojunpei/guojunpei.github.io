@@ -86,7 +86,7 @@ let q7={
 
 const questionList=[q1,q2,q3,q4,q5,q6,q7];
 
-const mainPaper = document.getElementById("div");
+const mainPaper = document.getElementById("main-paper");
 
 for(const qn of questionList){
     const questionAndAnswer = document.createElement("div");
@@ -115,18 +115,18 @@ for(const qn of questionList){
         answersOfOne.className="answers";
         answerschoose.type=qn.type;
         answerschoose.name="answer";
-        answerschoose.id="a"+qn.name+k[i];
+        answerschoose.id="a"+qn.name+lk[i];
         answerschoose.value=lk[i];
         answerschoose.className="select-style";
         answersOfOne.appendChild(answerschoose);
-        answersShow.id="al"+qn.name+k[i];
-        answersShow.htmlFor="a"+qn.name+k[i];
+        answersShow.id="al"+qn.name+lk[i];
+        answersShow.htmlFor="a"+qn.name+lk[i];
         answersShow.innerText=lv[i];
         answersOfOne.appendChild(answersShow);
         answerZone.appendChild(answersOfOne);
     }
     questionAndAnswer.appendChild(answerZone);
-    
+
     mainPaper.appendChild(questionAndAnswer);
 }
 
@@ -139,7 +139,7 @@ mainForm.addEventListener("submit",(e)=>{
     new FormData(mainForm);
 });
 
-form.addEventListener("formdata",(e)=>{
+mainForm.addEventListener("formdata",(e)=>{
     console.log(e);
     const obj = Object.fromEntries(e.formData);
     obj.name=document.getElementById("question-number").innerText;
