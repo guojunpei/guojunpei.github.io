@@ -89,6 +89,7 @@ const questionList=[q1,q2,q3,q4,q5,q6,q7];
 const mainPaper = document.getElementById("main-paper");
 
 for(const qn of questionList){
+    console.log(qn.name);
     const questionAndAnswer = document.createElement("div");
     questionAndAnswer.className="question-and-answer";
 
@@ -108,7 +109,9 @@ for(const qn of questionList){
     answerZone.className="answer-zone";
     let lv=Object.values(qn);
     let lk=Object.keys(qn);
-    for(let i=2;i<lv.length-2;i++){
+    for(let i=2;i<lk.length-2;i++){
+        console.log(qn.name+"."+lk[i]+":"+lv[i]);
+        console.log("al"+qn.name+lk[i]);
         const answersOfOne=document.createElement("div");
         const answerschoose=document.createElement("input");
         const answersShow=document.createElement("label");
@@ -174,8 +177,7 @@ mainForm.addEventListener("formdata",(e)=>{
     }
 
     console.log("score: "+save[0]);
-    document.getElementById("question-zone").style.display="none";
-    document.getElementById("answer-zone").style.display="none";
+    document.getElementById("question-and-answer").style.display="none";
     document.getElementById("show-score").style.flexDirection="column";
     document.getElementById("show-score-text").style.fontSize="2rem";
     document.getElementById("show-score-text").style.color="white";
