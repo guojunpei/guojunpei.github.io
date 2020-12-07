@@ -16,7 +16,7 @@ let q2={
     B:"The Web server",
     C:"A central machine deep within Netscape’s corporate offices",
     D:"None of the above",
-    rightAnswer:"D",
+    rightAnswer:"A",
     type:"radio",
 };
 
@@ -27,7 +27,7 @@ let q3={
     B:"<scripting>",
     C:"<script>",
     D:"<javascript>",
-    rightAnswer:"D",
+    rightAnswer:"C",
     type:"radio",
 };
 
@@ -38,7 +38,7 @@ let q4={
     B:"var txt = new Array:1=(“tim”)2=(“kim”)3=(“jim”)",
     C:"var txt = new Array(“tim”,”kim”,”jim”)",
     D:"var txt = new Array=”tim”,”kim”,”jim”",
-    rightAnswer:"D",
+    rightAnswer:"C",
     type:"radio",
 };
 
@@ -49,7 +49,7 @@ let q5={
     B:"onblur",
     C:"onclick",
     D:"ondblclick",
-    rightAnswer:"D",
+    rightAnswer:"B",
     type:"radio",
 };
 
@@ -74,13 +74,13 @@ let q7={
     E:"object",
     F:"Array",
     G:"Set",
-    H:" Map",
+    H:"Map",
     I:"Function",
     J:"Date",
     K:"boolean",
     L:"undefined",
     M:"symbol",
-    rightAnswer:"ACFK",
+    rightAnswer:"ACDKLM",
     type:"checkbox",
 };
 
