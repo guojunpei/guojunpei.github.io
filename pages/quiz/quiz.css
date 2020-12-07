@@ -43,7 +43,8 @@ html,body{
 .btn{
     color: white;
     background-color: darkblue;
-    margin: 0.5rem;
+    margin: 0.5rem auto;
+    display: block;
 }
 
 #show-score{
