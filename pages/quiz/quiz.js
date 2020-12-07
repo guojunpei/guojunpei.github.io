@@ -175,9 +175,11 @@ form.addEventListener("formdata",(e)=>{
     if(qusetionNow===q7){
         document.getElementById("question-zone").style.display="none";
         document.getElementById("answer-zone").style.display="none";
-        document.getElementById("show-score").style.flexDirection="column"
-        document.getElementById("show-score-text").innerText="Congratulations! All the questions has be finshed! your final score is"
-
+        document.getElementById("show-score").style.flexDirection="column";
+        document.getElementById("show-score-text").style.fontSize="2rem";
+        document.getElementById("show-score-text").style.color="white";
+        document.getElementById("show-score-text").innerText="Congratulations! All the questions has be finshed! your final score is";
+        document.getElementById("show-score-number").style.fontSize="4rem";
     }else{
         showQA(qusetionNext);
         qusetionNow=qusetionNext;
