@@ -180,17 +180,16 @@ mainForm.addEventListener("formdata",(e)=>{
                         sn=20;
                     }else{
                         for(let b of uv){
-                            for(let a of rv){
-                                if(b===a){
-                                    sn=sn+15/rv.length;
-                                }else{
-                                    sn=sn-10;
-                                }
+                            if(rv.includes(b)){
+                                sn=sn+15/rv.length;
+                            }else{
+                                sn=sn-10;
                             }
                         }
                     }
                 }
             }
+
             if(sn<-30){
                 sn=-30;
             }else{
@@ -214,3 +213,5 @@ mainForm.addEventListener("formdata",(e)=>{
     document.getElementById("show-score-number").innerText = save[0];
     document.getElementById("questions-and-score").innerText = questionsAndScore;
 })
+
+save.filter
