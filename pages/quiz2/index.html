@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz 2 </title>
+    <link rel="stylesheet" href="quiz2.css">
+</head>
+<body>
+    <div id="app-quiz">
+        <form action="">
+            <div id="question-and-answer">
+                <div id="question-zone">
+                    <div id="question-number">question-number</div>
+                    <div>:</div>
+                    <div id="question-content">This is the question</div>
+                </div>
+                <div id="answer-zone">
+                    <div class="answers">
+                        <input class="select-style" type="radio" name="answer" id="a1" value="A">
+                        <label id="a1l" for="a1">This is answer1</label>
+                    </div>
+                    <div class="answers">
+                        <input class="select-style" type="radio" name="answer" id="a2" value="B">
+                        <label id="a2l" for="a2">This is answer2</label>
+                    </div>
+                    <div class="answers">
+                        <input class="select-style" type="radio" name="answer" id="a3" value="C">
+                        <label id="a3l" for="a3">This is answer3</label>
+                    </div>
+                    <div class="answers">
+                        <input class="select-style" type="radio" name="answer" id="a4" value="D">
+                        <label id="a4l" for="a4">This is answer4</label>
+                    </div>
+                    <div class="btn-zone">
+                        <button class="btn" type="submit">submit and next</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div id="show-score">
+            <div id="show-score-text">your score:</div>
+            <div id="show-score-number">0</div>
+        </div>
+    </div>
+
+    <script src="quiz2.js"></script>
+</body>
+</html>
