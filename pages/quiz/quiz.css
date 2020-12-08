@@ -1,6 +1,8 @@
 html,body{
     height: 100%;
     width: 100%;
+    padding: 0rem;
+    margin: 0rem;
     background-color: black;
 }
 
@@ -22,11 +24,11 @@ html,body{
 #question-zone{
     display: flex;
     flex-direction: row;
-    color: darkgreen;
+    color: gray;
 }
 
 #question-content{
-    color: lawngreen;
+    color: lightskyblue;
 }
 
 .answers{

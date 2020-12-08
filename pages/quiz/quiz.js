@@ -143,29 +143,38 @@ form.addEventListener("formdata",(e)=>{
     console.log(obj);
     save.push(obj);
     console.log(qusetionNow);
+    console.log(qusetionNow.rightAnswer);
+    console.log(obj.answer);
+
     if(qusetionNow.type==="radio"){
         if(qusetionNow.rightAnswer===obj.answer){
             save[0]=save[0]+10;
-        }else{save[0]=save[0]-5;}
+            console.log(save[0]);
+        }else{
+            save[0]=save[0]-5;
+            console.log(save[0]);
+        }
         //"单选题（用 radio） 答对 10分，答错 -5 分 扣分"
     }else{
         if(qusetionNow.rightAnswer===obj.answer){
-            save[0]=save[0]+20;
+            sn=20;
         }else{
             let sn=0;
             const ras =qusetionNow.rightAnswer;
             for(let b of obj.answer){
-                for(let a of ras){
-                    if(a===b){
-                        sn=sn+15/ras.length;
-                    }else{
-                        sn=sn-10;
-                    }
+                if(ras.includes(b)){
+                    sn=sn+15/ras.length;
+                }else{
+                    sn=sn-10;
                 }
             }
-            if(sn<-30){save[0]=save[0]-30;}else{
-                save[0]=save[0]+sn;
+            if(sn<-30){
+                sn=-30;
+            }else{
+                sn=sn;
             }
+            save[0]=save[0]+sn;
+            console.log(save[0]);
         }
         //"多选题 （用 checkbox) 全对 20 分；选错 一个 -10 扣分（错误数 * -10）；最多扣 30分 （-30）；答对单个题分数为： 15 / 对的选项数量 全对 + 5分 （全对 20分）"
     }

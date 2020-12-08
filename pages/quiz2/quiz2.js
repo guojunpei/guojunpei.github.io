@@ -149,12 +149,15 @@ mainForm.addEventListener("formdata",(e)=>{
 
     save.push(userAnswer);
     
-    //let rightAnswerQ={};
+    let rightAnswerQ={};
     const rAMap=new Map();
     for(const qn of questionList){
         rAMap.set(qn.name,qn.rightAnswer);
     }
-    //rightAnswerQ=Object.fromEntries(rAMap);
+    rightAnswerQ=Object.fromEntries(rAMap);
+    
+    console.log(userAnswer);
+    console.log(rightAnswerQ);
 
     let questionsAndScore="";
 
@@ -200,8 +203,6 @@ mainForm.addEventListener("formdata",(e)=>{
         }
     }
     
-    console.log(userAnswer);
-
     console.log("score: "+save[0]);
     document.getElementById("show-paper").style.display="none";
     document.getElementById("show-score").style.display="flex";
