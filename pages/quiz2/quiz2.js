@@ -155,7 +155,7 @@ mainForm.addEventListener("formdata",(e)=>{
         rAMap.set(qn.name,qn.rightAnswer);
     }
     rightAnswerQ=Object.fromEntries(rAMap);
-    
+
     console.log(userAnswer);
     console.log(rightAnswerQ);
 
@@ -179,15 +179,14 @@ mainForm.addEventListener("formdata",(e)=>{
         }else{
             for(let [uk,uv] of uAMap){
                 if(uk==="Q7"){
-                    if(rv===uv){
-                        sn=20;
-                    }else{
-                        for(let b of uv){
-                            if(rv.includes(b)){
-                                sn=sn+15/rv.length;
-                            }else{
-                                sn=sn-10;
-                            }
+                    for(let b of uv){
+                        if(rv.includes(b)){
+                            sn=sn+15/rv.length;
+                        }else{
+                            sn=sn-10;
+                        }
+                        if(sn===15){
+                            sn=20;
                         }
                     }
                 }
