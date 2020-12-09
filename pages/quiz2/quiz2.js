@@ -1,7 +1,7 @@
 let q1={
-    name:"Q1",
+    id:"Q1",
     question:"Which of the following is not JavaScript Data Types?",
-    option:{
+    answerOption:{
         A:"Undefined",
         B:"Number",
         C:"Boolean",
@@ -15,9 +15,9 @@ let q1={
 };
 
 let q2={
-    name:"Q2",
+    id:"Q2",
     question:"When a user views a page containing a JavaScript program, which machine actually executes the script?",
-    option:{
+    answerOption:{
         A:"The User’s machine running a Web browser",
         B:"The Web server",
         C:"A central machine deep within Netscape’s corporate offices",
@@ -31,9 +31,9 @@ let q2={
 };
 
 let q3={
-    name:"Q3",
+    id:"Q3",
     question:"Inside which HTML element do we put the JavaScript?",
-    option:{
+    answerOption:{
         A:"<js>",
         B:"<scripting>",
         C:"<script>",
@@ -47,9 +47,9 @@ let q3={
 };
 
 let q4={
-    name:"Q4",
+    id:"Q4",
     question:"Which is the correct way to write a JavaScript array?",
-    option:{
+    answerOption:{
         A:"var txt = new Array(1:”tim”,2:”kim”,3:”jim”)",
         B:"var txt = new Array:1=(“tim”)2=(“kim”)3=(“jim”)",
         C:"var txt = new Array(“tim”,”kim”,”jim”)",
@@ -63,9 +63,9 @@ let q4={
 };
 
 let q5={
-    name:"Q5",
+    id:"Q5",
     question:"Which of the following event fires when the form element loses the focus: <button>, <input>, <label>, <select>, <textarea>?",
-    option:{
+    answerOption:{
         A:"onfocus",
         B:"onblur",
         C:"onclick",
@@ -79,9 +79,9 @@ let q5={
 };
 
 let q6={
-    name:"Q6",
+    id:"Q6",
     question:"Which of the following is the structure of an if statement?",
-    option:{
+    answerOption:{
         A:"if (conditional expression is true) thenexecute this codeend if",
         B:"if (conditional expression is true)execute this codeend if",
         C:"if (conditional expression is true) {then execute this code>->}",
@@ -95,9 +95,9 @@ let q6={
 };
 
 let q7={
-    name:"Q7",
+    id:"Q7",
     question:"What are JavaScript primitive data types:",
-    option:{
+    answerOption:{
         A:"string",
         B:"immutable",
         C:"number",
@@ -131,7 +131,7 @@ for(const qn of questionList){
     const questionNumber = document.createElement("div");
     const questionContent = document.createElement("div");
     questionZone.className="question-zone";
-    questionNumber.innerText=qn.name+":";
+    questionNumber.innerText=qn.id+":";
     questionNumber.className="question-number";
     questionContent.innerText=qn.question;
     questionContent.className="question-content";
@@ -149,13 +149,13 @@ for(const qn of questionList){
         const answersShow=document.createElement("label");
         answersOfOne.className="answers";
         answerschoose.type=qn.type;
-        answerschoose.name=qn.name;
-        answerschoose.id="a"+qn.name+lk[i];
+        answerschoose.id=qn.id;
+        answerschoose.id="a"+qn.id+lk[i];
         answerschoose.value=lk[i];
         answerschoose.className="select-style";
         answersOfOne.appendChild(answerschoose);
-        answersShow.id="al"+qn.name+lk[i];
-        answersShow.htmlFor="a"+qn.name+lk[i];
+        answersShow.id="al"+qn.id+lk[i];
+        answersShow.htmlFor="a"+qn.id+lk[i];
         answersShow.innerText=lv[i];
         answersOfOne.appendChild(answersShow);
         answerZone.appendChild(answersOfOne);
@@ -182,7 +182,7 @@ mainForm.addEventListener("formdata",(e)=>{
 //    let rightAnswerQ={};
     const rAMap=new Map();
     for(const qn of questionList){
-        rAMap.set(qn.name,qn.rightAnswer);
+        rAMap.set(qn.id,qn.rightAnswer);
     }
 //    rightAnswerQ=Object.fromEntries(rAMap);
 
