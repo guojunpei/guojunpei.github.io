@@ -141,27 +141,25 @@ for(const qn of questionList){
 
     const answerZone = document.createElement("div");
     answerZone.className="answer-zone";
-    let lv=Object.values(qn);
-    let lk=Object.keys(qn);
-    for(let i=2;i<lk.length-2;i++){
+    for(let [k,v] of Object.entries(qn.answerOption)){
         const answersOfOne=document.createElement("div");
         const answerschoose=document.createElement("input");
         const answersShow=document.createElement("label");
         answersOfOne.className="answers";
         answerschoose.type=qn.type;
-        answerschoose.id=qn.id;
-        answerschoose.id="a"+qn.id+lk[i];
-        answerschoose.value=lk[i];
-        answerschoose.className="select-style";
+        answerschoose.name=qn.id;
+        answerschoose.id=`a${qn.id}${k}`;
+        answerschoose.value=k;
+        //answerschoose.className="select-style";
         answersOfOne.appendChild(answerschoose);
-        answersShow.id="al"+qn.id+lk[i];
-        answersShow.htmlFor="a"+qn.id+lk[i];
-        answersShow.innerText=lv[i];
+        //answersShow.id="al"+qn.id+k;
+        //answersShow.className="select-style";
+        answersShow.htmlFor=`a${qn.id}${k}`;
+        answersShow.innerText=`${k}:${v}`;
         answersOfOne.appendChild(answersShow);
         answerZone.appendChild(answersOfOne);
     }
     questionAndAnswer.appendChild(answerZone);
-
     mainPaper.appendChild(questionAndAnswer);
 }
 
