@@ -1,86 +1,121 @@
 let q1={
     name:"Q1",
     question:"Which of the following is not JavaScript Data Types?",
-    A:"Undefined",
-    B:"Number",
-    C:"Boolean",
-    D:"Float",
-    rightAnswer:"D",
+    option:{
+        A:"Undefined",
+        B:"Number",
+        C:"Boolean",
+        D:"Float",
+    },
+    rightAnswer:{
+        optionKey:["D"],
+        optionValue:["Float"],
+    },
     type:"radio",
 };
 
 let q2={
     name:"Q2",
     question:"When a user views a page containing a JavaScript program, which machine actually executes the script?",
-    A:"The User’s machine running a Web browser",
-    B:"The Web server",
-    C:"A central machine deep within Netscape’s corporate offices",
-    D:"None of the above",
-    rightAnswer:"A",
+    option:{
+        A:"The User’s machine running a Web browser",
+        B:"The Web server",
+        C:"A central machine deep within Netscape’s corporate offices",
+        D:"None of the above",
+    },
+    rightAnswer:{
+        optionKey:["A"],
+        optionValue:["The User’s machine running a Web browser"],
+    },
     type:"radio",
 };
 
 let q3={
     name:"Q3",
     question:"Inside which HTML element do we put the JavaScript?",
-    A:"<js>",
-    B:"<scripting>",
-    C:"<script>",
-    D:"<javascript>",
-    rightAnswer:"C",
+    option:{
+        A:"<js>",
+        B:"<scripting>",
+        C:"<script>",
+        D:"<javascript>",
+    },
+    rightAnswer:{
+        optionKey:["C"],
+        optionValue:["<script>"],
+    },
     type:"radio",
 };
 
 let q4={
     name:"Q4",
     question:"Which is the correct way to write a JavaScript array?",
-    A:"var txt = new Array(1:”tim”,2:”kim”,3:”jim”)",
-    B:"var txt = new Array:1=(“tim”)2=(“kim”)3=(“jim”)",
-    C:"var txt = new Array(“tim”,”kim”,”jim”)",
-    D:"var txt = new Array=”tim”,”kim”,”jim”",
-    rightAnswer:"C",
+    option:{
+        A:"var txt = new Array(1:”tim”,2:”kim”,3:”jim”)",
+        B:"var txt = new Array:1=(“tim”)2=(“kim”)3=(“jim”)",
+        C:"var txt = new Array(“tim”,”kim”,”jim”)",
+        D:"var txt = new Array=”tim”,”kim”,”jim”",
+    },
+    rightAnswer:{
+        optionKey:["C"],
+        optionValue:["var txt = new Array(“tim”,”kim”,”jim”)"],
+    },
     type:"radio",
 };
 
 let q5={
     name:"Q5",
     question:"Which of the following event fires when the form element loses the focus: <button>, <input>, <label>, <select>, <textarea>?",
-    A:"onfocus",
-    B:"onblur",
-    C:"onclick",
-    D:"ondblclick",
-    rightAnswer:"B",
+    option:{
+        A:"onfocus",
+        B:"onblur",
+        C:"onclick",
+        D:"ondblclick",
+    },
+    rightAnswer:{
+        optionKey:["B"],
+        optionValue:["onblur"],
+    },
     type:"radio",
 };
 
 let q6={
     name:"Q6",
     question:"Which of the following is the structure of an if statement?",
-    A:"if (conditional expression is true) thenexecute this codeend if",
-    B:"if (conditional expression is true)execute this codeend if",
-    C:"if (conditional expression is true) {then execute this code>->}",
-    D:"if (conditional expression is true) then {execute this code}",
-    rightAnswer:"C",
+    option:{
+        A:"if (conditional expression is true) thenexecute this codeend if",
+        B:"if (conditional expression is true)execute this codeend if",
+        C:"if (conditional expression is true) {then execute this code>->}",
+        D:"if (conditional expression is true) then {execute this code}",
+    },
+    rightAnswer:{
+        optionKey:["C"],
+        optionValue:["if (conditional expression is true) {then execute this code>->}"],
+    },
     type:"radio",
 };
 
 let q7={
     name:"Q7",
     question:"What are JavaScript primitive data types:",
-    A:"string",
-    B:"immutable",
-    C:"number",
-    D:"bigint",
-    E:"object",
-    F:"Array",
-    G:"Set",
-    H:"Map",
-    I:"Function",
-    J:"Date",
-    K:"boolean",
-    L:"undefined",
-    M:"symbol",
-    rightAnswer:"ACDKLM",
+    option:{
+        A:"string",
+        B:"immutable",
+        C:"number",
+        D:"bigint",
+        E:"object",
+        F:"Array",
+        G:"Set",
+        H:"Map",
+        I:"Function",
+        J:"Date",
+        K:"boolean",
+        L:"undefined",
+        M:"symbol",
+    },
+    rightAnswer:{
+        optionKey:["A","C","D","K","L","M"],
+        optionValue:["string","number","bigint","boolean","undefined","symbol"],
+    },
     type:"checkbox",
 };
 
