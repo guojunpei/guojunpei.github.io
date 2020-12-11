@@ -389,8 +389,18 @@ mainForm.addEventListener("formdata",(e)=>{
 
 document.querySelector("button").addEventListener("click",(e)=>{
     let lossQn="";
-    for(let qn of questionList){
-        if(qn.score===0){lossQn+=qn.id+",";}
+    let lqn=[];
+    for(const qn of questionList){
+        let sqn=JSON.stringify(qn);
+        const formName= document.querySelector("form").sqn;
+        for(const v of formName){
+            if(v.checked){lqn.push(qn.id)}
+        }
+    }
+    for(const qn of questionList){
+        if(!lqn.includes(qn.id)){
+            lossQn+=qn.id+",";
+        }
     }
     if(lossQn!==""){
         confirm(`Do you want to loss ${lossQn}?`);
