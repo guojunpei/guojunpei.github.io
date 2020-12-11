@@ -8,8 +8,12 @@ let q1={
         D:"Float",
     },
     rightAnswer:{
-        questionName:"Q6",
-        optionScore:10,
+        optionScore:{
+            right:10,
+            wrong:-5,
+            includeEquipartition:0,
+            notInclude:0,
+        },
         optionScoreRule:"答对 10分，答错 -5 分 扣分",
         optionKey:["D"],
         optionValue:["Float"],
@@ -27,8 +31,12 @@ let q2={
         D:"None of the above",
     },
     rightAnswer:{
-        questionName:"Q6",
-        optionScore:10,
+        optionScore:{
+            right:10,
+            wrong:-5,
+            includeEquipartition:0,
+            notInclude:0,
+        },
         optionScoreRule:"答对 10分，答错 -5 分 扣分",
         optionKey:["A"],
         optionValue:["The User’s machine running a Web browser"],
@@ -46,8 +54,12 @@ let q3={
         D:"<javascript>",
     },
     rightAnswer:{
-        questionName:"Q6",
-        optionScore:10,
+        optionScore:{
+            right:10,
+            wrong:-5,
+            includeEquipartition:0,
+            notInclude:0,
+        },
         optionScoreRule:"答对 10分，答错 -5 分 扣分",
         optionKey:["C"],
         optionValue:["<script>"],
@@ -65,8 +77,12 @@ let q4={
         D:"var txt = new Array=”tim”,”kim”,”jim”",
     },
     rightAnswer:{
-        questionName:"Q6",
-        optionScore:10,
+        optionScore:{
+            right:10,
+            wrong:-5,
+            includeEquipartition:0,
+            notInclude:0,
+        },
         optionScoreRule:"答对 10分，答错 -5 分 扣分",
         optionKey:["C"],
         optionValue:["var txt = new Array(“tim”,”kim”,”jim”)"],
@@ -84,8 +100,12 @@ let q5={
         D:"ondblclick",
     },
     rightAnswer:{
-        questionName:"Q6",
-        optionScore:10,
+        optionScore:{
+            right:10,
+            wrong:-5,
+            includeEquipartition:0,
+            notInclude:0,
+        },
         optionScoreRule:"答对 10分，答错 -5 分 扣分",
         optionKey:["B"],
         optionValue:["onblur"],
@@ -103,8 +123,12 @@ let q6={
         D:"if (conditional expression is true) then {execute this code}",
     },
     rightAnswer:{
-        questionName:"Q6",
-        optionScore:10,
+        optionScore:{
+            right:10,
+            wrong:-5,
+            includeEquipartition:0,
+            notInclude:0,
+        },
         optionScoreRule:"答对 10分，答错 -5 分 扣分",
         optionKey:["C"],
         optionValue:["if (conditional expression is true) {then execute this code>->}"],
@@ -131,9 +155,12 @@ let q7={
         M:"symbol",
     },
     rightAnswer:{
-        questionName:"Q7",
-        optionScore:20,
-        optionType:"checkbox",
+        optionScore:{
+            right:20,
+            wrong:0,
+            includeEquipartition:15,
+            notInclude:-10,
+        },
         optionScoreRule:"全对 20 分；选错 一个 -10 扣分（错误数 * -10）；最多扣 30分 （-30）；答对单个题分数为： 15 / 对的选项数量 全对 + 5分 （全对 20分）",
         optionKey:["A","C","D","K","L","M"],
         optionValue:["string","number","bigint","boolean","undefined","symbol"],
@@ -169,7 +196,7 @@ for(const qn of questionList){
         const label=document.createElement("label");
         optionContainer.className="answers";
         option.type=qn.rightAnswer.optionType;
-        option.name=JSON.stringify(qn.rightAnswer);
+        option.name=JSON.stringify(qn);
         option.id=`a${qn.id}${k}`;
         option.value=k;
         //option.className="select-style";
@@ -199,7 +226,39 @@ mainForm.addEventListener("formdata",(e)=>{
     console.log(userAnswer);
     
     save.push(userAnswer);
-    
+
+    let questionsAndScore="";
+
+    for(let [k,v] of e.formData){
+        let sn=0;
+        let rightAnswerObj = JSON.parse(k);
+        let rs=rightAnswerObj.rightAnswer.optionScore;
+        let rk=rightAnswerObj.rightAnswer.optionKey;
+        if(rightAnswerObj.type==="radio"){
+            if(rk.includes(v)){
+                sn=rs.right;
+            }else{
+                sn=rs.wrong;
+            }
+        }else{
+            for(let s of v){
+                if(rk.includes(s)){
+                    sn=sn+rs.includeEquipartition/rk.length;
+                }else{
+                    sn=sn+rs.notInclude;
+                }
+            }
+            if(sn===rs.includeEquipartition){
+                sn=rs.right;
+            }
+        }
+        save[0]=save[0]+sn;
+        //questionsAndScore=questionsAndScore+rightAnswerObj.id+":full score "+sn+",your score"+sn+";\n";
+        questionsAndScore=`${questionsAndScore}${rightAnswerObj.id}:full score ${sn},your score ${sn};\n`;  
+    }
+
+
+/*
     let rightAnswerQ={};//
     const rAMap=new Map();
     for(const qn of questionList){
@@ -207,10 +266,6 @@ mainForm.addEventListener("formdata",(e)=>{
     }
     rightAnswerQ=Object.fromEntries(rAMap);//
 
-
-
-
-/*
     let questionsAndScore="";
 
     for(let [rk,rv] of rAMap){
