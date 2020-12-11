@@ -20,6 +20,7 @@ let q1={
         optionValue:["Float"],
     },
     type:"radio",
+    score:0,
 };
 
 let q2={
@@ -44,6 +45,7 @@ let q2={
         optionValue:["The User’s machine running a Web browser"],
     },
     type:"radio",
+    score:0,
 };
 
 let q3={
@@ -68,6 +70,7 @@ let q3={
         optionValue:["<script>"],
     },
     type:"radio",
+    score:0,
 };
 
 let q4={
@@ -92,6 +95,7 @@ let q4={
         optionValue:["var txt = new Array(“tim”,”kim”,”jim”)"],
     },
     type:"radio",
+    score:0,
 };
 
 let q5={
@@ -116,6 +120,7 @@ let q5={
         optionValue:["onblur"],
     },
     type:"radio",
+    score:0,
 };
 
 let q6={
@@ -140,6 +145,7 @@ let q6={
         optionValue:["if (conditional expression is true) {then execute this code>->}"],
     },
     type:"radio",
+    score:0,
 };
 
 let q7={
@@ -173,6 +179,7 @@ let q7={
         optionValue:["string","number","bigint","boolean","undefined","symbol"],
     },
     type:"checkbox",
+    score:0,
 };
 
 const questionList=[q1,q2,q3,q4,q5,q6,q7];
@@ -238,36 +245,39 @@ mainForm.addEventListener("formdata",(e)=>{
 
     for(let [k,v] of e.formData){
         let sn=0;
-        let snn=0;
         let rightAnswerObj = JSON.parse(k);
         let rs=rightAnswerObj.rightAnswer.optionScore;
         let rk=rightAnswerObj.rightAnswer.optionKey;
         if(rightAnswerObj.type==="radio"){
             if(rk.includes(v)){
-                snn=rs.right;
+                sn=rs.right;
             }else{
-                snn=rs.wrong;
+                sn=rs.wrong;
             }
         }else{
-            for(let s of v){
-                if(rk.includes(s)){
-                    sn=sn+rs.includeEquipartition/rk.length;
-                }else{
-                    sn=sn+rs.notInclude;
-                }
-            }
-            if(sn===rs.includeEquipartition){
-                snn=rs.right;
-            }else if(sn<rs.min){
-                snn=rs.min;
+            if(rk.includes(v)){
+                sn=rs.includeEquipartition/rk.length;
             }else{
-                snn=sn;
+                sn=rs.notInclude;
             }
         }
-        save[0]=save[0]+snn;
-        questionsAndScore=questionsAndScore+`${rightAnswerObj.id}:full score ${rs.right},your score ${snn};\n`;  
+
+        save[0]=save[0]+sn;
+
+        for(let qn of questionList){
+            if(qn.id===rightAnswerObj.id){
+                qn.score+=sn;
+                if(qn.type==="checkbox" && qn.score===qn.rightAnswer.optionScore.includeEquipartition){
+                    qn.score=qn.rightAnswer.optionScore.right;
+                }
+            }
+        }
     }
 
+    for(let qn of questionList){
+        questionsAndScore=questionsAndScore+`${qn.id}:full score ${qn.rightAnswer.optionScore.right},your score ${qn.score};\n`;
+        save[0]+=qn.score;
+    }
 
 /*
     let rightAnswerQ={};//
