@@ -396,3 +396,8 @@ document.querySelector("button").addEventListener("click",(e)=>{
         confirm(`Do you want to loss ${lossQn}?`);
     }
 })
+
+/*
+>document.getElementById("aQ1B").name===document.getElementById("aQ1A").name
+<true
+*/
