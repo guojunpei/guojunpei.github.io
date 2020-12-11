@@ -240,7 +240,7 @@ mainForm.addEventListener("formdata",(e)=>{
 
     save.push(userAnswer);
 
-    let questionsAndScore="";
+    //let questionsAndScore="";
 
     for(let [k,v] of e.formData){
         let sn=0;
@@ -271,11 +271,7 @@ mainForm.addEventListener("formdata",(e)=>{
         }
     }
 
-    for(let qn of questionList){
-        questionsAndScore=questionsAndScore+`${qn.id}:full score ${qn.rightAnswer.optionScore.right},your score ${qn.score};\n`;
-        save[0]=save[0]+qn.score;
-    }
-
+    
 /*
     let rightAnswerQ={};//
     const rAMap=new Map();
@@ -326,6 +322,64 @@ mainForm.addEventListener("formdata",(e)=>{
     }
     */
 
+    const scoreWrapper = document.getElementById("score-detail");
+    scoreWrapper.innerText = "";
+    const scoreTable = document.createElement("table");
+    const tableThead = document.createElement("thead");
+    const tableTrHead = document.createElement("tr");
+    const tableThHead = document.createElement("th");
+    tableThHead.innerText="Score detail";
+    tableThHead.colSpan="3";
+    tableTrHead.appendChild(tableThHead);
+    tableThead.appendChild(tableTrHead);
+    scoreTable.appendChild(tableThead);
+    const tableTrTh = document.createElement("tr");
+    const tableThQ = document.createElement("th");
+    const tableThFs = document.createElement("th");
+    const tableThYs = document.createElement("th");
+    tableThQ.innerText="Qn";
+    tableTrTh.appendChild(tableThQ);
+    tableThFs.innerText="Full score";
+    tableTrTh.appendChild(tableThFs);
+    tableThYs.innerText="Your score";
+    tableTrTh.appendChild(tableThYs);
+    scoreTable.appendChild(tableTrTh);
+    for(let qn of questionList){
+        //questionsAndScore=questionsAndScore+`${qn.id}:full score ${qn.rightAnswer.optionScore.right},your score ${qn.score};\n`;
+        save[0]=save[0]+qn.score;
+        
+        const tableTrTd = document.createElement("tr");
+        const tableTdQn = document.createElement("td");
+        const tableTdQnS = document.createElement("td");
+        const tableTdQnY = document.createElement("td");
+        tableTdQn.innerText=qn.id;
+        tableTrTd.appendChild(tableTdQn);
+        tableTdQnS.innerText=qn.rightAnswer.optionScore.right;
+        tableTrTd.appendChild(tableTdQnS);
+        tableTdQnY.innerText=qn.score;
+        tableTrTd.appendChild(tableTdQnY);
+        scoreTable.appendChild(tableTrTd);
+    }
+    scoreWrapper.appendChild(scoreTable);
+
+    /*
+<table>
+  <tr>
+    <th>Qn</th>
+    <th>Full score</th>
+    <th>Your score</th>
+  </tr>
+  <tr>
+    <td>Q1</td>
+    <td>10</td>
+    <td>10</td>
+  </tr>
+</table>
+    */
+
+
+
+
     document.getElementById("show-paper").style.display="none";
     document.getElementById("show-score").style.display="flex";
     document.getElementById("show-score-text").style.fontSize="2rem";
@@ -333,5 +387,5 @@ mainForm.addEventListener("formdata",(e)=>{
     document.getElementById("show-score-text").innerText="Congratulations!\n All the questions has be finshed!\n your final score is";
     document.getElementById("show-score-number").style.fontSize="4rem";
     document.getElementById("show-score-number").innerText = save[0];
-    document.getElementById("questions-and-score").innerText = questionsAndScore;
+    //document.getElementById("score-detail").innerText = questionsAndScore;
 })

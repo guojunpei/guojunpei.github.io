@@ -77,3 +77,14 @@ h1{
 #show-score-number{
     color: darkred;
 }
+
+table{
+    border-collapse: collapse;
+    border: 0.1rem solid darkblue;
+}
+
+td,th{
+    border: 0.1rem solid darkblue;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
