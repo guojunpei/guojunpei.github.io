@@ -261,8 +261,6 @@ mainForm.addEventListener("formdata",(e)=>{
             }
         }
 
-        save[0]=save[0]+sn;
-
         for(let qn of questionList){
             if(qn.id===rightAnswerObj.id){
                 qn.score+=sn;
@@ -275,7 +273,7 @@ mainForm.addEventListener("formdata",(e)=>{
 
     for(let qn of questionList){
         questionsAndScore=questionsAndScore+`${qn.id}:full score ${qn.rightAnswer.optionScore.right},your score ${qn.score};\n`;
-        save[0]+=qn.score;
+        save[0]=save[0]+qn.score;
     }
 
 /*
