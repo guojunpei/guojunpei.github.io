@@ -12,6 +12,7 @@ let q1={
             right:10,
             wrong:-5,
             includeEquipartition:0,
+            min:0,
             notInclude:0,
         },
         optionScoreRule:"答对 10分，答错 -5 分 扣分",
@@ -35,6 +36,7 @@ let q2={
             right:10,
             wrong:-5,
             includeEquipartition:0,
+            min:0,
             notInclude:0,
         },
         optionScoreRule:"答对 10分，答错 -5 分 扣分",
@@ -58,6 +60,7 @@ let q3={
             right:10,
             wrong:-5,
             includeEquipartition:0,
+            min:0,
             notInclude:0,
         },
         optionScoreRule:"答对 10分，答错 -5 分 扣分",
@@ -81,6 +84,7 @@ let q4={
             right:10,
             wrong:-5,
             includeEquipartition:0,
+            min:0,
             notInclude:0,
         },
         optionScoreRule:"答对 10分，答错 -5 分 扣分",
@@ -104,6 +108,7 @@ let q5={
             right:10,
             wrong:-5,
             includeEquipartition:0,
+            min:0,
             notInclude:0,
         },
         optionScoreRule:"答对 10分，答错 -5 分 扣分",
@@ -127,6 +132,7 @@ let q6={
             right:10,
             wrong:-5,
             includeEquipartition:0,
+            min:0,
             notInclude:0,
         },
         optionScoreRule:"答对 10分，答错 -5 分 扣分",
@@ -159,6 +165,7 @@ let q7={
             right:20,
             wrong:0,
             includeEquipartition:15,
+            min:-30,
             notInclude:-10,
         },
         optionScoreRule:"全对 20 分；选错 一个 -10 扣分（错误数 * -10）；最多扣 30分 （-30）；答对单个题分数为： 15 / 对的选项数量 全对 + 5分 （全对 20分）",
@@ -195,7 +202,7 @@ for(const qn of questionList){
         const option=document.createElement("input");
         const label=document.createElement("label");
         optionContainer.className="answers";
-        option.type=qn.rightAnswer.optionType;
+        option.type=qn.type;
         option.name=JSON.stringify(qn);
         option.id=`a${qn.id}${k}`;
         option.value=k;
@@ -231,14 +238,15 @@ mainForm.addEventListener("formdata",(e)=>{
 
     for(let [k,v] of e.formData){
         let sn=0;
+        let snn=0;
         let rightAnswerObj = JSON.parse(k);
         let rs=rightAnswerObj.rightAnswer.optionScore;
         let rk=rightAnswerObj.rightAnswer.optionKey;
         if(rightAnswerObj.type==="radio"){
             if(rk.includes(v)){
-                sn=rs.right;
+                snn=rs.right;
             }else{
-                sn=rs.wrong;
+                snn=rs.wrong;
             }
         }else{
             for(let s of v){
@@ -249,12 +257,15 @@ mainForm.addEventListener("formdata",(e)=>{
                 }
             }
             if(sn===rs.includeEquipartition){
-                sn=rs.right;
+                snn=rs.right;
+            }else if(sn<rs.min){
+                snn=rs.min;
+            }else{
+                snn=sn;
             }
         }
-        save[0]=save[0]+sn;
-        //questionsAndScore=questionsAndScore+rightAnswerObj.id+":full score "+sn+",your score"+sn+";\n";
-        questionsAndScore=`${questionsAndScore}${rightAnswerObj.id}:full score ${sn},your score ${sn};\n`;  
+        save[0]=save[0]+snn;
+        questionsAndScore=questionsAndScore+`${rightAnswerObj.id}:full score ${rs.right},your score ${snn};\n`;  
     }
 
 
