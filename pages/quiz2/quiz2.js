@@ -237,8 +237,7 @@ mainForm.addEventListener("submit",(e)=>{
 mainForm.addEventListener("formdata",(e)=>{
     const userAnswer = Object.fromEntries(e.formData);
     //const uAMap=e.formData;
-    console.log(userAnswer);
-    
+
     save.push(userAnswer);
 
     let questionsAndScore="";
@@ -283,18 +282,16 @@ mainForm.addEventListener("formdata",(e)=>{
     let rightAnswerQ={};//
     const rAMap=new Map();
     for(const qn of questionList){
-        rAMap.set(qn.id,qn.rightAnswer);
+        rAMap.set(qn.id,qn.rightAnswer.optionKey);
     }
     rightAnswerQ=Object.fromEntries(rAMap);//
-
-    let questionsAndScore="";
 
     for(let [rk,rv] of rAMap){
         let sn=0;
         if(rk!=="Q7"){
             for(let [uk,uv] of uAMap){
                 if(rk===uk){
-                    if(rv===uv){
+                    if(rv[0]===uv){
                         sn=10;
                     }else{
                         sn=-5;
