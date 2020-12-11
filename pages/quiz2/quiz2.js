@@ -339,9 +339,9 @@ mainForm.addEventListener("formdata",(e)=>{
     const tableThYs = document.createElement("th");
     tableThQ.innerText="Qn";
     tableTrTh.appendChild(tableThQ);
-    tableThFs.innerText="Full score";
+    tableThFs.innerText="Full";
     tableTrTh.appendChild(tableThFs);
-    tableThYs.innerText="Your score";
+    tableThYs.innerText="Your";
     tableTrTh.appendChild(tableThYs);
     scoreTable.appendChild(tableTrTh);
     for(let qn of questionList){
@@ -377,9 +377,6 @@ mainForm.addEventListener("formdata",(e)=>{
 </table>
     */
 
-
-
-
     document.getElementById("show-paper").style.display="none";
     document.getElementById("show-score").style.display="flex";
     document.getElementById("show-score-text").style.fontSize="2rem";
@@ -388,4 +385,14 @@ mainForm.addEventListener("formdata",(e)=>{
     document.getElementById("show-score-number").style.fontSize="4rem";
     document.getElementById("show-score-number").innerText = save[0];
     //document.getElementById("score-detail").innerText = questionsAndScore;
+})
+
+document.querySelector("button").addEventListener("click",(e)=>{
+    let lossQn="";
+    for(let qn of questionList){
+        if(qn.score===0){lossQn+=qn.id+",";}
+    }
+    if(lossQn!==""){
+        confirm(`Do you want to loss ${lossQn}?`);
+    }
 })
