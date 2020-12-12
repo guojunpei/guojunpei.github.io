@@ -229,6 +229,30 @@ for(const qn of questionList){
 let save=[0];
 const mainForm = document.querySelector("form");
 
+document.querySelector("button").addEventListener("click",(e)=>{
+    let lossQn="";
+    let lqn=[];
+    for(const qn of questionList){
+        for(let k of Object.keys(qn.answerOption)){
+            if(document.getElementById(`a${qn.id}${k}`).checked){
+                lqn.push(qn.id);
+            }
+        }
+    }
+    for(const qn of questionList){
+        if(!lqn.includes(qn.id)){
+            lossQn+=qn.id+",";
+        }
+    }
+    if(lossQn!==""){
+        if(window.confirm(`Do you want to loss ${lossQn}?`)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+})
+
 mainForm.addEventListener("submit",(e)=>{
     e.preventDefault();
     new FormData(mainForm);
@@ -386,15 +410,15 @@ mainForm.addEventListener("formdata",(e)=>{
     document.getElementById("show-score-number").innerText = save[0];
     //document.getElementById("score-detail").innerText = questionsAndScore;
 })
-
+/*
 document.querySelector("button").addEventListener("click",(e)=>{
-    let lossQn="";
+        let lossQn="";
     let lqn=[];
     for(const qn of questionList){
-        let sqn=JSON.stringify(qn);
-        const formName= document.querySelector("form").sqn;
-        for(const v of formName){
-            if(v.checked){lqn.push(qn.id)}
+        for(let k of Object.keys(qn.answerOption)){
+            if(document.getElementById(`a${qn.id}${k}`).checked){
+                lqn.push(qn.id);
+            }
         }
     }
     for(const qn of questionList){
@@ -403,10 +427,14 @@ document.querySelector("button").addEventListener("click",(e)=>{
         }
     }
     if(lossQn!==""){
-        confirm(`Do you want to loss ${lossQn}?`);
+        if(confirm(`Do you want to loss ${lossQn}?`)){
+            return true;
+        }else{
+            return false;
+        }
     }
 })
-
+*/
 /*
 >document.getElementById("aQ1B").name===document.getElementById("aQ1A").name
 <true
