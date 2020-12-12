@@ -215,7 +215,6 @@ for(const qn of questionList){
         option.value=k;
         //option.className="select-style";
         optionContainer.appendChild(option);
-        //label.id="al"+qn.id+k;
         //label.className="select-style";
         label.htmlFor=`a${qn.id}${k}`;
         label.innerText=`${k}:${v}`;
@@ -286,11 +285,8 @@ mainForm.addEventListener("submit",(e)=>{
 
 mainForm.addEventListener("formdata",(e)=>{
     const userAnswer = Object.fromEntries(e.formData);
-    //const uAMap=e.formData;
 
     save.push(userAnswer);
-
-    //let questionsAndScore="";
 
     for(let [k,v] of e.formData){
         let sn=0;
@@ -321,57 +317,6 @@ mainForm.addEventListener("formdata",(e)=>{
         }
     }
 
-    
-/*
-    let rightAnswerQ={};//
-    const rAMap=new Map();
-    for(const qn of questionList){
-        rAMap.set(qn.id,qn.rightAnswer.optionKey);
-    }
-    rightAnswerQ=Object.fromEntries(rAMap);//
-
-    for(let [rk,rv] of rAMap){
-        let sn=0;
-        if(rk!=="Q7"){
-            for(let [uk,uv] of uAMap){
-                if(rk===uk){
-                    if(rv[0]===uv){
-                        sn=10;
-                    }else{
-                        sn=-5;
-                    }
-                    save[0]=save[0]+sn;
-                    questionsAndScore=questionsAndScore+rk+":full score 10,yourscore"+sn+";\n";
-                }
-            }
-            //"单选题（用 radio） 答对 10分，答错 -5 分 扣分"
-        }else{
-            for(let [uk,uv] of uAMap){
-                if(uk==="Q7"){
-                    for(let b of uv){
-                        if(rv.includes(b)){
-                            sn=sn+15/rv.length;
-                        }else{
-                            sn=sn-10;
-                        }
-                        if(sn===15){
-                            sn=20;
-                        }
-                    }
-                }
-            }
-            if(sn<-30){
-                sn=-30;
-            }else{
-                sn=sn;
-            }
-            save[0]=save[0]+sn;
-            questionsAndScore=questionsAndScore+"Q7"+":full score 20,yourscore"+sn+";\n";
-            //"多选题 （用 checkbox) 全对 20 分；选错 一个 -10 扣分（错误数 * -10）；最多扣 30分 （-30）；答对单个题分数为： 15 / 对的选项数量 全对 + 5分 （全对 20分）"
-        }
-    }
-    */
-
     const scoreWrapper = document.getElementById("score-detail");
     scoreWrapper.innerText = "";
     const scoreTable = document.createElement("table");
@@ -395,7 +340,6 @@ mainForm.addEventListener("formdata",(e)=>{
     tableTrTh.appendChild(tableThYs);
     scoreTable.appendChild(tableTrTh);
     for(let qn of questionList){
-        //questionsAndScore=questionsAndScore+`${qn.id}:full score ${qn.rightAnswer.optionScore.right},your score ${qn.score};\n`;
         save[0]=save[0]+qn.score;
         
         const tableTrTd = document.createElement("tr");
@@ -412,21 +356,6 @@ mainForm.addEventListener("formdata",(e)=>{
     }
     scoreWrapper.appendChild(scoreTable);
 
-    /*
-<table>
-  <tr>
-    <th>Qn</th>
-    <th>Full score</th>
-    <th>Your score</th>
-  </tr>
-  <tr>
-    <td>Q1</td>
-    <td>10</td>
-    <td>10</td>
-  </tr>
-</table>
-    */
-
     document.getElementById("show-paper").style.display="none";
     document.getElementById("show-score").style.display="flex";
     document.getElementById("show-score-text").style.fontSize="2rem";
@@ -434,34 +363,4 @@ mainForm.addEventListener("formdata",(e)=>{
     document.getElementById("show-score-text").innerText="Congratulations!\n All the questions has be finshed!\n your final score is";
     document.getElementById("show-score-number").style.fontSize="4rem";
     document.getElementById("show-score-number").innerText = save[0];
-    //document.getElementById("score-detail").innerText = questionsAndScore;
 })
-/*
-document.querySelector("button").addEventListener("click",(e)=>{
-        let lossQn="";
-    let lqn=[];
-    for(const qn of questionList){
-        for(let k of Object.keys(qn.answerOption)){
-            if(document.getElementById(`a${qn.id}${k}`).checked){
-                lqn.push(qn.id);
-            }
-        }
-    }
-    for(const qn of questionList){
-        if(!lqn.includes(qn.id)){
-            lossQn+=qn.id+",";
-        }
-    }
-    if(lossQn!==""){
-        if(confirm(`Do you want to loss ${lossQn}?`)){
-            return true;
-        }else{
-            return false;
-        }
-    }
-})
-*/
-/*
->document.getElementById("aQ1B").name===document.getElementById("aQ1A").name
-<true
-*/
