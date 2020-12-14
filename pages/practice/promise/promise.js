@@ -10,17 +10,17 @@ function testPromise(){
 
     let p1=new Promise(
         (resolve,reject)=>{
-            log.insertAdjacentHTML("beforeend",thisPromiseCount+`) Promise开始(<small>异步代码开始</small>)<br/>`);
+            log.insertAdjacentHTML("beforeend",thisPromiseCount+`) Promise 开始 (<small>异步代码开始</small>)<br/>`);
             window.setTimeout(
                 function(){
                     resolve(thisPromiseCount);
-                },math.random() * 2000 + 1000
+                },Math.random() * 2000 + 1000
             );
         }
     );
     p1.then(
         function(val){
-            log.insertAdjacentHTML("beforeend",val+`) Promise 已填充完毕(<small>异步代码结束</small>)<br/>`);
+            log.insertAdjacentHTML("beforeend",val+`) Promise 已填充完毕 (<small>异步代码结束</small>)<br/>`);
         }
     )
     .catch(
