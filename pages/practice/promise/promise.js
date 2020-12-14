@@ -1,6 +1,10 @@
 //const myPromise=(new Promise(myExecutorFunc)).then(handleFulfilledA).then(handleFulfilledB).then(handleFulfilledC).catch(handleRejectAny);
 
 
+
+
+
+
 let promiseCount=0;
 
 function testPromise(){
