@@ -1,8 +1,16 @@
 //const myPromise=(new Promise(myExecutorFunc)).then(handleFulfilledA).then(handleFulfilledB).then(handleFulfilledC).catch(handleRejectAny);
 
+let myFirstPromise=new Promise((resolve,reject)=>{
+    setTimeout(function(){
+        resolve("Success!")
+    },250)
+})
 
+myFirstPromise.then((successMessage)=>{
+    console.log("Yay!"+successMessage)
+});
 
-
+//console
 
 
 let promiseCount=0;
@@ -22,6 +30,7 @@ function testPromise(){
             );
         }
     );
+
     p1.then(
         function(val){
             log.insertAdjacentHTML("beforeend",val+`) Promise 已填充完毕 (<small>异步代码结束</small>)<br/>`);
