@@ -247,7 +247,11 @@ function formCheck(){
         if(window.confirm(`Do you want to loss ${lossQn}?`)){
             return true;
         }else{
-            return false;
+            if(lossQn!==""){
+                mainForm.elements[0].setCustomValidity(
+                    "Don't loss any one !"
+                )
+            }
         }
     }
 }
