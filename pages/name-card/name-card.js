@@ -1,21 +1,3 @@
-/*
-let formMain=document.querySelector("form");
-
-formMain.addEventListener("submit",(e)=>{
-    e.preventDefault();
-    new FormData(formMain);
-    //console.log(e);
-    //console.log(new FormData(formMain));
-});
-
-formMain.addEventListener("formdata",(e)=>{
-    //console.log("formdata fired");
-    const obj = Object.fromEntries(e.formData);
-    //console.log(obj);
-    document.getElementById("show-name").innerText = obj["name"];
-})
-
-*/
 
 document.querySelector("form").addEventListener("submit",(e)=>{
     e.preventDefault();
@@ -29,17 +11,36 @@ document.getElementById("full-screen").addEventListener("click",()=>{
     document.getElementById("show-name").style.color=document.getElementById("color").value;
     document.getElementById("show-name").style.backgroundColor=document.getElementById("backgroundcolor").value;
     document.querySelector("form").style.display="none";
-    document.getElementById("show-name").style.fontSize=`${window.innerHeight/2}px`;
+    if(window.innerHeight<window.innerWidth){
+        if(window.innerHeight>window.innerWidth/(document.getElementById("name").value.length+1)){
+            document.getElementById("show-name").style.fontSize=`${window.innerWidth/(document.getElementById("name").value.length+1)}px`;
+        }else{
+            document.getElementById("show-name").style.fontSize=window.innerWidth*0.8;
+        }
+    }else{
+        if(window.innerWidth>window.innerHeight/(document.getElementById("name").value.length+1)){
+            document.getElementById("show-name").style.fontSize=`${window.innerHeight/(document.getElementById("name").value.length+1)}px`;
+        }else{
+            document.getElementById("show-name").style.fontSize=window.innerWidth*0.8;
+        }
+    }
 })
 
 window.addEventListener("resize",()=>{
     if(document.querySelector("form").style.display==="none"){
         if(window.innerHeight<window.innerWidth){
-            document.getElementById("show-name").style.fontSize=`${window.innerHeight/2}px`;
+            if(window.innerHeight>window.innerWidth/(document.getElementById("name").value.length+1)){
+                document.getElementById("show-name").style.fontSize=`${window.innerWidth/(document.getElementById("name").value.length+1)}px`;
+            }else{
+                document.getElementById("show-name").style.fontSize=window.innerWidth*0.8;
+            }
         }else{
-            document.getElementById("show-name").style.fontSize=`${window.innerWidth/1.8}px`;
+            if(window.innerWidth>window.innerHeight/(document.getElementById("name").value.length+1)){
+                document.getElementById("show-name").style.fontSize=`${window.innerHeight/(document.getElementById("name").value.length+1)}px`;
+            }else{
+                document.getElementById("show-name").style.fontSize=window.innerWidth*0.8;
+            }
         }
     }
 });
 
-//document.getElementById("preview").addEventListener("click",document.getElementById("show-name").innerText=document.getElementById("name").value);
