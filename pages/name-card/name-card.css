@@ -18,12 +18,13 @@ html,body{
 
 #show-name{
     color: white;
-    font-size: 7.5rem;
+    font-size: 10rem;
     text-align: center;
 }
 
 .form-content{
     color: white;
+    font-size: 2rem;
 }
 
 .form-button{
@@ -32,6 +33,7 @@ html,body{
 }
 
 .name-crad-btn{
+    font-size: 2rem;
     color: white;
     background-color: darkblue;
 }
