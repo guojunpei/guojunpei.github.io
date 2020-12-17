@@ -32,5 +32,14 @@ document.getElementById("full-screen").addEventListener("click",()=>{
     document.getElementById("show-name").style.fontSize=`${window.innerHeight/2}px`;
 })
 
+window.addEventListener("resize",()=>{
+    if(document.querySelector("form").style.display==="none"){
+        if(window.innerHeight<window.innerWidth){
+            document.getElementById("show-name").style.fontSize=`${window.innerHeight/2}px`;
+        }else{
+            document.getElementById("show-name").style.fontSize=`${window.innerWidth/1.8}px`;
+        }
+    }
+});
 
 //document.getElementById("preview").addEventListener("click",document.getElementById("show-name").innerText=document.getElementById("name").value);

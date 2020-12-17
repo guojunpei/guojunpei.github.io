@@ -4,45 +4,7 @@
 <head>
 	<title>name card</title>
     <meta charset="UTF-8" />
-    <style>
-        html,body{
-    height: 100%;
-    width: 100%;
-    padding: 0rem;
-    margin: 0rem;
-    background-color: black;
-}
-
-#name-card{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-}
-
-#show-name{
-    color: white;
-    font-size: 7.5rem;
-    text-align: center;
-}
-
-.form-content{
-    color: white;
-}
-
-.form-button{
-    display: flex;
-    justify-content: space-between;
-}
-
-.name-crad-btn{
-    color: white;
-    background-color: darkblue;
-}
-    </style>
+    <link rel="stylesheet" href="name-card.css">
 </head>
 
 <body>
@@ -69,23 +31,7 @@
             </div>
         </form>
     </div>
-
-	<script>
-    document.querySelector("form").addEventListener("submit",(e)=>{
-    e.preventDefault();
-    document.getElementById("show-name").innerText=document.getElementById("name").value;
-    document.getElementById("show-name").style.color=document.getElementById("color").value;
-    document.getElementById("show-name").style.backgroundColor=document.getElementById("backgroundcolor").value;
-})
-
-document.getElementById("full-screen").addEventListener("click",()=>{
-    document.getElementById("show-name").innerText=document.getElementById("name").value;
-    document.getElementById("show-name").style.color=document.getElementById("color").value;
-    document.getElementById("show-name").style.backgroundColor=document.getElementById("backgroundcolor").value;
-    document.querySelector("form").style.display="none";
-    document.getElementById("show-name").style.fontSize=`${window.innerHeight/2}px`;
-})
-	</script>
+    <script src="name-card.js"></script>
 </body>
 
 </html>
