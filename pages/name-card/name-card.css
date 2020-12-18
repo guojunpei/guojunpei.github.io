@@ -6,6 +6,10 @@ html,body{
     background-color: black;
 }
 
+form{
+    margin: 10%;
+}
+
 #name-card{
     height: 100%;
     width: 100%;

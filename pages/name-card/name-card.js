@@ -1,3 +1,36 @@
+function fontSizeControl(n){
+    document.getElementById("show-name").style.fontSize=`${n*3}px`;
+
+    for(let v of document.querySelectorAll("label")){
+        v.style.fontSize=`${n}px`;
+    }
+    
+    for(let v of document.querySelectorAll("input")){
+        v.style.fontSize=`${n}px`;
+    }
+    
+    for(let v of document.querySelectorAll("button")){
+        v.style.fontSize=`${n}px`;
+    }
+}
+
+function CN(){
+    document.getElementById("show-name").innerText="名字";
+    document.querySelectorAll("label")[0].innerText="输入名字或文字";
+    document.querySelectorAll("label")[1].innerText="选择文字颜色";
+    document.querySelectorAll("label")[2].innerText="选择文字背景颜色";
+    document.getElementById("preview").innerText="预览";
+    document.getElementById("full-screen").innerText="全屏显示";
+}
+
+function EN(){
+    document.getElementById("show-name").innerText="name";
+    document.querySelectorAll("label")[0].innerText="Enter new name:";
+    document.querySelectorAll("label")[1].innerText="Choose text color:";
+    document.querySelectorAll("label")[2].innerText="Choose backgroundcolor:";
+    document.getElementById("preview").innerText="Preview";
+    document.getElementById("full-screen").innerText="Full screen";
+}
 
 function smallTextFontSizeControl(){
     if(window.innerHeight<window.innerWidth){
@@ -19,6 +52,12 @@ function smallTextFontSizeControl(){
 
     }
     
+}
+
+if(navigator.language==="zh-CN"){
+    CN();
+}else{
+    EN();
 }
 
 smallTextFontSizeControl()
