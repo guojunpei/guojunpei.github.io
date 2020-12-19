@@ -71,16 +71,16 @@ document.querySelector("form").addEventListener("submit",(e)=>{
 
 function largeTextFontSizeControl(){
     if(window.innerHeight<window.innerWidth){
-        if(window.innerHeight>window.innerWidth*0.8/(document.getElementById("name").value.length)){
-            document.getElementById("show-name").style.fontSize=`${window.innerWidth*0.8/(document.getElementById("name").value.length)}px`;
+        if(window.innerHeight>window.innerWidth/(document.getElementById("name").value.length)){
+            document.getElementById("show-name").style.fontSize=`${window.innerWidth/(document.getElementById("name").value.length)}px`;
         }else{
-            document.getElementById("show-name").style.fontSize=window.innerWidth*0.8;
+            document.getElementById("show-name").style.fontSize=window.innerWidth;
         }
     }else{
-        if(window.innerWidth>window.innerHeight*0.8/(document.getElementById("name").value.length)){
-            document.getElementById("show-name").style.fontSize=`${window.innerHeight*0.8/(document.getElementById("name").value.length)}px`;
+        if(window.innerWidth>window.innerHeight/(document.getElementById("name").value.length)){
+            document.getElementById("show-name").style.fontSize=`${window.innerHeight/(document.getElementById("name").value.length)}px`;
         }else{
-            document.getElementById("show-name").style.fontSize=window.innerWidth*0.8;
+            document.getElementById("show-name").style.fontSize=window.innerWidth;
         }
     }
 }
