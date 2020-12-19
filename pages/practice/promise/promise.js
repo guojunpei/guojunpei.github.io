@@ -1,5 +1,7 @@
 //const myPromise=(new Promise(myExecutorFunc)).then(handleFulfilledA).then(handleFulfilledB).then(handleFulfilledC).catch(handleRejectAny);
 
+
+//
 let myFirstPromise=new Promise((resolve,reject)=>{
     setTimeout(function(){
         resolve("Success!")
@@ -44,3 +46,33 @@ function testPromise(){
 
     log.insertAdjacentHTML("beforeend",thisPromiseCount + `) Promise made (<small>同步代码结束</small>)<br/>`);
 }
+
+
+//
+let p1=new Promise(function(resolve,reject){
+    throw "Uh-oh!";
+});
+
+p1.catch(function(e){
+    console.log(e);
+});
+
+let p2=new Promise(function(resolve,reject){
+    setTimeout(function(){
+        throw "Uncaught Exception!";
+    },1000);
+});
+
+p2.catch(function(e){
+    console.log(e);
+});
+
+let p3=new Promise(function(resolve,reject){
+    resolve();
+    throw "Silenced Exception!";
+});
+
+p3.catch(function(e){
+    console.log(e);
+});
+//console
