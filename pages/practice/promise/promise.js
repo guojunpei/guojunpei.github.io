@@ -76,3 +76,16 @@ p3.catch(function(e){
     console.log(e);
 });
 //console
+
+//
+let isLoading=true;
+fetch(myREquest).then(function(response){
+    let contentType=response.headers.get("content-type");
+    if(contentType && contentType.includes("application/json")){
+        return response.json();
+    }
+    throw new TypeError("Oops,we have not got JSON!");
+})
+.then(function(json){/* process your JSON futher */})
+.catch(function(erro){ console.error(error);})
+.finally(function(){isLoading=false;});
