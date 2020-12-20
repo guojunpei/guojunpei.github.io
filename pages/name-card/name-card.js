@@ -33,23 +33,13 @@ function EN(){
 }
 
 function smallTextFontSizeControl(){
+    let n=0;
     if(window.innerHeight<window.innerWidth){
-
+        n=window.innerHeight/15;
+        fontSizeControl(n);
     }else{
-        for(let v of document.querySelectorAll("label")){
-            v.style.fontSize=`${window.innerWidth/15}px`;
-        }
-        
-        for(let v of document.querySelectorAll("input")){
-            v.style.fontSize=`${window.innerWidth/15}px`;
-        }
-        
-        for(let v of document.querySelectorAll("button")){
-            v.style.fontSize=`${window.innerWidth/15}px`;
-        }
-
-        document.getElementById("show-name").style.fontSize=`${window.innerWidth/5}px`;
-
+        n=window.innerWidth/12;
+        fontSizeControl(n)
     }
     
 }
@@ -60,7 +50,7 @@ if(navigator.language==="zh-CN"){
     EN();
 }
 
-smallTextFontSizeControl()
+smallTextFontSizeControl();
 
 document.querySelector("form").addEventListener("submit",(e)=>{
     e.preventDefault();
@@ -78,7 +68,7 @@ function largeTextFontSizeControl(){
         }
     }else{
         if(window.innerWidth>window.innerHeight/(document.getElementById("name").value.length)){
-            document.getElementById("show-name").style.fontSize=`${window.innerHeight/(document.getElementById("name").value.length)}px`;
+            document.getElementById("show-name").style.fontSize=`${0.7*window.innerHeight/(document.getElementById("name").value.length)}px`;
         }else{
             document.getElementById("show-name").style.fontSize=window.innerWidth;
         }

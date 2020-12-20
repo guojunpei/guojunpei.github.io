@@ -1,8 +1,8 @@
 html,body{
     height: 100%;
     width: 100%;
-    padding: 0rem;
-    margin: 0rem;
+    padding: 0;
+    margin: 0;
     background-color: black;
 }
 
@@ -27,11 +27,15 @@ form{
 }
 
 .form-content{
+    display: flex;
+    flex-direction: row;
     color: white;
     font-size: 2rem;
 }
 
 .form-button{
+    color: white;
+    font-size: 2rem;
     display: flex;
     justify-content: space-between;
 }
