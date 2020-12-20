@@ -35,10 +35,17 @@ function EN(){
 function smallTextFontSizeControl(){
     let n=0;
     if(window.innerHeight<window.innerWidth){
+        document.getElementById("name-container").style.flexDirection="row";
+        document.getElementById("color-container").style.flexDirection="row";
+        document.getElementById("bg-container").style.flexDirection="row";
         n=window.innerHeight/15;
         fontSizeControl(n);
     }else{
-        n=window.innerWidth/12;
+        document.getElementById("name-container").style.flexDirection="column";
+        document.getElementById("color-container").style.flexDirection="column";
+        document.getElementById("bg-container").style.flexDirection="column";
+        n=window.innerWidth/15;
+        //document.querySelector("form").style.padding=`${n}px`;
         fontSizeControl(n)
     }
     
