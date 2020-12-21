@@ -66,16 +66,22 @@ function largeTextFontSizeControl(){
     if(window.innerHeight<window.innerWidth){
         if(window.innerHeight>window.innerWidth/(inputName.value.length)){
             showName.style.fontSize=`${window.innerWidth/(inputName.value.length)}px`;
+            console.log("1: "+showName.style.fontSize+":"+window.innerWidth+"/"+inputName.value.length);
         }else{
-            showName.style.fontSize=window.innerWidth;
+            showName.style.fontSize=`${0.7*window.innerWidth}px`;
+            console.log("2: "+showName.style.fontSize+":"+window.innerWidth);
         }
     }else{
+        showName.style.writingMode="vertical-lr";
         if(window.innerWidth>window.innerHeight/(inputName.value.length)){
             showName.style.fontSize=`${0.7*window.innerHeight/(inputName.value.length)}px`;
+            console.log("3: "+showName.style.fontSize+":"+0.7*window.innerHeight+"/"+inputName.value.length);
         }else{
-            showName.style.fontSize=window.innerWidth;
+            showName.style.fontSize=`${0.7*window.innerWidth}px`;
+            console.log("4: "+showName.style.fontSize+":"+window.innerWidth);
         }
     }
+    console.log(showName.style.fontSize+":"+0.7*window.innerHeight+"/"+inputName.value.length);
 }
 
 function previewName(){
@@ -85,7 +91,6 @@ function previewName(){
         inputName.value==="name";
     }}
     showName.innerText=inputName.value;
-    console.log(inputName.value);
     showName.style.color=document.getElementById("color").value;
     showName.style.backgroundColor=document.getElementById("backgroundcolor").value;
 }
