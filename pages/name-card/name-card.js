@@ -1,5 +1,11 @@
+
+const inputName=document.getElementById("name");
+const showName=document.getElementById("show-name");
+const form=document.querySelector("form");
+
+
 function fontSizeControl(n){
-    document.getElementById("show-name").style.fontSize=`${n*3}px`;
+    showName.style.fontSize=`${n*3}px`;
 
     for(let v of document.querySelectorAll("label")){
         v.style.fontSize=`${n}px`;
@@ -15,7 +21,7 @@ function fontSizeControl(n){
 }
 
 function CN(){
-    document.getElementById("show-name").innerText="名字";
+    showName.innerText="名字";
     document.querySelectorAll("label")[0].innerText="输入名字或文字";
     document.querySelectorAll("label")[1].innerText="选择文字颜色";
     document.querySelectorAll("label")[2].innerText="选择文字背景颜色";
@@ -24,12 +30,18 @@ function CN(){
 }
 
 function EN(){
-    document.getElementById("show-name").innerText="name";
+    showName.innerText="name";
     document.querySelectorAll("label")[0].innerText="Enter new name:";
     document.querySelectorAll("label")[1].innerText="Choose text color:";
     document.querySelectorAll("label")[2].innerText="Choose backgroundcolor:";
     document.getElementById("preview").innerText="Preview";
     document.getElementById("full-screen").innerText="Full screen";
+}
+
+if(navigator.language==="zh-CN"){
+    CN();
+}else{
+    EN();
 }
 
 function smallTextFontSizeControl(){
@@ -45,53 +57,46 @@ function smallTextFontSizeControl(){
         document.getElementById("color-container").style.flexDirection="column";
         document.getElementById("bg-container").style.flexDirection="column";
         n=window.innerWidth/15;
-        //document.querySelector("form").style.padding=`${n}px`;
         fontSizeControl(n)
     }
     
 }
 
-if(navigator.language==="zh-CN"){
-    CN();
-}else{
-    EN();
-}
-
-smallTextFontSizeControl();
-
-document.querySelector("form").addEventListener("submit",(e)=>{
-    e.preventDefault();
-    document.getElementById("show-name").innerText=document.getElementById("name").value;
-    document.getElementById("show-name").style.color=document.getElementById("color").value;
-    document.getElementById("show-name").style.backgroundColor=document.getElementById("backgroundcolor").value;
-})
-
 function largeTextFontSizeControl(){
     if(window.innerHeight<window.innerWidth){
-        if(window.innerHeight>window.innerWidth/(document.getElementById("name").value.length)){
-            document.getElementById("show-name").style.fontSize=`${window.innerWidth/(document.getElementById("name").value.length)}px`;
+        if(window.innerHeight>window.innerWidth/(inputName.value.length)){
+            showName.style.fontSize=`${window.innerWidth/(inputName.value.length)}px`;
         }else{
-            document.getElementById("show-name").style.fontSize=window.innerWidth;
+            showName.style.fontSize=window.innerWidth;
         }
     }else{
-        if(window.innerWidth>window.innerHeight/(document.getElementById("name").value.length)){
-            document.getElementById("show-name").style.fontSize=`${0.7*window.innerHeight/(document.getElementById("name").value.length)}px`;
+        if(window.innerWidth>window.innerHeight/(inputName.value.length)){
+            showName.style.fontSize=`${0.7*window.innerHeight/(inputName.value.length)}px`;
         }else{
-            document.getElementById("show-name").style.fontSize=window.innerWidth;
+            showName.style.fontSize=window.innerWidth;
         }
     }
 }
 
-document.getElementById("full-screen").addEventListener("click",()=>{
-    document.getElementById("show-name").innerText=document.getElementById("name").value;
-    document.getElementById("show-name").style.color=document.getElementById("color").value;
-    document.getElementById("show-name").style.backgroundColor=document.getElementById("backgroundcolor").value;
-    document.querySelector("form").style.display="none";
+function previewName(){
+    showName.innerText=inputName.value;
+    console.log(inputName.value);
+    showName.style.color=document.getElementById("color").value;
+    showName.style.backgroundColor=document.getElementById("backgroundcolor").value;
+}
+
+function fullScreenName(){
+    showName.innerText=inputName.value;
+    showName.style.color=document.getElementById("color").value;
+    showName.style.backgroundColor=document.getElementById("backgroundcolor").value;
+    form.style.display="none";
     largeTextFontSizeControl();
-})
+}
+
+smallTextFontSizeControl();
 
 window.addEventListener("resize",()=>{
-    if(document.querySelector("form").style.display==="none"){
+    if(form.style.display==="none"){
         largeTextFontSizeControl();
     }else{
         smallTextFontSizeControl()
