@@ -1,7 +1,7 @@
 
 const inputName=document.getElementById("name");
 const showName=document.getElementById("show-name");
-const form=document.querySelector("form");
+const form=document.getElementById("form");
 
 
 function fontSizeControl(n){
@@ -79,6 +79,11 @@ function largeTextFontSizeControl(){
 }
 
 function previewName(){
+    if(inputName.value===""){if(navigator.language==="zh-CN"){
+        inputName.value==="名字";
+    }else{
+        inputName.value==="name";
+    }}
     showName.innerText=inputName.value;
     console.log(inputName.value);
     showName.style.color=document.getElementById("color").value;
@@ -86,6 +91,11 @@ function previewName(){
 }
 
 function fullScreenName(){
+    if(inputName.value===""){if(navigator.language==="zh-CN"){
+        inputName.value==="名字";
+    }else{
+        inputName.value==="name";
+    }}
     showName.innerText=inputName.value;
     showName.style.color=document.getElementById("color").value;
     showName.style.backgroundColor=document.getElementById("backgroundcolor").value;

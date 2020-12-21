@@ -45,3 +45,11 @@ form{
     color: white;
     background-color: darkblue;
 }
+
+input:invalid{
+    border: 0.1rem dashed red;
+}
+
+input:valid{
+    border: 0.1rem solid green;
+}
