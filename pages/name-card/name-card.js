@@ -67,7 +67,7 @@ function largeTextFontSizeControl(){
         if(window.innerHeight>window.innerWidth/(inputName.value.length)){
             showName.style.fontSize=`${window.innerWidth/(inputName.value.length)}px`;
         }else{
-            showName.style.fontSize=`${0.7*window.innerWidth}px`;
+            showName.style.fontSize=`${0.7*window.innerHeight}px`;
         }
     }else{
         showName.style.writingMode="vertical-lr";
