@@ -13,27 +13,25 @@
             name
         </div>
         <form action="">
-            <div class="form-content">
-                <label for="name">Enter your name:</label>
+            <div id="name-container" class="form-content">
+                <label for="name">Enter new name:</label>
                 <input type="text" name="name" id="name" value="" required>
             </div>
-            <div class="form-content">
+            <div id="color-container" class="form-content">
                 <label for="color">Choose text color:</label>
                 <input type="color" name="color" id="color" value="#ffffff">
             </div>
-            <div class="form-content">
+            <div id="bg-container" class="form-content">
                 <label for="backgroundcolor">Choose backgroundcolor:</label>
                 <input type="color" name="backgroundcolor" id="backgroundcolor" value="#000000">
             </div>
-            <div class="form-content form-button">
+            <div class="form-button">
                 <button type="submit" class="name-crad-btn" id="preview">Preview</button>
                 <button id="full-screen" onclick="" class="name-crad-btn">Full screen</button>
             </div>
         </form>
     </div>
-
-	<script src="name-card.js">
-	</script>
+    <script src="name-card.js"></script>
 </body>
 
 </html>
