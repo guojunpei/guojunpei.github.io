@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>name card</title>
+    <meta charset="UTF-8" />
+    <style>
+html,body{
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: black;
+}
+
+form{
+    padding: 3%;
+}
+
+#name-card{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+#show-name{
+    color: white;
+    font-size: 10rem;
+    text-align: center;
+}
+
+.form-content{
+    display: flex;
+    flex-direction: row;
+    color: white;
+    font-size: 2rem;
+}
+
+.form-button{
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.name-crad-btn{
+    font-size: 2rem;
+    color: white;
+    background-color: darkblue;
+}
+
+input:invalid{
+    border: 0.1rem dashed red;
+    background-color: rgba(255, 0, 0, 0.100);
+}
+
+input:valid{
+    border: 0.1rem solid green;
+    background-color: rgba(0, 128, 0, 0.100);
+}
+
+    </style>
+</head>
+
+<body>
+	<div id="name-card">
+        <div id="show-name">
+            name
+        </div>
+        <div id="form">
+            <div id="name-container" class="form-content">
+                <label for="name">Enter new name:</label>
+                <input type="text" name="name" id="name" value="" required>
+            </div>
+            <div id="color-container" class="form-content">
+                <label for="color">Choose text color:</label>
+                <input type="color" name="color" id="color" value="#ffffff">
+            </div>
+            <div id="bg-container" class="form-content">
+                <label for="backgroundcolor">Choose backgroundcolor:</label>
+                <input type="color" name="backgroundcolor" id="backgroundcolor" value="#000000">
+            </div>
+            <div class="form-button">
+                <button id="preview" class="name-crad-btn" onclick="previewName()">Preview</button>
+                <button id="full-screen" class="name-crad-btn" onclick="fullScreenName()">Full screen</button>
+            </div>
+        </div>
+    </div>
+    <script>
+
+const inputName=document.getElementById("name");
+const showName=document.getElementById("show-name");
+const form=document.getElementById("form");
+
+
+function fontSizeControl(n){
+    showName.style.fontSize=`${n*3}px`;
+
+    for(let v of document.querySelectorAll("label")){
+        v.style.fontSize=`${n}px`;
+    }
+    
+    for(let v of document.querySelectorAll("input")){
+        v.style.fontSize=`${n}px`;
+    }
+    
+    for(let v of document.querySelectorAll("button")){
+        v.style.fontSize=`${n}px`;
+    }
+}
+
+function CN(){
+    showName.innerText="名字";
+    document.querySelectorAll("label")[0].innerText="输入名字或文字";
+    document.querySelectorAll("label")[1].innerText="选择文字颜色";
+    document.querySelectorAll("label")[2].innerText="选择文字背景颜色";
+    document.getElementById("preview").innerText="预览";
+    document.getElementById("full-screen").innerText="全屏显示";
+}
+
+function EN(){
+    showName.innerText="name";
+    document.querySelectorAll("label")[0].innerText="Enter new name:";
+    document.querySelectorAll("label")[1].innerText="Choose text color:";
+    document.querySelectorAll("label")[2].innerText="Choose backgroundcolor:";
+    document.getElementById("preview").innerText="Preview";
+    document.getElementById("full-screen").innerText="Full screen";
+}
+
+if(navigator.language==="zh-CN"){
+    CN();
+}else{
+    EN();
+}
+
+function smallTextFontSizeControl(){
+    let n=0;
+    if(window.innerHeight<window.innerWidth){
+        document.getElementById("name-container").style.flexDirection="row";
+        document.getElementById("color-container").style.flexDirection="row";
+        document.getElementById("bg-container").style.flexDirection="row";
+        n=window.innerHeight/15;
+        fontSizeControl(n);
+    }else{
+        document.getElementById("name-container").style.flexDirection="column";
+        document.getElementById("color-container").style.flexDirection="column";
+        document.getElementById("bg-container").style.flexDirection="column";
+        n=window.innerWidth/15;
+        fontSizeControl(n)
+    }
+    
+}
+
+function largeTextFontSizeControl(){
+    if(window.innerHeight<window.innerWidth){
+        if(window.innerHeight>window.innerWidth/(inputName.value.length)){
+            showName.style.fontSize=`${0.7*window.innerWidth/(inputName.value.length)}px`;
+        }else{
+            showName.style.fontSize=`${0.7*window.innerHeight}px`;
+        }
+    }else{
+        showName.style.writingMode="vertical-lr";
+        if(window.innerWidth>window.innerHeight/(inputName.value.length)){
+            showName.style.fontSize=`${0.7*window.innerHeight/(inputName.value.length)}px`;
+        }else{
+            showName.style.fontSize=`${0.7*window.innerWidth}px`;
+        }
+    }
+}
+
+function previewName(){
+    if(inputName.value===""){if(navigator.language==="zh-CN"){
+        inputName.value==="名字";
+    }else{
+        inputName.value==="name";
+    }}
+    showName.innerText=inputName.value;
+    showName.style.color=document.getElementById("color").value;
+    showName.style.backgroundColor=document.getElementById("backgroundcolor").value;
+}
+
+function fullScreenName(){
+    if(inputName.value===""){if(navigator.language==="zh-CN"){
+        inputName.value==="名字";
+    }else{
+        inputName.value==="name";
+    }}
+    showName.innerText=inputName.value;
+    showName.style.color=document.getElementById("color").value;
+    showName.style.backgroundColor=document.getElementById("backgroundcolor").value;
+    form.style.display="none";
+    largeTextFontSizeControl();
+}
+
+smallTextFontSizeControl();
+
+window.addEventListener("resize",()=>{
+    if(form.style.display==="none"){
+        largeTextFontSizeControl();
+    }else{
+        smallTextFontSizeControl()
+    }
+});
+    </script>
+</body>
+
+</html>
