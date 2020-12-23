@@ -83,23 +83,29 @@ function largeTextFontSizeControl(){
 }
 
 function previewName(){
-    if(inputName.value===""){if(navigator.language==="zh-CN"){
-        inputName.value==="名字";
+    if(inputName.value===""){
+        if(navigator.language==="zh-CN"){
+            showName.innerText="名字";
+        }else{
+            showName.innerText="name";
+        }
     }else{
-        inputName.value==="name";
-    }}
-    showName.innerText=inputName.value;
+        showName.innerText=inputName.value;
+    }
     showName.style.color=document.getElementById("color").value;
     showName.style.backgroundColor=document.getElementById("backgroundcolor").value;
 }
 
 function fullScreenName(){
-    if(inputName.value===""){if(navigator.language==="zh-CN"){
-        inputName.value==="名字";
+    if(inputName.value===""){
+        if(navigator.language==="zh-CN"){
+            showName.innerText="名字";
+        }else{
+            showName.innerText="name";
+        }
     }else{
-        inputName.value==="name";
-    }}
-    showName.innerText=inputName.value;
+        showName.innerText=inputName.value;
+    }
     showName.style.color=document.getElementById("color").value;
     showName.style.backgroundColor=document.getElementById("backgroundcolor").value;
     form.style.display="none";
