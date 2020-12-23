@@ -152,7 +152,10 @@ function smallTextFontSizeControl(){
         n=window.innerWidth/15;
         fontSizeControl(n)
     }
-    
+    document.getElementById("color").style.width=`${2*n}px`;
+    document.getElementById("color").style.height=`${n}px`;
+    document.getElementById("backgroundcolor").style.width=`${2*n}px`;
+    document.getElementById("backgroundcolor").style.height=`${n}px`;
 }
 
 function largeTextFontSizeControl(){
