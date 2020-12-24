@@ -55,3 +55,11 @@ input:valid{
     border: 0.1rem solid green;
     background-color: rgba(0, 128, 0, 0.100);
 }
+
+.name-crad-btn:hover{
+    color: green;
+}
+
+.name-crad-btn:active{
+    border: 2px solid white;
+}
