@@ -225,3 +225,4 @@ gameState.appendChild(statePlay1);
 gameState.appendChild(statePlay1);
 gameState.appendChild(stateResult);
 app.appendChild(gameState);
+
