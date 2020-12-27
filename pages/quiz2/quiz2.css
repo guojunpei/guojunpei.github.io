@@ -30,6 +30,22 @@ html,body{
     color: white;
 }
 
+#tip-number-all{
+    color: white;
+}
+
+#tip-number-done{
+    color: white;
+}
+
+#tip-number-lose{
+    color: white;
+}
+
+#tip-sure{
+    color: white;
+}
+
 h1{
     text-align: center;
 }
@@ -101,21 +117,38 @@ td,th{
     padding-right: 0.5rem;
 }
 
+.tip-wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .tip{
     display: flex;
     flex-direction: row;
 }
 
 .tip > div{
-    padding: 0 1rem 0 1rem;
+    padding-right:1rem;
     display: flex;
     flex-direction: row;
+    padding: 0.5rem;
+    border: 1px solid blue;
 }
 
 .tip-text{
+    padding-right: 0.5rem;
     color: white;
 }
 
 .tip-number{
     color: white;
+}
+
+.tip-question{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+    border: 1px solid blue;
 }
