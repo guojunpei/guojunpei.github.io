@@ -18,6 +18,18 @@ html,body{
     margin: 0rem;
 }
 
+#show-paper{
+    color: white;
+}
+
+#main-paper{
+    color: white;
+}
+
+#score-detail{
+    color: white;
+}
+
 h1{
     text-align: center;
 }
@@ -87,4 +99,23 @@ td,th{
     border: 0.1rem solid rgb(0, 0, 65);
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+}
+
+.tip{
+    display: flex;
+    flex-direction: row;
+}
+
+.tip > div{
+    padding: 0 1rem 0 1rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.tip-text{
+    color: white;
+}
+
+.tip-number{
+    color: white;
 }
