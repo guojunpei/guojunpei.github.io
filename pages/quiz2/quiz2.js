@@ -256,32 +256,6 @@ function formCheck(){
     }
 }
 
-/*
-document.querySelector("button").addEventListener("click",(e)=>{
-    let lossQn="";
-    let lqn=[];
-    for(const qn of questionList){
-        for(let k of Object.keys(qn.answerOption)){
-            if(document.getElementById(`a${qn.id}${k}`).checked){
-                lqn.push(qn.id);
-            }
-        }
-    }
-    for(const qn of questionList){
-        if(!lqn.includes(qn.id)){
-            lossQn+=qn.id+",";
-        }
-    }
-    if(lossQn!==""){
-        if(window.confirm(`Do you want to loss ${lossQn}?`)){
-            return true;
-        }else{
-            return false;
-        }
-    }
-})
-*/
-
 mainForm.addEventListener("submit",(e)=>{
     e.preventDefault();
     new FormData(mainForm);
