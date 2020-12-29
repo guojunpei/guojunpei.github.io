@@ -184,6 +184,8 @@ let q7={
 
 const questionList=[q1,q2,q3,q4,q5,q6,q7];
 
+document.getElementById("tip-number-all").innerText=`${questionList.length}`;
+
 const mainPaper = document.getElementById("main-paper");
 
 for(const qn of questionList){
@@ -229,25 +231,30 @@ let save=[0];
 const mainForm = document.querySelector("form");
 
 function formCheck(){
-    let lossQn="";
-    let lqn=[];
+    let lossQnArry=[];
+    let doneQnArry=[];
+    let lossQnString="";
     for(const qn of questionList){
         for(let k of Object.keys(qn.answerOption)){
             if(document.getElementById(`a${qn.id}${k}`).checked){
-                lqn.push(qn.id);
+                doneQnArry.push(qn.id);
             }
         }
     }
     for(const qn of questionList){
-        if(!lqn.includes(qn.id)){
-            lossQn+=qn.id+",";
+        if(!doneQnArry.includes(qn.id)){
+            lossQnArry.push(qn.id);
+            lossQnString+=qn.id+",";
         }
     }
-    if(lossQn!==""){
-        if(window.confirm(`Do you want to loss ${lossQn}?`)){
+    document.getElementById("tip-number-done").innerText=`${doneQnArry.length}`;
+    document.getElementById("tip-number-lose").innerText=`${lossQnArry.length}`;
+    
+    if(lossQnString!==""){
+        if(window.confirm(`Do you want to loss ${lossQnString}?`)){
             return true;
         }else{
-            if(lossQn!==""){
+            if(lossQnString!==""){
                 mainForm.elements[0].setCustomValidity(
                     "Don't loss any one !"
                 )
@@ -255,6 +262,9 @@ function formCheck(){
         }
     }
 }
+
+
+mainForm.addEventListener("click",formCheck());
 
 mainForm.addEventListener("submit",(e)=>{
     e.preventDefault();
