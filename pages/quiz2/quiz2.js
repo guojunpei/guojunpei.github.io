@@ -264,7 +264,7 @@ function formCheck(){
 }
 
 
-mainForm.addEventListener("click",formCheck());
+mainForm.addEventListener("input",formCheck());
 
 mainForm.addEventListener("submit",(e)=>{
     e.preventDefault();
