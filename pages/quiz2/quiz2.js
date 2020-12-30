@@ -215,9 +215,7 @@ for(const qn of questionList){
         option.name=JSON.stringify(qn);
         option.id=`a${qn.id}${k}`;
         option.value=k;
-        //option.className="select-style";
         optionContainer.appendChild(option);
-        //label.className="select-style";
         label.htmlFor=`a${qn.id}${k}`;
         label.innerText=`${k}:${v}`;
         optionContainer.appendChild(label);
@@ -264,7 +262,7 @@ function formCheck(){
 }
 
 
-mainForm.addEventListener("input",formCheck());
+mainForm.addEventListener("keyup",formCheck());
 
 mainForm.addEventListener("submit",(e)=>{
     e.preventDefault();
