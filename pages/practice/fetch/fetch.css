@@ -1,6 +1,38 @@
+html,body{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#btn{
+    color: white;
+    background-color: blue;
+}
 
 
-#app-fatch{
+#app-fetch{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    color: white;
+    background-color: black;
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+#main-wrap{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#main-wrap > div{
+    width: 33%;
+    border: 0.1rem solid gray;
 }
