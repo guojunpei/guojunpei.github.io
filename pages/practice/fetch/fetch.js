@@ -7,9 +7,6 @@ const container3=document.getElementById("faster-first");
 
 const filesPath="https://guojunpei.github.io/pages/practice/fetch/";
 
-function getFile(n){
-    return fetch(`${filesPath}text${n}.md`).then(response=>response.text());
-}
 
 /*
 getFile(1).then(text=>{
@@ -31,6 +28,10 @@ getFile(1).then(text=>{t=text;});
 
 
 document.querySelector("button").addEventListener("click",function(){
+    function getFile(n){
+        return fetch(`${filesPath}text${n}.md`).then(response=>response.text());
+    }
+    
     function oneByOne(){
         let t=container1.innerText;
         let n=0;
@@ -78,7 +79,7 @@ document.querySelector("button").addEventListener("click",function(){
             t+="begin...";
         },Math.random()*randomTime+baseTime);
         let tl=[];
-        for(const i=0;i<8;i++){
+        for(let i=0;i<8;i++){
             tl.push(getFile(i));
         }
         Promise.all(tl).then((values)=>{
