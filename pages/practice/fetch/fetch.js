@@ -15,7 +15,33 @@ getFile(1).then(text=>{
     container1.innerText+=text;
 });
 
+getFile(1).then(text=>{
+    t=text;
+    console.log(t);
+});
 
+getFile(1).then(text=>{t+=text;});
+
+
+function afterAll(){
+    let t=container2.innerText;
+    window.setTimeout(function(){
+        t+="begin...";
+    },Math.random()*randomTime+baseTime);
+    let t1=fetch("https://github.com/guojunpei/guojunpei.github.io/blob/master/pages/practice/fetch/text1.md").then(r=>{t+=r.text();});
+    let t2=fetch("https://github.com/guojunpei/guojunpei.github.io/blob/master/pages/practice/fetch/text2.md").then(r=>{t+=r.text();});
+    let t3=fetch("https://github.com/guojunpei/guojunpei.github.io/blob/master/pages/practice/fetch/text3.md").then(r=>{t+=r.text();});
+    let t4=fetch("https://github.com/guojunpei/guojunpei.github.io/blob/master/pages/practice/fetch/text4.md").then(r=>{t+=r.text();});
+    let t5=fetch("https://github.com/guojunpei/guojunpei.github.io/blob/master/pages/practice/fetch/text5.md").then(r=>{t+=r.text();});
+    let t6=fetch("https://github.com/guojunpei/guojunpei.github.io/blob/master/pages/practice/fetch/text6.md").then(r=>{t+=r.text();});
+    let t7=fetch("https://github.com/guojunpei/guojunpei.github.io/blob/master/pages/practice/fetch/text7.md").then(r=>{t+=r.text();});
+    let t8=fetch("https://github.com/guojunpei/guojunpei.github.io/blob/master/pages/practice/fetch/text8.md").then(r=>{t+=r.text();});
+    Promise.all([f1,f2,f3,f4,f5,f6,f7,f8]).then((values)=>{
+        window.setTimeout(function(){
+            values;
+        },Math.random()*randomTime+baseTime);
+    });
+}
 
 
 function oneByOne(){
@@ -47,26 +73,6 @@ function oneByOne(){
     window.setTimeout(function(){
         fetch("https://github.com/guojunpei/guojunpei.github.io/blob/master/pages/practice/fetch/text8.md").then(r=>{t+=r.text();});
     },Math.random()*randomTime+baseTime);
-}
-
-function afterAll(){
-    let t=container2.innerText;
-    window.setTimeout(function(){
-        t+="begin...";
-    },Math.random()*randomTime+baseTime);
-    let f1=fetch("https://github.com/guojunpei/guojunpei.github.io/blob/master/pages/practice/fetch/text1.md").then(r=>{t+=r.text();});
-    let f2=fetch("https://github.com/guojunpei/guojunpei.github.io/blob/master/pages/practice/fetch/text2.md").then(r=>{t+=r.text();});
-    let f3=fetch("https://github.com/guojunpei/guojunpei.github.io/blob/master/pages/practice/fetch/text3.md").then(r=>{t+=r.text();});
-    let f4=fetch("https://github.com/guojunpei/guojunpei.github.io/blob/master/pages/practice/fetch/text4.md").then(r=>{t+=r.text();});
-    let f5=fetch("https://github.com/guojunpei/guojunpei.github.io/blob/master/pages/practice/fetch/text5.md").then(r=>{t+=r.text();});
-    let f6=fetch("https://github.com/guojunpei/guojunpei.github.io/blob/master/pages/practice/fetch/text6.md").then(r=>{t+=r.text();});
-    let f7=fetch("https://github.com/guojunpei/guojunpei.github.io/blob/master/pages/practice/fetch/text7.md").then(r=>{t+=r.text();});
-    let f8=fetch("https://github.com/guojunpei/guojunpei.github.io/blob/master/pages/practice/fetch/text8.md").then(r=>{t+=r.text();});
-    Promise.all([f1,f2,f3,f4,f5,f6,f7,f8]).then((values)=>{
-        window.setTimeout(function(){
-            values;
-        },Math.random()*randomTime+baseTime);
-    });
 }
 
 function fasterFirst(){
