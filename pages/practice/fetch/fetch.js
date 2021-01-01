@@ -52,7 +52,6 @@ document.querySelector("button").addEventListener("click",function(){
         },Math.random()*randomTime+baseTime);
     }
     
-    
     function afterAll(){
         let t=container2.innerText;
         window.setTimeout(function(){
@@ -63,14 +62,11 @@ document.querySelector("button").addEventListener("click",function(){
             tl.push(getFile(i));
         }
         Promise.all(tl).then((values)=>{
-            window.setTimeout(function(){
-                values.then(text=>{
-                    t+=text;
-                });
-            },Math.random()*randomTime+baseTime);
+            values.then(text=>{
+                t+=text;
+            });
         });
     }
-    
     
     function fasterFirst(){
         let t=container3.innerText;
