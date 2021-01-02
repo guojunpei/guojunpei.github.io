@@ -1,6 +1,5 @@
 let baseTime=1000;
 let randomTime=500;
-const delayPromise=()
 
 const filesPath="https://guojunpei.github.io/pages/practice/fetch/";
 
