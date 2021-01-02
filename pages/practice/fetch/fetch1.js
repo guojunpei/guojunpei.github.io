@@ -22,11 +22,15 @@ function getText(url){
     return fetch(url).then(response=>response.text());
 }
 
-document.querySelector("button").addEventListener("click",()=>{
+function oneByOne(){
     for(let url of urlL){
         getText(url).then(text=>{
             delayPromise(fillText(containner1,text));
         })
     }
+}
+
+document.querySelector("button").addEventListener("click",()=>{
+    oneByOne();
 })
 
