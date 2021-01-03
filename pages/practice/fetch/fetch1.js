@@ -25,13 +25,27 @@ function getText(url){
 }
 
 function oneByOne(){
+    getText(urlL[0]).then(text=>{
+        delayPromise(text).then(text=>{
+            fillText(containner1,text)
+        });
+        return urlL[1];
+    }).then(url=>{
+        getText(url).then(text=>{
+            delayPromise(text).then(text=>{
+                fillText(containner1,text)
+            });
+        })
+    })
 
+    /*
     getText(urlL[0]).then(text=>{
         delayPromise(fillText(containner1,text));
         getText(urlL[1]);
     }).then(text=>{
         delayPromise(fillText(containner1,text));
     })
+    */
 
     /*
     for(let url of urlL){
