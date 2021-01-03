@@ -33,11 +33,11 @@ function getText(url){
 function oneByOne(){
     getText(urlL[0]).then(text=>{
         fillText(containner1,text);
-        delayFun(urlL[1])
+        return delayFun(urlL[1]);
     }).then(url=>{
         getText(url).then(text=>{
             fillText(containner1,text);
-            delayFun(urlL[2])
+            return delayFun(urlL[2]);
         });
     }).then(url=>{
         getText(url).then(text=>{
