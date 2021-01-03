@@ -9,6 +9,18 @@ function delayPromise(value){
     })
 }
 
+function delayFun(value){
+    window.setTimeout(function(){
+        value;
+    },Math.random()*randomTime+baseTime);
+}
+
+delayFun(()=>{
+
+})
+
+
+
 let urlL=[];
 for(let i=1;i<9;i++){
     urlL.push(`${filesPath}text${i}`);
@@ -26,6 +38,21 @@ function getText(url){
 
 function oneByOne(){
     getText(urlL[0]).then(text=>{
+        fillText(containner1,text);
+        delayFun(urlL[1])
+    }).then(url=>{
+        getText(url).then(text=>{
+            fillText(containner1,text);
+            delayFun(urlL[2])
+        });
+    }).then(url=>{
+        getText(url).then(text=>{
+            fillText(containner1,text);
+        });
+    })
+
+    /*
+    getText(urlL[0]).then(text=>{
         delayPromise(text).then(text=>{
             fillText(containner1,text)
         });
@@ -37,6 +64,7 @@ function oneByOne(){
             });
         })
     })
+    /*
 
     /*
     getText(urlL[0]).then(text=>{
