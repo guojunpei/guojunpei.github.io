@@ -37,8 +37,8 @@ function oneByOne(){
     }).then(url=>{
         getText(url).then(text=>{
             fillText(containner1,text);
-            return delayFun(urlL[2]);
         });
+        return delayFun(urlL[2]);
     }).then(url=>{
         getText(url).then(text=>{
             fillText(containner1,text);
