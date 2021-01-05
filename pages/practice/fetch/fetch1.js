@@ -44,7 +44,6 @@ function oneByOne(){
             fillText(containner1,text);
         });
     })
-
 }
 
 document.querySelector("button").addEventListener("click",()=>{
