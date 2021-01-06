@@ -1,24 +1,6 @@
+/*
 let baseTime=1000;
 let randomTime=500;
-
-/*
-//create a function for delay i.e.:
-const delayPromise = (delayValue, ms) => {
-  return new Promise((r, t) => {
-    setTimeout(() => {
-      return r(delayValue);
-    }, ms);
-  });
-};
-
-//Can create a function for your random number i.e.:
-const getRandomNumber = (min = 100, max = 800) => { return Math.floor(Math.random() * (max - min)) + min;}
-delayPromise(delayValue, getRandomNumber());
-delayPromise(delayValue, getRandomNumber(200,1000));
-
-*/
-
-
 
 const filesPath="https://guojunpei.github.io/pages/practice/fetch/";
 
@@ -65,19 +47,6 @@ function oneByOne(){
         getFile(n).then(text=>{containner.innerText+=text;});
     },Math.random()*randomTime+baseTime);
 }
-
-// urls: list of your files' urls
-/*
-const oneByOne = (urls, index = 0) => {
-    if(!urls || !urls[index]) return;
-    fetchOneFile(urls[index]).then(response => {
-      yourResponseHandle(...);
-      if(index + 1 < urls.length){
-        oneByOne(urls, index + 1);
-      }
-    });
-}
-*/
 
 function afterAll(){
     let containner=document.getElementById("after-all");
@@ -177,14 +146,52 @@ function fasterFirst(){
     )
 }
 
-
-/*
-
-*/
-
 document.querySelector("button").addEventListener("click",function(){
     
     oneByOne();
     afterAll();
     fasterFirst();
 });
+*/
+
+const fileNames = [1, 2, 4, 5];
+const textContainerIdPrefix = "tcp";
+const filesPath = "https://guojunpei.github.io/pages/practice/fetch/";
+const getRandomNumber = (min = 200, max = 800) =>
+  Math.floor(Math.random() * (max - min)) + min;
+const delayPromise = (delayValue, ms) =>
+  new Promise((r, t) => {
+    setTimeout(() => {
+      return r(delayValue);
+    }, ms);
+  });
+const getFile = (n) =>
+  fetch(`${filesPath}text${n}.md`)
+    .then((response) => response.text())
+    .then((v) => delayPromise(v, getRandomNumber()));
+const initContainers = (fileNames) => {
+  for (const name of fileNames) {
+    const divEl = document.createElement("div");
+    divEl.style.padding = "1rem";
+    divEl.style.margin = "0.2rem";
+    divEl.style.border = "dashed gray";
+    divEl.id = `${textContainerIdPrefix}${name}`;
+    app.appendChild(divEl);
+  }
+};
+const loadText = (fileName, text) => {
+  const containerEl = document.querySelector(
+    `#${textContainerIdPrefix}${fileName}`
+  );
+  if (containerEl)
+    containerEl.innerHTML = `<small>${fileName}</small><p>${text}</p>`;
+};
+const oneByOne = (urls, index = 0) => {
+  if (!urls || !urls[index]) return;
+  getFile(urls[index]).then((response) => {
+    loadText(urls[index], response);
+    if (index + 1 < urls.length) {
+      oneByOne(urls, index + 1);
+    }
+  });
+};
