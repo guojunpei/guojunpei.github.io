@@ -58,6 +58,5 @@ function oneByOne(urls,index=0){
 
 document.querySelector("button").addEventListener("click",()=>{
     addContainners(fileNames)
-    oneByOne();
+    oneByOne(fileNames);
 })
-
