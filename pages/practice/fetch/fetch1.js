@@ -1,5 +1,4 @@
 
-
 const containner1=document.getElementById("one-by-one");
 
 let fileNames=[];
