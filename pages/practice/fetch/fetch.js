@@ -29,14 +29,14 @@ function getFile(n){
     .then((text)=>delayPromise(text));
 }
 
-function addContainners(fileNames){
+function addContainners(div,fileNames){
     for (const name of fileNames) {
         const divEl = document.createElement("div");
         divEl.style.padding = "1rem";
         divEl.style.margin = "0.2rem";
         divEl.style.border = "dashed gray";
         divEl.id = `${textContainerIdPrefix}${name}`;
-        containner1.appendChild(divEl);
+        div.appendChild(divEl);
       }
 }
 
@@ -57,7 +57,17 @@ function oneByOne(urls,index=0){
     });
 };
 
+function afterAll(){
+
+}
+
+function fasterFirst(){
+    
+}
+
 document.querySelector("button").addEventListener("click",()=>{
-    addContainners(fileNames)
+    addContainners(containner1,fileNames)
+    addContainners(containner2,fileNames)
+    addContainners(containner3,fileNames)
     oneByOne(fileNames);
 })
