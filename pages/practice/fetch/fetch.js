@@ -29,19 +29,19 @@ function getFile(n){
     .then((text)=>delayPromise(text));
 }
 
-function addContainners(div,fileNames){
+function addContainners(containnerN,fileNames){
     for (const name of fileNames) {
         const divEl = document.createElement("div");
         divEl.style.padding = "1rem";
         divEl.style.margin = "0.2rem";
         divEl.style.border = "dashed gray";
-        divEl.id = `${textContainerIdPrefix}${name}`;
-        div.appendChild(divEl);
+        divEl.id = `${textContainerIdPrefix}${containnerN.id}${name}`;
+        containnerN.appendChild(divEl);
       }
 }
 
-function loadText(fileName, text){
-    const containerEl = document.querySelector(`#${textContainerIdPrefix}${fileName}`);
+function loadText(containnerN,fileName, text){
+    const containerEl = document.querySelector(`#${textContainerIdPrefix}${containnerN.id}${fileName}`);
     if(containerEl!==""){
         containerEl.innerHTML = `<small>${fileName}</small><p>${text}</p>`;
     }
@@ -50,19 +50,27 @@ function loadText(fileName, text){
 function oneByOne(urls,index=0){
     if (!urls || !urls[index]) return;
     getFile(urls[index]).then((response)=>{
-        loadText(urls[index], response);
+        loadText(containner1,urls[index], response);
         if(index+1<urls.length){
             oneByOne(urls, index + 1);
         }
     });
 };
 
-function afterAll(){
-
+function afterAll(fileNames){
+    let promiseArry=[];
+    for(let n of fileNames){
+        promiseArry.push(getFile(n));
+    };
+    let fileName=0;
+    Promise.all(promiseArry).then((response)=>{
+        fileName++;
+        loadText(containner2,fileName, response);
+    });
 }
 
 function fasterFirst(){
-    
+
 }
 
 document.querySelector("button").addEventListener("click",()=>{
@@ -70,4 +78,5 @@ document.querySelector("button").addEventListener("click",()=>{
     addContainners(containner2,fileNames)
     addContainners(containner3,fileNames)
     oneByOne(fileNames);
+    afterAll(fileNames);
 })
