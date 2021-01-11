@@ -62,9 +62,8 @@ function afterAll(fileNames){
     for(let n of fileNames){
         promiseArry.push(getFile(n));
     };
-    let fileName=0;
+    let fileName=1;
     Promise.all(promiseArry).then((response)=>{
-        fileName++;
         loadText(containner2,fileName, response);
     });
 }
@@ -80,3 +79,18 @@ document.querySelector("button").addEventListener("click",()=>{
     oneByOne(fileNames);
     afterAll(fileNames);
 })
+
+/*
+const promise4 = Promise.resolve(3);
+const promise5 = 2;
+const promise6 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 100, 1);
+});
+
+let nn=0;
+Promise.all([promise4, promise5, promise6]).then((values) => {
+    nn++;
+    console.log(values+nn);
+  });
+//VM106:4 3,2,11
+  */
