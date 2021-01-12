@@ -62,8 +62,8 @@ function afterAll(fileNames){
     for(let n of fileNames){
         promiseArry.push(getFile(n));
     };
-    let fileName=1;
     Promise.all(promiseArry).then((response)=>{
+        let fileName=response.slice(1,1);
         loadText(containner2,fileName, response);
     });
 }
