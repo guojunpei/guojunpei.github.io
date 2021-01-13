@@ -98,6 +98,20 @@ Promise.all([promise4, promise5, promise6]).then((values) => {
 
 //fileName=Number(response.slice(2,3));
 
-getFile(1).then((response)=>{
-    loadText(containner1,1, response);
+/*
+getFile(fileNames[0]).then((response)=>{
+    loadText(containner1,fileNames[0], response);
 });
+
+const textContainerIdPrefix = "tcp";
+
+function loadText(containnerN,fileName, text){
+    const containerEl = document.querySelector(`#${textContainerIdPrefix}${containnerN.id}${fileName}`);
+    if(containerEl!==""){
+        containerEl.innerHTML = `<small>${fileName}</small><p>${text}</p>`;
+    }
+}
+
+document.querySelector(`#tcpone-by-one1`)
+document.querySelector(`#tcp1`)
+*/
