@@ -62,8 +62,9 @@ function afterAll(fileNames){
     for(let n of fileNames){
         promiseArry.push(getFile(n));
     };
+    let fileName=0;
     Promise.all(promiseArry).then((response)=>{
-        let fileName=response.slice(1,1);
+        fileName=Number(response.slice(2,3));
         loadText(containner2,fileName, response);
     });
 }
@@ -94,3 +95,9 @@ Promise.all([promise4, promise5, promise6]).then((values) => {
   });
 //VM106:4 3,2,11
   */
+
+//fileName=Number(response.slice(2,3));
+
+getFile(1).then((response)=>{
+    loadText(containner1,1, response);
+});
