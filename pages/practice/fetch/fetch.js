@@ -115,3 +115,36 @@ function loadText(containnerN,fileName, text){
 document.querySelector(`#tcpone-by-one1`)
 document.querySelector(`#tcp1`)
 */
+/*
+const promise1 = Promise.resolve(3);
+const promise2 = 42;
+const promise3 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 100, 'foo');
+});
+
+let nnn=0;
+Promise.all([promise1, promise2, promise3]).then((values) => {
+    nnn++;
+    console.log(values+":"+nnn);
+  });
+
+let n0=Promise.all([promise1, promise2, promise3]).then((values) => {
+    nnn++;
+    return values+":"+nnn;
+  });
+
+  Promise.all([promise1, promise2, promise3]).then((values) => {
+    let n1=values;
+  });
+//n1 is not defined
+
+  let n1=[];
+  Promise.all([promise1, promise2, promise3]).then((values) => {
+    let n1=values;
+  });
+
+  Promise.all([promise1, promise2, promise3]).then((values) => {
+    n1.push(values);
+  });
+*/
+//n1=[Array(3)] 0: (3) [3, 42, "foo"]
