@@ -62,10 +62,10 @@ function afterAll(fileNames){
     for(let n of fileNames){
         promiseArry.push(getFile(n));
     };
-    let fileName=0;
-    Promise.all(promiseArry).then((response)=>{
-        fileName=Number(response.slice(2,3));
-        loadText(containner2,fileName, response);
+    Promise.all(promiseArry).then((values)=>{
+        for(let i=1;i<9;i++){
+            loadText(containner2,i, values[i-1]);
+        }  
     });
 }
 
@@ -80,71 +80,3 @@ document.querySelector("button").addEventListener("click",()=>{
     oneByOne(fileNames);
     afterAll(fileNames);
 })
-
-/*
-const promise4 = Promise.resolve(3);
-const promise5 = 2;
-const promise6 = new Promise((resolve, reject) => {
-  setTimeout(resolve, 100, 1);
-});
-
-let nn=0;
-Promise.all([promise4, promise5, promise6]).then((values) => {
-    nn++;
-    console.log(values+nn);
-  });
-//VM106:4 3,2,11
-  */
-
-//fileName=Number(response.slice(2,3));
-
-/*
-getFile(fileNames[0]).then((response)=>{
-    loadText(containner1,fileNames[0], response);
-});
-
-const textContainerIdPrefix = "tcp";
-
-function loadText(containnerN,fileName, text){
-    const containerEl = document.querySelector(`#${textContainerIdPrefix}${containnerN.id}${fileName}`);
-    if(containerEl!==""){
-        containerEl.innerHTML = `<small>${fileName}</small><p>${text}</p>`;
-    }
-}
-
-document.querySelector(`#tcpone-by-one1`)
-document.querySelector(`#tcp1`)
-*/
-/*
-const promise1 = Promise.resolve(3);
-const promise2 = 42;
-const promise3 = new Promise((resolve, reject) => {
-  setTimeout(resolve, 100, 'foo');
-});
-
-let nnn=0;
-Promise.all([promise1, promise2, promise3]).then((values) => {
-    nnn++;
-    console.log(values+":"+nnn);
-  });
-
-let n0=Promise.all([promise1, promise2, promise3]).then((values) => {
-    nnn++;
-    return values+":"+nnn;
-  });
-
-  Promise.all([promise1, promise2, promise3]).then((values) => {
-    let n1=values;
-  });
-//n1 is not defined
-
-  let n1=[];
-  Promise.all([promise1, promise2, promise3]).then((values) => {
-    let n1=values;
-  });
-
-  Promise.all([promise1, promise2, promise3]).then((values) => {
-    n1.push(values);
-  });
-*/
-//n1=[Array(3)] 0: (3) [3, 42, "foo"]
