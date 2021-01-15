@@ -21,6 +21,7 @@ html,body{
 
 .btn{
     background-color: blue;
+    color: white;
 }
 
 .btn:hover{
@@ -28,6 +29,7 @@ html,body{
 }
 
 .btn:active{
+
     background-color: green;
     border: 0.1rem solid gray;
 }
