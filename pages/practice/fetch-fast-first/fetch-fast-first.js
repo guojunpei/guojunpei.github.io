@@ -28,3 +28,7 @@ function delayPromise(text){
         setTimeout(resolve,Math.random()*randomTime+baseTime,text)
     })
 }
+
+function fastFirst(){
+    
+}
