@@ -29,6 +29,27 @@ function delayPromise(text){
     })
 }
 
-function fastFirst(){
-    
+function getFile(fileName){
+    console.log(`${filesPath}${fileName}.md`);
+    return fetch(`${filesPath}${fileName}.md`)
+    .then((response)=>response.text())
+    .then((text)=>delayPromise(text));
 }
+
+function loadText(mainId,fileName,text){
+    document.getElementById(`${mainId}${fileName}`).innerHTML=`<small>${fileName}</small><p>${text}</p>`;
+}
+
+function fastFirst(fileNames,index=0){
+    getFile(fileNames[index]).then((response)=>{
+        loadText(containner1,fileNames[index], response);
+        if(index+1<fileNames.length){
+            fastFirst(fileNames, index + 1);
+        }
+    }).catch();
+}
+
+document.querySelector("button").addEventListener("click",()=>{
+    addContainnerEls(fileNames);
+    afterAll(fileNames,mainId);
+})
