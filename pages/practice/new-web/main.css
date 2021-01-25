@@ -1,0 +1,29 @@
+html,body{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: black;
+}
+
+.my-head{
+    color: white;
+    background-color: gray;
+}
+
+#web-head{
+    align-items: center;
+}
+
+.my-wrap{
+    color: white;
+    background-color:darkgray;
+}
+
+#web-head{
+    align-items: center;
+}
+
+.my-wrap{
+    display: flex;
+    flex-direction: column;
+}
