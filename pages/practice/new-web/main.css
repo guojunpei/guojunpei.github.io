@@ -11,7 +11,7 @@ html,body{
 }
 
 #web-head{
-    align-items: center;
+    text-align: center;
 }
 
 .my-wrap{
@@ -19,8 +19,8 @@ html,body{
     background-color:darkgray;
 }
 
-#web-head{
-    align-items: center;
+#enter-pic{
+    text-align: center;
 }
 
 .my-wrap{
