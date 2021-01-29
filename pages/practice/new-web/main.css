@@ -5,25 +5,52 @@ html,body{
     background-color: black;
 }
 
+.web-body{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    background-color: black;
+    padding: 10%;
+}
+
+
 .my-head{
     color: white;
     background-color: gray;
+    text-align: center;
 }
 
 #web-head{
-    text-align: center;
+    display: flex;
 }
 
 .my-wrap{
     color: white;
     background-color:darkgray;
+    display: flex;
 }
 
 #enter-pic{
     text-align: center;
+    margin: 10%;
+    background-color: black;
+    height: 100%;
+    width: 80%;
+}
+
+#enter-pic:hover{
+    color: #827717;
 }
 
 .my-wrap{
     display: flex;
     flex-direction: column;
+}
+
+#main-containner{
+    display: none;
+}
+
+#main-wrap{
+    display: flex;
 }
