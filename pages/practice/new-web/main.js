@@ -15,11 +15,27 @@ let c1L=pushSameClassIdIntoList(".my-c1");
 let c2L=pushSameClassIdIntoList(".my-c2");
 let c3L=pushSameClassIdIntoList(".my-c3");
 
-function changecontant(headId){
+function changecontent(headId){
     if(h1L.indexOf(headId)>-1){
         document.getElementById(headId).style.display="flex";
-
+        let n=h1L.indexOf(headId);
+        let l=h1L.splice(n);
+        for(let otherId of l){
+            document.getElementById(otherId).style.display="none";
+        }
+    }else if(h2L.indexOf(headId)>-1){
+        document.getElementById(headId).style.display="flex";
+        let n=h2L.indexOf(headId);
+        let l=h2L.splice(n);
+        for(let otherId of l){
+            document.getElementById(otherId).style.display="none";
+        }
+    }else if(h3L.indexOf(headId)>-1){
+        document.getElementById(headId).style.display="flex";
+        let n=h3L.indexOf(headId);
+        let l=h3L.splice(n);
+        for(let otherId of l){
+            document.getElementById(otherId).style.display="none";
+        }
     }
 }
-
-pushSameClassIdIntoList(".my-h3").indexOf("photography-head");
