@@ -9,32 +9,34 @@ html,body{
     display: flex;
     flex-direction: column;
     width: 80%;
-    background-color: black;
-    padding: 10%;
+    background-color: #212121;
+    margin: 10%;
+    padding: 2rem;
+    border-radius: 0.5rem;
 }
 
-
-.my-head{
+.my-h1{
     color: white;
     background-color: gray;
-    text-align: center;
+    align-content: center;
+    border-radius: 0.5rem 0.5rem 0 0;
 }
 
 #web-head{
-    display: flex;
+    text-align: center;
 }
 
 .my-wrap{
     color: white;
     background-color:darkgray;
     display: flex;
+    border-radius: 0 0 0.5rem 0.5rem;
 }
 
 #enter-pic{
     text-align: center;
     margin: 10%;
-    background-color: black;
-    height: 100%;
+    background-color: #424242;
     width: 80%;
 }
 
