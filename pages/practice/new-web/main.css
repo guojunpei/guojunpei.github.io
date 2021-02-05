@@ -51,6 +51,15 @@ html,body{
 
 .my-h3{
     padding: 1rem;
+    box-shadow: 0 0 1rem gray;
+}
+
+.my-c3{
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    box-shadow: 0 0 1rem gray;
+    width: 100%;
 }
 
 .my-h1:hover{
@@ -90,4 +99,12 @@ html,body{
 #content-containner{
     display: flex;
     flex-direction: column;
+}
+
+#inner-heads-containner{
+    width: 20%;
+}
+
+#inner-content-caontainner{
+    width: 75%;
 }
