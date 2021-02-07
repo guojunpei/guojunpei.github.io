@@ -19,30 +19,31 @@ function changecontent(headId){
     if(h1L.indexOf(headId)>-1){
         let n=h1L.indexOf(headId);
         document.getElementById(c1L[n]).style.display="flex";
-        let old=c1l;
+        let old=c1L;
         let l=c1L.splice(n);
         for(let otherId of l){
             document.getElementById(otherId).style.display="none";
+            console.log(otherId);
         }
-        c1l=old;
+        c1L=old;
     }else if(h2L.indexOf(headId)>-1){
         let n=h2L.indexOf(headId);
         document.getElementById(c2L[n]).style.display="flex";
-        let old=c2l;
+        let old=c2L;
         let l=c2L.splice(n);
         for(let otherId of l){
             document.getElementById(otherId).style.display="none";
         }
-        c2l=old;
+        c2L=old;
     }else if(h3L.indexOf(headId)>-1){
         let n=h3L.indexOf(headId);
         document.getElementById(c3L[n]).style.display="flex";
-        let old=c3l;
+        let old=c3L;
         let l=c3L.splice(n);
         for(let otherId of l){
             document.getElementById(otherId).style.display="none";
         }
-        c3l=old;
+        c3L=old;
     }
 }
 
