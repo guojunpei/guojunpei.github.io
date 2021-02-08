@@ -19,13 +19,13 @@ function changecontent(headId){
     if(h1L.indexOf(headId)>-1){
         let n=h1L.indexOf(headId);
         document.getElementById(c1L[n]).style.display="flex";
-        let old=c1L;
+
         let l=c1L.splice(n);
         for(let otherId of l){
             document.getElementById(otherId).style.display="none";
             console.log(otherId);
         }
-        c1L=old;
+
     }else if(h2L.indexOf(headId)>-1){
         let n=h2L.indexOf(headId);
         document.getElementById(c2L[n]).style.display="flex";
