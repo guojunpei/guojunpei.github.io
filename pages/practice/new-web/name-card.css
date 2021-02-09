@@ -1,0 +1,63 @@
+
+form{
+    padding: 3%;
+}
+
+#name-card{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+#show-name{
+    color: white;
+    font-size: 10rem;
+    text-align: center;
+}
+
+.form-content{
+    display: flex;
+    flex-direction: row;
+    color: white;
+    font-size: 2rem;
+}
+
+.form-button{
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.name-crad-btn{
+    font-size: 2rem;
+    color: white;
+    background-color: darkblue;
+}
+
+input:invalid{
+    border: 0.1rem dashed red;
+    background-color: rgba(255, 0, 0, 0.100);
+}
+
+input:valid{
+    border: 0.1rem solid green;
+    background-color: rgba(0, 128, 0, 0.100);
+}
+
+.name-crad-btn:hover{
+    display: block;
+    color: green;
+}
+
+.name-crad-btn:active{
+    border: 4px solid white;
+}
+
+#name{
+    color: white;
+}
