@@ -1,0 +1,110 @@
+html,body{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: black;
+}
+
+.web-body{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    background-color: #212121;
+    margin: 10%;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 1rem gray;
+}
+
+.my-h1{
+    color: #827717;
+    background-color: gray;
+    text-align: center;
+    border-radius: 0.5rem 0.5rem 0 0;
+    padding: 1rem 0 1rem 0;
+    text-shadow: 0 0 1rem black;
+}
+
+.my-c1{
+    color: #827717;
+    background-color:#424242;
+    display: flex;
+    border-radius: 0 0 0.5rem 0.5rem;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.my-h2{
+    padding: 1rem;
+    padding: 1rem 0 1rem 0;
+    width: 25%;
+    text-align: center;
+    box-shadow: 0 0 1rem gray;
+}
+
+.my-c2{
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    box-shadow: 0 0 1rem gray;
+}
+
+.my-h3{
+    padding: 1rem;
+    box-shadow: 0 0 1rem gray;
+}
+
+.my-c3{
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    box-shadow: 0 0 1rem gray;
+    width: 100%;
+}
+
+.my-h1:hover{
+    background-color: #212121;
+}
+
+.my-h2:hover{
+    background-color: #212121;
+}
+
+.my-h3:hover{
+    background-color: #212121;
+}
+
+#enter-pic{
+    text-align: center;
+    margin: 10%;
+    background-color: #424242;
+    width: 80%;
+}
+
+#enter-pic:hover{
+    color: white;
+}
+
+#main-containner{
+    display: flex;
+    flex-direction: column;
+}
+
+#content-head-containner{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#content-containner{
+    display: flex;
+    flex-direction: column;
+}
+
+#inner-heads-containner{
+    width: 20%;
+}
+
+#inner-content-caontainner{
+    width: 75%;
+}
