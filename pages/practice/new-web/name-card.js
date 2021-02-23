@@ -1,4 +1,4 @@
-/*
+
 const inputName=document.getElementById("name");
 const showName=document.getElementById("show-name");
 const form=document.getElementById("form");
@@ -119,8 +119,6 @@ window.addEventListener("resize",()=>{
     if(form.style.display==="none"){
         largeTextFontSizeControl();
     }else{
-        smallTextFontSizeControl()
+        smallTextFontSizeControl() 
     }
 });
-
-*/
