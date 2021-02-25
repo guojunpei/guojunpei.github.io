@@ -2,6 +2,8 @@
 const inputName=document.getElementById("name");
 const showName=document.getElementById("show-name");
 const form=document.getElementById("form");
+const webTitle=document.getElementById("web-head");
+
 
 
 function fontSizeControl(n){
@@ -109,6 +111,7 @@ function fullScreenName(){
     showName.style.color=document.getElementById("color").value;
     showName.style.backgroundColor=document.getElementById("backgroundcolor").value;
     form.style.display="none";
+    webTitle.style.display="none";
 
     largeTextFontSizeControl();
 }
