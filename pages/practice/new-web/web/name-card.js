@@ -3,6 +3,7 @@ const inputName=document.getElementById("name");
 const showName=document.getElementById("show-name");
 const form=document.getElementById("form");
 const webTitle=document.getElementById("web-head");
+const webBody=document.getElementById("web-body");
 
 
 
@@ -112,6 +113,10 @@ function fullScreenName(){
     showName.style.backgroundColor=document.getElementById("backgroundcolor").value;
     form.style.display="none";
     webTitle.style.display="none";
+    webBody.className="my-body-hide";
+    document.getElementById("main-wrap").style.padding="0";
+    document.getElementById("main-wrap").style.borderRadius="0";
+
 
     largeTextFontSizeControl();
 }
