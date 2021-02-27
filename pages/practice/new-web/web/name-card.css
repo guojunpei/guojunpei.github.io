@@ -35,6 +35,7 @@ form{
 
 .name-crad-btn{
     font-size: 2rem;
+    background-color: grey;
 }
 
 input:invalid{
