@@ -5,7 +5,7 @@ html,body{
     background-color: black;
 }
 
-.web-body{
+.my-body{
     display: flex;
     flex-direction: column;
     width: 80%;
