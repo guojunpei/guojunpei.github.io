@@ -16,6 +16,17 @@ html,body{
     box-shadow: 0 0 1rem gray;
 }
 
+.my-body-hide{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #212121;
+    margin: 0;
+    padding: 2rem;
+    border-radius: 0;
+    box-shadow: 0;
+}
+
 .my-h1{
     color: #827717;
     background-color: gray;

@@ -1,4 +1,3 @@
-
 const inputName=document.getElementById("name");
 const showName=document.getElementById("show-name");
 const form=document.getElementById("form");
