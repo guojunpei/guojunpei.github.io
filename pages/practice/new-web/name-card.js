@@ -1,3 +1,4 @@
+
 const inputName=document.getElementById("name");
 const showName=document.getElementById("show-name");
 const form=document.getElementById("form");
@@ -113,7 +114,15 @@ function fullScreenName(){
     webBody.className="my-body-hide";
     document.getElementById("main-wrap").style.padding="0";
     document.getElementById("main-wrap").style.borderRadius="0";
-
+    document.getElementById("enter-pic").style.display="none";
+    document.getElementById("content-head-containner").style.display="none";
+    document.getElementById("profile-content").style.display="none";
+    document.getElementById("favourite-content").style.display="none";
+    document.getElementById("photography-content").style.display="none";
+    document.getElementById("caculator-content").style.display="none";
+    document.getElementById("TTTG-content").style.display="none";
+    document.getElementById("inner-heads-containner").style.display="none";
+    document.getElementById("contect-content").style.display="none";
 
     largeTextFontSizeControl();
 }
