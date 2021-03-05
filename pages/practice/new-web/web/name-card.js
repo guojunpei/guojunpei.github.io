@@ -114,6 +114,7 @@ function fullScreenName(){
     webBody.className="my-body-hide";
     document.getElementById("main-wrap").style.padding="0";
     document.getElementById("main-wrap").style.borderRadius="0";
+    document.getElementById("name-card").style.padding="0";
 
 
     largeTextFontSizeControl();
