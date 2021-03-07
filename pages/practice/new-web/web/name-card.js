@@ -6,6 +6,7 @@ const webTitle=document.getElementById("web-head");
 const webBody=document.getElementById("web-body");
 
 function fontSizeControl(n){
+    /*
     showName.style.fontSize=`${n*3}px`;
 
     for(let v of document.querySelectorAll("label")){
@@ -19,6 +20,7 @@ function fontSizeControl(n){
     for(let v of document.querySelectorAll("button")){
         v.style.fontSize=`${n}px`;
     }
+    */
 }
 
 function CN(){
@@ -45,7 +47,9 @@ if(navigator.language==="zh-CN"){
     EN();
 }
 
+
 function smallTextFontSizeControl(){
+    /*
     let n=0;
     if(window.innerHeight<window.innerWidth){
         document.getElementById("name-container").style.flexDirection="row";
@@ -64,7 +68,9 @@ function smallTextFontSizeControl(){
     document.getElementById("color").style.height=`${n}px`;
     document.getElementById("backgroundcolor").style.width=`${2*n}px`;
     document.getElementById("backgroundcolor").style.height=`${n}px`;
+    */
 }
+
 
 function largeTextFontSizeControl(){
     if(window.innerHeight<window.innerWidth){
