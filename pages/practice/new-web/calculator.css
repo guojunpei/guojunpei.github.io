@@ -1,0 +1,89 @@
+
+#app-calculator{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 0rem;
+    margin: 0rem;
+    background-color: black;
+}
+
+#main-cal{
+    background-color: #3a3635;
+    padding: 0rem;
+    margin: 0rem;
+}
+
+#display-div{
+    font-size: 2rem;
+    width: 100%;
+    margin: 0rem;
+    padding: 0rem;
+    text-align: right;
+}
+
+.result-cal{
+    margin: 0rem;
+    padding: 0.5rem;
+    color: white;
+}
+
+#input-result{
+    font-size: 1.5rem;
+    word-wrap: break-word;
+}
+
+#input-div{
+    margin: 0rem;
+    padding: 0rem;
+}
+
+#input-div > div{
+    margin: 0rem;
+    padding: 0rem;
+}
+
+#btn-all-clear,#btn-one-clear,#btn-percent
+{
+    background-color: #4d4948;
+}
+
+#btn-divide,#btn-multiply,#btn-subtract,#btn-add,#btn-equal
+{
+    background-color: #fd9e2a;
+}
+
+#btn-seven,#btn-eight,#btn-nine,#btn-four,#btn-five,#btn-six,#btn-one,#btn-two,#btn-three,#btn-zero,#btn-point
+{
+    background-color: #6b6766;
+}
+
+.btn-cal{
+    color: white;
+    width: 4.5rem;
+    height: 4rem;
+    font-size: 2rem;
+    margin: 0.1rem;
+    padding: 0rem;
+    border-width: 0.1rem;
+    border-color: #3a3635;
+    border-style: none;
+    cursor: pointer;
+    display: block;
+    float: left;
+    
+}
+
+.btn-cal:hover{
+    border:0.1rem solid red;
+}
+
+.btn-cal:active{
+    color: red;
+}
+
+#btn-zero{
+    width: 9.2rem;
+}

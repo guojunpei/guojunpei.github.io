@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="name-card.css">
+    <link rel="stylesheet" href="calculator.css">
 
     <title>Guojunpei's web [single page]</title>
 
@@ -62,7 +63,49 @@
                                 摄影
                             </div>
                             <div id="caculator-content" class="my-c3">
-                                计算器
+                                <div id="app-calculator">
+                                    <div id="main-cal">
+                                        <div id="display-div">
+                                            <div id="calculate-result" class="result-cal">
+                                                0
+                                            </div>
+                                            <div id="input-result" class="result-cal">
+                                                0
+                                            </div>
+                                        </div>
+                                        <div id="input-div">
+                                            <div>
+                                                <button class="btn-cal" id="btn-all-clear" onclick="clickBtnAllClear()">AC</button>
+                                                <button class="btn-cal" id="btn-one-clear" onclick="clickBtnClear()">C</button>
+                                                <button class="btn-cal" id="btn-percent" onclick="clickBtnPercent()">%</button>
+                                                <button class="btn-cal" id="btn-divide" onclick="clickBtnS('÷')">÷</button>
+                                            </div>
+                                            <div>
+                                                <button class="btn-cal" id="btn-seven" onclick="clickBtnN(7)">7</button>
+                                                <button class="btn-cal" id="btn-eight" onclick="clickBtnN(8)">8</button>
+                                                <button class="btn-cal" id="btn-nine" onclick="clickBtnN(9)">9</button>
+                                                <button class="btn-cal" id="btn-multiply" onclick="clickBtnS('×')">×</button>
+                                            </div>
+                                            <div>
+                                                <button class="btn-cal" id="btn-four" onclick="clickBtnN(4)">4</button>
+                                                <button class="btn-cal" id="btn-five" onclick="clickBtnN(5)">5</button>
+                                                <button class="btn-cal" id="btn-six" onclick="clickBtnN(6)">6</button>
+                                                <button class="btn-cal" id="btn-subtract" onclick="clickBtnS('-')">-</button>
+                                            </div>
+                                            <div>
+                                                <button class="btn-cal" id="btn-one" onclick="clickBtnN(1)">1</button>
+                                                <button class="btn-cal" id="btn-two" onclick="clickBtnN(2)">2</button>
+                                                <button class="btn-cal" id="btn-three" onclick="clickBtnN(3)">3</button>
+                                                <button class="btn-cal" id="btn-add" onclick="clickBtnS('+')">+</button>
+                                            </div>
+                                            <div>
+                                                <button class="btn-cal" id="btn-zero" onclick="clickBtnN(0)">0</button>
+                                                <button class="btn-cal" id="btn-point" onclick="clickBtnN('.')">.</button>
+                                                <button class="btn-cal" id="btn-equal" onclick="clickBtnEqual()">=</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div id="NC-content" class="my-c3">
                                 <div id="name-card">
@@ -104,6 +147,8 @@
     
     <script src="main.js"></script>
     <script src="name-card.js"></script>
+    <script src="calculator.js"></script>
+
     
 </body>
 </html>
