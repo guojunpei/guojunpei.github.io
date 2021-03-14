@@ -46,11 +46,13 @@ html,body{
 }
 
 .my-h2{
-    padding: 1rem;
     padding: 1rem 0 1rem 0;
     width: 25%;
     text-align: center;
     box-shadow: 0 0 1rem gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .my-c2{
@@ -63,6 +65,7 @@ html,body{
 .my-h3{
     padding: 1rem;
     box-shadow: 0 0 1rem gray;
+    width: 100%;
 }
 
 .my-c3{
