@@ -1,18 +1,15 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="name-card.css">
     <link rel="stylesheet" href="..\main.css">
-
-    <title>tic-tac-toe-game</title>
+    
+    <title>work</title>
 
 </head>
-
 <body>
-    <div id="web-body" class="my-body">
+    <div class="web-body">
         <div id="web-head" class="my-h1">
             Guojunpei's web
         </div>
@@ -34,26 +31,33 @@
                         联系
                     </div>
                 </div>
-                <div id="content-containner">
-                    <div id="app-tic-tac-toe-game">
-                        <div id="main">
-                
-                        </div>
-                        <div id="left">
-                            player 1
-                
-                        </div>
-                        <div id="right">
-                            player 2
-                
-                        </div>
+
+                <div id="inner-heads-containner">
+                    <div id="photography-head" class="my-h3" onclick="changecontent('photography-head')">
+                        摄影
+                    </div>
+                    <div id="caculator-head" class="my-h3" onclick="changecontent('caculator-head')">
+                        <a href="calculator.html">计算器</a>
+                    </div>
+                    <div id="NC-head" class="my-h3" onclick="changecontent('NC-head')">
+                        <a href="name-card.html">姓名卡</a>
+                        
+                    </div>
+                    <div id="TTTG-head" class="my-h3" onclick="changecontent('TTTG-head')">
+                        
+                        <a href="tic-tac-toe-game.html">井字游戏</a>
                     </div>
                 </div>
+
+                <div id="content-containner">
+                    <div id="profile-content" class="my-c2">
+                        
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
-    <script src="tic-tac-toe-game.js">
-	</script>
+    
 </body>
-
 </html>
