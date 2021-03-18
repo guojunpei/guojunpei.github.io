@@ -88,6 +88,10 @@ html,body{
     background-color: #212121;
 }
 
+#web-head{
+    width: 100%;
+}
+
 #enter-pic{
     text-align: center;
     margin: 10%;
@@ -130,8 +134,29 @@ html,body{
     color: blue;
 }
 
-.mian-btn{
+a{
+    text-decoration: none;
+}
+
+a:link{
+    text-decoration: none;
     color: #827717;
-    background-color: #424242;
-    border: 0;
+}
+
+a:active{
+    text-decoration: none;
+}
+
+a:visited{
+    text-decoration: none;
+    color: #827717;
+}
+
+a:hover{
+    text-decoration: none;
+    color: white;
+}
+
+a:focus{
+    text-decoration: none;
 }
