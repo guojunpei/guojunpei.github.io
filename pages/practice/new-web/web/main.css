@@ -90,6 +90,7 @@ html,body{
 
 #web-head{
     width: 100%;
+    align-items: center;
 }
 
 #enter-pic{
