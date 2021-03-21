@@ -262,7 +262,7 @@ function formCheck(){
 }
 
 
-mainForm.addEventListener("keyup",formCheck());
+//mainForm.addEventListener("keyup",formCheck());
 
 mainForm.addEventListener("submit",(e)=>{
     e.preventDefault();
