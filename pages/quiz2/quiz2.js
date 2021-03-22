@@ -249,6 +249,9 @@ function formCheck(){
     document.getElementById("tip-number-lose").innerText=`${lossQnArry.length}`;
     
     if(lossQnString!==""){
+        document.getElementById("quiz-submit").style.color="red"
+
+        /*
         if(window.confirm(`Do you want to loss ${lossQnString}?`)){
             return true;
         }else{
@@ -258,6 +261,7 @@ function formCheck(){
                 )
             }
         }
+        */
     }
 }
 
