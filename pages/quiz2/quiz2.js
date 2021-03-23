@@ -262,11 +262,19 @@ function formCheck(){
             }
         }
         */
+    }else{
+        document.getElementById("quiz-submit").style.color="green"
     }
+
+    //console.log("formCheck()");
 }
 
 
-mainForm.addEventListener("keyup",formCheck());
+//document.getElementById("app-quiz").addEventListener("click",formCheck());
+//const answers=document.getElementsByClassName("answers");
+//answers.addEventListener("click",formCheck());
+
+mainForm.addEventListener("click",formCheck());
 
 mainForm.addEventListener("submit",(e)=>{
     e.preventDefault();
