@@ -251,30 +251,13 @@ function formCheck(){
     if(lossQnString!==""){
         document.getElementById("quiz-submit").style.color="red"
 
-        /*
-        if(window.confirm(`Do you want to loss ${lossQnString}?`)){
-            return true;
-        }else{
-            if(lossQnString!==""){
-                mainForm.elements[0].setCustomValidity(
-                    "Don't loss any one !"
-                )
-            }
-        }
-        */
     }else{
         document.getElementById("quiz-submit").style.color="green"
     }
 
-    //console.log("formCheck()");
 }
 
-
-//document.getElementById("app-quiz").addEventListener("click",formCheck());
-//const answers=document.getElementsByClassName("answers");
-//answers.addEventListener("click",formCheck());
-
-mainForm.addEventListener("click",formCheck());
+mainForm.addEventListener("click",formCheck);
 
 mainForm.addEventListener("submit",(e)=>{
     e.preventDefault();
