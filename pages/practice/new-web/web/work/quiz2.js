@@ -251,21 +251,13 @@ function formCheck(){
     if(lossQnString!==""){
         document.getElementById("quiz-submit").style.color="red"
 
-        /*
-        if(window.confirm(`Do you want to loss ${lossQnString}?`)){
-            return true;
-        }else{
-            if(lossQnString!==""){
-                mainForm.elements[0].setCustomValidity(
-                    "Don't loss any one !"
-                )
-            }
-        }
-        */
+    }else{
+        document.getElementById("quiz-submit").style.color="green"
     }
+
 }
 
-mainForm.addEventListener("keyup",formCheck());
+mainForm.addEventListener("click",formCheck);
 
 mainForm.addEventListener("submit",(e)=>{
     e.preventDefault();
