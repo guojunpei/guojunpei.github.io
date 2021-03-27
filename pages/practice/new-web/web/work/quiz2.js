@@ -245,7 +245,9 @@ function formCheck(){
             lossQnString+=qn.id+",";
         }
     }
-    document.getElementById("tip-number-done").innerText=`${doneQnArry.length}`;
+    
+    //document.getElementById("tip-number-done").innerText=`${doneQnArry.length}`;
+    document.getElementById("tip-number-done").innerText=`${questionList.length-lossQnArry.length}`;
     document.getElementById("tip-number-lose").innerText=`${lossQnArry.length}`;
     
     if(lossQnString!==""){

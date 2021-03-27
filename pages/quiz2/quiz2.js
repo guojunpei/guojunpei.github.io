@@ -239,13 +239,15 @@ function formCheck(){
             }
         }
     }
+
     for(const qn of questionList){
         if(!doneQnArry.includes(qn.id)){
             lossQnArry.push(qn.id);
             lossQnString+=qn.id+",";
         }
     }
-    document.getElementById("tip-number-done").innerText=`${doneQnArry.length}`;
+    //document.getElementById("tip-number-done").innerText=`${doneQnArry.length}`;
+    document.getElementById("tip-number-done").innerText=`${questionList.length-lossQnArry.length}`;
     document.getElementById("tip-number-lose").innerText=`${lossQnArry.length}`;
     
     if(lossQnString!==""){
