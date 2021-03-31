@@ -123,8 +123,7 @@ function fullScreenName(){
     document.getElementById("name-card").style.padding="0";
     document.getElementById("content-head-containner").style.display="none";
     document.getElementById("main-containner").style.height="100%";
-    document.getElementsByClassName("my-c1").style.padding="0";
-
+    document.getElementById("name-card").style.boxShadow="0 0 0 0";
 
     largeTextFontSizeControl();
 }
