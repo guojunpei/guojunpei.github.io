@@ -1,7 +1,6 @@
 
 #app-quiz{
-    height: 100%;
-    width: 100%;
+
     color: white;
     display: flex;
     align-items: center;
@@ -77,8 +76,6 @@ h1{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    width: 100%;
     white-space: pre-line;
     text-align: center;
 }
