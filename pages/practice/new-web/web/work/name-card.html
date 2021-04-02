@@ -22,7 +22,7 @@
 
                     <a href="..\favourite\index.html" id="favourite-head" class="my-h2">爱好</a>
 
-                    <a href="..\work\index.html" id="work-head" class="my-h2">作品</a>
+                    <a href="..\work\index.html" id="work-head" class="my-h2 now">作品</a>
 
                     <a href="..\contect\index.html" id="contect-head" class="my-h2">联系</a>
                 </div>
@@ -34,7 +34,7 @@
     
                         <a href="calculator.html" id="calculator-head" class="my-h3">计算器</a>
     
-                        <a href="name-card.html" id="NC-head" class="my-h3">姓名卡</a>
+                        <a href="name-card.html" id="NC-head" class="my-h3 now">姓名卡</a>
     
                         <a href="tic-tac-toe-game.html" id="TTTG-head" class="my-h3">井字游戏</a>
     
@@ -43,31 +43,30 @@
                     </div>
     
                     <div id="inner-content-containner">
-                        <div id="profile-content" class="my-c2">
-                            <div id="name-card" class="my-c3">
-                                <div id="show-name">
-                                    name
+                        <div id="name-card" class="my-c3">
+                            <div id="show-name">
+                                name
+                            </div>
+                            <div id="form">
+                                <div id="name-container" class="form-content">
+                                    <label for="name">Enter new name:</label>
+                                    <input type="text" name="name" id="name" value="" required>
                                 </div>
-                                <div id="form">
-                                    <div id="name-container" class="form-content">
-                                        <label for="name">Enter new name:</label>
-                                        <input type="text" name="name" id="name" value="" required>
-                                    </div>
-                                    <div id="color-container" class="form-content">
-                                        <label for="color">Choose text color:</label>
-                                        <input type="color" name="color" id="color" value="#ffffff">
-                                    </div>
-                                    <div id="bg-container" class="form-content">
-                                        <label for="backgroundcolor">Choose backgroundcolor:</label>
-                                        <input type="color" name="backgroundcolor" id="backgroundcolor" value="#000000">
-                                    </div>
-                                    <div class="form-button">
-                                        <button id="preview" class="name-crad-btn" onclick="previewName()">Preview</button>
-                                        <button id="full-screen" class="name-crad-btn" onclick="fullScreenName()">Full screen</button>
-                                    </div>
+                                <div id="color-container" class="form-content">
+                                    <label for="color">Choose text color:</label>
+                                    <input type="color" name="color" id="color" value="#ffffff">
+                                </div>
+                                <div id="bg-container" class="form-content">
+                                    <label for="backgroundcolor">Choose backgroundcolor:</label>
+                                    <input type="color" name="backgroundcolor" id="backgroundcolor" value="#000000">
+                                </div>
+                                <div class="form-button">
+                                    <button id="preview" class="name-crad-btn" onclick="previewName()">Preview</button>
+                                    <button id="full-screen" class="name-crad-btn" onclick="fullScreenName()">Full screen</button>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>

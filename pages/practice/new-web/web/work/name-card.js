@@ -124,6 +124,7 @@ function fullScreenName(){
     document.getElementById("content-head-containner").style.display="none";
     document.getElementById("main-containner").style.height="100%";
     document.getElementById("name-card").style.boxShadow="0 0 0 0";
+    document.getElementById("inner-heads-containner").style.display="none";
 
     largeTextFontSizeControl();
 }

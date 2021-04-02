@@ -250,16 +250,23 @@ function formCheck(){
     document.getElementById("tip-number-done").innerText=`${questionList.length-lossQnArry.length}`;
     document.getElementById("tip-number-lose").innerText=`${lossQnArry.length}`;
     
-    if(lossQnString!==""){
-        document.getElementById("quiz-submit").style.color="red"
-
+    if(document.getElementById("tip-sure").checked==="ture"){
+        document.getElementById("quiz-submit").style.color="green";
     }else{
-        document.getElementById("quiz-submit").style.color="green"
+        if(lossQnString!==""){
+            document.getElementById("quiz-submit").style.color="red";
+        }else{
+            document.getElementById("quiz-submit").style.color="green";
+        }
     }
 
 }
 
-mainForm.addEventListener("click",formCheck);
+document.getElementById("main-paper").addEventListener("click",formCheck);
+
+document.getElementById("tip-sure").addEventListener("click",()=>{
+    document.getElementById("quiz-submit").style.color="green";
+});
 
 mainForm.addEventListener("submit",(e)=>{
     e.preventDefault();

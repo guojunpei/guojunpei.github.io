@@ -134,7 +134,6 @@ html,body{
 
 }
 
-
 .btn{
     color: blue;
 }
@@ -164,4 +163,8 @@ a:hover{
 
 a:focus{
     text-decoration: none;
+}
+
+.now{
+    background-color: #212121;
 }
