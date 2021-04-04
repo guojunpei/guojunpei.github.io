@@ -1,0 +1,8 @@
+#photograph{
+    display: flex;
+}
+
+#photo{
+    flex-grow: 1;
+    flex-shrink: 10;
+}
