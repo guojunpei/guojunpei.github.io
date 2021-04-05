@@ -37,8 +37,9 @@ function nextImg(n){
     photo.height=imgL[imgN].height;
 }
 
-//document.getElementById("photograph").addEventListener("click",nextImg(1));
+document.getElementById("photograph").addEventListener("click",nextImg(1));
 
+/*
 document.getElementById("photograph").addEventListener("click",()=>{
     if(document.getElementById("photo").src==="../images/lake1.jpg"){
         document.getElementById("photo").src="../images/lake2.jpg";
@@ -46,3 +47,4 @@ document.getElementById("photograph").addEventListener("click",()=>{
         document.getElementById("photo").src="../images/lake1.jpg";
     }
 });
+*/
