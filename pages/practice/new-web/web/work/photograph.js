@@ -14,6 +14,14 @@ let img2={
     height:"534px",
 }
 
+let img3={
+    alt:"photo",
+    name:"road",
+    src:"../images/road.jpg",
+    width:"800px",
+    height:"534px",
+}
+
 let imgL=[img1,img2];
 let imgN="0";
 
@@ -37,14 +45,17 @@ function nextImg(n){
     photo.height=imgL[imgN].height;
 }
 
-document.getElementById("photograph").addEventListener("click",nextImg(1));
+//document.getElementById("photograph").addEventListener("click",nextImg(1));
 
-/*
+
 document.getElementById("photograph").addEventListener("click",()=>{
     if(document.getElementById("photo").src==="../images/lake1.jpg"){
         document.getElementById("photo").src="../images/lake2.jpg";
     }else{
-        document.getElementById("photo").src="../images/lake1.jpg";
+        if(document.getElementById("photo").src==="../images/lake2.jpg"){
+            document.getElementById("photo").src="../images/road.jpg";
+        }else{
+            document.getElementById("photo").src="../images/lake1.jpg";
+        }
     }
 });
-*/
