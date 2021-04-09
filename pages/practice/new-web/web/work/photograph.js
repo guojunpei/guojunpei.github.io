@@ -29,7 +29,7 @@ const photo=document.getElementById("photo");
 
 function imgResize(){
     const imgPrecent= photo.clientWidth/photo.width;
-    //photo.width=imgL[imgN].width;
+    photo.width=imgL[imgN].width*imgPrecent;
     photo.height=imgL[imgN].height*imgPrecent;
 }
 
