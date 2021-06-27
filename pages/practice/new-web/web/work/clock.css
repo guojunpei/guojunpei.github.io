@@ -1,0 +1,55 @@
+.clock{
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    margin-top: 100px;
+    border-radius: 50%;
+    border: 10px solid black;
+    position: relative;
+}
+
+.clock > div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+
+.hour-wrapper{
+    height: 60%;
+    width: 60%;
+    background-color: #bfa;
+}
+
+.hour{
+    height: 50%;
+    width: 6px;
+    background-color: #000;
+    margin: 0 auto;
+}
+
+.sec-wrapper{
+    width: 500px;
+    height: 500px;
+    animation: run 60s;
+}
+
+.sec{
+    height: 400pc;
+    width: 4px;
+    background-color: red;
+    margin: 0 auto;
+
+}
+
+@keyframes run{
+    form{
+        transform: rotate(0);
+    }
+
+    to{
+        transform: rotate(360deg);
+    }
+}
