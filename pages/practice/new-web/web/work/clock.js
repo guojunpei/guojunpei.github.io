@@ -1,13 +1,19 @@
+
+
 function clockNow(){
-    let date = new date;
-    let sec = date.getSecondes();
+    let date = new Date();
+    let sec = date.getSeconds();
     let min = date.getMinutes();
     let hour = date.getHours();
 
-    let secPointer = sec * 6;
-    let minPointer = min * 6;
-    let hourPointer = hour * 30;
+    let secPointerChange = sec * 6;
+    let minPointerChange = min * 6;
+    let hourPointerChange = hour * 30;
 
-    document.getElementsByClassName("sec-wrapper")
+    document.getElementsByClassName("sec-wrapper")[0].style.transform=`rotate(${secPointerChange}deg)`;
+    document.getElementsByClassName("min-wrapper")[0].style.transform=`rotate(${minPointerChange}deg)`;
+    document.getElementsByClassName("hour-wrapper")[0].style.transform=`rotate(${hourPointerChange}deg)`;
 
 }
+
+clockNow();
