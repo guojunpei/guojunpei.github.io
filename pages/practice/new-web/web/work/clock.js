@@ -17,3 +17,10 @@ function clockNow(){
 }
 
 clockNow();
+
+
+function addClockNumber(){
+    let clockNumbers = document.getElementById("clock-numbers");
+    
+
+}
