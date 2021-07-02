@@ -21,6 +21,17 @@ clockNow();
 
 function addClockNumber(){
     let clockNumbers = document.getElementById("clock-numbers");
+    let clockNumber = document.createElement("div");
+
+    for(let i = 0; i<12;i++){
+        clockNumber.innerText=`${i+1}`;
+        //clockNumber.style.transform=`rotate(${i*30}deg)`;
+        clockNumbers.appendChild(clockNumber);
+    }
+
+    
     
 
 }
+
+addClockNumber();
