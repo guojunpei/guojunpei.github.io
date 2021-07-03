@@ -23,11 +23,25 @@ function addClockNumber(){
     let clockNumbers = document.getElementById("clock-numbers");
     let clockNumber = document.createElement("div");
 
-    for(let i = 0; i<12;i++){
+    /*
+
+    for(let i = 0; i < 12; i++){
         clockNumber.innerText=`${i+1}`;
-        //clockNumber.style.transform=`rotate(${i*30}deg)`;
+        clockNumber.style.transform=`translate(50%,0%)`;
         clockNumbers.appendChild(clockNumber);
     }
+    */
+
+    clockNumber.innerText=`12`;
+    clockNumber.style.transform=`translate(50%,0%)`;
+    clockNumbers.appendChild(clockNumber);
+
+    clockNumber.innerText=`1`;
+    clockNumber.style.transform=`translate(100%,0%)`;
+    clockNumbers.appendChild(clockNumber);
+
+
+
 
     
     
