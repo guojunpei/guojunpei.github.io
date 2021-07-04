@@ -20,7 +20,8 @@ clockNow();
 
 
 function addClockNumber(){
-    let clockNumbers = document.getElementById("clock-numbers");
+    let clockNumbersWrapper = document.getElementById("clock-numbers-wrapper");
+    let clockNumberWrapper = document.createElement("div");
     let clockNumber = document.createElement("div");
 
     /*
@@ -32,19 +33,30 @@ function addClockNumber(){
     }
     */
 
+
     clockNumber.innerText=`12`;
+    clockNumberWrapper.className="clock-number-wrapper";
     clockNumber.style.transform=`translate(50%,0%)`;
-    clockNumbers.appendChild(clockNumber);
+    clockNumberWrapper.appendChild(clockNumber);
+    clockNumbersWrapper.appendChild(clockNumberWrapper);
 
-    clockNumber.innerText=`1`;
-    clockNumber.style.transform=`translate(100%,0%)`;
-    clockNumbers.appendChild(clockNumber);
+    clockNumber.innerText=`3`;
+    clockNumberWrapper.className="clock-number-wrapper";
+    clockNumber.style.transform=`translate(100%,100%)`;
+    clockNumberWrapper.appendChild(clockNumber);
+    clockNumbersWrapper.appendChild(clockNumberWrapper);
 
+/*
+    clockNumber.innerText="12";
+    clockNumber.className="clock-number-wrapper";
+    clockNumber.style.transform=`translate(50%,0%)`;
+    clockNumbersWrapper.appendChild(clockNumber);
 
-
-
-    
-    
+    clockNumber.innerText="3";
+    clockNumber.className="clock-number-wrapper";
+    clockNumber.style.transform=`translate(100%,50%)`;
+    clockNumbersWrapper.appendChild(clockNumber);
+    */
 
 }
 

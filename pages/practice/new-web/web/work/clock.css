@@ -57,6 +57,11 @@
 
 }
 
+.clock-number-wrapper{
+    height: 100%;
+    width: 100%;
+}
+
 @keyframes run{
     form{
         transform: rotate(0);
