@@ -34,18 +34,24 @@ function addClockNumber(){
     */
 
 
-    clockNumber.innerText=`12`;
+    clockNumberWrapper.innerText=`12`;
     clockNumberWrapper.className="clock-number-wrapper";
-    clockNumber.style.transform=`translate(50%,0%)`;
-    clockNumberWrapper.appendChild(clockNumber);
+    clockNumberWrapper.style.transform=`translate(50%,0%)`;
     clockNumbersWrapper.appendChild(clockNumberWrapper);
 
+    clockNumberWrapper.innerText=`3`;
+    clockNumberWrapper.className="clock-number-wrapper";
+    clockNumberWrapper.style.transform=`translate(100%,50%)`;
+    clockNumbersWrapper.appendChild(clockNumberWrapper);
+
+    /*
     clockNumber.innerText=`3`;
     clockNumberWrapper.className="clock-number-wrapper";
     clockNumber.style.transform=`translate(100%,100%)`;
     clockNumberWrapper.appendChild(clockNumber);
     clockNumbersWrapper.appendChild(clockNumberWrapper);
 
+    */
 /*
     clockNumber.innerText="12";
     clockNumber.className="clock-number-wrapper";
