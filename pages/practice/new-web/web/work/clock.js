@@ -35,14 +35,17 @@ function addClockNumber(){
 
 
     clockNumberWrapper.innerText=`12`;
+    clockNumberWrapper.id=`${12}clock`
     clockNumberWrapper.className="clock-number-wrapper";
     clockNumberWrapper.style.transform=`translate(50%,0%)`;
     clockNumbersWrapper.appendChild(clockNumberWrapper);
-
+/*
     clockNumberWrapper.innerText=`3`;
+    clockNumberWrapper.id=`${3}clock`
     clockNumberWrapper.className="clock-number-wrapper";
     clockNumberWrapper.style.transform=`translate(100%,50%)`;
     clockNumbersWrapper.appendChild(clockNumberWrapper);
+    */
 
     /*
     clockNumber.innerText=`3`;
