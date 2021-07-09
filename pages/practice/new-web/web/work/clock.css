@@ -4,7 +4,7 @@
     margin: 0 auto;
     margin-top: 100px;
     border-radius: 50%;
-    border: 10px solid black;
+    /*border: 10px solid black;*/
     position: relative;
     background-image: url(../images/clock1.png);
     background-repeat: no-repeat;
